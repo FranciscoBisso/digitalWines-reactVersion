@@ -1,6 +1,13 @@
+const db = require("../../database/models");
 const mainApiController = {
     home: (req, res) => {
-        res.json("Hola");
+        db.Vinos.findAll().then((vinos) => {
+            return res.json({
+                total: vinos.length,
+                data: vinos,
+                status: 200,
+            });
+        });
     },
 };
 
