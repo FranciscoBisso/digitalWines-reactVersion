@@ -15,9 +15,10 @@ const winesApiController = {
         });
     },
 
-    create: async (req, res) => {
-        return res.json(req.body);
-        /*await db.Vinos.create({
+    create: (req, res) => {
+        //return res.json(req.body);
+
+        db.Vinos.create({
             nombre: req.body.nombre,
             //imagen: req.file.path.split("public").pop(),
             imagen: req.body.imagen,
@@ -28,7 +29,14 @@ const winesApiController = {
             uva_id: req.body.uva_id,
             categoria_id: req.body.categoria_id,
             stock: req.body.stock,
-        });*/
+        })
+        .then(vino => {
+            res.status(200).json({
+            status: 200,
+            created: 'OK',
+            data: vino
+        })
+        })
     },
 };
 
