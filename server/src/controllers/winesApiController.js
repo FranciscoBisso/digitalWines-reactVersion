@@ -1,4 +1,4 @@
-const db = require("../../database/models");
+const db = require("../database/models");
 const winesApiController = {
     wineCellar: async (req, res) => {
         const vinos = await db.Vinos.findAll({

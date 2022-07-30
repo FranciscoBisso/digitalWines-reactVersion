@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 
 app.use("/api", mainApiRouter);
-app.use("/api", winesApiRouter);
+app.use("/api/wines", winesApiRouter);
 
 app.listen(3001, () => {
     console.log("Server working in PORT 3001");
