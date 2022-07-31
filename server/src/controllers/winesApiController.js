@@ -65,6 +65,20 @@ const winesApiController = {
             });
         });
     },
+
+    delete: async (req, res) => {
+        await db.Vinos.destroy({
+            where: {
+                id: req.params.id,
+            },
+        }).then((vino) => {
+            res.status(200).json({
+                status: 200,
+                deleted: "OK",
+                data: vino,
+            });
+        });
+    },
 };
 
 module.exports = winesApiController;
