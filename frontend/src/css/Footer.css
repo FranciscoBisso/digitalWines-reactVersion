@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto";
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    width: 100%;
+}
+
+.contenedor {
+    background-color: #d1cdcc;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.foot {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.presentacion {
+    display: flex;
+    justify-content: flex-start;
+    width: 33%;
+    margin: 20px 10px;
+}
+p {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.presentacion p {
+    text-align: center;
+}
+
+.copy p {
+    text-align: center;
+}
+
+.presentacion .corazon {
+    color: #aa0d3f;
+}
+
+.presentacion .cafe {
+    color: #201f1d;
+}
+
+.copy {
+    display: flex;
+    justify-content: flex-end;
+    width: 33%;
+    margin: 20px 10px;
+}
+
+.redes {
+    display: flex;
+    justify-content: flex-end;
+    width: 33%;
+    margin: 20px 10px;
+    color: blue;
+}
+
+.lista .fab {
+    color: rgb(98, 98, 100);
+    font-size: 20px;
+    margin: 0 10px;
+}

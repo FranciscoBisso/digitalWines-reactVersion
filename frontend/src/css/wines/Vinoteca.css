@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto";
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    background-color: #252525;
+}
+
+main h2 {
+    color: rgb(201, 196, 196);
+    text-align: center;
+    padding-top: 5%;
+    margin-bottom: 2%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+.contenedor-links_grande a {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+.d-flex {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
+#nombre {
+    border: 2px solid #aa0d3f;
+    background-color: transparent;
+    color: rgb(201, 196, 196);
+}
+
+#nombre::placeholder {
+    color: rgb(201, 196, 196);
+}
+
+#nombre:hover {
+    border: 2px solid rgb(201, 196, 196);
+}
+
+.btn-outline-success {
+    background-color: transparent;
+    color: rgb(201, 196, 196);
+    border: 2px solid #aa0d3f;
+}
+
+.btn-outline-success:hover {
+    color: rgb(201, 196, 196);
+    background-color: transparent;
+    border: 2px solid rgb(201, 196, 196);
+}
+
+.wine-shelf {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5% 0;
+}
+
+.flex-div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.articles-wrapper {
+    width: 50%;
+}
+.wine-card {
+    background-color: #fff;
+    margin: 5%;
+    border-radius: 8px;
+}
+.wine-card-img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+}
+.wine-card-body {
+    padding: 2%;
+    display: flex;
+    background-color: rgb(245, 245, 245);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.wine-card-texts {
+    width: 100%;
+}
+
+.card-title {
+    color: #aa0d3f;
+}
+
+.card-price {
+    color: #39b54a;
+    font-weight: bold;
+}
+
+.wine-card-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.wine-card-icons a i {
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+}
+
+.button-estrella-carrito {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 1.25rem;
+}
+
+.button-estrella-carrito i:hover {
+    color: #aa0d3f;
+}
+
+.wine-card-icons a i:hover {
+    color: #aa0d3f;
+}
+
+.button-add-product {
+    position: fixed;
+    text-decoration: none;
+    right: 2.5%;
+    bottom: 2.5%;
+    border-radius: 50%;
+    padding: 1.5%;
+    color: rgb(201, 196, 196);
+    background-color: transparent;
+    border: 2px solid #aa0d3f;
+    display: flex;
+}
+
+/*** QUERIES ***/
+
+/* Tablet */
+@media (min-width: 767px) {
+    .d-flex {
+        padding-top: 2%;
+    }
+
+    .articles-wrapper {
+        width: 33%;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1100px) {
+    .d-flex {
+        width: 87%;
+    }
+
+    .articles-wrapper {
+        width: 25%;
+    }
+
+    h2 {
+        margin-bottom: 3%;
+    }
+
+    .wine-card:hover {
+        box-shadow: 0px 0px 10px rgb(245, 245, 245);
+    }
+
+    .wine-card-product-description {
+        display: none;
+    }
+
+    .wine-card:hover .wine-card-product-description {
+        display: block;
+    }
+
+    .card-title:hover {
+        font-size: 25px;
+        color: brown;
+    }
+
+    .card-price {
+        text-align: center;
+        font-size: 1.25rem;
+        color: #aa0d3f;
+    }
+
+    .wine-card:hover .card-price {
+        text-align: start;
+        color: #39b54a;
+        font-weight: bold;
+        font-size: var(--bs-body-font-size);
+    }
+
+    .wine-card-icons {
+        display: none;
+    }
+
+    .wine-card:hover .wine-card-icons {
+        display: flex;
+    }
+
+    .button-add-product {
+        padding: 1%;
+    }
+}
