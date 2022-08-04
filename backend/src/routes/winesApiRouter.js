@@ -4,6 +4,8 @@ const winesApiController = require("../controllers/winesApiController");
 
 router.get("/winecellar", winesApiController.findAll);
 
+router.get("/details/:id", winesApiController.findOne);
+
 router.post("/create", winesApiController.create);
 
 router.get("/modify/:id", winesApiController.modify);

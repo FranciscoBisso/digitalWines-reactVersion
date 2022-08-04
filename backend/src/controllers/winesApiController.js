@@ -12,6 +12,25 @@ const winesApiController = {
         });
     },
 
+    findOne: async (req, res) => {
+        const vino = await db.Vinos.findOne({
+            include: [{ all: true }],
+            where: { id: req.params.id },
+        });
+
+        if (!vino) {
+            return res.status(400).json({
+                status: 400,
+                error: "No contamos con ese vino",
+            });
+        }
+
+        return res.json({
+            status: 200,
+            data: vino,
+        });
+    },
+
     create: async (req, res) => {
         const vino = await db.Vinos.create({
             nombre: req.body.nombre,
@@ -37,6 +56,14 @@ const winesApiController = {
             include: [{ all: true }],
             where: { id: req.params.id },
         });
+
+        if (!vino) {
+            return res.status(400).json({
+                status: 400,
+                error: "No contamos con ese vino",
+            });
+        }
+
         return res.json({
             status: 200,
             data: vino,
@@ -75,6 +102,14 @@ const winesApiController = {
             include: [{ all: true }],
             where: { id: req.params.id },
         });
+
+        if (!vino) {
+            return res.status(400).json({
+                status: 400,
+                error: "No contamos con ese vino",
+            });
+        }
+
         return res.json({
             status: 200,
             data: vino,
