@@ -6,48 +6,55 @@ export default class Vinoteca extends Component {
             <div>
                 <main>
                     <h2>CONOCE, DEGUSTA Y SIENTE NUESTROS VINOS </h2>
-                    <form class="d-flex" method="get" action="/products/buscar">
+                    <form
+                        className="d-flex"
+                        method="get"
+                        action="/products/buscar"
+                    >
                         <input
-                            class="form-control me-2"
+                            className="form-control me-2"
                             type="search"
                             placeholder="Encuentra tu vino"
                             aria-label="Search"
                             name="nombre"
                             id="nombre"
                         />
-                        <button class="btn btn-outline-success" type="submit">
+                        <button
+                            className="btn btn-outline-success"
+                            type="submit"
+                        >
                             Buscar
                         </button>
                     </form>
-                    <section class="wine-shelf">
-                        <div class="flex-div">
-                            <div class="articles-wrapper">
-                                <article class="wine-card">
+                    <section className="wine-shelf">
+                        <div className="flex-div">
+                            <div className="articles-wrapper">
+                                <article className="wine-card">
                                     <a href="/products/detalle/<%= vino.id %>">
                                         <img
                                             src="<%= vino.imagen %>"
                                             alt=""
                                             width="100%"
-                                            class="wine-card-img"
+                                            className="wine-card-img"
                                         />
                                     </a>
-                                    <div class="wine-card-body">
-                                        <div class="wine-card-texts">
-                                            <div class="wine-card-product-description">
-                                                <h4 class="card-title"></h4>
-                                                <h5 class="card-subtitle mb-2 text-muted"></h5>
+                                    <div className="wine-card-body">
+                                        <div className="wine-card-texts">
+                                            <div className="wine-card-product-description">
+                                                <h4 className="card-title"></h4>
+                                                <h5 className="card-subtitle mb-2 text-muted"></h5>
                                             </div>
-                                            <p class="card-text card-price">
+                                            <p className="card-text card-price">
                                                 $
                                             </p>
                                         </div>
 
-                                        <div class="wine-card-icons">
+                                        <div className="wine-card-icons">
                                             <a href="/products/eliminar/<%= vino.id %>">
-                                                <i class="fas fa-times"></i>
+                                                <i className="fas fa-times"></i>
                                             </a>
                                             <a href="/products/editar/<%= vino.id %>">
-                                                <i class="far fa-edit"></i>
+                                                <i className="far fa-edit"></i>
                                             </a>
 
                                             <form
@@ -56,9 +63,9 @@ export default class Vinoteca extends Component {
                                             >
                                                 <button
                                                     type="submit"
-                                                    class="button-estrella-carrito"
+                                                    className="button-estrella-carrito"
                                                 >
-                                                    <i class="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
                                                     <i>"far fa-star"</i>
                                                 </button>
                                             </form>
@@ -68,9 +75,9 @@ export default class Vinoteca extends Component {
                                             >
                                                 <button
                                                     type="submit"
-                                                    class="button-estrella-carrito"
+                                                    className="button-estrella-carrito"
                                                 >
-                                                    <i class="material-icons"></i>
+                                                    <i className="material-icons"></i>
                                                 </button>
                                             </form>
                                         </div>
@@ -82,10 +89,10 @@ export default class Vinoteca extends Component {
 
                     <section>
                         <a
-                            class="button-add-product btn-secondary"
+                            className="button-add-product btn-secondary"
                             href="/products/agregar"
                         >
-                            <i class="fas fa-plus"></i>
+                            <i className="fas fa-plus"></i>
                         </a>
                     </section>
                 </main>

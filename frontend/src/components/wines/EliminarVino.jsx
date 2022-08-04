@@ -5,21 +5,21 @@ export default class EliminarVino extends Component {
     render() {
         return (
             <div>
-                <main class="eliminarProducto-main-container">
+                <main className="eliminarProducto-main-container">
                     <form
-                        class="eliminarProducto-form-container"
+                        className="eliminarProducto-form-container"
                         action="/products/eliminar/<%= vino.id %>?_method=DELETE"
                         method="post"
                         enctype="multipart/form-data"
                     >
                         <h2>ELIMINAR PRODUCTO</h2>
                         <div>
-                            <label for="nombre" class="form-label">
+                            <label for="nombre" className="form-label">
                                 Nombre:
                             </label>
 
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="text"
                                 name="nombre"
                                 id="nombre"
@@ -28,12 +28,15 @@ export default class EliminarVino extends Component {
                             />
                         </div>
                         <div>
-                            <label for="descripcionProducto" class="form-label">
+                            <label
+                                for="descripcionProducto"
+                                className="form-label"
+                            >
                                 Bodega:
                             </label>
 
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="text"
                                 name="bodega"
                                 id="bodega"
@@ -42,12 +45,15 @@ export default class EliminarVino extends Component {
                             />
                         </div>
                         <div>
-                            <label for="descripcionProducto" class="form-label">
+                            <label
+                                for="descripcionProducto"
+                                className="form-label"
+                            >
                                 Categoria:
                             </label>
 
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="text"
                                 name="categoria"
                                 id="categoria"
@@ -56,12 +62,15 @@ export default class EliminarVino extends Component {
                             />
                         </div>
                         <div>
-                            <label for="descripcionProducto" class="form-label">
+                            <label
+                                for="descripcionProducto"
+                                className="form-label"
+                            >
                                 Uva:
                             </label>
 
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="text"
                                 name="uva"
                                 id="uva"
@@ -70,12 +79,12 @@ export default class EliminarVino extends Component {
                             />
                         </div>
                         <div>
-                            <label for="precioProducto" class="form-label">
+                            <label for="precioProducto" className="form-label">
                                 Precio:
                             </label>
 
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="number"
                                 name="precio"
                                 id="precio"
@@ -83,14 +92,17 @@ export default class EliminarVino extends Component {
                                 disabled
                             />
                         </div>
-                        <div class="big-divs-wrapper">
+                        <div className="big-divs-wrapper">
                             <div>
-                                <label for="precioProducto" class="form-label">
+                                <label
+                                    for="precioProducto"
+                                    className="form-label"
+                                >
                                     Descripcion:
                                 </label>
 
                                 <textarea
-                                    class="eliminarProducto-text-area box-shadow form-control"
+                                    className="eliminarProducto-text-area box-shadow form-control"
                                     name="descripcion"
                                     id="descripcion"
                                     cols="30"
@@ -99,18 +111,18 @@ export default class EliminarVino extends Component {
                                 ></textarea>
                             </div>
                             <div>
-                                <label class="form-label">Imagen:</label>
+                                <label className="form-label">Imagen:</label>
                                 <img
                                     src="<%= vino.imagen %>"
                                     alt="vino1"
-                                    class="eliminarProducto-img-product box-shadow"
+                                    className="eliminarProducto-img-product box-shadow"
                                 />
                             </div>
                         </div>
 
-                        <div class="eliminarProducto-div-button">
+                        <div className="eliminarProducto-div-button">
                             <button
-                                class="eliminarProducto-button btn-secondary"
+                                className="eliminarProducto-button btn-secondary"
                                 type="submit"
                                 value="Eliminar producto"
                             >

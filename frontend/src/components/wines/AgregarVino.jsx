@@ -4,36 +4,36 @@ export default class AgregarVino extends Component {
     render() {
         return (
             <div>
-                <main class="agregarProducto-main-container">
+                <main className="agregarProducto-main-container">
                     <form
-                        class="agregarProducto-form-container"
+                        className="agregarProducto-form-container"
                         method="POST"
                         enctype="multipart/form-data"
                     >
                         <h2>AGREGAR PRODUCTO</h2>
 
-                        <div class="agregarProducto-div-img-product">
-                            <label for="imagen" class="form-label">
+                        <div className="agregarProducto-div-img-product">
+                            <label for="imagen" className="form-label">
                                 Imagen del producto:
                             </label>
                             <input
-                                class="agregarProducto-input-img-product form-control box-shadow"
+                                className="agregarProducto-input-img-product form-control box-shadow"
                                 type="file"
                                 name="imagen"
                                 id="imagen"
                                 value=""
                             />
 
-                            <div class="text-danger">
+                            <div className="text-danger">
                                 <p style="color: red">{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
-                            <label for="nombre" class="form-label">
+                            <label for="nombre" className="form-label">
                                 Nombre:
                             </label>
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="text"
                                 name="nombre"
                                 id="nombre"
@@ -41,16 +41,16 @@ export default class AgregarVino extends Component {
                                 value=""
                             />
 
-                            <div class="text-danger">
+                            <div className="text-danger">
                                 <p style="color: red">{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
-                            <label for="precio" class="form-label">
+                            <label for="precio" className="form-label">
                                 Precio:
                             </label>
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="number"
                                 name="precio"
                                 id="precio"
@@ -58,16 +58,16 @@ export default class AgregarVino extends Component {
                                 value=""
                             />
 
-                            <div class="text-danger">
+                            <div className="text-danger">
                                 <p style="color: red">{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
-                            <label for="anio" class="form-label">
+                            <label for="anio" className="form-label">
                                 Año:
                             </label>
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="number"
                                 name="anio"
                                 id="anio"
@@ -75,16 +75,16 @@ export default class AgregarVino extends Component {
                                 value=""
                             />
 
-                            <div class="text-danger">
+                            <div className="text-danger">
                                 <p style="color: red">{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
-                            <label for="stock" class="form-label">
+                            <label for="stock" className="form-label">
                                 Stock:
                             </label>
                             <input
-                                class="box-shadow form-control"
+                                className="box-shadow form-control"
                                 type="number"
                                 name="stock"
                                 id="stock"
@@ -92,18 +92,18 @@ export default class AgregarVino extends Component {
                                 value=""
                             />
 
-                            <div class="text-danger">
+                            <div className="text-danger">
                                 <p style="color: red">{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
-                            <label for="bodega_id" class="form-label">
+                            <label for="bodega_id" className="form-label">
                                 Bodega:
                             </label>
                             <select
                                 name="bodega_id"
                                 id="bodega_id"
-                                class="form-select box-shadow"
+                                className="form-select box-shadow"
                             >
                                 <option value="<%= bodega.id %>">
                                     {/* meter bodegas */}
@@ -111,13 +111,13 @@ export default class AgregarVino extends Component {
                             </select>
                         </div>
                         <div>
-                            <label for="categoria_id" class="form-label">
+                            <label for="categoria_id" className="form-label">
                                 Categoría:
                             </label>
                             <select
                                 name="categoria_id"
                                 id="categoria_id"
-                                class="form-select box-shadow"
+                                className="form-select box-shadow"
                             >
                                 <option value="<%= categoria.id %>">
                                     {/* meter categorías */}
@@ -125,13 +125,13 @@ export default class AgregarVino extends Component {
                             </select>
                         </div>
                         <div>
-                            <label for="uva_id" class="form-label">
+                            <label for="uva_id" className="form-label">
                                 Uva:
                             </label>
                             <select
                                 name="uva_id"
                                 id="uva_id"
-                                class="form-select box-shadow"
+                                className="form-select box-shadow"
                             >
                                 <option value="<%= uva.id %>">
                                     {/* meter tipos de uvas */}
@@ -139,11 +139,11 @@ export default class AgregarVino extends Component {
                             </select>
                         </div>
                         <div>
-                            <label for="precioProducto" class="form-label">
+                            <label for="precioProducto" className="form-label">
                                 Descripcion:
                             </label>
                             <textarea
-                                class="agregarProducto-text-area box-shadow form-control"
+                                className="agregarProducto-text-area box-shadow form-control"
                                 name="descripcion"
                                 id="descripcion"
                                 cols="30"
@@ -151,22 +151,22 @@ export default class AgregarVino extends Component {
                                 value=""
                             ></textarea>
 
-                            <div class="text-danger">
+                            <div className="text-danger">
                                 <p style="color: red">{/* meter errores */}</p>
                             </div>
                         </div>
 
-                        <div class="agregarProducto-div-button">
+                        <div className="agregarProducto-div-button">
                             <button
-                                class="agregarProducto-button btn-secondary"
+                                className="agregarProducto-button btn-secondary"
                                 type="submit"
                                 value="Agregar producto"
                             >
                                 AGREGAR
                             </button>
                         </div>
-                        <div class="errores">
-                            <ul class="errores-front"></ul>
+                        <div className="errores">
+                            <ul className="errores-front"></ul>
                         </div>
                     </form>
                 </main>

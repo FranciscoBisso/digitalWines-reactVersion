@@ -6,26 +6,26 @@ export default class DetalleVino extends Component {
         return (
             <div>
                 <main>
-                    <div class="item-wrapper">
+                    <div className="item-wrapper">
                         <section id="contenedor-detalle">
-                            <div class="img-wrapper">
+                            <div className="img-wrapper">
                                 <img src="<%= vino.imagen %>" alt="vino1" />
                             </div>
                             <div id="contenedor-detalle-vino">
                                 <h2></h2>
-                                <div class="contenedor-detalle-info">
+                                <div className="contenedor-detalle-info">
                                     <h3>Precio:</h3>
                                     <p>$</p>
                                 </div>
-                                <div class="contenedor-detalle-info">
+                                <div className="contenedor-detalle-info">
                                     <h3>Bodega:</h3>
                                     <p></p>
                                 </div>
-                                <div class="contenedor-detalle-info">
+                                <div className="contenedor-detalle-info">
                                     <h3>Variedad:</h3>
                                     <p></p>
                                 </div>
-                                <div class="contenedor-detalle-info">
+                                <div className="contenedor-detalle-info">
                                     <h3>Descripción:</h3>
                                     <p id="descripcion"></p>
                                 </div>
@@ -37,10 +37,10 @@ export default class DetalleVino extends Component {
                                 action="/products/detalle/cava/<%= vino.id %>"
                                 method="POST"
                             >
-                                <button type="submit" class="boton-detalle">
+                                <button type="submit" className="boton-detalle">
                                     SACAR DE MI CAVA
                                 </button>
-                                <button type="submit" class="boton-detalle">
+                                <button type="submit" className="boton-detalle">
                                     AGREGAR A MI CAVA
                                 </button>
                             </form>
@@ -48,10 +48,10 @@ export default class DetalleVino extends Component {
                                 action="/products/detalle/favorito/<%= vino.id %>"
                                 method="POST"
                             >
-                                <button type="submit" class="boton-detalle">
+                                <button type="submit" className="boton-detalle">
                                     SACAR DE FAVORITOS
                                 </button>
-                                <button type="submit" class="boton-detalle">
+                                <button type="submit" className="boton-detalle">
                                     AÑADIR A FAVORITOS
                                 </button>
                             </form>

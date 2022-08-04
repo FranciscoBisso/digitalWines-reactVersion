@@ -3,37 +3,37 @@ import "../public/css/Footer.css";
 export default class Footer extends Component {
     render() {
         return (
-            <div class="contenedor">
-                <div class="foot">
-                    <div class="presentacion">
+            <div className="contenedor">
+                <div className="foot">
+                    <div className="presentacion">
                         <p>
                             Hecho con{" "}
-                            <a class="corazon" href="#">
-                                <i class="fas fa-heart"></i>
+                            <a className="corazon" href="#">
+                                <i className="fas fa-heart"></i>
                             </a>{" "}
                             y
-                            <a class="cafe" href="">
-                                <i class="fas fa-coffee"></i>
+                            <a className="cafe" href="">
+                                <i className="fas fa-coffee"></i>
                             </a>{" "}
                             en Mendoza y Buenos Aires, Argentina.
                         </p>
                     </div>
-                    <div class="copy">
+                    <div className="copy">
                         <p>
                             &copy; 2021 Digital Wine. Todos los derechos
                             reservados.
                         </p>
                     </div>
-                    <div class="redes">
-                        <ul class="lista">
+                    <div className="redes">
+                        <ul className="lista">
                             <a href="#">
-                                <i class="fab fa-facebook"></i>
+                                <i className="fab fa-facebook"></i>
                             </a>
                             <a href="#">
-                                <i class="fab fa-instagram"></i>
+                                <i className="fab fa-instagram"></i>
                             </a>
                             <a href="#">
-                                <i class="fab fa-twitter"></i>
+                                <i className="fab fa-twitter"></i>
                             </a>
                         </ul>
                     </div>
