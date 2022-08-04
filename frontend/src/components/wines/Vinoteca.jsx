@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "../../public/css/wines/Vinoteca.css";
 export default class Vinoteca extends Component {
     render() {
         return (

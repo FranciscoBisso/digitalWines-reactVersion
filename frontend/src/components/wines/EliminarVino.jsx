@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../../public/css/wines/EliminarVino.css";
 
 export default class EliminarVino extends Component {
     render() {

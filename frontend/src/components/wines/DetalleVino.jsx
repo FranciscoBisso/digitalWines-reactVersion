@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../../public/css/wines/DetalleVino.css";
 
 export default class DetalleVino extends Component {
     render() {

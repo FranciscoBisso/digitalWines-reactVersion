@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "../../public/css/wines/AgregarVino.css";
 export default class AgregarVino extends Component {
     render() {
         return (
