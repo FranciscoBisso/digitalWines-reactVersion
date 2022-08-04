@@ -20,6 +20,9 @@ function App() {
                 <button className="btn btn-secondary">
                     SOY UN LINDO BOTÓN
                 </button>
+                <div>
+                    <i className="fas fa-star"></i>
+                </div>
             </header>
         </div>
     );
