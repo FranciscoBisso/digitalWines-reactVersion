@@ -1,29 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter, Link, Routes, Route, Switch } from "react-router-dom";
+import Vinoteca from "./components/wines/Vinoteca";
+import AgregarVino from "./components/wines/AgregarVino";
+import DetalleVino from "./components/wines/DetalleVino";
+import EditarVino from "./components/wines/EditarVino";
+import EliminarVino from "./components/wines/EliminarVino";
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-                <button className="btn btn-secondary">
-                    SOY UN LINDO BOTÓN
-                </button>
-                <div>
-                    <i className="fas fa-star"></i>
-                </div>
-            </header>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/vinoteca" element={<Vinoteca />} />
+                    <Route path="/agregar" element={<AgregarVino />} />
+                    <Route path="/detalle" element={<DetalleVino />} />
+                    <Route path="/editar" element={<EditarVino />} />
+                    <Route path="/eliminar" element={<EliminarVino />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

@@ -30,9 +30,9 @@ export default class Vinoteca extends Component {
                         <div className="flex-div">
                             <div className="articles-wrapper">
                                 <article className="wine-card">
-                                    <a href="/products/detalle/<%= vino.id %>">
+                                    <a>
                                         <img
-                                            src="<%= vino.imagen %>"
+                                            src=""
                                             alt=""
                                             width="100%"
                                             className="wine-card-img"
@@ -50,17 +50,14 @@ export default class Vinoteca extends Component {
                                         </div>
 
                                         <div className="wine-card-icons">
-                                            <a href="/products/eliminar/<%= vino.id %>">
+                                            <a>
                                                 <i className="fas fa-times"></i>
                                             </a>
-                                            <a href="/products/editar/<%= vino.id %>">
+                                            <a>
                                                 <i className="far fa-edit"></i>
                                             </a>
 
-                                            <form
-                                                action="/products/detalle/favorito/<%= vino.id %>"
-                                                method="POST"
-                                            >
+                                            <form action="" method="POST">
                                                 <button
                                                     type="submit"
                                                     className="button-estrella-carrito"
@@ -69,10 +66,7 @@ export default class Vinoteca extends Component {
                                                     <i>"far fa-star"</i>
                                                 </button>
                                             </form>
-                                            <form
-                                                action="/products/detalle/cava/<%= vino.id %>"
-                                                method="POST"
-                                            >
+                                            <form action="" method="POST">
                                                 <button
                                                     type="submit"
                                                     className="button-estrella-carrito"
@@ -88,10 +82,7 @@ export default class Vinoteca extends Component {
                     </section>
 
                     <section>
-                        <a
-                            className="button-add-product btn-secondary"
-                            href="/products/agregar"
-                        >
+                        <a className="button-add-product btn-secondary">
                             <i className="fas fa-plus"></i>
                         </a>
                     </section>

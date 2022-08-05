@@ -9,7 +9,7 @@ export default class DetalleVino extends Component {
                     <div className="item-wrapper">
                         <section id="contenedor-detalle">
                             <div className="img-wrapper">
-                                <img src="<%= vino.imagen %>" alt="vino1" />
+                                <img src="" alt="vino1" />
                             </div>
                             <div id="contenedor-detalle-vino">
                                 <h2></h2>
@@ -33,10 +33,7 @@ export default class DetalleVino extends Component {
                         </section>
 
                         <div id="contenedor-detalle-botones">
-                            <form
-                                action="/products/detalle/cava/<%= vino.id %>"
-                                method="POST"
-                            >
+                            <form action="" method="POST">
                                 <button type="submit" className="boton-detalle">
                                     SACAR DE MI CAVA
                                 </button>
@@ -44,10 +41,7 @@ export default class DetalleVino extends Component {
                                     AGREGAR A MI CAVA
                                 </button>
                             </form>
-                            <form
-                                action="/products/detalle/favorito/<%= vino.id %>"
-                                method="POST"
-                            >
+                            <form action="" method="POST">
                                 <button type="submit" className="boton-detalle">
                                     SACAR DE FAVORITOS
                                 </button>

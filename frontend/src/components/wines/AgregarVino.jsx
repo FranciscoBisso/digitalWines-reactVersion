@@ -25,7 +25,7 @@ export default class AgregarVino extends Component {
                             />
 
                             <div className="text-danger">
-                                <p style="color: red">{/* meter errores */}</p>
+                                <p>{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
@@ -42,7 +42,7 @@ export default class AgregarVino extends Component {
                             />
 
                             <div className="text-danger">
-                                <p style="color: red">{/* meter errores */}</p>
+                                <p>{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
@@ -59,7 +59,7 @@ export default class AgregarVino extends Component {
                             />
 
                             <div className="text-danger">
-                                <p style="color: red">{/* meter errores */}</p>
+                                <p>{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
@@ -76,7 +76,7 @@ export default class AgregarVino extends Component {
                             />
 
                             <div className="text-danger">
-                                <p style="color: red">{/* meter errores */}</p>
+                                <p>{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
@@ -93,7 +93,7 @@ export default class AgregarVino extends Component {
                             />
 
                             <div className="text-danger">
-                                <p style="color: red">{/* meter errores */}</p>
+                                <p>{/* meter errores */}</p>
                             </div>
                         </div>
                         <div>
@@ -105,9 +105,7 @@ export default class AgregarVino extends Component {
                                 id="bodega_id"
                                 className="form-select box-shadow"
                             >
-                                <option value="<%= bodega.id %>">
-                                    {/* meter bodegas */}
-                                </option>
+                                <option value="">{/* meter bodegas */}</option>
                             </select>
                         </div>
                         <div>
@@ -119,7 +117,7 @@ export default class AgregarVino extends Component {
                                 id="categoria_id"
                                 className="form-select box-shadow"
                             >
-                                <option value="<%= categoria.id %>">
+                                <option value="">
                                     {/* meter categorías */}
                                 </option>
                             </select>
@@ -133,7 +131,7 @@ export default class AgregarVino extends Component {
                                 id="uva_id"
                                 className="form-select box-shadow"
                             >
-                                <option value="<%= uva.id %>">
+                                <option value="">
                                     {/* meter tipos de uvas */}
                                 </option>
                             </select>
@@ -152,7 +150,7 @@ export default class AgregarVino extends Component {
                             ></textarea>
 
                             <div className="text-danger">
-                                <p style="color: red">{/* meter errores */}</p>
+                                <p>{/* meter errores */}</p>
                             </div>
                         </div>
 

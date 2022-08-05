@@ -8,7 +8,7 @@ export default class EditarVino extends Component {
                 <main className="editarProducto-main-container">
                     <form
                         className="editarProducto-form-container"
-                        action="/products/editar/<%= vino.id %>?_method=PUT"
+                        action=""
                         method="post"
                         enctype="multipart/form-data"
                     >
@@ -24,7 +24,7 @@ export default class EditarVino extends Component {
                                 accept="image/jpg"
                                 name="imagen"
                                 id="imagen"
-                                value="<%= vino.imagen %>"
+                                value=""
                             />
                         </div>
                         <div>
@@ -37,7 +37,7 @@ export default class EditarVino extends Component {
                                 type="text"
                                 name="nombre"
                                 id="nombre"
-                                value="<%= vino.nombre %>"
+                                value=""
                             />
                         </div>
                         <div>
@@ -50,7 +50,7 @@ export default class EditarVino extends Component {
                                 type="number"
                                 name="precio"
                                 id="precio"
-                                value="<%= vino.precio %>"
+                                value=""
                             />
                         </div>
                         <div>
@@ -64,7 +64,7 @@ export default class EditarVino extends Component {
                                 name="anio"
                                 id="anio"
                                 placeholder=" Ej: 2017"
-                                value="<%= vino.anio %>"
+                                value=""
                             />
                         </div>
                         <div>
@@ -78,7 +78,7 @@ export default class EditarVino extends Component {
                                 name="stock"
                                 id="stock"
                                 placeholder=" Ej: 08"
-                                value="<%= vino.stock %>"
+                                value=""
                             />
                         </div>
                         <div>
@@ -90,7 +90,7 @@ export default class EditarVino extends Component {
                                 id="bodega_id"
                                 className="form-select box-shadow"
                             >
-                                <option value="<%= bodega.id %>">
+                                <option value="">
                                     {/* meter las bodagas */}
                                 </option>
                             </select>
@@ -104,7 +104,7 @@ export default class EditarVino extends Component {
                                 id="categoria_id"
                                 className="form-select box-shadow"
                             >
-                                <option value="<%= categoria.id %>">
+                                <option value="">
                                     {/* meter las categorías */}
                                 </option>
                             </select>
@@ -118,7 +118,7 @@ export default class EditarVino extends Component {
                                 id="uva_id"
                                 className="form-select box-shadow"
                             >
-                                <option value="<%= uva.id %>">
+                                <option value="">
                                     {/* meter el tipo de uva */}
                                 </option>
                             </select>

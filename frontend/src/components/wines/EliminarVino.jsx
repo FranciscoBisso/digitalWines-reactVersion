@@ -8,7 +8,7 @@ export default class EliminarVino extends Component {
                 <main className="eliminarProducto-main-container">
                     <form
                         className="eliminarProducto-form-container"
-                        action="/products/eliminar/<%= vino.id %>?_method=DELETE"
+                        action=""
                         method="post"
                         enctype="multipart/form-data"
                     >
@@ -23,7 +23,7 @@ export default class EliminarVino extends Component {
                                 type="text"
                                 name="nombre"
                                 id="nombre"
-                                value="<%= vino.nombre %>"
+                                value=""
                                 disabled
                             />
                         </div>
@@ -40,7 +40,7 @@ export default class EliminarVino extends Component {
                                 type="text"
                                 name="bodega"
                                 id="bodega"
-                                value="<%= vino.vinoBodega.nombre %>"
+                                value=""
                                 disabled
                             />
                         </div>
@@ -57,7 +57,7 @@ export default class EliminarVino extends Component {
                                 type="text"
                                 name="categoria"
                                 id="categoria"
-                                value="<%= vino.vinoCategoria.nombre %>"
+                                value=""
                                 disabled
                             />
                         </div>
@@ -74,7 +74,7 @@ export default class EliminarVino extends Component {
                                 type="text"
                                 name="uva"
                                 id="uva"
-                                value="<%= vino.vinoUva.nombre %>"
+                                value=""
                                 disabled
                             />
                         </div>
@@ -88,7 +88,7 @@ export default class EliminarVino extends Component {
                                 type="number"
                                 name="precio"
                                 id="precio"
-                                value="<%= vino.precio %>"
+                                value=""
                                 disabled
                             />
                         </div>
@@ -113,7 +113,7 @@ export default class EliminarVino extends Component {
                             <div>
                                 <label className="form-label">Imagen:</label>
                                 <img
-                                    src="<%= vino.imagen %>"
+                                    src=""
                                     alt="vino1"
                                     className="eliminarProducto-img-product box-shadow"
                                 />
