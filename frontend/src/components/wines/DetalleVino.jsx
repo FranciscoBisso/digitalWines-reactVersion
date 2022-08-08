@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import Header from "../Header";
+import Footer from "../Footer";
 import "../../public/css/wines/DetalleVino.css";
 
 export default class DetalleVino extends Component {
     render() {
         return (
             <div>
+                <header>
+                    <Header />
+                </header>
                 <main>
                     <div className="item-wrapper">
                         <section id="contenedor-detalle">
@@ -52,6 +57,9 @@ export default class DetalleVino extends Component {
                         </div>
                     </div>
                 </main>
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         );
     }

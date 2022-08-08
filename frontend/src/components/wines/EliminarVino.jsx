@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import Header from "../Header";
+import Footer from "../Footer";
 import "../../public/css/wines/EliminarVino.css";
 
 export default class EliminarVino extends Component {
     render() {
         return (
             <div>
+                <header>
+                    <Header />
+                </header>
                 <main className="eliminarProducto-main-container">
                     <form
                         className="eliminarProducto-form-container"
@@ -131,6 +136,9 @@ export default class EliminarVino extends Component {
                         </div>
                     </form>
                 </main>
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         );
     }

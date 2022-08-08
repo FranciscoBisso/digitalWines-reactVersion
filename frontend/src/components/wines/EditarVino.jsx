@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import Header from "../Header";
+import Footer from "../Footer";
 import "../../public/css/wines/EditarVino.css";
 
 export default class EditarVino extends Component {
     render() {
         return (
             <div>
+                <header>
+                    <Header />
+                </header>
                 <main className="editarProducto-main-container">
                     <form
                         className="editarProducto-form-container"
@@ -158,6 +163,9 @@ export default class EditarVino extends Component {
                         </div>
                     </form>
                 </main>
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         );
     }

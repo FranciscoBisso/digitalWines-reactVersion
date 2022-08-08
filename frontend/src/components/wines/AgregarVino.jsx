@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import Header from "../Header";
+import Footer from "../Footer";
 import "../../public/css/wines/AgregarVino.css";
 export default class AgregarVino extends Component {
     render() {
         return (
             <div>
+                <header>
+                    <Header />
+                </header>
                 <main className="agregarProducto-main-container">
                     <form
                         className="agregarProducto-form-container"
@@ -168,6 +173,9 @@ export default class AgregarVino extends Component {
                         </div>
                     </form>
                 </main>
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         );
     }

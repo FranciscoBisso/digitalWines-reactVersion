@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../public/css/Header.css";
+import logo from "../public/images/icono.ico";
 
 export default class Header extends Component {
     render() {
@@ -8,7 +9,7 @@ export default class Header extends Component {
                 <section className="barra-nav">
                     <a href="/" className="contenedor_logo">
                         <img
-                            src="/images/logo.png"
+                            src={logo}
                             alt="Logo"
                             className="logo"
                             width="100%"

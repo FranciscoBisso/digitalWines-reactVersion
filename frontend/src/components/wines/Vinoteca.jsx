@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import Header from "../Header";
+import Footer from "../Footer";
 import "../../public/css/wines/Vinoteca.css";
 export default class Vinoteca extends Component {
     render() {
         return (
             <div>
+                <header>
+                    <Header />
+                </header>
                 <main>
                     <h2>CONOCE, DEGUSTA Y SIENTE NUESTROS VINOS </h2>
                     <form
@@ -87,6 +92,9 @@ export default class Vinoteca extends Component {
                         </a>
                     </section>
                 </main>
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         );
     }
