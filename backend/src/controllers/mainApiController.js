@@ -2,14 +2,10 @@ const db = require("../database/models");
 const mainApiController = {
     home: async (req, res) => {
         const vinos = await db.Vinos.findAll({
-            include: [
-                { association: "vinoBodega" },
-                { association: "vinoCategoria" },
-            ],
+            include: [{ all: true }],
             order: [["nombre", "ASC"]],
         });
-        return res.json({
-            status: 200,
+        res.status(200).json({
             total: vinos.length,
             data: vinos,
         });
