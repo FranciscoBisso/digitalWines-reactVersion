@@ -12,9 +12,9 @@ function App() {
                 <Routes>
                     <Route path="/vinoteca" element={<Vinoteca />} />
                     <Route path="/agregar" element={<AgregarVino />} />
-                    <Route path="/detalle" element={<DetalleVino />} />
-                    <Route path="/editar" element={<EditarVino />} />
-                    <Route path="/eliminar" element={<EliminarVino />} />
+                    <Route path="/detalle/:id" element={<DetalleVino />} />
+                    <Route path="/editar/:id" element={<EditarVino />} />
+                    <Route path="/eliminar/:id" element={<EliminarVino />} />
                 </Routes>
             </BrowserRouter>
         </div>
