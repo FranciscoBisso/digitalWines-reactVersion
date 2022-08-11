@@ -39,11 +39,11 @@ export default function DetalleVino() {
                             </div>
                             <div className="contenedor-detalle-info">
                                 <h3>Bodega:</h3>
-                                <p>{wine.vinoBodega.nombre}</p>
+                                {/* <p>{wine.vinoBodega.nombre}</p> */}
                             </div>
                             <div className="contenedor-detalle-info">
                                 <h3>Variedad:</h3>
-                                <p>{wine.vinoUva.nombre}</p>
+                                {/* <p>{wine.vinoUva.nombre}</p> */}
                             </div>
                             <div className="contenedor-detalle-info">
                                 <h3>Descripción:</h3>
