@@ -79,8 +79,10 @@ export default function Vinoteca() {
                                                         type="submit"
                                                         className="button-estrella-carrito"
                                                     >
-                                                        <i className="fas fa-star"></i>
-                                                        <i>"far fa-star"</i>
+                                                        <i
+                                                            className="far
+                                                            fa-star"
+                                                        ></i>
                                                     </button>
                                                 </form>
                                                 <form action="" method="POST">
