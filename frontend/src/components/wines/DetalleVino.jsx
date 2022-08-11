@@ -14,6 +14,10 @@ export default function DetalleVino() {
                 `http://localhost:3001/api/wines/details/${params.id}`
             );
             let newInfo = await infoRes.json();
+            newInfo.data.bodega = newInfo.data.vinoBodega.nombre;
+            newInfo.data.uva = newInfo.data.vinoUva.nombre;
+            // no tengo ni idea porque las líneas 18 y 19
+            // hacen funcionar el código. Momento de pura intuición
 
             setWine(newInfo.data);
         }
@@ -32,18 +36,18 @@ export default function DetalleVino() {
                             <img src={`${wine.imagen}`} alt="vino1" />
                         </div>
                         <div id="contenedor-detalle-vino">
-                            <h2></h2>
+                            <h2>{wine.nombre}</h2>
                             <div className="contenedor-detalle-info">
                                 <h3>Precio:</h3>
                                 <p>${wine.precio}</p>
                             </div>
                             <div className="contenedor-detalle-info">
                                 <h3>Bodega:</h3>
-                                {/* <p>{wine.vinoBodega.nombre}</p> */}
+                                <p>{wine.bodega}</p>
                             </div>
                             <div className="contenedor-detalle-info">
                                 <h3>Variedad:</h3>
-                                {/* <p>{wine.vinoUva.nombre}</p> */}
+                                <p>{wine.uva}</p>
                             </div>
                             <div className="contenedor-detalle-info">
                                 <h3>Descripción:</h3>
