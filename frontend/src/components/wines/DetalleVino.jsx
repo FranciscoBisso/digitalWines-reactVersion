@@ -6,20 +6,20 @@ import Footer from "../Footer";
 import "../../public/css/wines/DetalleVino.css";
 
 export default function DetalleVino() {
-    let params = useParams();
-    const [wine, setWine] = useState({});
+    const params = useParams();
+    const [wine, setWine] = useState([]);
     useEffect(() => {
         async function fetchInfo() {
-            let infoRes = await fetch(
+            const infoRes = await fetch(
                 `http://localhost:3001/api/wines/details/${params.id}`
             );
-            let newInfo = await infoRes.json();
-            newInfo.data.bodega = newInfo.data.vinoBodega.nombre;
-            newInfo.data.uva = newInfo.data.vinoUva.nombre;
+            const wineInfo = await infoRes.json();
+            wineInfo.data.bodega = wineInfo.data.vinoBodega.nombre;
+            wineInfo.data.uva = wineInfo.data.vinoUva.nombre;
             // no tengo ni idea porque las líneas 18 y 19
             // hacen funcionar el código. Momento de pura intuición
 
-            setWine(newInfo.data);
+            setWine(wineInfo.data);
         }
 
         fetchInfo();

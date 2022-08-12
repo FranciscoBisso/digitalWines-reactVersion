@@ -7,13 +7,16 @@ export default function Vinoteca() {
     const [wines, setWines] = useState([]);
 
     useEffect(() => {
-        console.log("%cse montó el componente", "color: green");
-        fetch("http://localhost:3001/api/wines/winecellar")
-            .then((response) => response.json())
-            .then((data) => {
-                setWines(data.data);
-            })
-            .catch((error) => console.error(error));
+        async function fetchInfo() {
+            const infoRes = await fetch(
+                "http://localhost:3001/api/wines/winecellar"
+            );
+            const wineInfo = await infoRes.json();
+
+            setWines(wineInfo.data);
+        }
+
+        fetchInfo();
     }, []);
 
     return (
