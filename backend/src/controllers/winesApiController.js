@@ -73,14 +73,34 @@ const winesApiController = {
             include: [{ all: true }],
             where: { id: req.params.id },
         });
+        const bodegas = await db.Bodegas.findAll();
+        const uvas = await db.Uvas.findAll();
+        const categorias = await db.Categorias.findAll();
 
         if (!vinoModificable) {
             res.status(404).json({
                 error: "No contamos con ese vino",
             });
+        } else if (!bodegas) {
+            res.status(404).json({
+                error: "F con las bodegas",
+            });
+        } else if (!uvas) {
+            res.status(404).json({
+                error: "F con las uvas",
+            });
+        } else if (!categorias) {
+            res.status(404).json({
+                error: "F con las categorias",
+            });
         } else {
             res.status(200).json({
-                data: vinoModificable,
+                data: {
+                    wine: vinoModificable,
+                    bodegas: bodegas,
+                    uvas: uvas,
+                    categorias: categorias,
+                },
             });
         }
     },
