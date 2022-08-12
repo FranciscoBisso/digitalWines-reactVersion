@@ -1,7 +1,7 @@
 const db = require("../database/models");
 
 const winesApiController = {
-    findAll: async (req, res) => {
+    winecellar: async (req, res) => {
         const vinos = await db.Vinos.findAll({
             include: [{ all: true }],
             order: [["nombre", "ASC"]],
@@ -12,7 +12,7 @@ const winesApiController = {
         });
     },
 
-    findOne: async (req, res) => {
+    details: async (req, res) => {
         const vino = await db.Vinos.findOne({
             include: [{ all: true }],
             where: { id: req.params.id },
@@ -25,6 +25,25 @@ const winesApiController = {
         } else {
             res.status(200).json({
                 data: vino,
+            });
+        }
+    },
+
+    add: async (req, res) => {
+        const bodegas = await db.Bodegas.findAll();
+        const uvas = await db.Uvas.findAll();
+        const categorias = await db.Categorias.findAll();
+        if (bodegas && uvas && categorias) {
+            res.status(200).json({
+                data: {
+                    bodegas: bodegas,
+                    uvas: uvas,
+                    categorias: categorias,
+                },
+            });
+        } else {
+            res.status(400).json({
+                error: "F",
             });
         }
     },

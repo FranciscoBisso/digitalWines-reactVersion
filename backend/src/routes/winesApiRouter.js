@@ -2,16 +2,17 @@ const express = require("express");
 const router = express.Router();
 const winesApiController = require("../controllers/winesApiController");
 
-router.get("/winecellar", winesApiController.findAll);
+router.get("/winecellar", winesApiController.winecellar);
 
-router.get("/details/:id", winesApiController.findOne);
+router.get("/details/:id", winesApiController.details);
 
+router.get("/create", winesApiController.add);
 router.post("/create", winesApiController.create);
 
-router.get("/modify/:id", winesApiController.modify);
+router.get("/update/:id", winesApiController.modify);
 router.put("/update/:id", winesApiController.update);
 
 router.get("/delete/:id", winesApiController.delete);
-router.delete("/destroy/:id", winesApiController.destroy);
+router.delete("/delete/:id", winesApiController.destroy);
 
 module.exports = router;
