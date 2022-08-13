@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState, useEffect, Fragment } from "react";
+import { useParams } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
 import "../../public/css/wines/EliminarVino.css";
 
 export default function EliminarVino() {
+    const params = useParams();
+    const [wine, setWine] = useState([]);
+    useEffect(() => {
+        async function fetchInfo() {
+            const infoRes = await fetch(
+                `http://localhost:3001/api/wines/delete/${params.id}`
+            );
+            const wineInfo = await infoRes.json();
+            wineInfo.data.bodega = wineInfo.data.vinoBodega.nombre;
+            wineInfo.data.uva = wineInfo.data.vinoUva.nombre;
+            wineInfo.data.categoria = wineInfo.data.vinoCategoria.nombre;
+
+            setWine(wineInfo.data);
+        }
+
+        fetchInfo();
+    }, []);
     return (
-        <div>
+        <Fragment>
             <header>
                 <Header />
             </header>
@@ -27,7 +45,7 @@ export default function EliminarVino() {
                             type="text"
                             name="nombre"
                             id="nombre"
-                            value=""
+                            defaultValue={wine.nombre}
                             disabled
                         />
                     </div>
@@ -44,7 +62,7 @@ export default function EliminarVino() {
                             type="text"
                             name="bodega"
                             id="bodega"
-                            value=""
+                            defaultValue={wine.bodega}
                             disabled
                         />
                     </div>
@@ -61,7 +79,7 @@ export default function EliminarVino() {
                             type="text"
                             name="categoria"
                             id="categoria"
-                            value=""
+                            defaultValue={wine.categoria}
                             disabled
                         />
                     </div>
@@ -78,7 +96,7 @@ export default function EliminarVino() {
                             type="text"
                             name="uva"
                             id="uva"
-                            value=""
+                            defaultValue={wine.uva}
                             disabled
                         />
                     </div>
@@ -92,7 +110,7 @@ export default function EliminarVino() {
                             type="number"
                             name="precio"
                             id="precio"
-                            value=""
+                            defaultValue={wine.precio}
                             disabled
                         />
                     </div>
@@ -111,13 +129,14 @@ export default function EliminarVino() {
                                 id="descripcion"
                                 cols="30"
                                 rows="10"
+                                defaultValue={wine.descripcion}
                                 disabled
                             ></textarea>
                         </div>
                         <div>
                             <label className="form-label">Imagen:</label>
                             <img
-                                src=""
+                                src={`${wine.imagen}`}
                                 alt="vino1"
                                 className="eliminarProducto-img-product box-shadow"
                             />
@@ -128,7 +147,7 @@ export default function EliminarVino() {
                         <button
                             className="eliminarProducto-button btn-secondary"
                             type="submit"
-                            value="Eliminar producto"
+                            defaultValue="Eliminar producto"
                         >
                             ELIMINAR
                         </button>
@@ -138,6 +157,6 @@ export default function EliminarVino() {
             <footer>
                 <Footer />
             </footer>
-        </div>
+        </Fragment>
     );
 }
