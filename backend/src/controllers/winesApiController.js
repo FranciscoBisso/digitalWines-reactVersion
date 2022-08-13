@@ -30,9 +30,13 @@ const winesApiController = {
     },
 
     add: async (req, res) => {
-        const bodegas = await db.Bodegas.findAll();
-        const uvas = await db.Uvas.findAll();
-        const categorias = await db.Categorias.findAll();
+        const bodegas = await db.Bodegas.findAll({
+            order: [["nombre", "ASC"]],
+        });
+        const uvas = await db.Uvas.findAll({ order: [["nombre", "ASC"]] });
+        const categorias = await db.Categorias.findAll({
+            order: [["nombre", "ASC"]],
+        });
         if (bodegas && uvas && categorias) {
             res.status(200).json({
                 data: {
@@ -73,9 +77,13 @@ const winesApiController = {
             include: [{ all: true }],
             where: { id: req.params.id },
         });
-        const bodegas = await db.Bodegas.findAll();
-        const uvas = await db.Uvas.findAll();
-        const categorias = await db.Categorias.findAll();
+        const bodegas = await db.Bodegas.findAll({
+            order: [["nombre", "ASC"]],
+        });
+        const uvas = await db.Uvas.findAll({ order: [["nombre", "ASC"]] });
+        const categorias = await db.Categorias.findAll({
+            order: [["nombre", "ASC"]],
+        });
 
         if (!vinoModificable) {
             res.status(404).json({
