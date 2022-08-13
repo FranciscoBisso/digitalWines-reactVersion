@@ -1,8 +1,28 @@
-import React, { Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import "../../public/css/wines/AgregarVino.css";
 export default function AgregarVino() {
+    const [cellars, setCellars] = useState([]);
+    const [grapes, setGrapes] = useState([]);
+    const [categories, setCategories] = useState([]);
+    useEffect(() => {
+        async function fetchInfo() {
+            const infoRes = await fetch(
+                "http://localhost:3001/api/wines/create"
+            );
+            const info = await infoRes.json();
+
+            setCellars(info.data.bodegas);
+            setGrapes(info.data.uvas);
+            setCategories(info.data.categorias);
+        }
+
+        fetchInfo();
+    }, []);
+    console.log("Bodegas:", cellars);
+    console.log("Uvas:", grapes);
+    console.log("Categorias:", categories);
     return (
         <Fragment>
             <header>
@@ -109,9 +129,9 @@ export default function AgregarVino() {
                             id="bodega_id"
                             className="form-select box-shadow"
                         >
-                            <option defaultValue="">
-                                {/* meter bodegas */}
-                            </option>
+                            {cellars.map((cellar, i) => (
+                                <option key={i}>{cellar.nombre}</option>
+                            ))}
                         </select>
                     </div>
                     <div>
@@ -123,9 +143,9 @@ export default function AgregarVino() {
                             id="categoria_id"
                             className="form-select box-shadow"
                         >
-                            <option defaultValue="">
-                                {/* meter categorías */}
-                            </option>
+                            {categories.map((category, i) => (
+                                <option key={i}>{category.nombre}</option>
+                            ))}
                         </select>
                     </div>
                     <div>
@@ -137,9 +157,9 @@ export default function AgregarVino() {
                             id="uva_id"
                             className="form-select box-shadow"
                         >
-                            <option defaultValue="">
-                                {/* meter tipos de uvas */}
-                            </option>
+                            {grapes.map((grape, i) => (
+                                <option key={i}>{grape.nombre}</option>
+                            ))}
                         </select>
                     </div>
                     <div>
@@ -153,6 +173,7 @@ export default function AgregarVino() {
                             cols="30"
                             rows="10"
                             defaultValue=""
+                            placeholder="Una breve descripción del vino que deseas agregar..."
                         ></textarea>
 
                         <div className="text-danger">
