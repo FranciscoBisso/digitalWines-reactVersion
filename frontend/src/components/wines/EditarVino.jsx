@@ -47,7 +47,7 @@ export default function EditarVino() {
                 >
                     <h2>EDITAR PRODUCTO</h2>
                     <div className="editarProducto-div-img-product">
-                        <label for="imagen" className="form-label">
+                        <label htmlFor="imagen" className="form-label">
                             {" "}
                             Imagen del producto:
                         </label>
@@ -60,7 +60,7 @@ export default function EditarVino() {
                         />
                     </div>
                     <div>
-                        <label for="nombre" className="form-label">
+                        <label htmlFor="nombre" className="form-label">
                             Nombre
                         </label>
 
@@ -73,7 +73,7 @@ export default function EditarVino() {
                         />
                     </div>
                     <div>
-                        <label for="precio" className="form-label">
+                        <label htmlFor="precio" className="form-label">
                             Precio:
                         </label>
 
@@ -86,7 +86,7 @@ export default function EditarVino() {
                         />
                     </div>
                     <div>
-                        <label for="anio" className="form-label">
+                        <label htmlFor="anio" className="form-label">
                             Anio:
                         </label>
 
@@ -99,7 +99,7 @@ export default function EditarVino() {
                         />
                     </div>
                     <div>
-                        <label for="stock" className="form-label">
+                        <label htmlFor="stock" className="form-label">
                             Stock:
                         </label>
 
@@ -112,7 +112,7 @@ export default function EditarVino() {
                         />
                     </div>
                     <div>
-                        <label for="bodega_id" className="form-label">
+                        <label htmlFor="bodega_id" className="form-label">
                             Bodega:
                         </label>
                         <select
@@ -127,7 +127,7 @@ export default function EditarVino() {
                         </select>
                     </div>
                     <div>
-                        <label for="categoria_id" className="form-label">
+                        <label htmlFor="categoria_id" className="form-label">
                             Categoría:
                         </label>
                         <select
@@ -142,7 +142,7 @@ export default function EditarVino() {
                         </select>
                     </div>
                     <div>
-                        <label for="uva_id" className="form-label">
+                        <label htmlFor="uva_id" className="form-label">
                             Uva:
                         </label>
 
@@ -158,7 +158,7 @@ export default function EditarVino() {
                         </select>
                     </div>
                     <div>
-                        <label for="descripcion" className="form-label">
+                        <label htmlFor="descripcion" className="form-label">
                             Descripcion:
                         </label>
 

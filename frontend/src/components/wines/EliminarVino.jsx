@@ -18,7 +18,7 @@ export default function EliminarVino() {
                 >
                     <h2>ELIMINAR PRODUCTO</h2>
                     <div>
-                        <label for="nombre" className="form-label">
+                        <label htmlFor="nombre" className="form-label">
                             Nombre:
                         </label>
 
@@ -32,7 +32,10 @@ export default function EliminarVino() {
                         />
                     </div>
                     <div>
-                        <label for="descripcionProducto" className="form-label">
+                        <label
+                            htmlFor="descripcionProducto"
+                            className="form-label"
+                        >
                             Bodega:
                         </label>
 
@@ -46,7 +49,10 @@ export default function EliminarVino() {
                         />
                     </div>
                     <div>
-                        <label for="descripcionProducto" className="form-label">
+                        <label
+                            htmlFor="descripcionProducto"
+                            className="form-label"
+                        >
                             Categoria:
                         </label>
 
@@ -60,7 +66,10 @@ export default function EliminarVino() {
                         />
                     </div>
                     <div>
-                        <label for="descripcionProducto" className="form-label">
+                        <label
+                            htmlFor="descripcionProducto"
+                            className="form-label"
+                        >
                             Uva:
                         </label>
 
@@ -74,7 +83,7 @@ export default function EliminarVino() {
                         />
                     </div>
                     <div>
-                        <label for="precioProducto" className="form-label">
+                        <label htmlFor="precioProducto" className="form-label">
                             Precio:
                         </label>
 
@@ -89,7 +98,10 @@ export default function EliminarVino() {
                     </div>
                     <div className="big-divs-wrapper">
                         <div>
-                            <label for="precioProducto" className="form-label">
+                            <label
+                                htmlFor="precioProducto"
+                                className="form-label"
+                            >
                                 Descripcion:
                             </label>
 

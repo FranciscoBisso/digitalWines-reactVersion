@@ -17,7 +17,7 @@ export default function AgregarVino() {
                     <h2>AGREGAR PRODUCTO</h2>
 
                     <div className="agregarProducto-div-img-product">
-                        <label for="imagen" className="form-label">
+                        <label htmlFor="imagen" className="form-label">
                             Imagen del producto:
                         </label>
                         <input
@@ -33,7 +33,7 @@ export default function AgregarVino() {
                         </div>
                     </div>
                     <div>
-                        <label for="nombre" className="form-label">
+                        <label htmlFor="nombre" className="form-label">
                             Nombre:
                         </label>
                         <input
@@ -50,7 +50,7 @@ export default function AgregarVino() {
                         </div>
                     </div>
                     <div>
-                        <label for="precio" className="form-label">
+                        <label htmlFor="precio" className="form-label">
                             Precio:
                         </label>
                         <input
@@ -67,7 +67,7 @@ export default function AgregarVino() {
                         </div>
                     </div>
                     <div>
-                        <label for="anio" className="form-label">
+                        <label htmlFor="anio" className="form-label">
                             Año:
                         </label>
                         <input
@@ -84,7 +84,7 @@ export default function AgregarVino() {
                         </div>
                     </div>
                     <div>
-                        <label for="stock" className="form-label">
+                        <label htmlFor="stock" className="form-label">
                             Stock:
                         </label>
                         <input
@@ -101,7 +101,7 @@ export default function AgregarVino() {
                         </div>
                     </div>
                     <div>
-                        <label for="bodega_id" className="form-label">
+                        <label htmlFor="bodega_id" className="form-label">
                             Bodega:
                         </label>
                         <select
@@ -113,7 +113,7 @@ export default function AgregarVino() {
                         </select>
                     </div>
                     <div>
-                        <label for="categoria_id" className="form-label">
+                        <label htmlFor="categoria_id" className="form-label">
                             Categoría:
                         </label>
                         <select
@@ -125,7 +125,7 @@ export default function AgregarVino() {
                         </select>
                     </div>
                     <div>
-                        <label for="uva_id" className="form-label">
+                        <label htmlFor="uva_id" className="form-label">
                             Uva:
                         </label>
                         <select
@@ -139,7 +139,7 @@ export default function AgregarVino() {
                         </select>
                     </div>
                     <div>
-                        <label for="precioProducto" className="form-label">
+                        <label htmlFor="precioProducto" className="form-label">
                             Descripcion:
                         </label>
                         <textarea
