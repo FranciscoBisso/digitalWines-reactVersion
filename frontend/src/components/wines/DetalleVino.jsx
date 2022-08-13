@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -25,7 +25,7 @@ export default function DetalleVino() {
         fetchInfo();
     }, []);
     return (
-        <div>
+        <Fragment>
             <header>
                 <Header />
             </header>
@@ -79,6 +79,6 @@ export default function DetalleVino() {
             <footer>
                 <Footer />
             </footer>
-        </div>
+        </Fragment>
     );
 }

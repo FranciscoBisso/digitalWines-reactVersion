@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -32,9 +32,9 @@ export default function EditarVino() {
         setGrapes(wineInfo.data.uvas);
         setCategory(wineInfo.data.categorias);
     };
-    console.log(category);
+
     return (
-        <div>
+        <Fragment>
             <header>
                 <Header />
             </header>
@@ -196,6 +196,6 @@ export default function EditarVino() {
             <footer>
                 <Footer />
             </footer>
-        </div>
+        </Fragment>
     );
 }

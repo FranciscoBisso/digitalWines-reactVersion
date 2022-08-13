@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import "../../public/css/wines/Vinoteca.css";
@@ -20,7 +20,7 @@ export default function Vinoteca() {
     }, []);
 
     return (
-        <div>
+        <Fragment>
             <header>
                 <Header />
             </header>
@@ -114,6 +114,6 @@ export default function Vinoteca() {
             <footer>
                 <Footer />
             </footer>
-        </div>
+        </Fragment>
     );
 }

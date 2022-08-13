@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import "../../public/css/wines/AgregarVino.css";
 export default function AgregarVino() {
     return (
-        <div>
+        <Fragment>
             <header>
                 <Header />
             </header>
@@ -25,7 +25,7 @@ export default function AgregarVino() {
                             type="file"
                             name="imagen"
                             id="imagen"
-                            value=""
+                            defaultValue=""
                         />
 
                         <div className="text-danger">
@@ -42,7 +42,7 @@ export default function AgregarVino() {
                             name="nombre"
                             id="nombre"
                             placeholder=" Ej: Toro"
-                            value=""
+                            defaultValue=""
                         />
 
                         <div className="text-danger">
@@ -59,7 +59,7 @@ export default function AgregarVino() {
                             name="precio"
                             id="precio"
                             placeholder=" Ej: 1000"
-                            value=""
+                            defaultValue=""
                         />
 
                         <div className="text-danger">
@@ -76,7 +76,7 @@ export default function AgregarVino() {
                             name="anio"
                             id="anio"
                             placeholder=" Ej: 2017"
-                            value=""
+                            defaultValue=""
                         />
 
                         <div className="text-danger">
@@ -93,7 +93,7 @@ export default function AgregarVino() {
                             name="stock"
                             id="stock"
                             placeholder=" Ej: 32"
-                            value=""
+                            defaultValue=""
                         />
 
                         <div className="text-danger">
@@ -109,7 +109,9 @@ export default function AgregarVino() {
                             id="bodega_id"
                             className="form-select box-shadow"
                         >
-                            <option value="">{/* meter bodegas */}</option>
+                            <option defaultValue="">
+                                {/* meter bodegas */}
+                            </option>
                         </select>
                     </div>
                     <div>
@@ -121,7 +123,9 @@ export default function AgregarVino() {
                             id="categoria_id"
                             className="form-select box-shadow"
                         >
-                            <option value="">{/* meter categorías */}</option>
+                            <option defaultValue="">
+                                {/* meter categorías */}
+                            </option>
                         </select>
                     </div>
                     <div>
@@ -133,7 +137,7 @@ export default function AgregarVino() {
                             id="uva_id"
                             className="form-select box-shadow"
                         >
-                            <option value="">
+                            <option defaultValue="">
                                 {/* meter tipos de uvas */}
                             </option>
                         </select>
@@ -148,7 +152,7 @@ export default function AgregarVino() {
                             id="descripcion"
                             cols="30"
                             rows="10"
-                            value=""
+                            defaultValue=""
                         ></textarea>
 
                         <div className="text-danger">
@@ -173,6 +177,6 @@ export default function AgregarVino() {
             <footer>
                 <Footer />
             </footer>
-        </div>
+        </Fragment>
     );
 }
