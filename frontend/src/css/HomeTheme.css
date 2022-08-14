@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+}
+
+.titulo-home-vinos {
+    color: #af194b;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-size: 1.5rem;
+    margin-top: 1%;
+}
+.linea {
+    border-top: 1px solid black;
+    height: 5px;
+    padding: 0;
+    margin: 2px auto 0 auto;
+}
+.contenedor-links_grande a {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+.contenedor1 {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.contenedor2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapper {
+    width: 50%;
+}
+
+.card-wine {
+    background-color: #fff;
+    margin: 5%;
+    border-radius: 8px;
+    transition: all;
+}
+
+.card-wine-img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 2%;
+    background-color: rgb(245, 245, 245);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.card-tittle {
+    color: #aa0d3f;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    color: #39b54a;
+    font-weight: bold;
+}
+
+.contenedor3 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: white;
+    margin: 5%;
+    border-radius: 8px;
+}
+
+.nuestrosVarietales {
+    margin: 0 auto;
+    width: 90%;
+    padding: 5% 0;
+}
+
+/* INICIO ACCORDION */
+.accordion-item {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: none;
+    border-radius: 8px;
+    background-color: #aa0d3f;
+    /* border-top-left-radius: 0.25rem; */
+}
+
+.accordion-item:first-of-type {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.accordion-item:first-of-type .accordion-button {
+    border-radius: 8px;
+}
+
+.accordion-item:last-of-type {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-radius: 8px;
+}
+
+.accordion-button {
+    color: #aa0d3f;
+    background-color: #373a3e;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    letter-spacing: 2px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: #aa0d3f;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    color: #fff;
+    border-color: #aa0d3f;
+    background-color: #aa0d3f;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(170 13 63 / 25%);
+}
+
+.accordion-body {
+    font-size: 1.25rem;
+    text-align: justify;
+    background-color: rgb(245, 245, 245);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.accordion-header {
+    font-family: "Playfair Display", serif;
+}
+
+/* FIN ACCORDION */
+
+#titulo-varietales {
+    display: none;
+}
+
+#nuestrosTintillos {
+    display: none;
+}
+.nuestrosVarietales h3 {
+    display: none;
+    padding-left: 5%;
+    color: #fff;
+    font-size: calc(1.675rem + 0.3vw);
+    font-family: "Playfair Display", serif;
+}
+
+.nuestrosVarietales p {
+    display: none;
+    color: #fff;
+    font-size: 1.25rem;
+    text-align: justify;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+@media (min-width: 767px) {
+    .titulo-home-vinos {
+        font-size: calc(2rem + 0.3vw);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+    }
+
+    .card-tittle {
+        font-size: calc(1.275rem + 0.3vw);
+    }
+
+    .card-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .wrapper {
+        width: 33%;
+    }
+
+    #titulo-varietales {
+        display: block;
+    }
+
+    .nuestrosVarietales {
+        padding: 0;
+    }
+
+    #accordion-section {
+        display: none;
+    }
+
+    .accordion {
+        display: none;
+    }
+
+    #nuestrosTintillos {
+        display: block;
+        padding-bottom: 5%;
+    }
+
+    .columns {
+        padding: 2%;
+    }
+
+    .nuestrosVarietales h3 {
+        display: block;
+        padding-left: 5%;
+        color: #aa0d3f;
+        font-size: calc(1.675rem + 0.3vw);
+        letter-spacing: 2px;
+    }
+
+    .nuestrosVarietales p {
+        display: block;
+        color: rgb(245, 245, 245);
+        font-size: 1.25rem;
+        margin: 0;
+        padding-bottom: 1rem;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+}
+
+@media (min-width: 1100px) {
+    .titulo-home-vinos {
+        margin-top: 50px;
+    }
+
+    .wrapper {
+        width: 25%;
+    }
+
+    .card-wine:hover {
+        box-shadow: 0px 0px 10px rgb(245, 245, 245);
+        transition: all 0.5s;
+    }
+
+    .card-tittle {
+        display: none;
+    }
+
+    .card-wine:hover .card-tittle {
+        display: block;
+        transition: all 0.5s;
+    }
+
+    .card-tittle:hover {
+        font-size: 25px;
+        color: brown;
+        transition: all 0.5s;
+    }
+
+    .card-subtitle {
+        display: none;
+    }
+
+    .card-wine:hover .card-subtitle {
+        display: block;
+        transition: all 0.5s;
+    }
+
+    .card-text {
+        text-align: center;
+        font-size: 1.25rem;
+        color: #aa0d3f;
+    }
+
+    .card-wine:hover .card-text {
+        color: #39b54a;
+        font-weight: bold;
+        text-align: start;
+        transition: all 0.5s;
+    }
+
+    .columns-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .columns {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    p {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+}

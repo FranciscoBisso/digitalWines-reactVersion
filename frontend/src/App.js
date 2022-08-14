@@ -1,4 +1,5 @@
 import { BrowserRouter, Link, Routes, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
 import Vinoteca from "./pages/Vinoteca";
 import AgregarVino from "./pages/AgregarVino";
 import DetalleVino from "./pages/DetalleVino";
@@ -10,6 +11,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <Routes>
+                    <Route path="/" element={<Home />} />
                     <Route path="/vinoteca" element={<Vinoteca />} />
                     <Route path="/agregar" element={<AgregarVino />} />
                     <Route path="/detalle/:id" element={<DetalleVino />} />

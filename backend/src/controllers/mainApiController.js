@@ -1,13 +1,27 @@
 const db = require("../database/models");
 const mainApiController = {
     home: async (req, res) => {
-        const vinos = await db.Vinos.findAll({
+        const destacados = await db.Vinos.findAll({
             include: [{ all: true }],
             order: [["nombre", "ASC"]],
+            where: { categoria_id: 1 },
+        });
+        const masVendidos = await db.Vinos.findAll({
+            include: [{ all: true }],
+            order: [["nombre", "ASC"]],
+            where: { categoria_id: 2 },
+        });
+        const masEconomicos = await db.Vinos.findAll({
+            include: [{ all: true }],
+            order: [["nombre", "ASC"]],
+            where: { categoria_id: 3 },
         });
         res.status(200).json({
-            total: vinos.length,
-            data: vinos,
+            data: {
+                destacados: destacados,
+                masVendidos: masVendidos,
+                masEconomicos: masEconomicos,
+            },
         });
     },
 };
