@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState, Fragment } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
-import "../../public/css/wines/DetalleVino.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import "../public/css/wines/DetalleVino.css";
 
 export default function DetalleVino() {
     const params = useParams();
