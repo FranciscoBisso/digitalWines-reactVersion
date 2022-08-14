@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import "../public/css/wines/AgregarVino.css";
+import "../css/wines/AgregarVino.css";
 export default function AgregarVino() {
     const [cellars, setCellars] = useState([]);
     const [grapes, setGrapes] = useState([]);

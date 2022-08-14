@@ -1,5 +1,5 @@
 import React from "react";
-import "../public/css/Footer.css";
+import "../css/Footer.css";
 export default function Footer() {
     return (
         <div className="contenedor">

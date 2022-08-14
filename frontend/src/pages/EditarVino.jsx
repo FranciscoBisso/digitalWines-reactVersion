@@ -3,7 +3,7 @@ import { useEffect, useState, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import "../public/css/wines/EditarVino.css";
+import "../css/wines/EditarVino.css";
 
 export default function EditarVino() {
     const params = useParams();

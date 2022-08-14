@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import "../public/css/wines/Vinoteca.css";
+import "../css/wines/Vinoteca.css";
 
 export default function Vinoteca() {
     const [wines, setWines] = useState([]);
