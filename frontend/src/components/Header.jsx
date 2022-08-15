@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/Header.css";
 import logo from "../images/icono.ico";
 
@@ -6,51 +7,51 @@ export default function Header() {
     return (
         <div>
             <section className="barra-nav">
-                <a href="/" className="contenedor_logo">
+                <Link to="/" className="contenedor_logo">
                     <img src={logo} alt="Logo" className="logo" width="100%" />
                     <div className="logo-texto-wrapper">
                         <p className="logo-texto-D">D</p>
                         <p className="logo-texto-W">W</p>
                     </div>
-                </a>
+                </Link>
                 <nav className="contenedor-links_chica">
-                    <a className="link_chica" href="/products/vinoteca">
+                    <Link className="link_chica" to="/vinoteca">
                         <i className="fas fa-wine-bottle"></i>
-                    </a>
+                    </Link>
 
-                    <a className="link_chica" href="/products/plus">
+                    <Link className="link_chica" to="/agregarbvc">
                         <i className="fas fa-plus"></i>
-                    </a>
-                    <a className="link_chica" href="/users/cuenta">
+                    </Link>
+                    <Link className="link_chica" to="/cuenta">
                         <i className="fas fa-user"></i>
-                    </a>
+                    </Link>
 
-                    <a className="link_chica" href="/users/cava">
+                    <Link className="link_chica" to="/cava">
                         <i className="fas fa-wine-glass-alt"></i>
-                    </a>
-                    <a className="link_chica" href="/users/cuenta">
+                    </Link>
+                    <Link className="link_chica" to="/cuenta">
                         <i className="fas fa-user"></i>
-                    </a>
+                    </Link>
 
-                    <a className="link_chica" href="/users/login">
+                    <Link className="link_chica" to="/login">
                         <i className="fas fa-user"></i>
-                    </a>
-                    <a className="link_chica" href="/users/registro">
+                    </Link>
+                    <Link className="link_chica" to="/registro">
                         <i className="far fa-id-card"></i>
-                    </a>
+                    </Link>
                 </nav>
 
                 <nav className="contenedor-links_grande">
-                    <a href="/products/vinoteca">Vinoteca</a>
+                    <Link to="/vinoteca">Vinoteca</Link>
 
-                    <a href="/products/plus">Agregar BVC</a>
-                    <a href="/users/cuenta">Mi Cuenta</a>
+                    <Link to="/agregarbvc">Agregar BVC</Link>
+                    <Link to="/cuenta">Mi Cuenta</Link>
 
-                    <a href="/users/cava">Mi Cava</a>
-                    <a href="/users/cuenta">Mi Cuenta</a>
+                    <Link to="/cava">Mi Cava</Link>
+                    <Link to="/cuenta">Mi Cuenta</Link>
 
-                    <a href="/users/login">Login</a>
-                    <a href="/users/registro">Registro</a>
+                    <Link to="/login">Login</Link>
+                    <Link to="/registro">Registro</Link>
                 </nav>
             </section>
         </div>
