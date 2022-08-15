@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../css/wines/Vinoteca.css";
@@ -46,14 +47,14 @@ export default function Vinoteca() {
                             return (
                                 <div className="articles-wrapper" key={i}>
                                     <article className="wine-card">
-                                        <a>
+                                        <Link to={`/detalle/${wine.id}`}>
                                             <img
-                                                src=""
+                                                src={wine.imagen}
                                                 alt=""
                                                 width="100%"
                                                 className="wine-card-img"
                                             />
-                                        </a>
+                                        </Link>
                                         <div className="wine-card-body">
                                             <div className="wine-card-texts">
                                                 <div className="wine-card-product-description">
@@ -70,32 +71,19 @@ export default function Vinoteca() {
                                             </div>
 
                                             <div className="wine-card-icons">
-                                                <a>
+                                                <Link
+                                                    to={`/eliminar/${wine.id}`}
+                                                >
                                                     <i className="fas fa-times"></i>
-                                                </a>
-                                                <a>
+                                                </Link>
+                                                <Link to={`/editar/${wine.id}`}>
                                                     <i className="far fa-edit"></i>
-                                                </a>
+                                                </Link>
 
-                                                <form action="" method="POST">
-                                                    <button
-                                                        type="submit"
-                                                        className="button-estrella-carrito"
-                                                    >
-                                                        <i
-                                                            className="far
+                                                <i
+                                                    className="far
                                                             fa-star"
-                                                        ></i>
-                                                    </button>
-                                                </form>
-                                                <form action="" method="POST">
-                                                    <button
-                                                        type="submit"
-                                                        className="button-estrella-carrito"
-                                                    >
-                                                        <i className="material-icons"></i>
-                                                    </button>
-                                                </form>
+                                                ></i>
                                             </div>
                                         </div>
                                     </article>
@@ -106,9 +94,12 @@ export default function Vinoteca() {
                 </section>
 
                 <section>
-                    <a className="button-add-product btn-secondary">
+                    <Link
+                        to="/agregar"
+                        className="button-add-product btn-secondary"
+                    >
                         <i className="fas fa-plus"></i>
-                    </a>
+                    </Link>
                 </section>
             </main>
             <footer>

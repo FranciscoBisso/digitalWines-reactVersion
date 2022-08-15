@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import "../css/HomeTheme.css";
 import "../css/HomeStyles.css";
 import video from "../videos/spot-vino.mp4";
-import logo from "../images/icono.ico";
 
 export default function Home() {
     const [bestSellers, setBestSellers] = useState([]);
