@@ -1,9 +1,11 @@
 import React, { useState, useEffect, Fragment } from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../css/HomeTheme.css";
 import "../css/HomeStyles.css";
 import video from "../videos/spot-vino.mp4";
+import logo from "../images/icono.ico";
 
 export default function Home() {
     const [bestSellers, setBestSellers] = useState([]);
@@ -140,13 +142,13 @@ export default function Home() {
                         {remarcables.map((wine, i) => (
                             <article className="wrapper" key={i}>
                                 <div className="card-wine">
-                                    <a href="">
+                                    <Link to={`/detalle/${wine.id}`}>
                                         <img
                                             className="card-wine-img"
                                             src=""
                                             alt=""
                                         />
-                                    </a>
+                                    </Link>
                                     <div className="card-body">
                                         <h4 className="card-tittle">
                                             {wine.nombre}
@@ -171,13 +173,13 @@ export default function Home() {
                         {bestSellers.map((wine, i) => (
                             <article className="wrapper" key={i}>
                                 <div className="card-wine">
-                                    <a href="/products/detalle/<%= vino.id %>">
+                                    <Link to={`/detalle/${wine.id}`}>
                                         <img
                                             className="card-wine-img"
                                             src=""
                                             alt=""
                                         />
-                                    </a>
+                                    </Link>
                                     <div className="card-body">
                                         <h4 className="card-tittle">
                                             {wine.nombre}
@@ -202,13 +204,13 @@ export default function Home() {
                         {promoted.map((wine, i) => (
                             <article className="wrapper" key={i}>
                                 <div className="card-wine">
-                                    <a href="/products/detalle/<%= vino.id %>">
+                                    <Link to={`/detalle/${wine.id}`}>
                                         <img
                                             className="card-wine-img"
                                             src=""
                                             alt=""
                                         />
-                                    </a>
+                                    </Link>
                                     <div className="card-body">
                                         <h4 className="card-tittle">
                                             {wine.nombre}
