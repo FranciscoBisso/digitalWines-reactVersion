@@ -143,6 +143,7 @@ export default function AgregarVino() {
                             id="categoria_id"
                             className="form-select box-shadow"
                         >
+                            <option value="">Sin Categoria</option>
                             {categories.map((category, i) => (
                                 <option key={i}>{category.nombre}</option>
                             ))}
