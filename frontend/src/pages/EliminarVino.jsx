@@ -136,7 +136,7 @@ export default function EliminarVino() {
                         <div>
                             <label className="form-label">Imagen:</label>
                             <img
-                                src={`${wine.imagen}`}
+                                src={wine.imagen}
                                 alt="vino1"
                                 className="eliminarProducto-img-product box-shadow"
                             />

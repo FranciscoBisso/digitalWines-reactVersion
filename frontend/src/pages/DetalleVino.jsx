@@ -33,7 +33,7 @@ export default function DetalleVino() {
                 <div className="item-wrapper">
                     <section id="contenedor-detalle">
                         <div className="img-wrapper">
-                            <img src={`${wine.imagen}`} alt="vino1" />
+                            <img src={wine.imagen} alt="vino1" />
                         </div>
                         <div id="contenedor-detalle-vino">
                             <h2>{wine.nombre}</h2>
