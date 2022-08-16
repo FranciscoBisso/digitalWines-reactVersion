@@ -6,6 +6,9 @@ const winesApiController = {
             include: [{ all: true }],
             order: [["nombre", "ASC"]],
         });
+        for (let vino of vinos) {
+            vino.imagen = "http://localhost:3001" + vino.imagen;
+        }
         res.status(200).json({
             total: vinos.length,
             data: vinos,
@@ -17,6 +20,7 @@ const winesApiController = {
             include: [{ all: true }],
             where: { id: req.params.id },
         });
+        vino.imagen = "http://localhost:3001" + vino.imagen;
 
         if (!vino) {
             res.status(404).json({
@@ -84,6 +88,8 @@ const winesApiController = {
         const categorias = await db.Categorias.findAll({
             order: [["nombre", "ASC"]],
         });
+        vinoModificable.imagen =
+            "http://localhost:3001" + vinoModificable.imagen;
 
         if (!vinoModificable) {
             res.status(404).json({
@@ -145,6 +151,7 @@ const winesApiController = {
             include: [{ all: true }],
             where: { id: req.params.id },
         });
+        vino.imagen = "http://localhost:3001" + vino.imagen;
 
         if (!vino) {
             res.status(404).json({
