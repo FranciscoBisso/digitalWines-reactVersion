@@ -144,7 +144,7 @@ export default function Home() {
                                     <Link to={`/detalle/${wine.id}`}>
                                         <img
                                             className="card-wine-img"
-                                            src=""
+                                            src={wine.imagen}
                                             alt=""
                                         />
                                     </Link>
@@ -175,7 +175,7 @@ export default function Home() {
                                     <Link to={`/detalle/${wine.id}`}>
                                         <img
                                             className="card-wine-img"
-                                            src=""
+                                            src={wine.imagen}
                                             alt=""
                                         />
                                     </Link>
@@ -206,7 +206,7 @@ export default function Home() {
                                     <Link to={`/detalle/${wine.id}`}>
                                         <img
                                             className="card-wine-img"
-                                            src=""
+                                            src={wine.imagen}
                                             alt=""
                                         />
                                     </Link>
