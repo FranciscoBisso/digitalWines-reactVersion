@@ -39,7 +39,7 @@ export default function AgregarVino() {
 		e.preventDefault();
 
 		const wine = {
-			imagen: image, //problemas con la imagen
+			imagen: image,
 			nombre: name,
 			precio: price,
 			anio: year,
@@ -47,34 +47,38 @@ export default function AgregarVino() {
 			bodega_id: selectedCellar,
 			categoria_id: selectedCategory,
 			uva_id: selectedGrape,
-			descriopcion: description,
+			descripcion: description,
 		};
 
-		console.log(wine);
+		//problemas con la imagen. Necesito saber como poder convertirla a JSON. Es un File object pero con stringify no puedo convertirla a json
+		console.log("image: ", image);
+		console.log("image.json: ", JSON.stringify(image));
+		console.log("image.file: ", image.name);
+		console.log("wine.json: ", JSON.stringify(wine));
 
-		const response = await fetch("http://localhost:3001/api/wines/create", {
-			method: "POST",
-			body: JSON.stringify(wine),
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
-		const json = await response.json();
+		// const response = await fetch("http://localhost:3001/api/wines/create", {
+		// 	method: "POST",
+		// 	body: JSON.stringify(wine),
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// });
+		// const json = await response.json();
 
-		if (response.ok) {
-			setError(null);
-			setImage();
-			setName("");
-			setPrice("");
-			setYear("");
-			setStock("");
-			setSelectedCellar("");
-			setSelectedCategory("");
-			setSelectedGrape("");
-			console.log("new wine added:", json);
-		} else {
-			setError(json.error);
-		}
+		// if (response.ok) {
+		// 	setError(null);
+		// 	setImage("");
+		// 	setName("");
+		// 	setPrice("");
+		// 	setYear("");
+		// 	setStock("");
+		// 	setSelectedCellar("");
+		// 	setSelectedCategory("");
+		// 	setSelectedGrape("");
+		// 	console.log("new wine added:", json);
+		// } else {
+		// 	setError(json.error);
+		// }
 	};
 
 	return (

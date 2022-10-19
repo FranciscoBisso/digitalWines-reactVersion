@@ -57,6 +57,7 @@ const winesApiController = {
 	},
 
 	create: async (req, res) => {
+		console.log("file:", req.file);
 		console.log("body:", req.body);
 
 		// const yaExiste = await db.Vinos.findOne({
