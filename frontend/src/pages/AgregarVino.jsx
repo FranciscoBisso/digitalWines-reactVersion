@@ -37,48 +37,31 @@ export default function AgregarVino() {
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
+		const form = document.querySelector("#createForm");
+		const formData = new FormData(form);
 
-		const wine = {
-			imagen: image,
-			nombre: name,
-			precio: price,
-			anio: year,
-			stock: stock,
-			bodega_id: selectedCellar,
-			categoria_id: selectedCategory,
-			uva_id: selectedGrape,
-			descripcion: description,
-		};
+		const response = await fetch("http://localhost:3001/api/wines/create", {
+			method: "POST",
+			body: formData,
+		});
 
-		//problemas con la imagen. Necesito saber como poder convertirla a JSON. Es un File object pero con stringify no puedo convertirla a json
-		console.log("image: ", image);
-		console.log("image.json: ", JSON.stringify(image));
-		console.log("image.file: ", image.name);
-		console.log("wine.json: ", JSON.stringify(wine));
+		const json = await response.json();
 
-		// const response = await fetch("http://localhost:3001/api/wines/create", {
-		// 	method: "POST",
-		// 	body: JSON.stringify(wine),
-		// 	headers: {
-		// 		"Content-Type": "application/json",
-		// 	},
-		// });
-		// const json = await response.json();
-
-		// if (response.ok) {
-		// 	setError(null);
-		// 	setImage("");
-		// 	setName("");
-		// 	setPrice("");
-		// 	setYear("");
-		// 	setStock("");
-		// 	setSelectedCellar("");
-		// 	setSelectedCategory("");
-		// 	setSelectedGrape("");
-		// 	console.log("new wine added:", json);
-		// } else {
-		// 	setError(json.error);
-		// }
+		if (!response.ok) {
+			setError(json.error);
+		} else {
+			setError(null);
+			setImage(undefined);
+			setName("");
+			setPrice("");
+			setYear("");
+			setStock("");
+			setSelectedCellar("");
+			setSelectedCategory("");
+			setSelectedGrape("");
+			setDescription("");
+			console.log("Added wine:", json);
+		}
 	};
 
 	return (
@@ -89,6 +72,7 @@ export default function AgregarVino() {
 			<main className="agregarProducto-main-container">
 				<form
 					className="agregarProducto-form-container"
+					id="createForm"
 					method="POST"
 					encType="multipart/form-data"
 					onSubmit={submitHandler}
@@ -194,7 +178,6 @@ export default function AgregarVino() {
 							onChange={(e) => setSelectedCellar(e.target.value)}
 							value={selectedCellar}
 						>
-							<option value={""}></option>
 							{cellars.map((cellar, i) => (
 								<option key={i} value={cellar.id}>
 									{cellar.nombre}
@@ -215,7 +198,6 @@ export default function AgregarVino() {
 							}
 							value={selectedCategory}
 						>
-							<option value={""}></option>
 							{categories.map((category, i) => (
 								<option key={i} value={category.id}>
 									{category.nombre}
@@ -234,7 +216,6 @@ export default function AgregarVino() {
 							onChange={(e) => setSelectedGrape(e.target.value)}
 							value={selectedGrape}
 						>
-							<option value={""}></option>
 							{grapes.map((grape, i) => (
 								<option key={i} value={grape.id}>
 									{grape.nombre}

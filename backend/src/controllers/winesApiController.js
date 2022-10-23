@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const path = require("path");
 
 const winesApiController = {
 	winecellar: async (req, res) => {
@@ -60,23 +61,33 @@ const winesApiController = {
 		console.log("file:", req.file);
 		console.log("body:", req.body);
 
-		// const yaExiste = await db.Vinos.findOne({
-		//     include: [{ all: true }],
-		//     where: { nombre: req.body.nombre },
-		// });
+		const yaExiste = await db.Vinos.findOne({
+			include: [{ all: true }],
+			where: { nombre: req.body.nombre },
+		});
 
-		// if (yaExiste) {
-		//     res.status(400).json({
-		//         error: "Ya contamos con ese vino en nuestra DB",
-		//         data: yaExiste,
-		//     });
-		// } else {
-		//     const newWine = await db.Vinos.create({ ...req.body }); //probablemente tenga que modificar la propiedad imagen del body
-		//     res.status(200).json({
-		//         created: "OK",
-		//         data: newWine,
-		//     });
-		// }
+		if (yaExiste) {
+			res.status(400).json({
+				error: "Ya contamos con ese vino en nuestra DB",
+				data: yaExiste,
+			});
+		} else {
+			const newWine = await db.Vinos.create({
+				nombre: req.body.nombre,
+				imagen: req.file.path.split("public").pop(),
+				bodega_id: req.body.bodega_id,
+				descripcion: req.body.descripcion,
+				precio: req.body.precio,
+				anio: req.body.anio,
+				uva_id: req.body.uva_id,
+				categoria_id: req.body.categoria_id,
+				stock: req.body.stock,
+			});
+			res.status(200).json({
+				created: "OK",
+				data: newWine,
+			});
+		}
 	},
 
 	modify: async (req, res) => {
