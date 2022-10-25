@@ -8,7 +8,7 @@ export default function AgregarVino() {
 	const [categories, setCategories] = useState([]);
 	const [grapes, setGrapes] = useState([]);
 
-	const [image, setImage] = useState("");
+	const [image, setImage] = useState(undefined);
 	const [name, setName] = useState("");
 	const [price, setPrice] = useState("");
 	const [year, setYear] = useState("");
@@ -18,7 +18,7 @@ export default function AgregarVino() {
 	const [selectedGrape, setSelectedGrape] = useState("");
 	const [description, setDescription] = useState("");
 
-	const [error, setError] = useState(null);
+	const [errors, setErrors] = useState([]);
 
 	useEffect(() => {
 		async function fetchInfo() {
@@ -48,10 +48,10 @@ export default function AgregarVino() {
 		const json = await response.json();
 
 		if (!response.ok) {
-			setError(json.error);
+			setErrors(json.errorsData);
 		} else {
-			setError(null);
-			setImage(undefined);
+			setErrors([]);
+
 			setName("");
 			setPrice("");
 			setYear("");
@@ -92,7 +92,13 @@ export default function AgregarVino() {
 						/>
 
 						<div className="text-danger">
-							<p>{/* meter errores */}</p>
+							{errors.map((err, i) =>
+								err.param === "imagen" ? (
+									<p key={i}>{err.msg}</p>
+								) : (
+									""
+								)
+							)}
 						</div>
 					</div>
 					<div>
@@ -110,7 +116,14 @@ export default function AgregarVino() {
 						/>
 
 						<div className="text-danger">
-							<p>{/* meter errores */}</p>
+							{errors &&
+								errors.map((err, i) =>
+									err.param === "nombre" ? (
+										<p key={i}>{err.msg}</p>
+									) : (
+										""
+									)
+								)}
 						</div>
 					</div>
 					<div>
@@ -128,7 +141,14 @@ export default function AgregarVino() {
 						/>
 
 						<div className="text-danger">
-							<p>{/* meter errores */}</p>
+							{errors &&
+								errors.map((err, i) =>
+									err.param === "precio" ? (
+										<p key={i}>{err.msg}</p>
+									) : (
+										""
+									)
+								)}
 						</div>
 					</div>
 					<div>
@@ -146,7 +166,14 @@ export default function AgregarVino() {
 						/>
 
 						<div className="text-danger">
-							<p>{/* meter errores */}</p>
+							{errors &&
+								errors.map((err, i) =>
+									err.param === "anio" ? (
+										<p key={i}>{err.msg}</p>
+									) : (
+										""
+									)
+								)}
 						</div>
 					</div>
 					<div>
@@ -164,7 +191,14 @@ export default function AgregarVino() {
 						/>
 
 						<div className="text-danger">
-							<p>{/* meter errores */}</p>
+							{errors &&
+								errors.map((err, i) =>
+									err.param === "stock" ? (
+										<p key={i}>{err.msg}</p>
+									) : (
+										""
+									)
+								)}
 						</div>
 					</div>
 					<div>
@@ -239,7 +273,14 @@ export default function AgregarVino() {
 						></textarea>
 
 						<div className="text-danger">
-							<p>{/* meter errores */}</p>
+							{errors &&
+								errors.map((err, i) =>
+									err.param === "descripcion" ? (
+										<p key={i}>{err.msg}</p>
+									) : (
+										""
+									)
+								)}
 						</div>
 					</div>
 
@@ -253,8 +294,7 @@ export default function AgregarVino() {
 						</button>
 					</div>
 					<div className="errores">
-						<ul className="errores-front"></ul>
-						{error && <div className="errores-front">{error}</div>}
+						{/* <ul className="errores-front"><li></li></ul> */}
 					</div>
 				</form>
 			</main>

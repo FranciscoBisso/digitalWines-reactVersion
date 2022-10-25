@@ -1,5 +1,7 @@
 const db = require("../database/models");
 const path = require("path");
+const { validationResult } = require("express-validator");
+const e = require("express");
 
 const winesApiController = {
 	winecellar: async (req, res) => {
@@ -58,35 +60,39 @@ const winesApiController = {
 	},
 
 	create: async (req, res) => {
-		console.log("file:", req.file);
-		console.log("body:", req.body);
+		let errors = validationResult(req);
+		console.log(errors);
 
-		const yaExiste = await db.Vinos.findOne({
-			include: [{ all: true }],
-			where: { nombre: req.body.nombre },
-		});
-
-		if (yaExiste) {
-			res.status(400).json({
-				error: "Ya contamos con ese vino en nuestra DB",
-				data: yaExiste,
+		if (errors.isEmpty()) {
+			const yaExiste = await db.Vinos.findOne({
+				include: [{ all: true }],
+				where: { nombre: req.body.nombre },
 			});
+
+			if (yaExiste) {
+				res.status(400).json({
+					error: "Ya contamos con ese vino en nuestra DB",
+					data: yaExiste,
+				});
+			} else {
+				const newWine = await db.Vinos.create({
+					nombre: req.body.nombre,
+					imagen: req.file.path.split("public").pop(),
+					bodega_id: req.body.bodega_id,
+					descripcion: req.body.descripcion,
+					precio: req.body.precio,
+					anio: req.body.anio,
+					uva_id: req.body.uva_id,
+					categoria_id: req.body.categoria_id,
+					stock: req.body.stock,
+				});
+				res.status(200).json({
+					created: "OK",
+					data: newWine,
+				});
+			}
 		} else {
-			const newWine = await db.Vinos.create({
-				nombre: req.body.nombre,
-				imagen: req.file.path.split("public").pop(),
-				bodega_id: req.body.bodega_id,
-				descripcion: req.body.descripcion,
-				precio: req.body.precio,
-				anio: req.body.anio,
-				uva_id: req.body.uva_id,
-				categoria_id: req.body.categoria_id,
-				stock: req.body.stock,
-			});
-			res.status(200).json({
-				created: "OK",
-				data: newWine,
-			});
+			res.status(400).json({ errorsData: errors.errors });
 		}
 	},
 
