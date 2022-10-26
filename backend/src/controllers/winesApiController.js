@@ -71,7 +71,7 @@ const winesApiController = {
 
 			if (yaExiste) {
 				res.status(400).json({
-					error: "Ya contamos con ese vino en nuestra DB",
+					error: "Ya contamos con ese vino en nuestra DB.",
 					data: yaExiste,
 				});
 			} else {

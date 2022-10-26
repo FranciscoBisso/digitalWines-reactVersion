@@ -19,6 +19,7 @@ export default function AgregarVino() {
 	const [description, setDescription] = useState("");
 
 	const [errors, setErrors] = useState([]);
+	const [notNew, setNotNew] = useState({});
 
 	useEffect(() => {
 		async function fetchInfo() {
@@ -48,10 +49,15 @@ export default function AgregarVino() {
 		const json = await response.json();
 
 		if (!response.ok) {
-			setErrors(json.errorsData);
+			if (json.errorsData) {
+				setErrors(json.errorsData);
+			} else {
+				setNotNew(json);
+				console.log("Wine in DB:", notNew.data);
+				alert(notNew.error);
+			}
 		} else {
 			setErrors([]);
-
 			setName("");
 			setPrice("");
 			setYear("");
