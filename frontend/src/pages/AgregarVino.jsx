@@ -20,6 +20,7 @@ export default function AgregarVino() {
 
 	const [errors, setErrors] = useState([]);
 	const [notNew, setNotNew] = useState({});
+	const [successMsg, setSuccessMsg] = useState("");
 
 	useEffect(() => {
 		async function fetchInfo() {
@@ -52,12 +53,13 @@ export default function AgregarVino() {
 			if (json.errorsData) {
 				setErrors(json.errorsData);
 			} else {
+				setErrors([]);
 				setNotNew(json);
-				console.log("Wine in DB:", notNew.data);
-				alert(notNew.error);
 			}
 		} else {
 			setErrors([]);
+			setNotNew({});
+			setSuccessMsg("Vino agregado exitosamente!!!");
 			setName("");
 			setPrice("");
 			setYear("");
@@ -66,7 +68,6 @@ export default function AgregarVino() {
 			setSelectedCategory("");
 			setSelectedGrape("");
 			setDescription("");
-			console.log("Added wine:", json);
 		}
 	};
 
@@ -84,7 +85,6 @@ export default function AgregarVino() {
 					onSubmit={submitHandler}
 				>
 					<h2>AGREGAR PRODUCTO</h2>
-
 					<div className="agregarProducto-div-img-product">
 						<label htmlFor="imagen" className="form-label">
 							Imagen del producto:
@@ -97,13 +97,11 @@ export default function AgregarVino() {
 							onChange={(e) => setImage(e.target.files[0])}
 						/>
 
-						<div className="text-danger">
+						<div className="errores-front">
 							{errors.map((err, i) =>
 								err.param === "imagen" ? (
 									<p key={i}>{err.msg}</p>
-								) : (
-									""
-								)
+								) : null
 							)}
 						</div>
 					</div>
@@ -121,14 +119,12 @@ export default function AgregarVino() {
 							value={name}
 						/>
 
-						<div className="text-danger">
+						<div className="errores-front">
 							{errors &&
 								errors.map((err, i) =>
 									err.param === "nombre" ? (
 										<p key={i}>{err.msg}</p>
-									) : (
-										""
-									)
+									) : null
 								)}
 						</div>
 					</div>
@@ -146,14 +142,12 @@ export default function AgregarVino() {
 							value={price}
 						/>
 
-						<div className="text-danger">
+						<div className="errores-front">
 							{errors &&
 								errors.map((err, i) =>
 									err.param === "precio" ? (
 										<p key={i}>{err.msg}</p>
-									) : (
-										""
-									)
+									) : null
 								)}
 						</div>
 					</div>
@@ -171,14 +165,12 @@ export default function AgregarVino() {
 							value={year}
 						/>
 
-						<div className="text-danger">
+						<div className="errores-front">
 							{errors &&
 								errors.map((err, i) =>
 									err.param === "anio" ? (
 										<p key={i}>{err.msg}</p>
-									) : (
-										""
-									)
+									) : null
 								)}
 						</div>
 					</div>
@@ -196,14 +188,12 @@ export default function AgregarVino() {
 							value={stock}
 						/>
 
-						<div className="text-danger">
+						<div className="errores-front">
 							{errors &&
 								errors.map((err, i) =>
 									err.param === "stock" ? (
 										<p key={i}>{err.msg}</p>
-									) : (
-										""
-									)
+									) : null
 								)}
 						</div>
 					</div>
@@ -278,14 +268,12 @@ export default function AgregarVino() {
 							value={description}
 						></textarea>
 
-						<div className="text-danger">
+						<div className="errores-front">
 							{errors &&
 								errors.map((err, i) =>
 									err.param === "descripcion" ? (
 										<p key={i}>{err.msg}</p>
-									) : (
-										""
-									)
+									) : null
 								)}
 						</div>
 					</div>
@@ -299,9 +287,12 @@ export default function AgregarVino() {
 							AGREGAR
 						</button>
 					</div>
-					<div className="errores">
-						{/* <ul className="errores-front"><li></li></ul> */}
+					<div className="errores-front">
+						<p>{notNew ? notNew.error : null}</p>
 					</div>
+					{successMsg ? (
+						<div className="success-msg">{successMsg}</div>
+					) : null}
 				</form>
 			</main>
 			<footer>
