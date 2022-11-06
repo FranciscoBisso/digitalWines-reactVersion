@@ -93,6 +93,7 @@ form div input {
 }
 
 .errores-front {
+	width: 100%;
 	color: #aa0d3f;
 	font-weight: bold;
 	font-style: italic;

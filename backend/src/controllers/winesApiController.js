@@ -61,7 +61,6 @@ const winesApiController = {
 
 	create: async (req, res) => {
 		let errors = validationResult(req);
-		console.log(errors);
 
 		if (errors.isEmpty()) {
 			const yaExiste = await db.Vinos.findOne({
@@ -108,12 +107,10 @@ const winesApiController = {
 		const categorias = await db.Categorias.findAll({
 			order: [["nombre", "ASC"]],
 		});
-		vinoModificable.imagen =
-			"http://localhost:3001" + vinoModificable.imagen;
 
 		if (!vinoModificable) {
 			res.status(404).json({
-				error: "No contamos con ese vino",
+				error: "Vino inexistente",
 			});
 		} else if (!bodegas) {
 			res.status(404).json({
@@ -128,6 +125,8 @@ const winesApiController = {
 				error: "F con las categorias",
 			});
 		} else {
+			vinoModificable.imagen =
+				"http://localhost:3001" + vinoModificable.imagen;
 			res.status(200).json({
 				data: {
 					wine: vinoModificable,
@@ -140,18 +139,26 @@ const winesApiController = {
 	},
 
 	update: async (req, res) => {
-		const vino = await db.Vinos.findOne({
+		let errors = validationResult(req);
+
+		const vinoModificable = await db.Vinos.findOne({
 			include: [{ all: true }],
 			where: { id: req.params.id },
 		});
 
-		if (!vino) {
-			res.status(404).json({
-				error: "No se pudo modificar un vino inexistente",
-			});
-		} else {
+		if (errors.isEmpty()) {
 			await db.Vinos.update(
-				{ ...req.body },
+				{
+					nombre: req.body.nombre,
+					imagen: req.file.path.split("public").pop(),
+					bodega_id: req.body.bodega_id,
+					descripcion: req.body.descripcion,
+					precio: req.body.precio,
+					anio: req.body.anio,
+					uva_id: req.body.uva_id,
+					categoria_id: req.body.categoria_id,
+					stock: req.body.stock,
+				},
 				{
 					where: {
 						id: req.params.id,
@@ -159,10 +166,11 @@ const winesApiController = {
 				}
 			);
 			res.status(200).json({
-				updated: "OK",
 				updatedData: req.body,
-				oldData: vino,
+				oldData: vinoModificable,
 			});
+		} else {
+			res.status(400).json({ formErrors: errors.errors });
 		}
 	},
 
@@ -171,13 +179,13 @@ const winesApiController = {
 			include: [{ all: true }],
 			where: { id: req.params.id },
 		});
-		vino.imagen = "http://localhost:3001" + vino.imagen;
 
 		if (!vino) {
 			res.status(404).json({
 				error: "No contamos con ese vino",
 			});
 		} else {
+			vino.imagen = "http://localhost:3001" + vino.imagen;
 			res.status(200).json({
 				data: vino,
 			});

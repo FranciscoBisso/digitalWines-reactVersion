@@ -1,7 +1,7 @@
 const path = require("path");
 const { body } = require("express-validator");
 
-const createValidation = [
+const formValidations = [
 	body("nombre")
 		.trim()
 		.notEmpty()
@@ -48,4 +48,4 @@ const createValidation = [
 	}),
 ];
 
-module.exports = createValidation;
+module.exports = formValidations;

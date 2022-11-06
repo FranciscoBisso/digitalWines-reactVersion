@@ -1,201 +1,302 @@
 import React from "react";
 import { useEffect, useState, Fragment } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../css/wines/EditarVino.css";
 
 export default function EditarVino() {
-    const params = useParams();
-    const [wine, setWine] = useState([]);
-    const [cellars, setCellars] = useState([]);
-    const [grapes, setGrapes] = useState([]);
-    const [category, setCategory] = useState([]);
+	const navigate = useNavigate();
+	const params = useParams();
+	const [wine, setWine] = useState([]);
+	const [selectedCellar, setSelectedCellar] = useState("");
+	const [selectedCategory, setSelectedCategory] = useState("");
+	const [selectedGrape, setSelectedGrape] = useState("");
+	const [cellars, setCellars] = useState([]);
+	const [grapes, setGrapes] = useState([]);
+	const [category, setCategory] = useState([]);
 
-    useEffect(() => {
-        fetchInfo();
-    }, []);
+	// const [image, setImage] = useState({});
 
-    const fetchInfo = async () => {
-        const infoRes = await fetch(
-            `http://localhost:3001/api/wines/update/${params.id}`
-        );
-        const wineInfo = await infoRes.json();
+	const [errors, setErrors] = useState([]);
 
-        wineInfo.data.wine.bodega = wineInfo.data.wine.vinoBodega.nombre;
-        wineInfo.data.wine.uva = wineInfo.data.wine.vinoUva.nombre;
-        wineInfo.data.wine.categoria = wineInfo.data.wine.vinoCategoria.nombre;
+	useEffect(() => {
+		const fetchInfo = async () => {
+			const infoRes = await fetch(
+				`http://localhost:3001/api/wines/update/${params.id}`
+			);
+			const wineInfo = await infoRes.json();
 
-        setWine(wineInfo.data.wine);
-        setCellars(wineInfo.data.bodegas);
-        setGrapes(wineInfo.data.uvas);
-        setGrapes(wineInfo.data.uvas);
-        setCategory(wineInfo.data.categorias);
-    };
+			if (!infoRes.ok) {
+				navigate("/vinoteca");
+				console.log(wineInfo);
+			} else {
+				setWine(wineInfo.data.wine);
+				setSelectedCellar(wineInfo.data.wine.vinoBodega);
+				setSelectedCategory(wineInfo.data.wine.vinoCategoria);
+				setSelectedGrape(wineInfo.data.wine.vinoUva);
+				setCellars(wineInfo.data.bodegas);
+				setGrapes(wineInfo.data.uvas);
+				setCategory(wineInfo.data.categorias);
+			}
+		};
 
-    return (
-        <Fragment>
-            <header>
-                <Header />
-            </header>
-            <main className="editarProducto-main-container">
-                <form
-                    className="editarProducto-form-container"
-                    action=""
-                    method="post"
-                    enctype="multipart/form-data"
-                >
-                    <h2>EDITAR PRODUCTO</h2>
-                    <div className="editarProducto-div-img-product">
-                        <label htmlFor="imagen" className="form-label">
-                            {" "}
-                            Imagen del producto:
-                        </label>
-                        <input
-                            className="editarProducto-input-img-product form-control box-shadow"
-                            type="file"
-                            accept="image/jpg"
-                            name="imagen"
-                            id="imagen"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="nombre" className="form-label">
-                            Nombre
-                        </label>
+		fetchInfo();
+	}, []);
 
-                        <input
-                            className="box-shadow form-control"
-                            type="text"
-                            name="nombre"
-                            id="nombre"
-                            defaultValue={wine.nombre}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="precio" className="form-label">
-                            Precio:
-                        </label>
+	const submitHandler = async (e) => {
+		e.preventDefault();
 
-                        <input
-                            className="box-shadow form-control"
-                            type="number"
-                            name="precio"
-                            id="precio"
-                            defaultValue={wine.precio}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="anio" className="form-label">
-                            Anio:
-                        </label>
+		const form = document.querySelector("#editForm");
+		const formData = new FormData(form);
+		console.log("wine.imagen:", wine.imagen);
+		console.log("formData.imagen", formData.get("imagen"));
 
-                        <input
-                            className="box-shadow form-control"
-                            type="number"
-                            name="anio"
-                            id="anio"
-                            defaultValue={wine.anio}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="stock" className="form-label">
-                            Stock:
-                        </label>
+		const res = await fetch(
+			`http://localhost:3001/api/wines/update/${params.id}`,
+			{
+				method: "PUT",
+				body: formData,
+			}
+		);
 
-                        <input
-                            className="box-shadow form-control"
-                            type="number"
-                            name="stock"
-                            id="stock"
-                            defaultValue={wine.stock}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="bodega_id" className="form-label">
-                            Bodega:
-                        </label>
-                        <select
-                            name="bodega_id"
-                            id="bodega_id"
-                            className="form-select box-shadow"
-                        >
-                            <option selected>{wine.bodega}</option>
-                            {cellars.map((cellar, i) => (
-                                <option key={i}>{cellar.nombre}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <div>
-                        <label htmlFor="categoria_id" className="form-label">
-                            Categoría:
-                        </label>
-                        <select
-                            name="categoria_id"
-                            id="categoria_id"
-                            className="form-select box-shadow"
-                        >
-                            <option selected>{wine.categoria}</option>
-                            {category.map((cat, i) => (
-                                <option key={i}>{cat.nombre}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <div>
-                        <label htmlFor="uva_id" className="form-label">
-                            Uva:
-                        </label>
+		const json = await res.json();
+		console.log("json:", json);
 
-                        <select
-                            name="uva_id"
-                            id="uva_id"
-                            className="form-select box-shadow"
-                        >
-                            <option selected>{wine.uva}</option>
-                            {grapes.map((grape, i) => (
-                                <option key={i}>{grape.nombre}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <div>
-                        <label htmlFor="descripcion" className="form-label">
-                            Descripcion:
-                        </label>
+		if (!res.ok) {
+			setErrors(json.formErrors);
+			console.log("errors:", errors);
+		} else {
+			navigate("/vinoteca");
+		}
+	};
 
-                        <textarea
-                            className="editarProducto-text-area box-shadow form-control"
-                            name="descripcion"
-                            id="descripcion"
-                            cols="30"
-                            rows="10"
-                            defaultValue={wine.descripcion}
-                        ></textarea>
-                    </div>
+	return (
+		<Fragment>
+			<header>
+				<Header />
+			</header>
+			<main className="editarProducto-main-container">
+				<form
+					className="editarProducto-form-container"
+					id="editForm"
+					onSubmit={submitHandler}
+				>
+					<h2>EDITAR PRODUCTO</h2>
+					<div className="editarProducto-div-img-product">
+						<label htmlFor="imagen" className="form-label">
+							Imagen del producto:
+						</label>
+						<input
+							className="editarProducto-input-img-product form-control box-shadow"
+							type="file"
+							accept="image/jpg"
+							name="imagen"
+							id="imagen"
+						/>
 
-                    <div className="editarProducto-div-button">
-                        <button
-                            className="editarProducto-button btn-secondary"
-                            type="submit"
-                            defaultValue="Editar producto"
-                        >
-                            EDITAR
-                        </button>
-                    </div>
+						<div className="errores-front">
+							{errors.map((err, i) =>
+								err.param === "imagen" ? (
+									<p key={i}>{err.msg}</p>
+								) : null
+							)}
+						</div>
+					</div>
+					<div>
+						<label htmlFor="nombre" className="form-label">
+							Nombre
+						</label>
 
-                    <div>
-                        <ul>
-                            <li>{/* meter los errores */}</li>
-                        </ul>
-                    </div>
+						<input
+							className="box-shadow form-control"
+							type="text"
+							name="nombre"
+							id="nombre"
+							defaultValue={wine.nombre}
+							placeholder={wine.nombre}
+						/>
 
-                    <div className="errores">
-                        <ul className="errores-front"></ul>
-                    </div>
-                </form>
-            </main>
-            <footer>
-                <Footer />
-            </footer>
-        </Fragment>
-    );
+						<div className="errores-front">
+							{errors.map((err, i) =>
+								err.param === "nombre" ? (
+									<p key={i}>{err.msg}</p>
+								) : null
+							)}
+						</div>
+					</div>
+
+					<div>
+						<label htmlFor="precio" className="form-label">
+							Precio:
+						</label>
+
+						<input
+							className="box-shadow form-control"
+							type="number"
+							name="precio"
+							id="precio"
+							defaultValue={wine.precio}
+							placeholder={wine.precio}
+						/>
+
+						<div className="errores-front">
+							{errors.map((err, i) =>
+								err.param === "precio" ? (
+									<p key={i}>{err.msg}</p>
+								) : null
+							)}
+						</div>
+					</div>
+					<div>
+						<label htmlFor="anio" className="form-label">
+							Anio:
+						</label>
+
+						<input
+							className="box-shadow form-control"
+							type="number"
+							name="anio"
+							id="anio"
+							defaultValue={wine.anio}
+							placeholder={wine.anio}
+						/>
+
+						<div className="errores-front">
+							{errors.map((err, i) =>
+								err.param === "anio" ? (
+									<p key={i}>{err.msg}</p>
+								) : null
+							)}
+						</div>
+					</div>
+					<div>
+						<label htmlFor="stock" className="form-label">
+							Stock:
+						</label>
+
+						<input
+							className="box-shadow form-control"
+							type="number"
+							name="stock"
+							id="stock"
+							defaultValue={wine.stock}
+							placeholder={wine.stock}
+						/>
+
+						<div className="errores-front">
+							{errors.map((err, i) =>
+								err.param === "stock" ? (
+									<p key={i}>{err.msg}</p>
+								) : null
+							)}
+						</div>
+					</div>
+					<div>
+						<label htmlFor="bodega_id" className="form-label">
+							Bodega:
+						</label>
+						<select
+							name="bodega_id"
+							id="bodega_id"
+							className="form-select box-shadow"
+						>
+							<option value={selectedCellar.id}>
+								{selectedCellar.nombre}
+							</option>
+							{cellars.map((cellar, i) =>
+								cellar.nombre !== selectedCellar.nombre ? (
+									<option key={i} value={cellar.id}>
+										{cellar.nombre}
+									</option>
+								) : null
+							)}
+						</select>
+					</div>
+					<div>
+						<label htmlFor="categoria_id" className="form-label">
+							Categoría:
+						</label>
+						<select
+							name="categoria_id"
+							id="categoria_id"
+							className="form-select box-shadow"
+						>
+							<option value={selectedCategory.id}>
+								{selectedCategory.nombre}
+							</option>
+							{category.map((cat, i) =>
+								cat.nombre !== selectedCategory.nombre ? (
+									<option key={i} value={cat.id}>
+										{cat.nombre}
+									</option>
+								) : null
+							)}
+						</select>
+					</div>
+					<div>
+						<label htmlFor="uva_id" className="form-label">
+							Uva:
+						</label>
+
+						<select
+							name="uva_id"
+							id="uva_id"
+							className="form-select box-shadow"
+						>
+							<option value={selectedGrape.id}>
+								{selectedGrape.nombre}
+							</option>
+							{grapes.map((grape, i) =>
+								grape.nombre !== selectedGrape.nombre ? (
+									<option key={i} value={grape.id}>
+										{grape.nombre}
+									</option>
+								) : null
+							)}
+						</select>
+					</div>
+					<div>
+						<label htmlFor="descripcion" className="form-label">
+							Descripcion:
+						</label>
+
+						<textarea
+							className="editarProducto-text-area box-shadow form-control"
+							name="descripcion"
+							id="descripcion"
+							cols="30"
+							rows="10"
+							defaultValue={wine.descripcion}
+							placeholder={wine.descripcion}
+						></textarea>
+
+						<div className="errores-front">
+							{errors.map((err, i) =>
+								err.param === "descripcion" ? (
+									<p key={i}>{err.msg}</p>
+								) : null
+							)}
+						</div>
+					</div>
+
+					<div className="editarProducto-div-button">
+						<button
+							className="editarProducto-button btn-secondary"
+							type="submit"
+						>
+							EDITAR
+						</button>
+					</div>
+
+					<div className="errores">
+						<ul className="errores-front"></ul>
+					</div>
+				</form>
+			</main>
+			<footer>
+				<Footer />
+			</footer>
+		</Fragment>
+	);
 }

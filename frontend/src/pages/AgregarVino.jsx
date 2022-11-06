@@ -80,8 +80,6 @@ export default function AgregarVino() {
 				<form
 					className="agregarProducto-form-container"
 					id="createForm"
-					method="POST"
-					encType="multipart/form-data"
 					onSubmit={submitHandler}
 				>
 					<h2>AGREGAR PRODUCTO</h2>
