@@ -1,7 +1,5 @@
 const db = require("../database/models");
-const path = require("path");
 const { validationResult } = require("express-validator");
-const e = require("express");
 
 const winesApiController = {
 	winecellar: async (req, res) => {
