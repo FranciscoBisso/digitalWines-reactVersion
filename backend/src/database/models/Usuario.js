@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
 		},
 		imagen: {
 			type: dataTypes.STRING(200),
-			allowNull: true,
+			allowNull: false,
 		},
 	};
 
