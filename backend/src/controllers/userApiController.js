@@ -1,6 +1,10 @@
 const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
-const path = require("path");
+const jwt = require("jsonwebtoken");
+
+const createToken = (id) => {
+	return jwt.sign({ id }, process.env.SECRET, { expiresIn: "3d" });
+};
 
 const userApiController = {
 	signup: async (req, res) => {
@@ -18,7 +22,13 @@ const userApiController = {
 				imagen: req.body.imagen,
 				//imagen: req.file.path.split("public").pop(),
 			});
-			res.status(200).json({ registration: "OK", newUser: newUser });
+
+			const token = createToken(newUser.id);
+
+			res.status(200).json({
+				email: newUser.email,
+				token: token,
+			});
 		}
 		if (existingEmail) {
 			res.status(400).json({ credentialsError: "Invalid credentials" });
