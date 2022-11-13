@@ -3,7 +3,7 @@ const router = express.Router();
 const userApiController = require("../controllers/userApiController");
 
 // SING UP
-router.post("/signup", userApiController.signup);
+router.post("/register", userApiController.register);
 
 // LOGIN
 router.post("/login", userApiController.login);

@@ -11,7 +11,7 @@ const createToken = (id) => {
 };
 
 const userApiController = {
-	signup: async (req, res) => {
+	register: async (req, res) => {
 		const existingEmail = await db.Usuarios.findOne({
 			where: { email: req.body.email },
 		});
