@@ -1,0 +1,297 @@
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+    NUEVO CSS
+////////////////////////////////////////////////////////////////////////////////////
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+.login-body {
+    font-size: 1rem;
+}
+
+.hide-icon-login {
+    display: none;
+}
+
+.contenedor-links_grande a {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+/*
+
+MAIN
+
+*/
+
+.login-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #252525;
+}
+
+.login-desktop-bg-img {
+    display: none;
+}
+
+.login-form-container {
+    max-width: 400px;
+    margin-top: 5%;
+    padding: 5%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    color: #aa0d3f;
+    text-align: center;
+}
+
+section {
+    width: 100%;
+}
+
+.login-div-google {
+    margin-bottom: 6%;
+}
+
+.button-google {
+    background-color: #4285f4;
+    width: 100%;
+    padding: 4%;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+
+.google-icon {
+    margin-right: 2%;
+}
+
+.login-div-fb {
+    margin-bottom: 5%;
+}
+
+.button-facebook {
+    background-color: #4267f2;
+    width: 100%;
+    padding: 4%;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+
+.button-facebook a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.fb-icon {
+    margin-right: 2%;
+}
+
+.errores-front {
+    color: #aa0d3f;
+    font-weight: bold;
+    font-style: italic;
+}
+
+label {
+    color: #fff;
+}
+
+.login-imput-email {
+    width: 100%;
+    padding: 4%;
+    border: none;
+    border-radius: 8px;
+}
+
+.login-invalid-text-input {
+    color: #aa0d3f;
+    font-style: italic;
+    padding: 4%;
+    display: none;
+}
+
+.login-div-password {
+    margin-bottom: 10%;
+}
+
+.login-imput-password {
+    width: 100%;
+    padding: 4%;
+    border: none;
+    border-radius: 8px;
+}
+
+.login-div-enter {
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.login-button-enter {
+    width: 80%;
+    padding: 4%;
+    padding-bottom: none;
+    border: none;
+    border-radius: 8px;
+    background-color: #aa0d3f;
+}
+
+.login-button-enter a {
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.login-div-remember-me {
+    margin-bottom: 10%;
+    padding-left: 42%;
+}
+
+.login-div-forgot-password {
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.login-div-forgot-password a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.login-div-subscribe {
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.login-div-subscribe a {
+    text-decoration: none;
+    text-align: start;
+    padding-left: 4%;
+}
+
+.login-div-subscribe p {
+    color: #fff;
+    width: 50%;
+    text-align: end;
+}
+
+.login-div-legal-consequences {
+    text-align: center;
+    color: #fff;
+}
+
+.box-shadow {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.register-invalid-text-input {
+    color: #aa0d3f;
+    font-style: italic;
+    padding: 4%;
+}
+
+/* 
+    QUERIES
+*/
+
+@media (min-width: 767px) {
+    .login-form-container {
+        max-width: 50%;
+        margin-top: 0;
+        padding: 5% o;
+    }
+
+    .button-google {
+        padding: 2%;
+    }
+
+    .button-facebook {
+        padding: 2%;
+    }
+
+    .login-imput-email {
+        padding: 2%;
+    }
+
+    .login-div-password {
+        margin-bottom: 10%;
+    }
+
+    .login-imput-password {
+        padding: 2%;
+    }
+
+    .login-button-enter {
+        padding: 2%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .login-main-container {
+        flex-direction: row-reverse;
+        position: relative;
+        background-color: transparent;
+    }
+
+    h2 {
+        color: #aa0d3f;
+        margin-bottom: 5%;
+        font-family: fansong;
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .login-desktop-bg-img {
+        display: block;
+        position: absolute;
+        z-index: -100;
+        width: 100%;
+        height: 100%;
+    }
+
+    .login-form-container {
+        width: 30%;
+        margin: 5% 5% 10% 0;
+        padding: 2%;
+        background-color: #ebebeb;
+        border-radius: 8px;
+    }
+
+    .login-div-remember-me {
+        color: black;
+        padding-left: 40%;
+    }
+
+    label {
+        color: black;
+    }
+
+    .login-div-forgot-password a {
+        color: black;
+    }
+
+    .login-div-subscribe p {
+        color: black;
+        width: 60%;
+    }
+
+    .login-div-legal-consequences {
+        color: black;
+    }
+}

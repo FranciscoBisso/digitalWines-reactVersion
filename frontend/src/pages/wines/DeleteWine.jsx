@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import "../css/wines/EliminarVino.css";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import "../../css/wines/EliminarVino.css";
 
 export default function EliminarVino() {
 	const params = useParams();

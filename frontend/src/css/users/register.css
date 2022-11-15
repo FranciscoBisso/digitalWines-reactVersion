@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+.register-body {
+    font-size: 1rem;
+}
+
+.contenedor-links_grande a {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+/*
+
+MAIN
+
+*/
+
+.register-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #252525;
+}
+
+.register-desktop-bg-img {
+    display: none;
+}
+
+.register-form-container {
+    max-width: 400px;
+    margin-top: 5%;
+    padding: 5%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-section {
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+.register-title {
+    color: #aa0d3f;
+    text-align: center;
+    margin-bottom: 5%;
+    font-family: fansong;
+    font-size: 1.7rem;
+}
+
+h4 {
+    color: rgb(201, 196, 196);
+    text-align: center;
+    font-weight: bold;
+}
+
+.register-div-google {
+    margin-bottom: 5%;
+}
+
+.button-google {
+    background-color: #4285f4;
+    width: 100%;
+    padding: 2%;
+    border: none;
+    border-radius: 8px;
+}
+
+.button-google a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.google-icon {
+    margin-right: 2%;
+}
+
+.button-facebook {
+    background-color: #4267f2;
+    width: 100%;
+    padding: 2%;
+    border: none;
+    border-radius: 8px;
+}
+
+.button-facebook a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.fb-icon {
+    margin-right: 2%;
+}
+
+.register-imput-name {
+    width: 100%;
+    padding: 2%;
+    border: none;
+    border-radius: 8px;
+}
+
+.register-div-email {
+    margin-bottom: 5%;
+}
+
+.register-imput-email {
+    width: 100%;
+    padding: 2%;
+    border: none;
+    border-radius: 8px;
+}
+
+.register-invalid-text-input {
+    color: #aa0d3f;
+    font-style: italic;
+    padding: 4%;
+}
+
+.register-imput-password {
+    width: 100%;
+    padding: 2%;
+    border: none;
+    border-radius: 8px;
+}
+
+.register-div-confirmPassword {
+    margin-bottom: 5%;
+}
+
+.register-div-img {
+    margin-top: 8%;
+}
+
+.register-div-img label {
+    color: rgb(201, 196, 196);
+    font-weight: bold;
+}
+
+.register-div-enter {
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.register-button-enter {
+    width: 80%;
+    padding: 2%;
+    border: none;
+    border-radius: 8px;
+    background-color: #aa0d3f;
+}
+
+.register-button-enter p {
+    margin-bottom: 0;
+}
+
+.register-button-enter a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.register-div-to-login {
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.register-div-to-login p {
+    color: rgb(201, 196, 196);
+}
+
+.register-div-to-login a {
+    text-decoration: none;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.errores {
+    color: #aa0d3f;
+    text-shadow: black;
+    padding-bottom: 10%;
+}
+
+/* 
+    QUERIES
+*/
+
+@media (min-width: 767px) {
+    .register-form-container {
+        width: 50%;
+        padding: 5%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .register-main-container {
+        position: relative;
+        flex-direction: row-reverse;
+        background-color: transparent;
+    }
+
+    .register-desktop-bg-img {
+        display: block;
+        position: absolute;
+        z-index: -100;
+        width: 100%;
+        height: 100%;
+    }
+
+    .register-form-container {
+        width: 30%;
+        margin: 6% 5% 10% 0;
+        padding: 2%;
+        background-color: rgb(245, 245, 245);
+        border-radius: 8px;
+        border: none;
+    }
+
+    .box-shadow {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    h4 {
+        color: #aa0d3f;
+        font-weight: bold;
+    }
+
+    .register-div-img label {
+        color: #252525;
+        font-weight: normal;
+    }
+
+    .register-div-to-login p {
+        color: #252525;
+    }
+
+    .errores {
+        padding-bottom: 0%;
+    }
+}

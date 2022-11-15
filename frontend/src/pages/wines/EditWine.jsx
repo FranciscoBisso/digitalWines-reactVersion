@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState, Fragment } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import "../css/wines/EditarVino.css";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import "../../css/wines/EditarVino.css";
 
 export default function EditarVino() {
 	const navigate = useNavigate();
