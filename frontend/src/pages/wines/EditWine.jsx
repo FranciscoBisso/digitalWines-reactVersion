@@ -3,9 +3,9 @@ import { useEffect, useState, Fragment } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import "../../css/wines/EditarVino.css";
+import "../../css/wines/EditWine.css";
 
-export default function EditarVino() {
+export default function EditWine() {
 	const navigate = useNavigate();
 	const params = useParams();
 	const [wine, setWine] = useState([]);
@@ -82,7 +82,7 @@ export default function EditarVino() {
 					id="editForm"
 					onSubmit={submitHandler}
 				>
-					<h2>EDITAR PRODUCTO</h2>
+					<h2 className="editarProducto-title">EDITAR PRODUCTO</h2>
 					<div className="editarProducto-div-img-product">
 						<label htmlFor="imagen" className="form-label">
 							Imagen del producto:
@@ -103,7 +103,7 @@ export default function EditarVino() {
 							)}
 						</div>
 					</div>
-					<div>
+					<div className="editarProducto-form-div">
 						<label htmlFor="nombre" className="form-label">
 							Nombre
 						</label>
@@ -126,7 +126,7 @@ export default function EditarVino() {
 						</div>
 					</div>
 
-					<div>
+					<div className="editarProducto-form-div">
 						<label htmlFor="precio" className="form-label">
 							Precio:
 						</label>
@@ -148,7 +148,8 @@ export default function EditarVino() {
 							)}
 						</div>
 					</div>
-					<div>
+
+					<div className="editarProducto-form-div">
 						<label htmlFor="anio" className="form-label">
 							Anio:
 						</label>
@@ -170,7 +171,8 @@ export default function EditarVino() {
 							)}
 						</div>
 					</div>
-					<div>
+
+					<div className="editarProducto-form-div">
 						<label htmlFor="stock" className="form-label">
 							Stock:
 						</label>
@@ -192,7 +194,8 @@ export default function EditarVino() {
 							)}
 						</div>
 					</div>
-					<div>
+
+					<div className="editarProducto-form-div">
 						<label htmlFor="bodega_id" className="form-label">
 							Bodega:
 						</label>
@@ -213,7 +216,8 @@ export default function EditarVino() {
 							)}
 						</select>
 					</div>
-					<div>
+
+					<div className="editarProducto-form-div">
 						<label htmlFor="categoria_id" className="form-label">
 							Categoría:
 						</label>
@@ -234,7 +238,8 @@ export default function EditarVino() {
 							)}
 						</select>
 					</div>
-					<div>
+
+					<div className="editarProducto-form-div">
 						<label htmlFor="uva_id" className="form-label">
 							Uva:
 						</label>
@@ -256,7 +261,8 @@ export default function EditarVino() {
 							)}
 						</select>
 					</div>
-					<div>
+
+					<div className="editarProducto-form-div">
 						<label htmlFor="descripcion" className="form-label">
 							Descripcion:
 						</label>

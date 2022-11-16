@@ -2,9 +2,9 @@ import React, { useState, useEffect, Fragment } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import "../../css/wines/EliminarVino.css";
+import "../../css/wines/DeleteWine.css";
 
-export default function EliminarVino() {
+export default function DeleteWine() {
 	const params = useParams();
 	const navigate = useNavigate();
 	const [wine, setWine] = useState([]);
@@ -61,8 +61,10 @@ export default function EliminarVino() {
 					className="eliminarProducto-form-container"
 					onSubmit={deleteHandler}
 				>
-					<h2>ELIMINAR PRODUCTO</h2>
-					<div>
+					<h2 className="eliminarProducto-title">
+						ELIMINAR PRODUCTO
+					</h2>
+					<div className="eliminarProducto-form-div">
 						<label htmlFor="nombre" className="form-label">
 							Nombre:
 						</label>
@@ -76,7 +78,7 @@ export default function EliminarVino() {
 							disabled
 						/>
 					</div>
-					<div>
+					<div className="eliminarProducto-form-div">
 						<label
 							htmlFor="descripcionProducto"
 							className="form-label"
@@ -93,7 +95,7 @@ export default function EliminarVino() {
 							disabled
 						/>
 					</div>
-					<div>
+					<div className="eliminarProducto-form-div">
 						<label
 							htmlFor="descripcionProducto"
 							className="form-label"
@@ -110,7 +112,7 @@ export default function EliminarVino() {
 							disabled
 						/>
 					</div>
-					<div>
+					<div className="eliminarProducto-form-div">
 						<label
 							htmlFor="descripcionProducto"
 							className="form-label"
@@ -127,7 +129,7 @@ export default function EliminarVino() {
 							disabled
 						/>
 					</div>
-					<div>
+					<div className="eliminarProducto-form-div">
 						<label htmlFor="precioProducto" className="form-label">
 							Precio:
 						</label>
@@ -142,7 +144,7 @@ export default function EliminarVino() {
 						/>
 					</div>
 					<div className="big-divs-wrapper">
-						<div>
+						<div className="eliminarProducto-form-div">
 							<label
 								htmlFor="precioProducto"
 								className="form-label"
@@ -160,7 +162,7 @@ export default function EliminarVino() {
 								disabled
 							></textarea>
 						</div>
-						<div>
+						<div className="eliminarProducto-form-div">
 							<label className="form-label">Imagen:</label>
 							<img
 								src={wine.imagen}

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import "../../css/wines/AgregarVino.css";
+import "../../css/wines/AddWine.css";
 
-export default function AgregarVino() {
+export default function AddWine() {
 	const [cellars, setCellars] = useState([]);
 	const [categories, setCategories] = useState([]);
 	const [grapes, setGrapes] = useState([]);
@@ -82,7 +82,7 @@ export default function AgregarVino() {
 					id="createForm"
 					onSubmit={submitHandler}
 				>
-					<h2>AGREGAR PRODUCTO</h2>
+					<h2 className="agregar-title">AGREGAR PRODUCTO</h2>
 					<div className="agregarProducto-div-img-product">
 						<label htmlFor="imagen" className="form-label">
 							Imagen del producto:
@@ -103,7 +103,7 @@ export default function AgregarVino() {
 							)}
 						</div>
 					</div>
-					<div>
+					<div className="agregarProducto-form-div">
 						<label htmlFor="nombre" className="form-label">
 							Nombre:
 						</label>
@@ -126,7 +126,7 @@ export default function AgregarVino() {
 								)}
 						</div>
 					</div>
-					<div>
+					<div className="agregarProducto-form-div">
 						<label htmlFor="precio" className="form-label">
 							Precio:
 						</label>
@@ -149,7 +149,7 @@ export default function AgregarVino() {
 								)}
 						</div>
 					</div>
-					<div>
+					<div className="agregarProducto-form-div">
 						<label htmlFor="anio" className="form-label">
 							Año:
 						</label>
@@ -172,7 +172,7 @@ export default function AgregarVino() {
 								)}
 						</div>
 					</div>
-					<div>
+					<div className="agregarProducto-form-div">
 						<label htmlFor="stock" className="form-label">
 							Stock:
 						</label>
@@ -195,7 +195,7 @@ export default function AgregarVino() {
 								)}
 						</div>
 					</div>
-					<div>
+					<div className="agregarProducto-form-div">
 						<label htmlFor="bodega_id" className="form-label">
 							Bodega:
 						</label>
@@ -213,7 +213,7 @@ export default function AgregarVino() {
 							))}
 						</select>
 					</div>
-					<div>
+					<div className="agregarProducto-form-div">
 						<label htmlFor="categoria_id" className="form-label">
 							Categoría:
 						</label>
@@ -233,7 +233,7 @@ export default function AgregarVino() {
 							))}
 						</select>
 					</div>
-					<div>
+					<div className="agregarProducto-form-div">
 						<label htmlFor="uva_id" className="form-label">
 							Uva:
 						</label>
@@ -251,7 +251,7 @@ export default function AgregarVino() {
 							))}
 						</select>
 					</div>
-					<div>
+					<div className="agregarProducto-form-div">
 						<label htmlFor="precioProducto" className="form-label">
 							Descripcion:
 						</label>

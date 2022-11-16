@@ -2,9 +2,9 @@ import React, { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import "../../css/wines/Vinoteca.css";
+import "../../css/wines/Winecellar.css";
 
-export default function Vinoteca() {
+export default function Winecellar() {
 	const [wines, setWines] = useState([]);
 
 	useEffect(() => {
@@ -29,7 +29,7 @@ export default function Vinoteca() {
 				<h2>CONOCE, DEGUSTA Y SIENTE NUESTROS VINOS </h2>
 				<form className="d-flex" method="get" action="/products/buscar">
 					<input
-						className="form-control me-2"
+						className="form-control me-2 search-bar"
 						type="search"
 						placeholder="Encuentra tu vino"
 						aria-label="Search"

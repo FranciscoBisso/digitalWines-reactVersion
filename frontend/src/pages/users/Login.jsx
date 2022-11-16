@@ -18,52 +18,60 @@ export default function Login() {
 					method="POST"
 					class="login-form-container"
 				>
-					<h2>LOGIN</h2>
-					<section>
+					<h2 className="login-title">LOGIN</h2>
+					<section className="login-sections">
 						<div class="login-div-google">
 							<Link
 								type="submit"
 								name="button-google"
-								class="button-google box-shadow btn-secondary"
+								class="login-button-google login-box-shadow btn-secondary"
 								to="#"
 							>
-								<i class="fab fa-google google-icon"></i>
+								<i class="fab fa-google login-google-icon"></i>
 								<span>Google</span>
 							</Link>
 						</div>
 					</section>
 
 					<div class="errores">
-						<ul class="errores-front"></ul>
+						<ul class="login-errores-front"></ul>
 					</div>
 
-					<section>
+					<section className="login-sections">
 						<div class="login-div-email">
-							<label for="email" class="form-label"></label>
+							<label
+								className="login-label"
+								for="email"
+								class="form-label"
+							></label>
 							<input
 								type="email"
 								name="email"
 								id="email"
 								placeholder=" Correo electrónico"
-								class="login-imput-email box-shadow form-control"
+								class="login-imput-email login-box-shadow form-control"
 								value=""
 							/>
 
-							<p class="register-invalid-text-input">
+							<p class="login-invalid-text-input">
 								{/* msg errores */}
 							</p>
 						</div>
 						<div class="login-div-password">
-							<label for="password" class="form-label"></label>
+							<label
+								className="login-label"
+								for="password"
+								class="form-label"
+							></label>
 							<input
 								type="password"
 								name="password"
 								id="password"
 								placeholder=" Contraseña"
-								class="login-imput-password box-shadow form-control"
+								class="login-imput-password login-box-shadow form-control"
 							/>
 
-							<p class="register-invalid-text-input">
+							<p class="login-invalid-text-input">
 								{/* msg errores */}
 							</p>
 						</div>
@@ -72,7 +80,7 @@ export default function Login() {
 							<button
 								type="submit"
 								name="button-enter"
-								class="login-button-enter box-shadow btn-secondary"
+								class="login-button-enter login-box-shadow btn-secondary"
 							>
 								INGRESAR
 							</button>

@@ -3,9 +3,9 @@ import { useEffect, useState, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import "../../css/wines/DetalleVino.css";
+import "../../css/wines/DetailsWine.css";
 
-export default function DetalleVino() {
+export default function DetailsWine() {
 	const params = useParams();
 	const [wine, setWine] = useState([]);
 	useEffect(() => {
@@ -29,8 +29,8 @@ export default function DetalleVino() {
 			<header>
 				<Header />
 			</header>
-			<main>
-				<div className="item-wrapper">
+			<main className="detalle-main">
+				<div className="detalle-item-wrapper">
 					<section id="contenedor-detalle">
 						<div className="img-wrapper">
 							<img src={wine.imagen} alt="vino1" />
@@ -51,13 +51,15 @@ export default function DetalleVino() {
 							</div>
 							<div className="contenedor-detalle-info">
 								<h3>Descripción:</h3>
-								<p id="descripcion">{wine.descripcion}</p>
+								<p id="descripcion-detalle-vino">
+									{wine.descripcion}
+								</p>
 							</div>
 						</div>
 					</section>
 
 					<div id="contenedor-detalle-botones">
-						<form action="" method="POST">
+						<form className="detalle-form">
 							<button type="submit" className="boton-detalle">
 								SACAR DE MI CAVA
 							</button>
@@ -65,7 +67,7 @@ export default function DetalleVino() {
 								AGREGAR A MI CAVA
 							</button>
 						</form>
-						<form action="" method="POST">
+						<form className="detalle-form">
 							<button type="submit" className="boton-detalle">
 								SACAR DE FAVORITOS
 							</button>

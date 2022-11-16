@@ -34,21 +34,21 @@ MAIN
 	flex-direction: column;
 }
 
-h2 {
+.agregar-title {
 	text-align: center;
 	color: #aa0d3f;
 }
 
-form div {
+.agregarProducto-form-div {
 	margin-bottom: 5%;
 }
 
-form div label {
+.agregarProducto-form-div label {
 	margin-left: 2.5%;
 	color: rgb(245, 245, 245);
 }
 
-form div input {
+.agregarProducto-form-div input {
 	width: 100%;
 	border: none;
 	border-radius: 8px;
@@ -126,11 +126,11 @@ form div input {
 		flex-wrap: wrap;
 	}
 
-	h2 {
+	.agregar-title {
 		width: 100%;
 	}
 
-	form div {
+	.agregarProducto-form-div {
 		width: 50%;
 		margin-bottom: 5%;
 		padding: 0 5%;
@@ -149,7 +149,7 @@ form div input {
 	}
 
 	.agregarProducto-button {
-		width: 30%;
+		width: 60%;
 		border-radius: 8px;
 		padding: 1%;
 		background-color: transparent;

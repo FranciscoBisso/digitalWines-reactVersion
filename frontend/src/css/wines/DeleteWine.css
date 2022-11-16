@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Roboto;
+}
+
+.eliminarProducto-body {
+	font-size: 1rem;
+}
+
+/*
+
+MAIN
+
+*/
+
+.hide-icon-eliminarProducto {
+	display: none;
+}
+
+.eliminarProducto-main-container {
+	background-color: #252525;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.eliminarProducto-form-container {
+	max-width: 400px;
+	padding: 5%;
+	border: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.eliminarProducto-title {
+	text-align: center;
+	color: #aa0d3f;
+}
+
+.eliminarProducto-form-div {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 5%;
+}
+
+.eliminarProducto-form-div label {
+	margin-left: 2.5%;
+	color: rgb(245, 245, 245);
+}
+
+.eliminarProducto-form-div input {
+	width: 100%;
+	border: none;
+	border-radius: 8px;
+}
+
+.eliminarProducto-text-area {
+	width: 100%;
+	max-height: 240px;
+	max-width: 335.203px;
+	border: none;
+	border-radius: 8px;
+	text-align: justify;
+}
+
+.eliminarProducto-img-product {
+	width: 100%;
+	max-height: 240px;
+	max-width: 335.203px;
+	border-radius: 8px;
+}
+
+.eliminarProducto-div-button {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 5%;
+}
+
+.eliminarProducto-button {
+	width: 60%;
+	border: 2px solid #aa0d3f;
+	border-radius: 8px;
+	padding: 2%;
+	background-color: transparent;
+	color: #aa0d3f;
+}
+
+.box-shadow {
+	box-shadow: 0px 0px 10px rgb(100, 100, 100);
+	border: none;
+}
+
+/* 
+    QUERIES
+*/
+
+@media (min-width: 767px) {
+	.eliminarProducto-form-container {
+		max-width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.eliminarProducto-title {
+		width: 100%;
+	}
+
+	.eliminarProducto-form-div {
+		width: 50%;
+		margin-bottom: 5%;
+		padding: 0 2%;
+	}
+
+	.big-divs-wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+	}
+
+	.eliminarProducto-div-button {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 0;
+	}
+
+	.eliminarProducto-button {
+		width: 30%;
+		padding: 1%;
+	}
+}
+
+@media (min-width: 1100px) {
+	.eliminarProducto-form-container {
+		padding: 2.5% 5%;
+		margin: 0;
+		width: 100%;
+		max-width: 1100px;
+	}
+}

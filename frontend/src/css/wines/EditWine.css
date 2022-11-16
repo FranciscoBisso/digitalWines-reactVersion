@@ -34,21 +34,21 @@ MAIN
 	flex-direction: column;
 }
 
-h2 {
+.editarProducto-title {
 	text-align: center;
 	color: #aa0d3f;
 }
 
-form div {
+.editarProducto-form-div {
 	margin-bottom: 5%;
 }
 
-form div label {
+.editarProducto-form-div label {
 	margin-left: 2.5%;
 	color: rgb(245, 245, 245);
 }
 
-form div input {
+.editarProducto-form-div input {
 	width: 100%;
 	border: none;
 	border-radius: 8px;
@@ -70,6 +70,12 @@ form div input {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 5%;
+}
+
+.editarProducto-div-img-product label {
+	margin-left: 2.5%;
+	color: rgb(245, 245, 245);
 }
 
 .editarProducto-input-img-product {
@@ -117,18 +123,23 @@ form div input {
 		flex-wrap: wrap;
 	}
 
-	h2 {
+	.editarProducto-title {
 		width: 100%;
 	}
 
-	form div {
+	.editarProducto-form-div {
 		width: 50%;
 		margin-bottom: 5%;
 		padding: 0 5%;
 	}
 
+	.editarProducto-form-div input {
+		padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+	}
+
 	.editarProducto-div-img-product {
 		width: 50%;
+		padding: 0 5%;
 	}
 
 	.editarProducto-div-button {

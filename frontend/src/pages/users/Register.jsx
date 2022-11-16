@@ -24,10 +24,10 @@ export default function Register() {
 							<button
 								type="submit"
 								name="button-google"
-								className="button-google box-shadow btn-secondary"
+								className="register-button-google box-shadow btn-secondary"
 							>
 								<Link to="">
-									<i className="fab fa-google google-icon"></i>
+									<i className="fab fa-google register-google-icon"></i>
 									<span>Google</span>
 								</Link>
 							</button>
@@ -35,7 +35,9 @@ export default function Register() {
 					</section>
 
 					<section className="register-section">
-						<h4>Información Personal:</h4>
+						<h4 className="register-subtitle">
+							Información Personal:
+						</h4>
 						<div className="register-div-name">
 							<label for="name" className="form-label"></label>
 							<input
