@@ -61,29 +61,13 @@ export default function Winecellar() {
 													<h4 className="card-title">
 														{wine.nombre}
 													</h4>
-													<h5 className="card-subtitle mb-2 text-muted">
+													<h5 className="card-subtitle text-muted">
 														{wine.vinoBodega.nombre}
 													</h5>
 												</div>
 												<p className="card-text card-price">
 													${wine.precio}
 												</p>
-											</div>
-
-											<div className="wine-card-icons">
-												<Link
-													to={`/eliminar/${wine.id}`}
-												>
-													<i className="fas fa-times"></i>
-												</Link>
-												<Link to={`/editar/${wine.id}`}>
-													<i className="far fa-edit"></i>
-												</Link>
-
-												<i
-													className="far
-                                                            fa-star"
-												></i>
 											</div>
 										</div>
 									</article>

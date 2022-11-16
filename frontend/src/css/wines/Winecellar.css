@@ -177,11 +177,17 @@ main h2 {
 
 	.wine-card:hover .wine-card-product-description {
 		display: block;
+		padding-left: 2%;
 	}
 
 	.card-title:hover {
 		font-size: 25px;
 		color: brown;
+	}
+
+	.wine-card:hover .card-subtitle {
+		display: block;
+		margin-bottom: 0px;
 	}
 
 	.card-price {
