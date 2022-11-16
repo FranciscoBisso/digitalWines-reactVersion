@@ -5,6 +5,22 @@ import Footer from "../../components/Footer";
 import "../../css/users/register.css";
 import bg_img from "../../images/venus-birth.jpeg";
 export default function Register() {
+	const submitHandler = (e) => {
+		e.preventDefault();
+		const form = document.getElementById("register-form");
+		const formData = new FormData(form);
+		const name = formData.get("name");
+		const email = formData.get("email");
+		const password = formData.get("password");
+		const confirmPassword = formData.get("confirm-password");
+		const image = formData.get("image");
+		console.log("name", name);
+		console.log("email", email);
+		console.log("password", password);
+		console.log("confirmPassword", confirmPassword);
+		console.log("image", image);
+	};
+
 	return (
 		<Fragment>
 			<header>
@@ -17,7 +33,11 @@ export default function Register() {
 					alt="bg-img"
 				/>
 
-				<form className="register-form-container box-shadow">
+				<form
+					className="register-form-container box-shadow"
+					id="register-form"
+					onSubmit={submitHandler}
+				>
 					<section className="register-section">
 						<h4 className="register-title">REGISTRO</h4>
 						<div className="register-div-google">
@@ -39,7 +59,10 @@ export default function Register() {
 							Información Personal:
 						</h4>
 						<div className="register-div-name">
-							<label for="name" className="form-label"></label>
+							<label
+								htmlFor="name"
+								className="form-label"
+							></label>
 							<input
 								className="register-imput-name box-shadow form-control"
 								name="name"
@@ -53,7 +76,10 @@ export default function Register() {
 							</p>
 						</div>
 						<div className="register-div-email">
-							<label for="email" className="form-label"></label>
+							<label
+								htmlFor="email"
+								className="form-label"
+							></label>
 							<input
 								type="email"
 								name="email"
@@ -69,7 +95,7 @@ export default function Register() {
 
 						<div className="register-div-password">
 							<label
-								for="password"
+								htmlFor="password"
 								className="form-label"
 							></label>
 							<input
@@ -86,7 +112,7 @@ export default function Register() {
 						</div>
 						<div className="register-div-confirmPassword">
 							<label
-								for="confirm-password"
+								htmlFor="confirm-password"
 								className="form-label"
 							></label>
 							<input
@@ -102,15 +128,15 @@ export default function Register() {
 							</p>
 						</div>
 						<div className="register-div-img">
-							<label for="imagen" className="form-label">
+							<label htmlFor="image" className="form-label">
 								Foto de Perfil:
 							</label>
 							<input
 								className="form-control box-shadow"
 								width="100%"
 								type="file"
-								name="imagen"
-								id="imagen"
+								name="image"
+								id="image"
 								accept="image/jpg"
 							/>
 
