@@ -1,24 +1,20 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { useRegister } from "../../hooks/useRegister";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "../../css/users/register.css";
 import bg_img from "../../images/venus-birth.jpeg";
+
 export default function Register() {
-	const submitHandler = (e) => {
+	const { register, isLoading, errors, notNew } = useRegister();
+
+	const submitHandler = async (e) => {
 		e.preventDefault();
 		const form = document.getElementById("register-form");
 		const formData = new FormData(form);
-		const name = formData.get("name");
-		const email = formData.get("email");
-		const password = formData.get("password");
-		const confirmPassword = formData.get("confirm-password");
-		const image = formData.get("image");
-		console.log("name", name);
-		console.log("email", email);
-		console.log("password", password);
-		console.log("confirmPassword", confirmPassword);
-		console.log("image", image);
+
+		await register(formData);
 	};
 
 	return (
@@ -70,10 +66,18 @@ export default function Register() {
 								type="text"
 								placeholder=" Nombre y Apellido"
 							/>
-
-							<p className="register-invalid-text-input">
-								{/* msg de error */}
-							</p>
+							{errors
+								? errors.map((err, i) =>
+										err.param === "name" ? (
+											<p
+												className="register-invalid-text-input"
+												key={i}
+											>
+												{err.msg}
+											</p>
+										) : null
+								  )
+								: null}
 						</div>
 						<div className="register-div-email">
 							<label
@@ -88,9 +92,18 @@ export default function Register() {
 								className="register-imput-email box-shadow form-control"
 							/>
 
-							<p className="register-invalid-text-input">
-								{/* msg de error */}
-							</p>
+							{errors
+								? errors.map((err, i) =>
+										err.param === "email" ? (
+											<p
+												className="register-invalid-text-input"
+												key={i}
+											>
+												{err.msg}
+											</p>
+										) : null
+								  )
+								: null}
 						</div>
 
 						<div className="register-div-password">
@@ -106,9 +119,18 @@ export default function Register() {
 								className="register-imput-password box-shadow form-control"
 							/>
 
-							<p className="register-invalid-text-input">
-								{/* msg de error */}
-							</p>
+							{errors
+								? errors.map((err, i) =>
+										err.param === "password" ? (
+											<p
+												className="register-invalid-text-input"
+												key={i}
+											>
+												{err.msg}
+											</p>
+										) : null
+								  )
+								: null}
 						</div>
 						<div className="register-div-confirmPassword">
 							<label
@@ -117,15 +139,24 @@ export default function Register() {
 							></label>
 							<input
 								type="password"
-								name="confirm-password"
+								name="confirmPassword"
 								id="confirm-password"
 								placeholder=" Confirmar Contraseña"
 								className="register-imput-password box-shadow form-control"
 							/>
 
-							<p className="register-invalid-text-input">
-								{/* msg de error */}
-							</p>
+							{errors
+								? errors.map((err, i) =>
+										err.param === "confirmPassword" ? (
+											<p
+												className="register-invalid-text-input"
+												key={i}
+											>
+												{err.msg}
+											</p>
+										) : null
+								  )
+								: null}
 						</div>
 						<div className="register-div-img">
 							<label htmlFor="image" className="form-label">
@@ -141,9 +172,18 @@ export default function Register() {
 							/>
 
 							<div className="text-danger">
-								<p className="register-invalid-text-input">
-									{/* msg de error */}
-								</p>
+								{errors
+									? errors.map((err, i) =>
+											err.param === "image" ? (
+												<p
+													className="register-invalid-text-input"
+													key={i}
+												>
+													{err.msg}
+												</p>
+											) : null
+									  )
+									: null}
 							</div>
 						</div>
 					</section>
@@ -152,13 +192,17 @@ export default function Register() {
 						<div className="register-div-enter">
 							<button
 								type="submit"
+								disabled={isLoading}
 								name="button-enter"
 								className="register-button-enter box-shadow btn-secondary"
 							>
 								<p>INGRESAR</p>
-								<p></p>
 							</button>
 						</div>
+
+						{notNew ? (
+							<p className="credentials-error">{notNew}</p>
+						) : null}
 
 						<div className="register-div-to-login">
 							<p>

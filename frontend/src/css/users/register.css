@@ -161,9 +161,10 @@ MAIN
 	font-weight: bold;
 }
 
-.errores {
+.credentials-error {
 	color: #aa0d3f;
-	text-shadow: black;
+	text-align: center;
+	font-weight: bold;
 	padding-bottom: 10%;
 }
 
@@ -220,7 +221,7 @@ MAIN
 		color: #252525;
 	}
 
-	.errores {
+	.credentials-error {
 		padding-bottom: 0%;
 	}
 }
