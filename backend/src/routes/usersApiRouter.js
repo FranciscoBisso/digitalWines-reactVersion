@@ -1,9 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const userApiController = require("../controllers/userApiController");
+const uploadFile = require("../middlewares/multerUsers");
+const registerValidations = require("../middlewares/validations/registerValidations");
 
 // SING UP
-router.post("/register", userApiController.register);
+router.post(
+	"/register",
+	uploadFile.single("image"),
+	registerValidations,
+	userApiController.register
+);
 
 // LOGIN
 router.post("/login", userApiController.login);

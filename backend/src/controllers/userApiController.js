@@ -1,6 +1,7 @@
 const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { validationResult } = require("express-validator");
 
 const createToken = (id) => {
 	return jwt.sign({ id }, process.env.SECRET);
@@ -12,35 +13,43 @@ const createToken = (id) => {
 
 const userApiController = {
 	register: async (req, res) => {
-		const existingEmail = await db.Usuarios.findOne({
-			where: { email: req.body.email },
-		});
+		const errors = validationResult(req);
+		console.log("errors", errors);
 
-		if (!existingEmail) {
-			const newUser = await db.Usuarios.create({
-				//chequear que los inputs tengan estos nombres.
-				nombre: req.body.nombre,
-				email: req.body.email,
-				contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
-				tipo_id: 2,
-				imagen: req.body.imagen,
-				//imagen: req.file.path.split("public").pop(),
+		if (errors.isEmpty()) {
+			const existingEmail = await db.Usuarios.findOne({
+				where: { email: req.body.email },
 			});
 
-			const token = createToken(newUser.id);
+			if (!existingEmail) {
+				const newUser = await db.Usuarios.create({
+					//chequear que los inputs tengan estos nombres.
+					nombre: req.body.name,
+					email: req.body.email,
+					contrasenia: bcryptjs.hashSync(req.body.password, 10),
+					tipo_id: 2,
+					imagen: req.file.path.split("public").pop(),
+				});
 
-			res.status(200).json({
-				newUser: {
-					nombre: newUser.nombre,
-					email: newUser.email,
-					imagen: newUser.imagen,
-				},
-				token: token,
-			});
-		}
-		if (existingEmail) {
+				const token = createToken(newUser.id);
+
+				res.status(200).json({
+					newUser: {
+						nombre: newUser.nombre,
+						email: newUser.email,
+						imagen: newUser.imagen,
+					},
+					token: token,
+				});
+			}
+			if (existingEmail) {
+				res.status(400).json({
+					credentialsError: "Credenciales inválidas.",
+				});
+			}
+		} else {
 			res.status(400).json({
-				credentialsError: "Credenciales inválidas.",
+				errors: errors.errors,
 			});
 		}
 	},
