@@ -97,8 +97,8 @@ MAIN
 .login-invalid-text-input {
 	color: #aa0d3f;
 	font-style: italic;
-	padding: 4%;
-	display: none;
+	font-weight: bold;
+	margin: 0;
 }
 
 .login-div-password {

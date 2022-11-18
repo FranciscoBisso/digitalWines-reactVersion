@@ -27,8 +27,9 @@ export const useRegister = () => {
 			// guardar en localStorage el user
 			localStorage.setItem("user", JSON.stringify(json.newUser));
 
-			// useAuthContext
+			// actualiza el estado global de autContext
 			dispatch({ type: "LOGIN", payload: json });
+
 			setIsLoading(false);
 
 			navigate("/");

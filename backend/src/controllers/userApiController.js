@@ -14,7 +14,6 @@ const createToken = (id) => {
 const userApiController = {
 	register: async (req, res) => {
 		const errors = validationResult(req);
-		console.log("errors", errors);
 
 		if (errors.isEmpty()) {
 			const existingEmail = await db.Usuarios.findOne({
@@ -55,30 +54,43 @@ const userApiController = {
 	},
 
 	login: async (req, res) => {
-		const user = await db.Usuarios.findOne({
-			where: { email: req.body.email },
-		});
+		const errors = validationResult(req);
+		console.log(errors);
 
-		if (user) {
-			const match = bcryptjs.compareSync(
-				req.body.contrasenia,
-				user.contrasenia
-			);
-			if (match) {
-				const token = createToken(user.id);
+		if (errors.isEmpty()) {
+			const user = await db.Usuarios.findOne({
+				where: { email: req.body.email },
+			});
 
-				res.status(200).json({
-					loggedUser: {
-						nombre: user.nombre,
-						email: user.email,
-						imagen: user.imagen,
-					},
-					token: token,
+			if (user) {
+				const match = bcryptjs.compareSync(
+					req.body.password,
+					user.contrasenia
+				);
+				if (match) {
+					const token = createToken(user.id);
+
+					res.status(200).json({
+						loggedUser: {
+							nombre: user.nombre,
+							email: user.email,
+							imagen: user.imagen,
+						},
+						token: token,
+					});
+				} else {
+					res.status(400).json({
+						credentialsError: "Credenciales inválidas.",
+					});
+				}
+			} else {
+				res.status(400).json({
+					credentialsError: "Credenciales inválidas.",
 				});
 			}
 		} else {
 			res.status(400).json({
-				credentialsError: "Credenciales inválidas.",
+				formErrors: errors.errors,
 			});
 		}
 	},
@@ -93,8 +105,6 @@ const userApiController = {
 	update: async (req, res) => {},
 
 	delete: async (req, res) => {},
-
-	logout: async (req, res) => {},
 };
 
 module.exports = userApiController;

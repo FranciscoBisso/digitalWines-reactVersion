@@ -3,6 +3,7 @@ const router = express.Router();
 const userApiController = require("../controllers/userApiController");
 const uploadFile = require("../middlewares/multerUsers");
 const registerValidations = require("../middlewares/validations/registerValidations");
+const loginValidations = require("../middlewares/validations/loginValidations");
 
 // SING UP
 router.post(
@@ -13,7 +14,7 @@ router.post(
 );
 
 // LOGIN
-router.post("/login", userApiController.login);
+router.post("/login", loginValidations, userApiController.login);
 
 // ACCOUNT DETAILS
 router.get("/profile/:id", userApiController.details);
@@ -23,8 +24,5 @@ router.put("/profile/:id", userApiController.update);
 
 // DELETE PROFILE
 router.delete("/delete/:id", userApiController.delete);
-
-// LOGOUT
-router.get("/logout", userApiController.logout);
 
 module.exports = router;

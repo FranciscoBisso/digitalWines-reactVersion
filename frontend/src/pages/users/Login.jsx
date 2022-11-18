@@ -1,19 +1,19 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { useLogin } from "../../hooks/useLogin";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "../../css/users/login.css";
 import bg_img from "../../images/baco-ariadna.jpg";
 
 export default function Login() {
-	const submitHandler = (e) => {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const { login, isLoading, errors, badCredentials } = useLogin();
+
+	const submitHandler = async (e) => {
 		e.preventDefault();
-		const form = document.getElementById("login-form");
-		const formData = new FormData(form);
-		const email = formData.get("email");
-		const password = formData.get("password");
-		console.log("email", email);
-		console.log("password", password);
+		await login(email, password);
 	};
 
 	return (
@@ -63,11 +63,22 @@ export default function Login() {
 								id="email"
 								placeholder=" Correo electrónico"
 								className="login-imput-email login-box-shadow form-control"
+								onChange={(e) => setEmail(e.target.value)}
+								value={email}
 							/>
 
-							<p className="login-invalid-text-input">
-								{/* msg errores */}
-							</p>
+							{errors
+								? errors.map((err, i) =>
+										err.param === "email" ? (
+											<p
+												className="login-invalid-text-input"
+												key={i}
+											>
+												{err.msg}
+											</p>
+										) : null
+								  )
+								: null}
 						</div>
 						<div className="login-div-password">
 							<label
@@ -80,11 +91,22 @@ export default function Login() {
 								id="password"
 								placeholder=" Contraseña"
 								className="login-imput-password login-box-shadow form-control"
+								onChange={(e) => setPassword(e.target.value)}
+								value={password}
 							/>
 
-							<p className="login-invalid-text-input">
-								{/* msg errores */}
-							</p>
+							{errors
+								? errors.map((err, i) =>
+										err.param === "password" ? (
+											<p
+												className="login-invalid-text-input"
+												key={i}
+											>
+												{err.msg}
+											</p>
+										) : null
+								  )
+								: null}
 						</div>
 
 						<div className="login-div-enter">
@@ -92,9 +114,15 @@ export default function Login() {
 								type="submit"
 								name="button-enter"
 								className="login-button-enter login-box-shadow btn-secondary"
+								disabled={isLoading}
 							>
 								INGRESAR
 							</button>
+							{badCredentials ? (
+								<p className="login-invalid-text-input">
+									{badCredentials}
+								</p>
+							) : null}
 						</div>
 
 						<div className="login-div-subscribe">
