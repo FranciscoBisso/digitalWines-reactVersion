@@ -4,9 +4,9 @@ import "../css/Header.css";
 import logo from "../images/icono.ico";
 
 export default function Header() {
-	const logout = useLogout();
+	const { logout } = useLogout();
 
-	const clickHandler = () => {
+	const logoutHandler = () => {
 		logout();
 	};
 
@@ -30,14 +30,14 @@ export default function Header() {
 					<Link className="link_chica" to="/registro">
 						<i className="far fa-address-card"></i>
 					</Link>
-					<Link className="link_chica" onClick={clickHandler} to="#">
+					<Link className="link_chica" onClick={logoutHandler} to="#">
 						<i className="fas fa-user-times"></i>
 					</Link>
 				</nav>
 
 				<nav className="contenedor-links_grande">
 					<Link to="/vinoteca">Vinoteca</Link>
-					<Link onClick={clickHandler} to="#">
+					<Link onClick={logoutHandler} to="#">
 						Logout
 					</Link>
 					<Link to="/login">Login</Link>
