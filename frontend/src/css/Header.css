@@ -53,6 +53,7 @@ header {
 	width: 70%;
 	display: flex;
 	flex-direction: row;
+	justify-content: flex-end;
 }
 
 .link_chica {
@@ -70,6 +71,15 @@ header {
 	align-self: center;
 	justify-self: center;
 	text-decoration: none;
+}
+
+.avatar {
+	min-width: 40px;
+	min-height: 40px;
+	max-width: 58px;
+	max-height: 58px;
+	border-radius: 8px;
+	align-self: center;
 }
 
 .contenedor-links_grande {
@@ -92,6 +102,14 @@ header {
 	}
 	.link_chica i {
 		font-size: 2rem;
+	}
+	.avatar {
+		min-width: 40px;
+		min-height: 40px;
+		max-width: 73px;
+		max-height: 100px;
+		border-radius: 8px;
+		align-self: center;
 	}
 }
 
@@ -126,5 +144,12 @@ header {
 	}
 	.contenedor-links_grande a:hover {
 		color: #ebebeb;
+	}
+
+	.avatar {
+		min-width: 60px;
+		min-height: 60px;
+		max-width: 80px;
+		max-height: 80px;
 	}
 }

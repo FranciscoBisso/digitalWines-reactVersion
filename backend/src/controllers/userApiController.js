@@ -36,7 +36,7 @@ const userApiController = {
 					newUser: {
 						nombre: newUser.nombre,
 						email: newUser.email,
-						imagen: newUser.imagen,
+						imagen: "http://localhost:3001" + newUser.imagen,
 					},
 					token: token,
 				});
@@ -74,7 +74,7 @@ const userApiController = {
 						loggedUser: {
 							nombre: user.nombre,
 							email: user.email,
-							imagen: user.imagen,
+							imagen: "http://localhost:3001" + user.imagen,
 						},
 						token: token,
 					});

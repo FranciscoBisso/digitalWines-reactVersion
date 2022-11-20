@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useEffect } from "react";
 
 // creo contexto
 export const AuthContext = createContext();
@@ -20,6 +20,16 @@ export const authReducer = (state, action) => {
 export function AuthContextProvider({ children }) {
 	// determino/registro el valor del contexto que estoy proveyendo. Como es dinámico, uso el hook useReducer() que maneja el contenido del contexto -del componente que provee el contexto-.
 	const [state, dispatch] = useReducer(authReducer, { user: null });
+
+	// para evitar que, al refrescar la página, react -pese a que el usuario está en localStorage- interprete que state de user es null.
+	// useEffect solo se dispara 1 vez y "actualiza" el state si hay algo guardado en localStorage
+	useEffect(() => {
+		const user = JSON.parse(localStorage.getItem("user"));
+
+		if (user) {
+			dispatch({ type: "LOGIN", payload: user });
+		}
+	}, []);
 
 	console.log("AuthContext state: ", state);
 

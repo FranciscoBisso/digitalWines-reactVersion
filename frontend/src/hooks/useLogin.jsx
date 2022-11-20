@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
 	const [errors, setErrors] = useState(null);
 	const [badCredentials, setBadCredentials] = useState(null);
 	const [isLoading, setIsLoading] = useState(null);
 	const { dispatch } = useAuthContext();
-	//const navigate = useNavigate();
+	const navigate = useNavigate();
 
 	const login = async (email, password) => {
 		setIsLoading(true);
@@ -30,7 +30,7 @@ export const useLogin = () => {
 
 			setIsLoading(false);
 
-			//navigate("/");
+			navigate("/");
 		}
 		if (!response.ok) {
 			setIsLoading(false);
