@@ -33,11 +33,9 @@ const userApiController = {
 				const token = createToken(newUser.id);
 
 				res.status(200).json({
-					newUser: {
-						nombre: newUser.nombre,
-						email: newUser.email,
-						imagen: "http://localhost:3001" + newUser.imagen,
-					},
+					nombre: newUser.nombre,
+					email: newUser.email,
+					imagen: "http://localhost:3001" + newUser.imagen,
 					token: token,
 				});
 			}
@@ -71,11 +69,9 @@ const userApiController = {
 					const token = createToken(user.id);
 
 					res.status(200).json({
-						loggedUser: {
-							nombre: user.nombre,
-							email: user.email,
-							imagen: "http://localhost:3001" + user.imagen,
-						},
+						nombre: user.nombre,
+						email: user.email,
+						imagen: "http://localhost:3001" + user.imagen,
 						token: token,
 					});
 				} else {
