@@ -7,7 +7,7 @@ function Home() {
 			<Helmet>
 				<title>HOME</title>
 			</Helmet>
-			<div className={styles.testing}>Hello there...!</div>
+			<div className={styles.robotoFont}>Hello there...!</div>
 		</>
 	);
 }
