@@ -6,6 +6,10 @@ function Home() {
 		<>
 			<Helmet>
 				<title>HOME</title>
+				<meta
+					name="description"
+					content="¡Bienvenido a nuestra página principal!"
+				/>
 			</Helmet>
 			<div className={styles.robotoFont}>Hello there...!</div>
 		</>
