@@ -1,11 +1,11 @@
-import styles from "../css/home.module.css";
 import { Helmet } from "react-helmet";
+import styles from "../css/home.module.css";
 
 function Home() {
 	return (
 		<>
 			<Helmet>
-				<title>HOME</title>
+				<title>DW | Home</title>
 				<meta
 					name="description"
 					content="¡Bienvenido a nuestra página principal!"
