@@ -38,8 +38,8 @@
 }
 
 .footer {
-	background-color: lightcoral;
 	margin-bottom: 8vh;
+	height: 8vh;
 }
 
 @media (min-width: 768px) {

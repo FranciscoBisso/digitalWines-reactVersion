@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-//import styles from "../css/home.module.css";
+import styles from "../css/home.module.css";
 
 function Home() {
 	return (
@@ -11,6 +11,14 @@ function Home() {
 					content="¡Bienvenido a nuestra página principal!"
 				/>
 			</Helmet>
+			<section className={styles.intro_section}>
+				<div className={styles.video_wrapper}>
+					<video src={styles.video}></video>
+				</div>
+				<div className={styles.remarcables}></div>
+			</section>
+			<section className={styles.middle_section}></section>
+			<section className={styles.bottom_section}></section>
 			<div className="robotoFont" style={{ color: "#ebebee" }}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
 				optio id eligendi repellat debitis, ratione laborum explicabo?

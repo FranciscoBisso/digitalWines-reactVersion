@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import styles from "../css/header.module.css";
-import logo from "../public/logo.png";
+import styles from "../css/components/header.module.css";
+import logo from "../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faWineBottle,

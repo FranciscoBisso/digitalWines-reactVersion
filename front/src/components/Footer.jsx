@@ -1,9 +1,11 @@
+import styles from "../css/components/footer.module.css";
+
 function Footer() {
 	return (
 		<>
-			<footer>
-				<div>Hola soy el footer</div>
-			</footer>
+			<div className={styles.footer_wrapper}>
+				<p>&copy; 2023 Digital Wine. Todos los derechos reservados.</p>
+			</div>
 		</>
 	);
 }
