@@ -1,7 +1,9 @@
 function Footer() {
 	return (
 		<>
-			<div>Hola soy el footer</div>
+			<footer>
+				<div>Hola soy el footer</div>
+			</footer>
 		</>
 	);
 }

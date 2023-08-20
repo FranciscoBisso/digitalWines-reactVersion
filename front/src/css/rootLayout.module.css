@@ -1,0 +1,99 @@
+/* * {
+	color: #ebebee; //WHITE
+} */
+/* FONTS - START */
+.cinzelFont {
+	font-family: "Cinzel", serif;
+}
+
+.ebGaramondFont {
+	font-family: "EB Garamond", serif;
+}
+.marcelusFont {
+	font-family: "Marcellus", serif;
+}
+
+.quattrocentoFont {
+	font-family: "Quattrocento", serif;
+}
+/* FONTS - END */
+
+.primary_bg_color {
+	background-color: #252525;
+}
+
+.secondary_bg_color {
+	background-color: #201f1d;
+}
+
+.header {
+	position: fixed;
+	bottom: 0;
+	height: 8vh;
+	border-top: 2px solid rgba(170, 13, 63, 0.7);
+}
+
+.main {
+	padding: 1%;
+}
+
+.footer {
+	background-color: lightcoral;
+	margin-bottom: 8vh;
+}
+
+@media (min-width: 768px) {
+	.header {
+		position: fixed;
+		height: 100vh;
+		left: 0;
+		bottom: 0;
+		top: 0;
+		width: 10vw;
+		border-top: none;
+		border-right: 2px solid rgba(170, 13, 63, 0.5);
+	}
+
+	.main {
+		width: 90vw;
+		margin-left: 10vw;
+	}
+
+	.footer {
+		width: 90vw;
+		margin-left: 10vw;
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 1025px) {
+	.header {
+		width: 5vw;
+	}
+	.main {
+		width: 95vw;
+		margin-left: 5vw;
+	}
+
+	.footer {
+		width: 95vw;
+		margin-left: 5vw;
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 1440px) {
+	.header {
+		width: 130px;
+	}
+	.main {
+		width: calc(100% - 130px);
+		margin-left: 130px;
+	}
+
+	.footer {
+		width: calc(100% - 130px);
+		margin-left: 130px;
+		margin-bottom: 0;
+	}
+}
