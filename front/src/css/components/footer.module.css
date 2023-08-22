@@ -1,5 +1,10 @@
 .footer_wrapper {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.copyright {
 	text-align: center;
-	padding: 1rem auto;
 	color: #ebebeb;
 }

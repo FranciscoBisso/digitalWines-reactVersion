@@ -18,30 +18,30 @@ function Header() {
 					<FontAwesomeIcon
 						icon={faWineBottle}
 						className={styles.icons}
-					/>
-					Vinoteca
+					/>{" "}
+					<span>Vinoteca</span>
 				</NavLink>
 				<NavLink className={styles.nav_link}>
 					<FontAwesomeIcon icon={faUser} className={styles.icons} />
-					Mi Cuenta
+					<span>Mi Cuenta</span>
 				</NavLink>
 				<NavLink className={styles.nav_link}>
 					<FontAwesomeIcon
 						icon={faWineGlassAlt}
 						className={styles.icons}
 					/>
-					Mi Cava
+					<span>Mi Cava</span>
 				</NavLink>
 				<NavLink className={styles.nav_link}>
 					<FontAwesomeIcon icon={faUser} className={styles.icons} />
-					Login
+					<span>Login</span>
 				</NavLink>
 				<NavLink className={styles.nav_link}>
 					<FontAwesomeIcon
 						icon={faUserPlus}
 						className={styles.icons}
 					/>
-					Registro
+					<span>Registro</span>
 				</NavLink>
 			</nav>
 		</>

@@ -6,17 +6,16 @@ import styles from "../css/layouts/rootLayout.module.css";
 function RootLayout() {
 	return (
 		<>
-			<header
-				className={`${styles.secondary_bg_color} ${styles.header} ${styles.cinzelFont}`}
-			>
+			<header className={`${styles.header} ${styles.cinzelFont}`}>
 				<Header />
 			</header>
 
-			<main className={`${styles.primary_bg_color} ${styles.main}`}>
+			<main className={`${styles.main} ${styles.marcelusFont}`}>
 				<Outlet />
+				Vamos a ver la fuente
 			</main>
 
-			<footer className={`${styles.primary_bg_color} ${styles.footer}`}>
+			<footer className={`${styles.footer} ${styles.marcelusFont}`}>
 				<Footer />
 			</footer>
 		</>
