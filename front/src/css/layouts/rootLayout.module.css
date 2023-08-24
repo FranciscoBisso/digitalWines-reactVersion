@@ -1,3 +1,13 @@
+:root {
+	--strongBlack: #rgba(32, 31, 29, 1);
+	--lightBlack: rgba(37, 37, 37, 1);
+	--gray: rgba(53, 53, 53, 1);
+	--lightGray: rgba(245, 245, 245, 0.2);
+	--red: rgba(170, 13, 63, 1);
+	--yellow: rgba(251, 186, 0, 1);
+	--white: rgba(245, 245, 245, 1);
+}
+
 /* FONTS - START */
 .cinzelFont {
 	font-family: "Cinzel", serif;
@@ -20,15 +30,15 @@
 	position: fixed;
 	bottom: 0;
 	height: 8vh;
-	border-top: 2px solid rgba(170, 13, 63, 0.7);
+	border-top: 2px solid var(--red);
 }
 
 .main {
-	background-color: #252525;
+	background-color: var(--lightBlack);
 }
 
 .footer {
-	background-color: #353535;
+	background-color: var(--lightBlack);
 	margin-bottom: 8vh;
 	height: 16vh;
 }
@@ -42,7 +52,7 @@
 		top: 0;
 		width: 12vw;
 		border-top: none;
-		border-right: 2px solid rgba(170, 13, 63, 0.5);
+		border-right: 2px solid var(--red);
 	}
 
 	.main {

@@ -19,14 +19,13 @@
 	align-items: center;
 	justify-content: space-evenly;
 	gap: 0.2rem;
-	color: #ebebee;
+	color: var(--white);
 	font-size: 0.5rem;
 }
 
 .icons {
 	font-size: 1.1rem;
-	color: rgba(170, 13, 63, 0.7);
-	border-color: #ebebee;
+	color: var(--red);
 }
 
 @media (min-width: 640px) {

@@ -6,7 +6,7 @@ import {
 	faWineBottle,
 	faUser,
 	faUserPlus,
-	faWineGlassAlt,
+	faWineGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
@@ -27,7 +27,7 @@ function Header() {
 				</NavLink>
 				<NavLink className={styles.nav_link}>
 					<FontAwesomeIcon
-						icon={faWineGlassAlt}
+						icon={faWineGlass}
 						className={styles.icons}
 					/>
 					<span>Mi Cava</span>

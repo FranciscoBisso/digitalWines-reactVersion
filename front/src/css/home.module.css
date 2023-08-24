@@ -4,10 +4,11 @@
 
 .video_wrapper {
 	background-color: aliceblue;
-	height: 90%;
 }
 
 .video {
+	height: 60vh;
+	object-fit: unset;
 }
 
 .remarcables {

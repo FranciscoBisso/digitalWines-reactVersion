@@ -6,5 +6,5 @@
 
 .copyright {
 	text-align: center;
-	color: #ebebeb;
+	color: var(--lightGray);
 }
