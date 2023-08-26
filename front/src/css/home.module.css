@@ -3,19 +3,19 @@
 }
 
 .video_wrapper {
-	background-color: aliceblue;
+	height: 60vh;
 }
 
 .video {
-	height: 60vh;
 	object-fit: unset;
+	height: 100%;
 }
 
-.remarcables {
+.wine_card_wrapper {
 }
 
-.middle_section {
+.wine_card {
 }
 
-.bottom_section {
+.wine_card_img {
 }

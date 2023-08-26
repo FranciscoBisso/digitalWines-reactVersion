@@ -10,12 +10,12 @@ function RootLayout() {
 				<Header />
 			</header>
 
-			<main className={`${styles.main} ${styles.marcelusFont}`}>
+			<main className={`${styles.main} ${styles.ebGaramondFont}`}>
 				<Outlet />
 				Vamos a ver la fuente
 			</main>
 
-			<footer className={`${styles.footer} ${styles.marcelusFont}`}>
+			<footer className={`${styles.footer} ${styles.ebGaramondFont}`}>
 				<Footer />
 			</footer>
 		</>

@@ -1,7 +1,7 @@
 :root {
-	--strongBlack: #rgba(32, 31, 29, 1);
-	--lightBlack: rgba(37, 37, 37, 1);
-	--gray: rgba(53, 53, 53, 1);
+	--strongBlack: rgba(0, 0, 0, 1);
+	--lightBlack: rgba(15, 15, 15, 1);
+	--gray: rgba(37, 37, 37, 1);
 	--lightGray: rgba(245, 245, 245, 0.2);
 	--red: rgba(170, 13, 63, 1);
 	--yellow: rgba(251, 186, 0, 1);
@@ -16,9 +16,6 @@
 .ebGaramondFont {
 	font-family: "EB Garamond", serif;
 }
-.marcelusFont {
-	font-family: "Marcellus", serif;
-}
 
 .quattrocentoFont {
 	font-family: "Quattrocento", serif;
@@ -26,7 +23,7 @@
 /* FONTS - END */
 
 .header {
-	background-color: #201f1d;
+	background-color: var(--strongBlack);
 	position: fixed;
 	bottom: 0;
 	height: 8vh;

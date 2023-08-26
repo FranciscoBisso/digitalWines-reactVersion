@@ -24,10 +24,10 @@ function Home() {
 						<source src={video} type="video/mp4" />
 					</video>
 				</div>
-				<div className={styles.remarcables}></div>
+				<div className={styles.wine_card_wrapper}></div>
 			</section>
-			<section className={styles.middle_section}></section>
-			<section className={styles.bottom_section}></section>
+			<section className={styles.wine_card_wrapper}></section>
+			<section className={styles.wine_card_wrapper}></section>
 		</>
 	);
 }
