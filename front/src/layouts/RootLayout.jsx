@@ -12,7 +12,6 @@ function RootLayout() {
 
 			<main className={`${styles.main} ${styles.ebGaramondFont}`}>
 				<Outlet />
-				Vamos a ver la fuente
 			</main>
 
 			<footer className={`${styles.footer} ${styles.ebGaramondFont}`}>
