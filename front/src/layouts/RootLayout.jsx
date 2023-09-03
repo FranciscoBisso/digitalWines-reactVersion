@@ -6,15 +6,15 @@ import styles from "../css/layouts/rootLayout.module.css";
 function RootLayout() {
 	return (
 		<>
-			<header className={`${styles.header} ${styles.cinzelFont}`}>
+			<header className={styles.header}>
 				<Header />
 			</header>
 
-			<main className={`${styles.main} ${styles.ebGaramondFont}`}>
+			<main className={styles.main}>
 				<Outlet />
 			</main>
 
-			<footer className={`${styles.footer} ${styles.ebGaramondFont}`}>
+			<footer className={styles.footer}>
 				<Footer />
 			</footer>
 		</>

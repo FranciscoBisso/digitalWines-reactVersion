@@ -1,0 +1,17 @@
+h2 {
+    color: var(--white);
+    font-family: var(--cinzelFont);
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navLinks {
+    font-family: var(--cinzelFont);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+}

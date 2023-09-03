@@ -1,31 +1,31 @@
 import { useQuery } from "@tanstack/react-query";
+import { fetchData } from "../services/fetchData";
 import { Helmet } from "react-helmet";
 import NotFound from './NotFound'
 import styles from "../css/home.module.css";
 import video from "../assets/promo-video.mp4";
-import { fetchData } from "../services/fetchData";
+import WinesGrid from '../components/WinesGrid'
 
 
 const url = "http://localhost:3001/api/home";
 
-function Home() {
-	const { data, status } = useQuery({
-        queryKey: ["winesInfo"],
+function Home({ pageTitle }) {
+    const { data, status } = useQuery({
+        queryKey: ["homeInfo"],
         queryFn: () => fetchData(url),
     });
-	
-	console.log('DATA ->', data);
-	console.log("STATUS ->", status);
 
-	return (
+    return (
         <>
             <Helmet>
-                <title>DW | Home</title>
+                <title>{pageTitle}</title>
                 <meta
                     name="description"
                     content="¡Bienvenido a nuestra página principal!"
                 />
             </Helmet>
+
+            
             {status === "error" && <NotFound />}
             {status === "loading" && (
                 <div className={styles.loading}>Loading...</div>
@@ -45,11 +45,15 @@ function Home() {
                             </video>
                         </div>
                         <div className={styles.wine_card_wrapper}>
-                            {data && data.data.destacados.map(destacado => (<div key={destacado.id}><p>{destacado.nombre}</p></div>))}
+                            {/* <WinesGrid wines={data.data.destacados} /> */}
                         </div>
                     </section>
-                    <section className={styles.wine_card_wrapper}></section>
-                    <section className={styles.wine_card_wrapper}></section>
+                    <section className={styles.wine_card_wrapper}>
+                        <WinesGrid wines={data.data.masEconomicos} />
+                    </section>
+                    <section className={styles.wine_card_wrapper}>
+                        <WinesGrid wines={data.data.masVendidos} />
+                    </section>
                 </>
             )}
         </>

@@ -6,24 +6,14 @@
 	--red: rgba(170, 13, 63, 1);
 	--yellow: rgba(251, 186, 0, 1);
 	--white: rgba(245, 245, 245, 1);
+	--cinzelFont: "Cinzel", serif;
+	--ebGaramondFont: "EB Garamond", serif;
+	--quattrocentoFont: "Quattrocento", serif;
 }
-
-/* FONTS - START */
-.cinzelFont {
-	font-family: "Cinzel", serif;
-}
-
-.ebGaramondFont {
-	font-family: "EB Garamond", serif;
-}
-
-.quattrocentoFont {
-	font-family: "Quattrocento", serif;
-}
-/* FONTS - END */
 
 .header {
 	background-color: var(--strongBlack);
+	font-family: var(--cinzelFont);
 	position: fixed;
 	bottom: 0;
 	height: 8vh;
@@ -32,10 +22,12 @@
 
 .main {
 	background-color: var(--lightBlack);
+	font-family: var(--ebGaramondFont);
 }
 
 .footer {
 	background-color: var(--lightBlack);
+	font-family: var(--ebGaramondFont);
 	margin-bottom: 8vh;
 	height: 16vh;
 }
