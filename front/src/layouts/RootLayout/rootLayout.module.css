@@ -1,89 +1,90 @@
 :root {
-	--strongBlack: rgba(0, 0, 0, 1);
-	--lightBlack: rgba(12, 12, 12, 1);
-	--gray: rgba(37, 37, 37, 1);
-	--lightGray: rgba(245, 245, 245, 0.2);
-	--red: rgba(170, 13, 63, 1);
-	--yellow: rgba(251, 186, 0, 1);
-	--white: rgba(245, 245, 245, 1);
-	--cinzelFont: "Cinzel", serif;
-	--ebGaramondFont: "EB Garamond", serif;
-	--quattrocentoFont: "Quattrocento", serif;
+    --strongBlack: rgba(0, 0, 0, 1);
+    --lightBlack: rgba(12, 12, 12, 1);
+    --gray: rgba(37, 37, 37, 1);
+    --lightGray: rgba(245, 245, 245, 0.2);
+    --red: rgba(170, 13, 63, 1);
+    --yellow: rgba(251, 186, 0, 1);
+    --white: rgba(245, 245, 245, 1);
+    --cinzelFont: "Cinzel", serif;
+    --ebGaramondFont: "EB Garamond", serif;
+    --quattrocentoFont: "Quattrocento", serif;
 }
 
 .header {
-	background-color: var(--strongBlack);
-	font-family: var(--cinzelFont);
-	position: fixed;
-	bottom: 0;
-	height: 8vh;
-	border-top: 2px solid var(--red);
+    background-color: var(--strongBlack);
+    font-family: var(--cinzelFont);
+    position: fixed;
+    bottom: 0;
+    height: 8vh;
+    border-top: 2px solid var(--red);
 }
 
 .main {
-	background-color: var(--lightBlack);
-	font-family: var(--ebGaramondFont);
+    min-height: 100vh;
+    background-color: var(--lightBlack);
+    font-family: var(--ebGaramondFont);
 }
 
 .footer {
-	background-color: var(--lightBlack);
-	font-family: var(--ebGaramondFont);
-	margin-bottom: 8vh;
-	height: 16vh;
+    background-color: var(--lightBlack);
+    font-family: var(--ebGaramondFont);
+    margin-bottom: 8vh;
+    height: 16vh;
 }
 
 @media (min-width: 640px) {
-	.header {
-		position: fixed;
-		height: 100vh;
-		left: 0;
-		bottom: 0;
-		top: 0;
-		width: 12vw;
-		border-top: none;
-		border-right: 2px solid var(--red);
-	}
+    .header {
+        position: fixed;
+        height: 100vh;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        width: 12vw;
+        border-top: none;
+        border-right: 2px solid var(--red);
+    }
 
-	.main {
-		width: 88vw;
-		margin-left: 12vw;
-	}
+    .main {
+        width: 88vw;
+        margin-left: 12vw;
+    }
 
-	.footer {
-		width: 88vw;
-		margin-left: 12vw;
-		margin-bottom: 0;
-	}
+    .footer {
+        width: 88vw;
+        margin-left: 12vw;
+        margin-bottom: 0;
+    }
 }
 
 @media (min-width: 1025px) {
-	.header {
-		width: 5vw;
-	}
-	.main {
-		width: 95vw;
-		margin-left: 5vw;
-	}
+    .header {
+        width: 5vw;
+    }
+    .main {
+        width: 95vw;
+        margin-left: 5vw;
+    }
 
-	.footer {
-		width: 95vw;
-		margin-left: 5vw;
-		margin-bottom: 0;
-	}
+    .footer {
+        width: 95vw;
+        margin-left: 5vw;
+        margin-bottom: 0;
+    }
 }
 
 @media (min-width: 1440px) {
-	.header {
-		width: 130px;
-	}
-	.main {
-		width: calc(100% - 130px);
-		margin-left: 130px;
-	}
+    .header {
+        width: 130px;
+    }
+    .main {
+        width: calc(100% - 130px);
+        margin-left: 130px;
+    }
 
-	.footer {
-		width: calc(100% - 130px);
-		margin-left: 130px;
-		margin-bottom: 0;
-	}
+    .footer {
+        width: calc(100% - 130px);
+        margin-left: 130px;
+        margin-bottom: 0;
+    }
 }

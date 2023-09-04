@@ -30,16 +30,12 @@ const router = createBrowserRouter(
                 path="vinoteca"
                 element={<Winecellar pageTitle={"Vinoteca"} />}
             />
-            <Route path="agregar" element={<Add pageTitle={"Agregar"} />} />
+
             <Route
                 path="detalle/:id"
                 element={<Details pageTitle={"Detalles"} />}
             />
-            <Route path="editar/:id" element={<Edit pageTitle={"Editar"} />} />
-            <Route
-                path="eliminar/:id"
-                element={<Delete pageTitle={"Eliminar"} />}
-            />
+
             <Route path="login" element={<Login pageTitle={"Login"} />} />
             <Route
                 path="registro"
@@ -48,6 +44,17 @@ const router = createBrowserRouter(
             <Route path="cava" element={<Cava pageTitle={"Mi cava"} />} />
             <Route path="cuenta" element={<Cuenta pageTitle={"Mi cuenta"} />} />
             <Route path="*" element={<NotFound pageTitle={"Ups! 404"} />} />
+            <Route path="/admin">
+                <Route path="agregar" element={<Add pageTitle={"Agregar"} />} />
+                <Route
+                    path="editar/:id"
+                    element={<Edit pageTitle={"Editar"} />}
+                />
+                <Route
+                    path="eliminar/:id"
+                    element={<Delete pageTitle={"Eliminar"} />}
+                />
+            </Route>
         </Route>
     )
 );
