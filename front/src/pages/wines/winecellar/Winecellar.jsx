@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "../../services/fetchData";
+import { fetchData } from "../../../services/fetchData";
 import { Helmet } from "react-helmet";
-import WinesGrid from "../../components/WinesGrid";
-import NotFound from "../NotFound";
-import styles from "../../css/wines/winecellar.module.css";
+import WinesGrid from "../../../components/winesGrid/WinesGrid";
+import NotFound from "../../notFound/NotFound";
+import styles from "./winecellar.module.css";
 
 function Winecellar({ pageTitle }) {
     const url = "http://localhost:3001/api/wines/winecellar";

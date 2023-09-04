@@ -1,26 +1,26 @@
 import {
-	createBrowserRouter,
-	createRoutesFromElements,
-	RouterProvider,
-	Route,
+    createBrowserRouter,
+    createRoutesFromElements,
+    RouterProvider,
+    Route,
 } from "react-router-dom";
 // LAYOUTS - PAGES - COMPONENTS
-import RootLayout from "./layouts/RootLayout";
+import RootLayout from "./layouts/RootLayout/RootLayout";
 // Página del home
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 // Páginas de los usuarios
-import Login from "./pages/users/Login";
-import Register from "./pages/users/Register";
-import Cuenta from "./pages/users/Cuenta";
-import Cava from "./pages/users/Cava";
+import Login from "./pages/users/login/Login";
+import Register from "./pages/users/register/Register";
+import Cuenta from "./pages/users/cuenta/Cuenta";
+import Cava from "./pages/users/cava/Cava";
 // Páginas de los vinos
-import Winecellar from "./pages/wines/Winecellar";
-import Add from "./pages/wines/Add";
-import Details from "./pages/wines/Details";
-import Edit from "./pages/wines/Edit";
-import Delete from "./pages/wines/Delete";
+import Winecellar from "./pages/wines/winecellar/Winecellar";
+import Add from "./pages/admin/addWine/Add";
+import Details from "./pages/wines/details/Details";
+import Edit from "./pages/admin/editWine/Edit";
+import Delete from "./pages/admin/deleteWine/Delete";
 // 404
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/notFound/NotFound";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -31,11 +31,20 @@ const router = createBrowserRouter(
                 element={<Winecellar pageTitle={"Vinoteca"} />}
             />
             <Route path="agregar" element={<Add pageTitle={"Agregar"} />} />
-            <Route path="detalle/:id" element={<Details pageTitle={"Detalles"} />} />
+            <Route
+                path="detalle/:id"
+                element={<Details pageTitle={"Detalles"} />}
+            />
             <Route path="editar/:id" element={<Edit pageTitle={"Editar"} />} />
-            <Route path="eliminar/:id" element={<Delete pageTitle={"Eliminar"} />} />
+            <Route
+                path="eliminar/:id"
+                element={<Delete pageTitle={"Eliminar"} />}
+            />
             <Route path="login" element={<Login pageTitle={"Login"} />} />
-            <Route path="registro" element={<Register pageTitle={"Registro"} />} />
+            <Route
+                path="registro"
+                element={<Register pageTitle={"Registro"} />}
+            />
             <Route path="cava" element={<Cava pageTitle={"Mi cava"} />} />
             <Route path="cuenta" element={<Cuenta pageTitle={"Mi cuenta"} />} />
             <Route path="*" element={<NotFound pageTitle={"Ups! 404"} />} />
@@ -44,11 +53,11 @@ const router = createBrowserRouter(
 );
 
 function App() {
-	return (
-		<>
-			<RouterProvider router={router} />
-		</>
-	);
+    return (
+        <>
+            <RouterProvider router={router} />
+        </>
+    );
 }
 
 export default App;

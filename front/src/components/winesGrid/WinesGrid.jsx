@@ -1,7 +1,9 @@
-export default function WinesGrid({wines}) {
+import styles from "./winesGrid.module.css";
+
+export default function WinesGrid({ wines }) {
     return (
         <>
-            <div>Soy el WinesGrid</div>;
+            <div className={styles}>Soy el WinesGrid</div>;
             {wines.map((wine) => (
                 <div key={wine.id}>
                     <img src={wine.imagen} />

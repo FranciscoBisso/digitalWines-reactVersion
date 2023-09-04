@@ -1,11 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "../services/fetchData";
+import { fetchData } from "../../services/fetchData";
 import { Helmet } from "react-helmet";
-import NotFound from './NotFound'
-import styles from "../css/home.module.css";
-import video from "../assets/promo-video.mp4";
-import WinesGrid from '../components/WinesGrid'
-
+import NotFound from "../notFound/NotFound";
+import WinesGrid from "../../components/winesGrid/WinesGrid";
+import video from "../../assets/promo-video.mp4";
+import styles from "./home.module.css";
 
 const url = "http://localhost:3001/api/home";
 
@@ -25,7 +24,6 @@ function Home({ pageTitle }) {
                 />
             </Helmet>
 
-            
             {status === "error" && <NotFound />}
             {status === "loading" && (
                 <div className={styles.loading}>Loading...</div>
