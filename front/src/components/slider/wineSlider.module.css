@@ -1,0 +1,17 @@
+.slider{
+    height: 30vh;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    gap: 1rem;
+    border: solid 2px lightblue;
+}
+
+.slider_item{
+    min-width: 33vw;
+}
+
+.slider_item img {
+    width: 100%;
+    height: 50%;
+}

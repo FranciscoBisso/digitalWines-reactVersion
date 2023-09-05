@@ -20,11 +20,8 @@
 	height: 100%;
 }
 
-.wine_card_wrapper {
-}
-
-.wine_card {
-}
-
-.wine_card_img {
+.slider_wrapper {
+	position: relative;
+	bottom: 15%;
+	border: solid 2px red;
 }
