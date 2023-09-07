@@ -1,27 +1,32 @@
-.loading{
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-	color: white;
+.loading {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
 }
 
 .intro_section {
-	height: 100vh;
+    border-bottom: 2px solid;
+    border-bottom-color: rgb(8, 124, 240);
+    position: relative;
+    margin-bottom: 8rem;
 }
 
 .video_wrapper {
-	height: 60vh;
+    height: 65vh;
+    border-bottom: 2px solid;
+    border-bottom-color: yellow;
 }
 
 .video {
-	object-fit: unset;
-	height: 100%;
+    object-fit: unset;
+    height: 100%;
 }
 
 .slider_wrapper {
-	position: relative;
-	bottom: 15%;
-	border: solid 2px red;
+    /* position: relative; */
+    position: absolute;
+    bottom: -8rem;
 }
