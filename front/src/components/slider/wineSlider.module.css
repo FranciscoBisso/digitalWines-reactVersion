@@ -1,5 +1,6 @@
 .title {
     font-family: var(--cinzelFont);
+    font-size: 1.7rem;
     color: var(--white);
     display: inline-block;
     text-align: center;
@@ -8,13 +9,18 @@
 .slider {
     display: flex;
     flex-wrap: nowrap;
-    overflow: scroll;
-    gap: 1rem;
+    overflow: auto;
+    gap: 1.2rem;
     padding: 0 4rem;
 }
 
+.slider::-webkit-scrollbar {
+    opacity: 0;
+}
+
+
 .slider_item {
-    min-width: 60vw;
+    min-width: 70vw;
     border-radius: 10px;
     background-color: var(--gray);
 }
