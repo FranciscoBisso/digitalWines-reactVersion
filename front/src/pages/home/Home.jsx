@@ -45,16 +45,25 @@ function Home({ pageTitle }) {
                             </video>
                         </div>
                         <div className={styles.slider_wrapper}>
-                            <WineSlider wines={data.data.destacados} />
+                            <WineSlider
+                                title={"Destacados"}
+                                wines={data.data.destacados}
+                            />
                         </div>
                     </section>
 
                     <section>
-                        <WineSlider wines={data.data.masEconomicos} />
+                        <WineSlider
+                            title={"Más Económicos"}
+                            wines={data.data.masEconomicos}
+                        />
                     </section>
 
                     <section>
-                        <WineSlider wines={data.data.masVendidos} />
+                        <WineSlider
+                            title={"Más Vendidos"}
+                            wines={data.data.masVendidos}
+                        />
                     </section>
                 </>
             )}
