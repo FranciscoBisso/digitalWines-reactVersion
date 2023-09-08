@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
 function Cava({ pageTitle }) {
@@ -5,13 +6,14 @@ function Cava({ pageTitle }) {
     <>
       <Helmet>
         <title>{pageTitle}</title>
-        <meta
-          name="description"
-          content="¡Bienvenido la página de tu cava!"
-        />
+        <meta name="description" content="¡Bienvenido la página de tu cava!" />
       </Helmet>
     </>
   );
 }
 
 export default Cava;
+
+Cava.propTypes = {
+  pageTitle: PropTypes.string,
+};
