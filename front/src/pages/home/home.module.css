@@ -11,7 +11,7 @@
     border-bottom: 2px solid;
     border-bottom-color: rgb(8, 124, 240);
     position: relative;
-    margin-bottom: 10rem;
+    margin-bottom: 7rem;
 }
 
 .video_wrapper {
@@ -27,5 +27,24 @@
 
 .slider_wrapper {
     position: absolute;
-    bottom: -10rem;
+    bottom: -7rem;
+}
+
+@media (min-width: 640px) {
+    .intro_section {
+        margin-bottom: 9rem;
+    }
+    .video_wrapper {
+        height: 90vh;
+        border-bottom: 2px solid;
+        border-bottom-color: yellow;
+    }
+    .slider_wrapper {
+        position: absolute;
+        bottom: -9rem;
+    }
+}
+@media (min-width: 1025px) {
+}
+@media (min-width: 1440px) {
 }

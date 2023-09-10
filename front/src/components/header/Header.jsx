@@ -15,7 +15,7 @@ function Header() {
         <>
             <img src={logo} alt="Logo" className={styles.logo} width="100%" />
             <nav className={styles.nav_bar}>
-                <NavLink className={styles.nav_link}>
+                <NavLink className={`${styles.nav_link} ${styles.home_icon}`}>
                     <FontAwesomeIcon icon={faHome} className={styles.icons} />{" "}
                     <span>Home</span>
                 </NavLink>
