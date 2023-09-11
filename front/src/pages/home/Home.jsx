@@ -35,20 +35,59 @@ function Home({ pageTitle }) {
                 <source src={video} type="video/mp4" />
               </video>
             </div>
+          </section>
+
+          <section className={styles.sliders_section}>
             <div className={styles.slider_wrapper}>
               <WineSlider title={"Destacados"} wines={data.data.destacados} />
             </div>
+            <div className={styles.slider_wrapper}>
+              <WineSlider
+                title={"Más Económicos"}
+                wines={data.data.masEconomicos}
+              />
+            </div>
+            <div className={styles.slider_wrapper}>
+              <WineSlider title={"Promociones"} wines={data.data.masVendidos} />
+            </div>
           </section>
-
-          <section>
-            <WineSlider
-              title={"Más Económicos"}
-              wines={data.data.masEconomicos}
-            />
-          </section>
-
-          <section>
-            <WineSlider title={"Promociones"} wines={data.data.masVendidos} />
+          <section
+            style={{
+              color: "white",
+              fontSize: "15px",
+              border: "1px solid aqua",
+            }}
+          >
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+              maxime, hic vitae reiciendis soluta veritatis perferendis commodi
+              quos eveniet voluptas aliquam quod error, nostrum beatae, labore
+              enim dolores odio consectetur!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+              maxime, hic vitae reiciendis soluta veritatis perferendis commodi
+              quos eveniet voluptas aliquam quod error, nostrum beatae, labore
+              enim dolores odio consectetur!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+              maxime, hic vitae reiciendis soluta veritatis perferendis commodi
+              quos eveniet voluptas aliquam quod error, nostrum beatae, labore
+              enim dolores odio consectetur!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+              maxime, hic vitae reiciendis soluta veritatis perferendis commodi
+              quos eveniet voluptas aliquam quod error, nostrum beatae, labore
+              enim dolores odio consectetur!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+              maxime, hic vitae reiciendis soluta veritatis perferendis commodi
+              quos eveniet voluptas aliquam quod error, nostrum beatae, labore
+              enim dolores odio consectetur!
+            </p>
           </section>
         </>
       )}
