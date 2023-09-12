@@ -8,14 +8,14 @@
 }
 
 .intro_section {
-    border-bottom: 2px solid;
-    border-bottom-color: rgb(8, 124, 240);
+    /* border-bottom: 2px solid;
+    border-bottom-color: rgb(8, 124, 240); */
 }
 
 .video_wrapper {
-    height: 72vh;
-    border-bottom: 2px solid;
-    border-bottom-color: yellow;
+    height: 67vh;
+    /* border-bottom: 2px solid;
+    border-bottom-color: yellow; */
 }
 
 .video {
@@ -24,7 +24,7 @@
 }
 
 .sliders_section {
-    border: solid 1px red;
+    /* border: solid 1px red; */
     position: relative;
     top: -6rem;
     margin-bottom: -6rem;
@@ -35,18 +35,6 @@
 }
 
 @media (min-width: 640px) {
-    .intro_section {
-        margin-bottom: 9rem;
-    }
-    .video_wrapper {
-        height: 90vh;
-        border-bottom: 2px solid;
-        border-bottom-color: yellow;
-    }
-    .slider_wrapper {
-        position: absolute;
-        bottom: -9rem;
-    }
 }
 @media (min-width: 1025px) {
 }

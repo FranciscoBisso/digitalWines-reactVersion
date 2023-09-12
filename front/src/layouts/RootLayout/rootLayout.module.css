@@ -20,7 +20,6 @@
     --font-sz-8: 3.5rem;
 }
 
-
 .header {
     background-color: var(--strongBlack);
     font-family: var(--cinzelFont);
@@ -28,7 +27,7 @@
     z-index: 10;
     bottom: 0;
     height: 8vh;
-    border-top: 2px solid var(--red);
+    /* border-top: 2px solid var(--red); */
 }
 
 .main {
@@ -53,7 +52,7 @@
         top: 0;
         width: 12vw;
         border-top: none;
-        border-right: 2px solid var(--red);
+        /* border-right: 2px solid var(--red); */
     }
 
     .main {

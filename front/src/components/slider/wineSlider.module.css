@@ -1,6 +1,6 @@
 .title {
     font-family: var(--cinzelFont);
-    font-size: var(--font-sz-4);
+    font-size: var(--font-sz-3);
     color: var(--white);
     display: inline-block;
     text-align: center;
@@ -20,10 +20,11 @@
 }
 
 .slider_item {
-    min-width: 55vw;
-    max-width: 55vw;
+    min-width: 40vw;
+    max-width: 40vw;
     border-radius: 10px;
     cursor: pointer;
+    margin-bottom: 2rem;
 }
 
 .slider_item:hover {
