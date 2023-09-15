@@ -41,8 +41,21 @@
     aspect-ratio: 1;
 }
 
+.modal {
+    width: 80%;
+    position: fixed;
+    top: 40%;
+    margin: 0 auto;
+    background-color: var(--lightBlack);
+    border: none;
+    border-radius: 10px;
+}
+
 .wine_description {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .name {
@@ -56,6 +69,15 @@
 
 .price {
     color: var(--green);
+}
+
+button {
+    background-color: var(--gray);
+    color: var(--white);
+    width: 10%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
 }
 
 @media (min-width: 640px) {
