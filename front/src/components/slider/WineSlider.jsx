@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
 import styles from "./wineSlider.module.css";
 import { useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faXmark,
+  faWineGlass,
+  faStar,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function WinesSlider({ wines, title }) {
   const modal = useRef();
@@ -28,7 +35,7 @@ export default function WinesSlider({ wines, title }) {
               open(wine);
             }}
           >
-            <img src={wine.imagen} loading="lazy" />
+            <img className={styles.item_img} src={wine.imagen} loading="lazy" />
           </div>
         ))}
       </div>
@@ -36,14 +43,32 @@ export default function WinesSlider({ wines, title }) {
       <dialog className={styles.modal} ref={modal}>
         {selectedWine && (
           <>
-            <img src={selectedWine.imagen} loading="lazy" />
-            <div className={styles.wine_description}>
+            <img
+              className={styles.modal_img}
+              src={selectedWine.imagen}
+              loading="lazy"
+            />
+            <div className={styles.buttons_wrapper}>
+              <button onClick={close}>
+                <FontAwesomeIcon icon={faWineGlass} />
+              </button>
+              <button onClick={close}>
+                <FontAwesomeIcon icon={faStar} />
+              </button>
+              <button onClick={close}>
+                <FontAwesomeIcon icon={faPlus} />
+              </button>
+
+              <button onClick={close}>
+                <FontAwesomeIcon icon={faXmark} />
+              </button>
+            </div>
+            <div className={styles.description}>
               <h4 className={styles.name}>{selectedWine.nombre}</h4>
               <h5 className={styles.vineyard}>
                 {selectedWine.vinoBodega.nombre}
               </h5>
               <h6 className={styles.price}>{`AR$ ${selectedWine.precio}`}</h6>
-              <button onClick={close}>X</button>
             </div>
           </>
         )}
