@@ -5,7 +5,8 @@ import { useRef } from "react";
 export default function WinesSlider({ wines, title }) {
     const modal = useRef();
 
-    const open = () => {
+    const open = (e) => {
+        e.stopPropagation();
         modal?.current.showModal();
     };
     const close = (e) => {
@@ -35,7 +36,6 @@ export default function WinesSlider({ wines, title }) {
                                     className={styles.price}
                                 >{`AR$ ${wine.precio}`}</h6>
                                 <button onClick={close}>X</button>
-                                {/* <button>X</button> OPTION 2*/}
                             </div>
                         </dialog>
                     </div>
