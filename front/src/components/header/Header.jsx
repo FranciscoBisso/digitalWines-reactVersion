@@ -13,7 +13,14 @@ import {
 function Header() {
     return (
         <>
-            <img src={logo} alt="Logo" className={styles.logo} width="100%" />
+            <NavLink>
+                <img
+                    src={logo}
+                    alt="Logo"
+                    className={styles.logo}
+                    width="100%"
+                />
+            </NavLink>
             <nav className={styles.nav_bar}>
                 <NavLink className={`${styles.nav_link} ${styles.home_icon}`}>
                     <FontAwesomeIcon icon={faHome} className={styles.icons} />{" "}
