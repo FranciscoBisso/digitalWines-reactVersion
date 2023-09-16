@@ -31,7 +31,7 @@
     width: 100%;
     height: 100%;
     transform: scale(0.9);
-    transition: 200ms;
+    transition: 100ms;
 }
 
 .item_img {
@@ -42,14 +42,23 @@
 }
 
 .modal {
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    background-color: var(--lightBlack);
+    background-color: transparent;
+    padding: 5%;
     border: none;
-    border-radius: 10px;
 }
 
 .modal::backdrop {
     background-color: rgba(37, 37, 37, 0.7);
+}
+
+.card {
+    background-color: var(--lightBlack);
+    border-radius: 10px;
+    position: relative;
+    aspect-ratio: 1;
 }
 
 .modal_img {
@@ -62,7 +71,6 @@
 }
 
 .description {
-
 }
 
 .name {
@@ -89,7 +97,24 @@ button {
     aspect-ratio: 1;
     background: transparent;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+}
+
+.link_button {
+    text-decoration: none;
+    color: var(--red);
+}
+
+.exit_button {
+    position: absolute;
+    top: -4%;
+    right: -5%;
+    width: 12%;
+    aspect-ratio: 1;
+    border: 2.5px solid var(--red);
+    border-radius: 50%;
+    background-color: var(--lightBlack);
+    color: var(--white);
 }
 
 @media (min-width: 640px) {

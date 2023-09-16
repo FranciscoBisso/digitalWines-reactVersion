@@ -69,50 +69,51 @@ function Home({ pageTitle }) {
                         style={{
                             color: "white",
                             fontSize: "15px",
-                            border: "1px solid aqua",
+                            border: "1px solid var(--lightGray)",
+                            padding: "2% 5%",
+                            textAlign: "justify",
+                            lineHeight: "1.5em",
                         }}
                     >
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Id maxime, hic vitae reiciendis soluta
-                            veritatis perferendis commodi quos eveniet voluptas
-                            aliquam quod error, nostrum beatae, labore enim
-                            dolores odio consectetur!
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Id maxime, hic vitae reiciendis soluta
-                            veritatis perferendis commodi quos eveniet voluptas
-                            aliquam quod error, nostrum beatae, labore enim
-                            dolores odio consectetur!
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Id maxime, hic vitae reiciendis soluta
-                            veritatis perferendis commodi quos eveniet voluptas
-                            aliquam quod error, nostrum beatae, labore enim
-                            dolores odio consectetur!
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Id maxime, hic vitae reiciendis soluta
-                            veritatis perferendis commodi quos eveniet voluptas
-                            aliquam quod error, nostrum beatae, labore enim
-                            dolores odio consectetur!
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Id maxime, hic vitae reiciendis soluta
-                            veritatis perferendis commodi quos eveniet voluptas
-                            aliquam quod error, nostrum beatae, labore enim
-                            dolores odio consectetur!
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Id maxime, hic vitae reiciendis soluta
-                            veritatis perferendis commodi quos eveniet voluptas
-                            aliquam quod error, nostrum beatae, labore enim
-                            dolores odio consectetur!
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Illum fugit laudantium veniam debitis nisi
+                            quibusdam earum nihil nesciunt tempore et ipsum
+                            eveniet labore quaerat eos mollitia laboriosam
+                            quisquam obcaecati laborum quae, impedit temporibus
+                            itaque maxime voluptatibus! Alias veritatis,
+                            laboriosam similique inventore consequatur voluptate
+                            corporis amet, hic quis dolorem nisi id! Esse iste
+                            et dignissimos dolore laudantium. Amet maiores sed
+                            adipisci nam libero eligendi necessitatibus
+                            cupiditate sequi rerum quam, ut error numquam earum
+                            nulla at quidem voluptate voluptas culpa officia
+                            explicabo molestiae porro laudantium quisquam?
+                            Similique distinctio illum aliquam earum
+                            consequuntur possimus. Libero culpa blanditiis
+                            veritatis cum repellat, nulla ipsam magni quod, eos
+                            possimus aut quia dolores asperiores voluptatum! Qui
+                            sequi illo vel, ad inventore est nulla minima
+                            praesentium possimus ex quos explicabo impedit! Quas
+                            commodi a voluptas quisquam. Nisi laudantium sint
+                            sunt dolores vitae reiciendis incidunt eligendi
+                            asperiores dicta placeat magnam mollitia omnis error
+                            adipisci, eos esse excepturi tempora sequi hic
+                            quaerat itaque ipsa eius aliquid libero. Delectus,
+                            ad? Earum aliquam sit atque recusandae aspernatur ab
+                            possimus in quisquam odit accusamus officiis animi
+                            repudiandae praesentium harum quia fugit sequi ad,
+                            aut minima, reiciendis officia, est alias aperiam!
+                            Magnam exercitationem laudantium nam? Mollitia modi
+                            vitae ad sit sed corporis nostrum incidunt nemo
+                            natus in! Aspernatur dicta dolores commodi
+                            temporibus rem et illo molestias iure debitis
+                            necessitatibus, perferendis ducimus fugiat
+                            similique! Hic ipsa delectus consectetur eos nobis
+                            natus asperiores, tempora maxime porro quam id
+                            veritatis eius nisi eveniet, nemo ipsum libero
+                            voluptatibus. Rem, nihil. Sint velit eius
+                            repellendus libero eum molestias error!
                         </p>
                     </section>
                 </>
