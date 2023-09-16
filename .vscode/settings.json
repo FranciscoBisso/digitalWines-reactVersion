@@ -1,0 +1,14 @@
+{
+    "css.completion.triggerPropertyValueCompletion": true,
+    "css.format.spaceAroundSelectorSeparator": true,
+    "css.lint.duplicateProperties": "warning",
+    "css.lint.float": "warning",
+    "css.lint.hexColorLength": "warning",
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+    "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": false,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.referencesCodeLens.showOnAllFunctions": true
+}
