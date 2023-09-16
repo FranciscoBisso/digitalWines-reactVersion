@@ -71,38 +71,44 @@
 }
 
 .description {
+    padding-top: 5%;
+    text-align: center;
 }
 
 .name {
-    color: var(--red);
-    font-family: var(--cinzelFont);
-}
-
-.vineyard {
+    width: 50%;
+    display: inline-block;
     color: var(--white);
+    font-family: var(--cinzelFont);
+    font-size: var(--font-sz-5);
 }
 
 .price {
+    width: 50%;
+    display: inline-block;
     color: var(--green);
+    font-size: var(--font-sz-4);
 }
 
 .buttons_wrapper {
+    position: absolute;
+    top: 25%;
+    width: 25%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-button {
+.actions {
     color: var(--red);
-    width: 10%;
-    aspect-ratio: 1;
     background: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: var(--font-sz-5);
 }
 
 .link_button {
     text-decoration: none;
-    color: var(--red);
+    padding: 5% 0;
 }
 
 .exit_button {
@@ -119,7 +125,6 @@ button {
 
 @media (min-width: 640px) {
     .title {
-        font-size: 1.2rem;
     }
 
     .slider_item {
