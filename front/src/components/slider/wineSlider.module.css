@@ -67,7 +67,7 @@
     border-top-left-radius: 10px;
     object-fit: cover;
     aspect-ratio: 1;
-    border-bottom: 4px solid var(--red);
+    /* border-bottom: 4px solid var(--red); */
 }
 
 .description {
@@ -81,6 +81,7 @@
     color: var(--white);
     font-family: var(--cinzelFont);
     font-size: var(--font-sz-5);
+    text-shadow: 0px 0px 4px var(--white);
 }
 
 .price {
@@ -88,6 +89,7 @@
     display: inline-block;
     color: var(--green);
     font-size: var(--font-sz-4);
+    text-shadow: 0px 0px 4px var(--green);
 }
 
 .buttons_wrapper {
@@ -104,11 +106,14 @@
     background: transparent;
     border: none;
     font-size: var(--font-sz-5);
+    filter: drop-shadow(0px 0px 4px var(--strongBlack));
 }
 
 .link_button {
     text-decoration: none;
     padding: 5% 0;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 4px var(--red));
 }
 
 .exit_button {
