@@ -3,6 +3,7 @@ import { fetchData } from "../../services/fetchData";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import NotFound from "../notFound/NotFound";
+import Loading from "../../components/loading/Loading";
 import WineSlider from "../../components/slider/WineSlider";
 import video from "../../assets/promo-video.mp4";
 import styles from "./home.module.css";
@@ -26,9 +27,7 @@ export default function Home({ pageTitle }) {
             </Helmet>
 
             {status === "error" && <NotFound />}
-            {status === "loading" && (
-                <div className={styles.loading}>Loading...</div>
-            )}
+            {status === "loading" && <Loading />}
             {status === "success" && (
                 <>
                     <section className={styles.intro_section}>

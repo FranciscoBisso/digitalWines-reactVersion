@@ -31,7 +31,7 @@
 }
 
 .main {
-    min-height: 100vh;
+    min-height: calc(100vh - 16vh - 8vh);
     background-color: var(--lightBlack);
     font-family: var(--ebGaramondFont);
 }
@@ -58,6 +58,7 @@
     .main {
         width: 88vw;
         margin-left: 12vw;
+        min-height: calc(100vh - 16vh);
     }
 
     .footer {

@@ -1,0 +1,14 @@
+.loading_wrapper {
+    height: calc(100vh - 8vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading_spinner {
+    color: var(--red);
+    font-size: 5rem;
+    width: 90vw;
+    opacity: 0.5;
+}

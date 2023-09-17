@@ -21,6 +21,7 @@ import Edit from "./pages/admin/editWine/Edit";
 import Delete from "./pages/admin/deleteWine/Delete";
 // 404
 import NotFound from "./pages/notFound/NotFound";
+import Loading from "./components/loading/Loading";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
                 path="vinoteca"
                 element={<Winecellar pageTitle={"Vinoteca"} />}
             />
+            <Route path="loading" element={<Loading />} />
 
             <Route
                 path="detalle/:id"
