@@ -10,7 +10,7 @@ import {
     faWineGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Header() {
+export default function Header() {
     return (
         <>
             <NavLink>
@@ -59,4 +59,3 @@ function Header() {
         </>
     );
 }
-export default Header;

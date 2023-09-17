@@ -3,7 +3,7 @@ import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import styles from "./rootLayout.module.css";
 
-function RootLayout() {
+export default function RootLayout() {
     return (
         <>
             <header className={styles.header}>
@@ -20,4 +20,3 @@ function RootLayout() {
         </>
     );
 }
-export default RootLayout;

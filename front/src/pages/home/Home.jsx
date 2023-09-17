@@ -9,7 +9,7 @@ import styles from "./home.module.css";
 
 const url = "http://localhost:3001/api/home";
 
-function Home({ pageTitle }) {
+export default function Home({ pageTitle }) {
     const { data, status } = useQuery({
         queryKey: ["homeInfo"],
         queryFn: () => fetchData(url),
@@ -125,5 +125,3 @@ function Home({ pageTitle }) {
 Home.propTypes = {
     pageTitle: PropTypes.string,
 };
-
-export default Home;
