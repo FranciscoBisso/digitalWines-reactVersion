@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom";
+import { Suspense } from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import styles from "./rootLayout.module.css";
+import Loading from "../../components/loading/Loading";
 
 export default function RootLayout() {
     return (
@@ -11,7 +13,9 @@ export default function RootLayout() {
             </header>
 
             <main className={styles.main}>
-                <Outlet />
+                <Suspense fallback={<Loading />}>
+                    <Outlet />
+                </Suspense>
             </main>
 
             <footer className={styles.footer}>

@@ -4,29 +4,34 @@ import {
     RouterProvider,
     Route,
 } from "react-router-dom";
+import { lazy } from "react";
 // LAYOUTS - PAGES - COMPONENTS
 import RootLayout from "./layouts/RootLayout/RootLayout";
 // Página del home
-import Home from "./pages/home/Home";
+const Home = lazy(() => import("./pages/home/Home"));
+
 // Páginas de los usuarios
-import Login from "./pages/users/login/Login";
-import Register from "./pages/users/register/Register";
-import Cuenta from "./pages/users/cuenta/Cuenta";
-import Cava from "./pages/users/cava/Cava";
+const Login = lazy(() => import("./pages/users/login/Login"));
+const Register = lazy(() => import("./pages/users/register/Register"));
+const Cuenta = lazy(() => import("./pages/users/cuenta/Cuenta"));
+const Cava = lazy(() => import("./pages/users/cava/Cava"));
+
 // Páginas de los vinos
-import Winecellar from "./pages/wines/winecellar/Winecellar";
-import Add from "./pages/admin/addWine/Add";
-import Details from "./pages/wines/details/Details";
-import Edit from "./pages/admin/editWine/Edit";
-import Delete from "./pages/admin/deleteWine/Delete";
-// 404
-import NotFound from "./pages/notFound/NotFound";
-import Loading from "./components/loading/Loading";
+const Winecellar = lazy(() => import("./pages/wines/winecellar/Winecellar"));
+const Add = lazy(() => import("./pages/admin/addWine/Add"));
+const Details = lazy(() => import("./pages/wines/details/Details"));
+const Edit = lazy(() => import("./pages/admin/editWine/Edit"));
+const Delete = lazy(() => import("./pages/admin/deleteWine/Delete"));
+
+// Fallback Components
+const NotFound = lazy(() => import("./pages/notFound/NotFound"));
+const Loading = lazy(() => import("./components/loading/Loading"));
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<RootLayout />}>
             <Route index element={<Home pageTitle={"Digital Wines"} />} />
+
             <Route
                 path="vinoteca"
                 element={<Winecellar pageTitle={"Vinoteca"} />}
