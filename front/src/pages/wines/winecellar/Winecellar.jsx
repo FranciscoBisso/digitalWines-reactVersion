@@ -3,6 +3,7 @@ import { fetchData } from "../../../services/fetchData";
 import { Helmet } from "react-helmet";
 import WinesGrid from "../../../components/winesGrid/WinesGrid";
 import NotFound from "../../notFound/NotFound";
+import Loading from "../../../components/loading/Loading";
 import styles from "./winecellar.module.css";
 import PropTypes from "prop-types";
 
@@ -24,9 +25,7 @@ export default function Winecellar({ pageTitle }) {
                 />
             </Helmet>
 
-            {status === "loading" && (
-                <div className={styles.loading}>Loading...</div>
-            )}
+            {status === "loading" && <Loading />}
             {status === "error" && <NotFound />}
             {status === "success" && (
                 <div className={styles.wrapper}>
