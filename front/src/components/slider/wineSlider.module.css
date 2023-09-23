@@ -1,139 +1,136 @@
+/* minimal measure considered 360 x 640 */
 .title {
-    font-family: var(--cinzelFont);
-    font-size: var(--font-sz-3);
-    color: var(--white);
-    display: inline-block;
-    text-align: center;
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-4);
+	color: var(--white);
+	display: inline-block;
+	text-align: center;
 }
 
 .slider {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    overflow: auto;
-    gap: 0.5rem;
-    padding: 0 2.5rem;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	overflow: auto;
+	gap: 0.25rem;
+	padding: 0 2.5rem;
 }
 
 .slider::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 .slider_item {
-    min-width: 40vw;
-    max-width: 40vw;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-bottom: 2rem;
+	min-width: 147px;
+	max-width: 147px;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
 .slider_item:hover {
-    width: 100%;
-    height: 100%;
-    transform: scale(0.9);
-    transition: 100ms;
+	width: 100%;
+	height: 100%;
+	transform: scale(0.9);
+	transition: 100ms;
 }
 
 .item_img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    aspect-ratio: 1;
+	width: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+	aspect-ratio: 1;
+	border: 2px solid var(--lightBlack);
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    background-color: transparent;
-    padding: 5%;
-    border: none;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	background-color: transparent;
+	padding: 5%;
+	border: none;
 }
 
 .modal::backdrop {
-    background-color: rgba(37, 37, 37, 0.7);
+	background-color: rgba(37, 37, 37, 0.7);
 }
 
 .card {
-    background-color: var(--lightBlack);
-    border-radius: 10px;
-    position: relative;
-    aspect-ratio: 1;
+	background-color: var(--lightBlack);
+	border-radius: 10px;
+	position: relative;
+	aspect-ratio: 1;
 }
 
 .modal_img {
-    width: 100%;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    object-fit: cover;
-    aspect-ratio: 1;
-    /* border-bottom: 4px solid var(--red); */
+	width: 100%;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	object-fit: cover;
+	aspect-ratio: 1;
+	/* border-bottom: 4px solid var(--red); */
 }
 
 .description {
-    padding-top: 5%;
-    text-align: center;
+	padding-top: 5%;
+	text-align: center;
 }
 
 .name {
-    width: 50%;
-    display: inline-block;
-    color: var(--white);
-    font-family: var(--cinzelFont);
-    font-size: var(--font-sz-5);
+	width: 50%;
+	display: inline-block;
+	color: var(--white);
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-5);
 }
 
 .price {
-    width: 50%;
-    display: inline-block;
-    color: var(--green);
-    font-size: var(--font-sz-4);
+	width: 50%;
+	display: inline-block;
+	color: var(--green);
+	font-size: var(--font-sz-4);
 }
 
 .buttons_wrapper {
-    position: absolute;
-    top: 25%;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+	position: absolute;
+	top: 25%;
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 .actions {
-    color: var(--red);
-    background: transparent;
-    border: none;
-    font-size: var(--font-sz-5);
-    filter: drop-shadow(0px 0px 4px var(--strongBlack));
+	color: var(--red);
+	background: transparent;
+	border: none;
+	font-size: var(--font-sz-5);
+	filter: drop-shadow(0px 0px 4px var(--strongBlack));
 }
 
 .link_button {
-    text-decoration: none;
-    padding: 5% 0;
-    cursor: pointer;
-    filter: drop-shadow(0px 0px 4px var(--red));
+	text-decoration: none;
+	padding: 5% 0;
+	cursor: pointer;
+	filter: drop-shadow(0px 0px 4px var(--red));
 }
 
 .exit_button {
-    position: absolute;
-    top: -4%;
-    right: -5%;
-    width: 12%;
-    aspect-ratio: 1;
-    border: 2.5px solid var(--red);
-    border-radius: 50%;
-    background-color: var(--lightBlack);
-    color: var(--white);
+	position: absolute;
+	top: -4%;
+	right: -5%;
+	width: 12%;
+	aspect-ratio: 1;
+	border: 2.5px solid var(--red);
+	border-radius: 50%;
+	background-color: var(--lightBlack);
+	color: var(--white);
 }
-
 @media (min-width: 640px) {
-    .title {
-    }
-
-    .slider_item {
-        min-width: 25vw;
-        max-width: 25vw;
-    }
+	/* .slider_item {
+		min-width: 25vw;
+		max-width: 25vw;
+	} */
 }
 @media (min-width: 1025px) {
 }
