@@ -7,7 +7,7 @@ import {
 	faXmark,
 	faWineGlass,
 	faStar,
-	faAngleDown,
+	faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function WinesSlider({ wines, title }) {
@@ -23,7 +23,6 @@ export default function WinesSlider({ wines, title }) {
 		modal?.current.close();
 		setSelectedWine(null);
 	};
-
 	return (
 		<>
 			<div>
@@ -56,36 +55,39 @@ export default function WinesSlider({ wines, title }) {
 							src={selectedWine.imagen}
 							loading="lazy"
 						/>
+						<div className={styles.actions_wrapper}>
+							<FontAwesomeIcon
+								icon={faWineGlass}
+								className={styles.actions}
+							/>
 
+							<FontAwesomeIcon
+								icon={faStar}
+								className={styles.actions}
+							/>
+							<Link
+								className={styles.actions}
+								to={`detalle/${selectedWine.id}`}>
+								<FontAwesomeIcon icon={faAngleRight} />
+							</Link>
+						</div>
 						<div className={styles.description}>
 							<h4 className={styles.name}>
 								{selectedWine.nombre}
 							</h4>
-							<h5
+							<h4 className={styles.vineyard}>
+								{selectedWine.vinoBodega.nombre}
+							</h4>
+							<h3
 								className={
 									styles.price
-								}>{`AR$ ${selectedWine.precio}`}</h5>
+								}>{`$${selectedWine.precio}`}</h3>
 						</div>
-						<div className={styles.buttons_wrapper}>
-							<button className={styles.actions}>
-								<FontAwesomeIcon icon={faWineGlass} />
-							</button>
-							<button className={styles.actions}>
-								<FontAwesomeIcon icon={faStar} />
-							</button>
-						</div>
-						<button className={styles.actions}>
-							<Link
-								className={`${styles.actions} ${styles.link_button}`}
-								to={`detalle/${selectedWine.id}`}>
-								<FontAwesomeIcon icon={faAngleDown} />
-							</Link>
-						</button>
-						<button
-							className={`${styles.actions} ${styles.exit_button}`}
-							onClick={close}>
-							<FontAwesomeIcon icon={faXmark} />
-						</button>
+						<FontAwesomeIcon
+							className={styles.exit_button}
+							icon={faXmark}
+							onClick={close}
+						/>
 					</div>
 				)}
 			</dialog>
