@@ -50,6 +50,8 @@
 	background-color: transparent;
 	padding: 1.45rem;
 	border: none;
+	outline: none;
+	/* outline-color: transparent; */
 }
 
 .modal::backdrop {
