@@ -55,33 +55,35 @@ export default function WinesSlider({ wines, title }) {
 							src={selectedWine.imagen}
 							loading="lazy"
 						/>
-						<div className={styles.actions_wrapper}>
-							<FontAwesomeIcon
-								icon={faWineGlass}
-								className={styles.actions}
-							/>
+						<div className={styles.card_body}>
+							<div className={styles.actions_wrapper}>
+								<FontAwesomeIcon
+									icon={faWineGlass}
+									className={styles.actions}
+								/>
 
-							<FontAwesomeIcon
-								icon={faStar}
-								className={styles.actions}
-							/>
-							<Link
-								className={styles.actions}
-								to={`detalle/${selectedWine.id}`}>
-								<FontAwesomeIcon icon={faAngleRight} />
-							</Link>
-						</div>
-						<div className={styles.description}>
-							<h4 className={styles.name}>
-								{selectedWine.nombre}
-							</h4>
-							<h4 className={styles.vineyard}>
-								{selectedWine.vinoBodega.nombre}
-							</h4>
-							<h3
-								className={
-									styles.price
-								}>{`$${selectedWine.precio}`}</h3>
+								<FontAwesomeIcon
+									icon={faStar}
+									className={styles.actions}
+								/>
+								<Link
+									className={styles.actions}
+									to={`detalle/${selectedWine.id}`}>
+									<FontAwesomeIcon icon={faAngleRight} />
+								</Link>
+							</div>
+							<div className={styles.description}>
+								<h4 className={styles.name}>
+									{selectedWine.nombre}
+								</h4>
+								<h4 className={styles.vineyard}>
+									{selectedWine.vinoBodega.nombre}
+								</h4>
+								<h3
+									className={
+										styles.price
+									}>{`$${selectedWine.precio}`}</h3>
+							</div>
 						</div>
 						<FontAwesomeIcon
 							className={styles.exit_button}
