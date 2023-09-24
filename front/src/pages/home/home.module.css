@@ -1,7 +1,8 @@
 /* minimal measure considered 360 x 640 */
 .video_wrapper {
 	height: 70vh;
-	border-bottom: 2px solid;
+	border: none;
+	/* border-bottom: 2px solid; */
 	/* border-bottom-color: yellow; */
 }
 
@@ -23,15 +24,12 @@
 
 @media (min-width: 640px) {
 	.video_wrapper {
-		height: 95vh;
-		border-bottom: 2px solid;
-		/* border-bottom-color: yellow; */
+		height: 100vh;
 	}
 	.sliders_section {
-		/* border: solid 1px red; */
 		position: static;
 		margin-bottom: 0rem;
-		padding: 2.5rem 0rem calc(2.5rem + 32.5px) 0rem;
+		padding: 2.5rem 0rem calc(2.5rem + 16.25px) 0rem;
 	}
 }
 @media (min-width: 1025px) {
