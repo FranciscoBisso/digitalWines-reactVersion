@@ -32,7 +32,21 @@
 		padding: 2.5rem 0rem calc(2.5rem + 16.25px) 0rem;
 	}
 }
-@media (min-width: 1025px) {
+
+@media (min-width: 768px) {
+	.video_wrapper {
+		height: 70vh;
+	}
+
+	.sliders_section {
+		border: solid 1px red;
+		position: relative;
+		top: -4rem;
+		margin-bottom: -4rem;
+	}
+}
+
+@media (min-width: 1020px) {
 }
 @media (min-width: 1440px) {
 }

@@ -198,7 +198,21 @@
 		right: -3%;
 	}
 }
+
+@media (min-width: 768px) {
+	.slider {
+		gap: 0.25rem;
+		padding: 0 5rem;
+	}
+
+	.slider_item {
+		min-width: 240px;
+		max-width: 240px;
+	}
+}
+
 @media (min-width: 1025px) {
 }
+
 @media (min-width: 1440px) {
 }
