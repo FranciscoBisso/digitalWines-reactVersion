@@ -56,35 +56,39 @@ export default function WinesSlider({ wines, title }) {
 							loading="lazy"
 						/>
 						<div className={styles.card_body}>
-							<div className={styles.actions_wrapper}>
-								<FontAwesomeIcon
-									icon={faWineGlass}
-									className={styles.actions}
-								/>
+							<h4
+								className={
+									styles.price
+								}>{`$${selectedWine.precio}`}</h4>
 
-								<FontAwesomeIcon
-									icon={faStar}
-									className={styles.actions}
-								/>
+							<div className={styles.actions_wrapper}>
+								<button className={styles.actions}>
+									<FontAwesomeIcon icon={faWineGlass} />
+									<span className={styles.actions_subtitle}>
+										Cava
+									</span>
+								</button>
+								<button className={styles.actions}>
+									<FontAwesomeIcon
+										icon={faStar}
+										bordered
+									/>
+									<span className={styles.actions_subtitle}>
+										Favoritos
+									</span>
+								</button>
+
 								<Link
 									className={styles.actions}
 									to={`detalle/${selectedWine.id}`}>
 									<FontAwesomeIcon icon={faAngleRight} />
+									<span className={styles.actions_subtitle}>
+										Info
+									</span>
 								</Link>
 							</div>
-							<div className={styles.description}>
-								<h4 className={styles.name}>
-									{selectedWine.nombre}
-								</h4>
-								<h4 className={styles.vineyard}>
-									{selectedWine.vinoBodega.nombre}
-								</h4>
-								<h3
-									className={
-										styles.price
-									}>{`$${selectedWine.precio}`}</h3>
-							</div>
 						</div>
+
 						<FontAwesomeIcon
 							className={styles.exit_button}
 							icon={faXmark}

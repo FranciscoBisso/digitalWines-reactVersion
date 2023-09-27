@@ -47,6 +47,8 @@
 
 /** MODAL */
 .modal {
+	width: 75%;
+	max-width: 310px;
 	margin: auto;
 	background-color: transparent;
 	padding: 1.45rem;
@@ -57,7 +59,6 @@
 
 .modal::backdrop {
 	background-color: rgba(37, 37, 37, 0.7);
-	height: calc(100vh - 8vh);
 }
 
 .card {
@@ -79,54 +80,53 @@
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	padding-top: 1.2%;
+	padding: 2% 0%;
 }
 
 .actions {
 	width: unset;
-	text-decoration: none;
+	font-size: var(--font-sz-3);
 	color: var(--red);
 	background: transparent;
+	text-decoration: none;
 	border: none;
-	font-size: var(--font-sz-3);
 	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
 }
 
 .actions:last-child {
 	font-size: var(--font-sz-4);
+	display: flex;
+	flex-direction: column;
+	gap: 0rem;
 }
 
-.actions:hover {
-	scale: 1.5;
-	filter: drop-shadow(0px 0px 1rem var(--white));
+.actions svg path {
+	cursor: pointer;
 }
 
-.description {
-	padding: 1% 4% 4.5% 7%;
+.actions svg path:hover {
+	scale: 1.2;
+	filter: drop-shadow(0rem 0rem 14rem var(--white));
 }
 
-.name {
-	color: var(--white);
-	color: var(--yellow);
-	font-family: var(--cinzelFont);
-	font-size: var(--font-sz-3);
-}
-
-.vineyard {
-	color: var(--lightGray);
+.actions_subtitle {
+	width: unset;
 	color: var(--white);
 	font-family: var(--cinzelFont);
-	font-size: var(--font-sz-1);
+	font-size: 0.5rem;
 }
 
 .price {
-	color: var(--green);
-	font-size: var(--font-sz-4);
-	font-family: var(--quattrocentoFont);
 	position: absolute;
 	top: 4%;
 	left: 4%;
-	padding-right: 8%;
+	width: 90%;
+	color: var(--green);
+	font-size: var(--font-sz-4);
+	font-family: var(--cinzelFont);
 }
 
 .exit_button {
@@ -148,23 +148,23 @@
 	filter: drop-shadow(0px 0px 1rem var(--white));
 }
 
-/* @media (min-width: 640px) {
-	.slider_item {
-		min-width: 165px;
-		max-width: 165px;
+@media (min-width: 640px) {
+	.slider {
+		height: 38vh;
 	}
 
+	/* * MODAL */
 	.modal {
 		border: 1px solid red;
-		overflow: unset;
-		overflow: none;
-		width: calc(100vw - 12vw);
-		margin: auto;
+		width: 100%;
+		max-width: calc(100vw - 12vw);
 		margin-left: 12vw;
 	}
 
 	.modal::backdrop {
 		height: 100vh;
+		max-width: calc(100vw - 12vw);
+		margin-left: 12vw;
 	}
 
 	.card {
@@ -172,37 +172,31 @@
 		margin: auto;
 		display: flex;
 	}
+
 	.modal_img {
-		width: 60%;
+		width: 80%;
 		border-top-right-radius: 0px;
 		border-bottom-left-radius: 10px;
 	}
 
 	.card_body {
-		display: flex;
-		flex-direction: column-reverse;
-		justify-content: space-between;
+		width: 20%;
 	}
 
 	.actions_wrapper {
-		padding: 8%;
+		height: 100%;
+		padding: 10% 0;
+		flex-direction: column;
 		justify-content: space-between;
 	}
 
-	.description {
-		padding: 8%;
-	}
-	.price {
-		position: static;
-		padding: 0;
-	}
 	.exit_button {
 		top: -5%;
 		right: -3%;
 	}
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) { 
 	.slider {
 		gap: 0.25rem;
 		padding: 0 5rem;
