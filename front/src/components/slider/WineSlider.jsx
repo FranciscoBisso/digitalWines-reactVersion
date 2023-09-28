@@ -7,7 +7,7 @@ import {
 	faXmark,
 	faWineGlass,
 	faStar,
-	faAngleRight,
+	faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function WinesSlider({ wines, title }) {
@@ -81,7 +81,7 @@ export default function WinesSlider({ wines, title }) {
 								<Link
 									className={styles.actions}
 									to={`detalle/${selectedWine.id}`}>
-									<FontAwesomeIcon icon={faAngleRight} />
+									<FontAwesomeIcon icon={faPlus} />
 									<span className={styles.actions_subtitle}>
 										Info
 									</span>
