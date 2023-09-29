@@ -1,14 +1,37 @@
+/* @MEDIA-QUERY RULES FOR DIFFERENT DEVICES 
+SMALL PHONES: width -> 360px || height -> 640px
+MEDIUM TABLETS: width -> 768px || height -> 1024px
+BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px
+BIG MONITORS: width -> 2560px || height -> 1600px 
+*/
+
 .loading_wrapper {
-    height: calc(100vh - 8vh);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	height: calc(100vh - 8vh);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .loading_spinner {
-    color: var(--red);
-    font-size: 5rem;
-    width: 90vw;
-    opacity: 0.5;
+	color: var(--red);
+	font-size: 5rem;
+	width: 90vw;
+	opacity: 0.5;
+}
+
+/* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
+@media (min-width: 640px) {
+}
+
+/* MEDIUM TABLETS: width -> 768px || height -> 1024px */
+@media (min-width: 768px) {
+}
+
+/* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
+@media (min-width: 1024px) {
+}
+
+/* BIG MONITORS: width -> 2560px || height -> 1600px */
+@media (min-width: 2560px) {
 }

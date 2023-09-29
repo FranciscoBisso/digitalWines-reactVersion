@@ -1,101 +1,126 @@
 :root {
-    --strongBlack: rgba(0, 0, 0, 1);
-    --lightBlack: rgba(12, 12, 12, 1);
-    --gray: rgba(37, 37, 37, 1);
-    --lightGray: rgba(245, 245, 245, 0.2);
-    --red: rgba(170, 13, 63, 1);
-    --green: rgb(57, 181, 74, 1);
-    --yellow: rgba(251, 186, 0, 1);
-    --white: rgba(245, 245, 245, 1);
-    --cinzelFont: "Cinzel", serif;
-    --ebGaramondFont: "EB Garamond", serif;
-    --quattrocentoFont: "Quattrocento", serif;
-    --font-sz-1: 1rem;
-    --font-sz-2: 1.1rem;
-    --font-sz-3: 1.25rem;
-    --font-sz-4: 1.5rem;
-    --font-sz-5: 2rem;
-    --font-sz-6: 2.5rem;
-    --font-sz-7: 3rem;
-    --font-sz-8: 3.5rem;
+	--strongBlack: rgba(0, 0, 0, 1);
+	--lightBlack: rgba(12, 12, 12, 1);
+	--gray: rgba(37, 37, 37, 1);
+	--lightGray: rgba(245, 245, 245, 0.2);
+	--red: rgba(170, 13, 63, 1);
+	--green: rgb(57, 181, 74, 1);
+	--yellow: rgba(251, 186, 0, 1);
+	--white: rgba(245, 245, 245, 1);
+	--cinzelFont: "Cinzel", serif;
+	--ebGaramondFont: "EB Garamond", serif;
+	--quattrocentoFont: "Quattrocento", serif;
+	--font-sz-1: 1rem;
+	--font-sz-2: 1.1rem;
+	--font-sz-3: 1.25rem;
+	--font-sz-4: 1.5rem;
+	--font-sz-5: 2rem;
+	--font-sz-6: 2.5rem;
+	--font-sz-7: 3rem;
+	--font-sz-8: 3.5rem;
 }
 
 .header {
-    background-color: var(--strongBlack);
-    font-family: var(--cinzelFont);
-    position: fixed;
-    z-index: 10;
-    bottom: 0;
-    height: 8vh;
-    /* border-top: 2px solid var(--red); */
+	background-color: var(--strongBlack);
+	font-family: var(--cinzelFont);
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	height: 8vh;
+	/* border-top: 2px solid var(--red); */
 }
 
 .main {
-    min-height: calc(100vh - 16vh - 8vh);
-    background-color: var(--lightBlack);
-    font-family: var(--ebGaramondFont);
+	min-height: calc(100vh - 16vh - 8vh);
+	background-color: var(--lightBlack);
+	font-family: var(--ebGaramondFont);
 }
 
 .footer {
-    background-color: var(--lightBlack);
-    font-family: var(--ebGaramondFont);
-    margin-bottom: 8vh;
-    height: 16vh;
+	background-color: var(--lightBlack);
+	font-family: var(--ebGaramondFont);
+	margin-bottom: 8vh;
+	height: 16vh;
 }
 
+/* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
-    .header {
-        position: fixed;
-        height: 100vh;
-        left: 0;
-        bottom: 0;
-        top: 0;
-        width: 12vw;
-        border-top: none;
-        /* border-right: 2px solid var(--red); */
-    }
+	.header {
+		position: fixed;
+		height: 100vh;
+		left: 0;
+		bottom: 0;
+		top: 0;
+		width: 12vw;
+		border-top: none;
+		/* border-right: 2px solid var(--red); */
+	}
 
-    .main {
-        width: 88vw;
-        margin-left: 12vw;
-        min-height: calc(100vh - 16vh);
-    }
+	.main {
+		width: 88vw;
+		margin-left: 12vw;
+		min-height: calc(100vh - 16vh);
+	}
 
-    .footer {
-        width: 88vw;
-        margin-left: 12vw;
-        margin-bottom: 0;
-    }
+	.footer {
+		width: 88vw;
+		margin-left: 12vw;
+		margin-bottom: 0;
+	}
 }
 
-@media (min-width: 1025px) {
-    .header {
-        width: 5vw;
-    }
-    .main {
-        width: 95vw;
-        margin-left: 5vw;
-    }
+/* MEDIUM TABLETS: width -> 768px || height -> 1024px */
+@media (min-width: 768px) {
+	.header {
+		top: calc(100vh - 8vh);
+		width: 100vw;
+		height: 8vh;
+	}
 
-    .footer {
-        width: 95vw;
-        margin-left: 5vw;
-        margin-bottom: 0;
-    }
+	.main {
+		width: 100vw;
+		margin-left: 0vw;
+		min-height: calc(100vh - 16vh - 8vh);
+	}
+
+	.footer {
+		width: 100vw;
+		margin-left: 0vw;
+		margin-bottom: 8vh;
+		height: 16vh;
+	}
 }
 
-@media (min-width: 1440px) {
-    .header {
-        width: 130px;
-    }
-    .main {
-        width: calc(100% - 130px);
-        margin-left: 130px;
-    }
+/* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
+@media (min-width: 1024px) {
+	.header {
+		width: 5vw;
+	}
+	.main {
+		width: 95vw;
+		margin-left: 5vw;
+	}
 
-    .footer {
-        width: calc(100% - 130px);
-        margin-left: 130px;
-        margin-bottom: 0;
-    }
+	.footer {
+		width: 95vw;
+		margin-left: 5vw;
+		margin-bottom: 0;
+	}
+}
+
+/* BIG MONITORS: width -> 2560px || height -> 1600px */
+@media (min-width: 2560px) {
+	.header {
+		width: 130px;
+	}
+	.main {
+		width: calc(100% - 130px);
+		margin-left: 130px;
+	}
+
+	.footer {
+		width: calc(100% - 130px);
+		margin-left: 130px;
+		margin-bottom: 0;
+	}
 }

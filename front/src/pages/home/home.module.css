@@ -1,4 +1,10 @@
-/* minimal measure considered 360 x 640 */
+/* @MEDIA-QUERY RULES FOR DIFFERENT DEVICES 
+SMALL PHONES: width -> 360px || height -> 640px
+MEDIUM TABLETS: width -> 768px || height -> 1024px
+BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px
+BIG MONITORS: width -> 2560px || height -> 1600px 
+*/
+
 .video_wrapper {
 	height: 70vh;
 	border: none;
@@ -36,13 +42,15 @@
 @media (min-width: 768px) {
 	.video_wrapper {
 		height: 70vh;
+		border: solid 1px lightblue;
 	}
 
 	.sliders_section {
-		border: solid 1px red;
+		border: solid 1px yellow;
 		position: relative;
 		top: -4rem;
 		margin-bottom: -4rem;
+		padding: 0 0 2.5rem 0;
 	}
 }
 
