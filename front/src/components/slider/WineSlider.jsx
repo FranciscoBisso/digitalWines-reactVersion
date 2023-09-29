@@ -69,10 +69,7 @@ export default function WinesSlider({ wines, title }) {
 									</span>
 								</button>
 								<button className={styles.actions}>
-									<FontAwesomeIcon
-										icon={faStar}
-										bordered
-									/>
+									<FontAwesomeIcon icon={faStar} />
 									<span className={styles.actions_subtitle}>
 										Favoritos
 									</span>
