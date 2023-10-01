@@ -27,7 +27,7 @@
 	z-index: 10;
 	bottom: 0;
 	height: 8vh;
-	border: 1px solid orange;
+	/* border: 1px solid orange; */
 }
 
 .main {
@@ -50,6 +50,7 @@
 		width: 12vw;
 		left: 0;
 		top: 0;
+		bottom: 0;
 	}
 
 	.main {
@@ -67,34 +68,15 @@
 
 /* MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
-	.header {
-		top: calc(100vh - 8vh);
-		width: 100vw;
-		height: 8vh;
-	}
-
-	.main {
-		width: 100vw;
-		margin-left: 0vw;
-		min-height: calc(100vh - 16vh - 8vh);
-	}
-
-	.footer {
-		width: 100vw;
-		margin-left: 0vw;
-		margin-bottom: 8vh;
-		height: 16vh;
-	}
+	/* no changes needed */
 }
 
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
 	.header {
 		height: 100vh;
 		width: 8vw;
-		left: 0;
 		top: 0;
-		border-top: none;
 	}
 
 	.main {
@@ -110,13 +92,10 @@
 	}
 }
 
+/* BIG TABLETS - MEDIUM MONITORS (horizontally): width -> 1366px || height -> 1024px */
 @media (min-width: 1300px) {
 	.header {
-		height: 100vh;
 		width: 6vw;
-		left: 0;
-		top: 0;
-		border-top: none;
 	}
 
 	.main {
@@ -127,7 +106,6 @@
 
 	.footer {
 		width: calc(100vw - 6vw);
-		margin-bottom: 0;
 		margin-left: 6vw;
 	}
 }
@@ -135,11 +113,7 @@
 /* BIG MONITORS: width -> 2048px || height -> 1440px */
 @media (min-width: 2000px) {
 	.header {
-		height: 100vh;
 		width: 4vw;
-		left: 0;
-		top: 0;
-		border-top: none;
 	}
 
 	.main {
@@ -150,7 +124,6 @@
 
 	.footer {
 		width: calc(100vw - 4vw);
-		margin-bottom: 0;
 		margin-left: 4vw;
 	}
 }
