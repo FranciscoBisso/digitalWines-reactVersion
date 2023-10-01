@@ -88,7 +88,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
 	.nav_bar {
 		flex-direction: column;
 		width: 100%;
@@ -108,9 +108,9 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	}
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1300px) {
 	.nav_link {
-		font-size: 0.6rem;
+		font-size: 0.5rem;
 	}
 
 	.icons {
@@ -118,13 +118,13 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	}
 }
 
-/* BIG MONITORS: width -> 2560px || height -> 1600px */
-@media (min-width: 2560px) {
+/* BIG MONITORS: width -> 2048px || height -> 1440px */
+@media (min-width: 2000px) {
 	.nav_link {
-		font-size: 0.6rem;
+		font-size: 0.8rem;
 	}
 
 	.icons {
-		font-size: 1.6rem;
+		font-size: 2rem;
 	}
 }
