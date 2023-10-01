@@ -27,7 +27,7 @@
 	z-index: 10;
 	bottom: 0;
 	height: 8vh;
-	/* border-top: 2px solid var(--red); */
+	border: 1px solid orange;
 }
 
 .main {
@@ -46,14 +46,10 @@
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
 	.header {
-		position: fixed;
 		height: 100vh;
-		left: 0;
-		bottom: 0;
-		top: 0;
 		width: 12vw;
-		border-top: none;
-		/* border-right: 2px solid var(--red); */
+		left: 0;
+		top: 0;
 	}
 
 	.main {
@@ -94,33 +90,67 @@
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
 @media (min-width: 1024px) {
 	.header {
-		width: 5vw;
+		height: 100vh;
+		width: 8vw;
+		left: 0;
+		top: 0;
+		border-top: none;
 	}
+
 	.main {
-		width: 95vw;
-		margin-left: 5vw;
+		width: calc(100vw - 8vw);
+		min-height: calc(100vh - 16vh);
+		margin-left: 8vw;
 	}
 
 	.footer {
-		width: 95vw;
-		margin-left: 5vw;
+		width: calc(100vw - 8vw);
 		margin-bottom: 0;
+		margin-left: 8vw;
+	}
+}
+
+@media (min-width: 1366px) {
+	.header {
+		height: 100vh;
+		width: 6vw;
+		left: 0;
+		top: 0;
+		border-top: none;
+	}
+
+	.main {
+		width: calc(100vw - 6vw);
+		min-height: calc(100vh - 16vh);
+		margin-left: 6vw;
+	}
+
+	.footer {
+		width: calc(100vw - 6vw);
+		margin-bottom: 0;
+		margin-left: 6vw;
 	}
 }
 
 /* BIG MONITORS: width -> 2560px || height -> 1600px */
-@media (min-width: 2560px) {
+@media (min-width: 2500px) {
 	.header {
-		width: 130px;
+		height: 100vh;
+		width: 4vw;
+		left: 0;
+		top: 0;
+		border-top: none;
 	}
+
 	.main {
-		width: calc(100% - 130px);
-		margin-left: 130px;
+		width: calc(100vw - 4vw);
+		min-height: calc(100vh - 16vh);
+		margin-left: 4vw;
 	}
 
 	.footer {
-		width: calc(100% - 130px);
-		margin-left: 130px;
+		width: calc(100vw - 4vw);
 		margin-bottom: 0;
+		margin-left: 4vw;
 	}
 }
