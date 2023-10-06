@@ -1,7 +1,9 @@
 /* @MEDIA-QUERY RULES FOR DIFFERENT DEVICES 
 SMALL PHONES: width -> 360px || height -> 640px
+SMALL PHONES (horizontally): width -> 640px || height -> 360px
 MEDIUM TABLETS: width -> 768px || height -> 1024px
 BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px
+BIG TABLETS - MEDIUM MONITORS (horizontally): width -> 1366px || height -> 1024px
 BIG MONITORS: width -> 2560px || height -> 1600px 
 */
 
@@ -28,6 +30,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	padding-bottom: 32.5px;
 }
 
+/* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
 	.video_wrapper {
 		height: 100vh;
@@ -39,6 +42,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	}
 }
 
+/* MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
 	.video_wrapper {
 		height: 70vh;
@@ -54,7 +58,14 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	}
 }
 
-@media (min-width: 1020px) {
+/* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
+@media (min-width: 1024px) {
 }
-@media (min-width: 1440px) {
+
+/* BIG TABLETS - MEDIUM MONITORS (horizontally): width -> 1366px || height -> 1024px */
+@media (min-width: 1300px) {
+}
+
+/* BIG MONITORS: width -> 2048px || height -> 1440px */
+@media (min-width: 2000px) {
 }
