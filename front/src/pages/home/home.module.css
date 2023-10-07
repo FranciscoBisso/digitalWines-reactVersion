@@ -8,10 +8,8 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 */
 
 .video_wrapper {
-	height: 70vh;
-	border: none;
-	/* border-bottom: 2px solid; */
-	/* border-bottom-color: yellow; */
+	height: 75vh;
+	/* border: 1px solid aliceblue; */
 }
 
 .video {
@@ -20,10 +18,10 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .sliders_section {
-	/* border: solid 1px red; */
+	/* border: solid 1px yellow; */
 	position: relative;
-	top: -4rem;
-	margin-bottom: -4rem;
+	top: -5rem;
+	margin-bottom: -5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
@@ -45,27 +43,45 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 /* MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
 	.video_wrapper {
-		height: 70vh;
-		border: solid 1px lightblue;
+		height: 75vh;
+		/* border: solid 1px lightblue; */
 	}
 
 	.sliders_section {
-		border: solid 1px yellow;
+		/* border: solid 1px yellow; */
 		position: relative;
-		top: -4rem;
-		margin-bottom: -4rem;
+		top: -6rem;
+		margin-bottom: -6rem;
 		padding: 0 0 2.5rem 0;
 	}
 }
 
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
 @media (min-width: 1024px) {
+	.video_wrapper {
+		height: 82vh;
+	}
 }
 
 /* BIG TABLETS - MEDIUM MONITORS (horizontally): width -> 1366px || height -> 1024px */
 @media (min-width: 1300px) {
+	.video_wrapper {
+		height: 90vh;
+		/* border: solid 1px lightblue; */
+	}
+	.sliders_section {
+		top: -8rem;
+		margin-bottom: -8rem;
+	}
 }
 
 /* BIG MONITORS: width -> 2048px || height -> 1440px */
 @media (min-width: 2000px) {
+	.video_wrapper {
+		height: 100vh;
+	}
+	.sliders_section {
+		top: -6rem;
+		margin-bottom: -6rem;
+	}
 }

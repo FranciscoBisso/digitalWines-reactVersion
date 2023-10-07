@@ -21,10 +21,10 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	align-items: center;
 	overflow-x: auto;
 	overflow-y: hidden;
-	height: 23vh;
+	height: 24vh;
 	padding: 0 14.23vw;
 	gap: 0.25rem;
-	border: 0.5px solid green;
+	/* border: 0.5px solid green; */
 }
 
 .slider::-webkit-scrollbar {
@@ -154,7 +154,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
 	.slider {
-		height: 38vh;
+		height: 50vh;
 	}
 
 	/* * MODAL */
@@ -196,7 +196,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 /* MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
 	.slider {
-		height: 23vh;
+		height: 22vh;
 	}
 
 	/* * MODAL */
@@ -267,10 +267,24 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
 @media (min-width: 1024px) {
+	.slider {
+		height: 22vh;
+	}
+
+	.title {
+		font-size: var(--font-sz-5);
+	}
+
+	.item_img {
+		height: 100%;
+	}
 }
 
 /* BIG TABLETS - MEDIUM MONITORS (horizontally): width -> 1366px || height -> 1024px */
 @media (min-width: 1300px) {
+	.slider {
+		height: 25vh;
+	}
 	.modal {
 		max-width: 650px;
 	}
@@ -278,4 +292,11 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 /* BIG MONITORS: width -> 2048px || height -> 1440px */
 @media (min-width: 2000px) {
+	.slider {
+		height: 33vh;
+	}
+
+	.title {
+		font-size: var(--font-sz-5);
+	}
 }
