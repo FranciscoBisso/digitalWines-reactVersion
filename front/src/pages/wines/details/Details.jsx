@@ -8,15 +8,14 @@ import NotFound from "../../notFound/NotFound";
 import styles from "./details.module.css";
 
 export default function Details({ pageTitle }) {
-	const params = useParams();
-	const url = `http://localhost:3001/api/wines/details/${params.id}`;
+	const { id } = useParams();
+	const url = `http://localhost:3001/api/wines/details/${id}`;
 
-	const { data, status } = useQuery({
-		queryKey: [`wineDetails/${params.id}`],
+	const { isLoading, isError, status, data } = useQuery({
+		queryKey: ["wineDetails/", id],
 		queryFn: () => fetchData(url),
 	});
-	console.log("STATUS", status);
-	console.log("DATA", data);
+
 	return (
 		<>
 			<Helmet>
@@ -27,16 +26,14 @@ export default function Details({ pageTitle }) {
 				/>
 			</Helmet>
 
-			{status === "error" && <NotFound />}
-			{status === "loading" && <Loading />}
-			{status === "success" && data.error && (
-				<NotFound error={data.error} />
-			)}
-			{status === "success" && data.data && (
+			{isError && <NotFound />}
+			{isLoading && <Loading />}
+			{status === "success" && (
 				<>
 					<img
 						src={data.data.imagen}
 						alt="wineImg"
+						loading="lazy"
 					/>
 					<h1 className={styles}>{data.data.nombre}</h1>
 					<h2 className={styles}>{data.data.vinoBodega.nombre}</h2>

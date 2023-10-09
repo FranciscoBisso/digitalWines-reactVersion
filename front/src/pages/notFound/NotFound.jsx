@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import styles from "./notFound.module.css";
 
-export default function NotFound({ pageTitle, error }) {
+export default function NotFound({ pageTitle }) {
 	return (
 		<>
 			<Helmet>
@@ -12,14 +12,11 @@ export default function NotFound({ pageTitle, error }) {
 					content="¡Ups! página no encontrada"
 				/>
 			</Helmet>
-			<div className={styles.wrapper}>
-				{error ? error : "¡Ups! página no encontrada"}
-			</div>
+			<div className={styles.wrapper}>¡Ups! página no encontrada</div>
 		</>
 	);
 }
 
 NotFound.propTypes = {
 	pageTitle: PropTypes.string,
-	error: PropTypes.string,
 };
