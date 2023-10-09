@@ -12,10 +12,11 @@ export default function Details({ pageTitle }) {
 	const url = `http://localhost:3001/api/wines/details/${params.id}`;
 
 	const { data, status } = useQuery({
-		queryKey: ["wineDetails"],
+		queryKey: [`wineDetails/${params.id}`],
 		queryFn: () => fetchData(url),
 	});
 	console.log("STATUS", status);
+	console.log("DATA", data);
 	return (
 		<>
 			<Helmet>
@@ -28,7 +29,10 @@ export default function Details({ pageTitle }) {
 
 			{status === "error" && <NotFound />}
 			{status === "loading" && <Loading />}
-			{status === "success" && (
+			{status === "success" && data.error && (
+				<NotFound error={data.error} />
+			)}
+			{status === "success" && data.data && (
 				<>
 					<img
 						src={data.data.imagen}
