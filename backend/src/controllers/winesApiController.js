@@ -21,13 +21,13 @@ const winesApiController = {
 			include: [{ all: true }],
 			where: { id: req.params.id },
 		});
-		vino.imagen = "http://localhost:3001" + vino.imagen;
 
 		if (!vino) {
 			res.status(404).json({
 				error: "No contamos con ese vino",
 			});
 		} else {
+			vino.imagen = "http://localhost:3001" + vino.imagen;
 			res.status(200).json({
 				data: vino,
 			});

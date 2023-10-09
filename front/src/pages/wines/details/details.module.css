@@ -5,6 +5,15 @@ BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px
 BIG MONITORS: width -> 2560px || height -> 1600px 
 */
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: var(--white);
+}
+
 /* SMALL PHONES (vertically): width -> 360px || height -> 640px */
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
