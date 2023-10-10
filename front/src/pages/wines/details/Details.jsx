@@ -11,9 +11,10 @@ export default function Details({ pageTitle }) {
 	const { id } = useParams();
 	const url = `http://localhost:3001/api/wines/details/${id}`;
 
-	const { isLoading, isError, status, data } = useQuery({
-		queryKey: ["wineDetails/", id],
+	const { isLoading, isError, error, status, data } = useQuery({
+		queryKey: ["details/", id],
 		queryFn: () => fetchData(url),
+		retry: 2,
 	});
 
 	return (
@@ -26,9 +27,9 @@ export default function Details({ pageTitle }) {
 				/>
 			</Helmet>
 
-			{isError && <NotFound />}
+			{isError && <NotFound apiErrorMsg={error?.message} />}
 			{isLoading && <Loading />}
-			{status === "success" && (
+			{status === "success" && data && (
 				<>
 					<img
 						src={data.data.imagen}
