@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import { lazy } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../../../services/fetchData";
-import Loading from "../../../components/loading/Loading";
-import NotFound from "../../notFound/NotFound";
-import styles from "./details.module.css";
+const Loading = lazy(() => import("../../../components/loading/Loading"));
+const NotFound = lazy(() => import("../../notFound/NotFound"));
+const styles = lazy(() => import("./details.module.css"));
 
 export default function Details({ pageTitle }) {
 	const { id } = useParams();
