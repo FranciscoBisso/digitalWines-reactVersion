@@ -8,35 +8,35 @@ import styles from "./winecellar.module.css";
 import PropTypes from "prop-types";
 
 export default function Winecellar({ pageTitle }) {
-    const url = "http://localhost:3001/api/wines/winecellar";
+	const url = "http://localhost:3001/api/wines/winecellar";
 
-    const { data, status } = useQuery({
-        queryKey: ["wcWines"],
-        queryFn: () => fetchData(url),
-    });
+	const { isLoading, isError, data, status } = useQuery({
+		queryKey: ["winecellar"],
+		queryFn: () => fetchData(url),
+	});
 
-    return (
-        <>
-            <Helmet>
-                <title>{pageTitle}</title>
-                <meta
-                    name="description"
-                    content="¡Bienvenido a la página de nuestra vinoteca!"
-                />
-            </Helmet>
+	return (
+		<>
+			<Helmet>
+				<title>{pageTitle}</title>
+				<meta
+					name="description"
+					content="¡Bienvenido a la página de nuestra vinoteca!"
+				/>
+			</Helmet>
 
-            {status === "loading" && <Loading />}
-            {status === "error" && <NotFound />}
-            {status === "success" && (
-                <div className={styles.wrapper}>
-                    <h2>Nuestros Vinos</h2>
-                    <WinesGrid wines={data.data} />
-                </div>
-            )}
-        </>
-    );
+			{isLoading && <Loading />}
+			{isError && <NotFound />}
+			{status === "success" && (
+				<div className={styles.wrapper}>
+					<h2>Nuestros Vinos</h2>
+					<WinesGrid wines={data.data} />
+				</div>
+			)}
+		</>
+	);
 }
 
 Winecellar.propTypes = {
-    pageTitle: PropTypes.string,
+	pageTitle: PropTypes.string,
 };
