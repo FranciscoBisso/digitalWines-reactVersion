@@ -1,12 +1,13 @@
+import { lazy } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../../services/fetchData";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
-import NotFound from "../notFound/NotFound";
-import Loading from "../../components/loading/Loading";
-import WineSlider from "../../components/slider/WineSlider";
 import video from "../../assets/promo-video.mp4";
 import styles from "./home.module.css";
+const NotFound = lazy(() => import("../notFound/NotFound"));
+const Loading = lazy(() => import("../../components/loading/Loading"));
+const WineSlider = lazy(() => import("../../components/slider/WineSlider"));
 
 const url = "http://localhost:3001/api/home";
 

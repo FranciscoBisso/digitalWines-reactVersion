@@ -1,11 +1,13 @@
+import { lazy } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../../../services/fetchData";
 import { Helmet } from "react-helmet";
-import WinesGrid from "../../../components/winesGrid/WinesGrid";
-import NotFound from "../../notFound/NotFound";
-import Loading from "../../../components/loading/Loading";
 import styles from "./winecellar.module.css";
 import PropTypes from "prop-types";
+
+const Loading = lazy(() => import("../../../components/loading/Loading"));
+const NotFound = lazy(() => import("../../notFound/NotFound"));
+const WinesGrid = lazy(() => import("../../../components/winesGrid/WinesGrid"));
 
 export default function Winecellar({ pageTitle }) {
 	const url = "http://localhost:3001/api/wines/winecellar";
@@ -27,7 +29,7 @@ export default function Winecellar({ pageTitle }) {
 
 			{isLoading && <Loading />}
 			{isError && <NotFound />}
-			{status === "success" && (
+			{status === "success" && data && (
 				<div className={styles.wrapper}>
 					<h2>Nuestros Vinos</h2>
 					<WinesGrid wines={data.data} />
