@@ -51,19 +51,19 @@ export default function Home({ pageTitle }) {
 						<div className={styles.slider_wrapper}>
 							<WineSlider
 								title={"Destacados"}
-								wines={data.data.destacados}
+								wines={data.featured}
 							/>
 						</div>
 						<div className={styles.slider_wrapper}>
 							<WineSlider
 								title={"Más Económicos"}
-								wines={data.data.masEconomicos}
+								wines={data.bestSellers}
 							/>
 						</div>
 						<div className={styles.slider_wrapper}>
 							<WineSlider
 								title={"Promociones"}
-								wines={data.data.masVendidos}
+								wines={data.bestDeals}
 							/>
 						</div>
 					</section>
