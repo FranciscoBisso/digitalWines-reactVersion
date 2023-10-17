@@ -46,22 +46,22 @@ export default function Details({ pageTitle }) {
 							autoFocus>
 							<img
 								className={styles.wine_card_img}
-								src={data.vino.imagen}
+								src={data.wine.imagen}
 								alt="wineImg"
 								loading="lazy"
 							/>
 						</div>
 						<div className={styles.wine_card_body}>
-							<h1 className={styles}>{data.vino.nombre}</h1>
+							<h1 className={styles}>{data.wine.nombre}</h1>
 							<h2 className={styles}>
-								{data.vino.vinoBodega.nombre}
+								{data.wine.vinoBodega.nombre}
 							</h2>
 							<h3 className={styles}>
-								{data.vino.vinoUva.nombre}
+								{data.wine.vinoUva.nombre}
 							</h3>
-							<p className={styles}>{data.vino.descripcion}</p>
-							<h4 className={styles}>${data.vino.precio}</h4>
-							<h5 className={styles}>{data.vino.stock}</h5>
+							<p className={styles}>{data.wine.descripcion}</p>
+							<h4 className={styles}>${data.wine.precio}</h4>
+							<h5 className={styles}>{data.wine.stock}</h5>
 						</div>
 						<div className={styles.actions_wrapper}>
 							<button className={styles.actions}>
@@ -79,10 +79,12 @@ export default function Details({ pageTitle }) {
 						</div>
 					</section>
 					<section className={styles.similar_wines}>
-						<WineSlider
-							wines={data.similares}
-							title="Similares"
-						/>
+						{data.similarWines.length != 0 && (
+							<WineSlider
+								wines={data.similarWines}
+								title="Vinos Similares"
+							/>
+						)}
 					</section>
 					<section className={styles}></section>
 				</>

@@ -32,7 +32,7 @@ export default function Winecellar({ pageTitle }) {
 			{status === "success" && data && (
 				<div className={styles.wrapper}>
 					<h2>Nuestros Vinos</h2>
-					<WinesGrid wines={data.data} />
+					<WinesGrid wines={data.wines} />
 				</div>
 			)}
 		</>
