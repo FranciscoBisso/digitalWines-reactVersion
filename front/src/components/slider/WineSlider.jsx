@@ -77,7 +77,8 @@ export default function WinesSlider({ wines, title }) {
 
 								<Link
 									className={styles.actions}
-									to={`detalle/${selectedWine.id}`}>
+									to={`/detalle/${selectedWine.id}`}
+									onClick={close}>
 									<FontAwesomeIcon icon={faPlus} />
 									<span className={styles.actions_subtitle}>
 										Info

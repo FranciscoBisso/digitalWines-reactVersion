@@ -26,10 +26,23 @@ const winesApiController = {
 			res.status(404).json({
 				error: "No contamos con ese vino",
 			});
-		} else {
+		}
+
+		if (vino) {
+			const similares = await db.Vinos.findAll({
+				include: [{ all: true }],
+				where: { bodega_id: vino.bodega_id },
+			});
+
 			vino.imagen = "http://localhost:3001" + vino.imagen;
+
+			similares.map(
+				(vino) => (vino.imagen = "http://localhost:3001" + vino.imagen)
+			);
+
 			res.status(200).json({
-				data: vino,
+				vino,
+				similares,
 			});
 		}
 	},

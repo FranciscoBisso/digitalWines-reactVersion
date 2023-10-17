@@ -4,9 +4,12 @@ import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../../../services/fetchData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWineGlass, faStar } from "@fortawesome/free-solid-svg-icons";
 import styles from "./details.module.css";
 const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../notFound/NotFound"));
+const WineSlider = lazy(() => import("../../../components/slider/WineSlider"));
 
 export default function Details({ pageTitle }) {
 	const { id } = useParams();
@@ -15,13 +18,18 @@ export default function Details({ pageTitle }) {
 	const { isLoading, isError, error, status, data } = useQuery({
 		queryKey: ["details/", id],
 		queryFn: () => fetchData(url),
-		retry: 2,
+		retry: 1,
 	});
 
 	return (
 		<>
 			<Helmet>
 				<title>{pageTitle}</title>
+				<link
+					rel="icon"
+					href="../../../assets/icons/logo.ico"
+				/>
+
 				<meta
 					name="description"
 					content="¡Bienvenido a nuestra página para ver los detalles del vino!"
@@ -32,17 +40,51 @@ export default function Details({ pageTitle }) {
 			{isLoading && <Loading />}
 			{status === "success" && data && (
 				<>
-					<img
-						src={data.data.imagen}
-						alt="wineImg"
-						loading="lazy"
-					/>
-					<h1 className={styles}>{data.data.nombre}</h1>
-					<h2 className={styles}>{data.data.vinoBodega.nombre}</h2>
-					<h3 className={styles}>{data.data.vinoUva.nombre}</h3>
-					<p className={styles}>{data.data.descripcion}</p>
-					<h4 className={styles}>${data.data.precio}</h4>
-					<h5 className={styles}>{data.data.stock}</h5>
+					<section className={styles.wine_card}>
+						<div
+							className={styles.wine_card_img_wrapper}
+							autoFocus>
+							<img
+								className={styles.wine_card_img}
+								src={data.vino.imagen}
+								alt="wineImg"
+								loading="lazy"
+							/>
+						</div>
+						<div className={styles.wine_card_body}>
+							<h1 className={styles}>{data.vino.nombre}</h1>
+							<h2 className={styles}>
+								{data.vino.vinoBodega.nombre}
+							</h2>
+							<h3 className={styles}>
+								{data.vino.vinoUva.nombre}
+							</h3>
+							<p className={styles}>{data.vino.descripcion}</p>
+							<h4 className={styles}>${data.vino.precio}</h4>
+							<h5 className={styles}>{data.vino.stock}</h5>
+						</div>
+						<div className={styles.actions_wrapper}>
+							<button className={styles.actions}>
+								<FontAwesomeIcon icon={faWineGlass} />
+								<span className={styles.actions_subtitle}>
+									Cava
+								</span>
+							</button>
+							<button className={styles.actions}>
+								<FontAwesomeIcon icon={faStar} />
+								<span className={styles.actions_subtitle}>
+									Favoritos
+								</span>
+							</button>
+						</div>
+					</section>
+					<section className={styles.similar_wines}>
+						<WineSlider
+							wines={data.similares}
+							title="Similares"
+						/>
+					</section>
+					<section className={styles}></section>
 				</>
 			)}
 		</>
