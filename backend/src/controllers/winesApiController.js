@@ -1,48 +1,63 @@
 const db = require("../database/models");
+const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 
 const winesApiController = {
 	winecellar: async (req, res) => {
-		const vinos = await db.Vinos.findAll({
+		const wines = await db.Vinos.findAll({
 			include: [{ all: true }],
 			order: [["nombre", "ASC"]],
 		});
-		for (let vino of vinos) {
-			vino.imagen = "http://localhost:3001" + vino.imagen;
+
+		if (!wines) {
+			res.status(404).json({
+				error: "¡Houston, tenemos un problema con los vinos de la vinoteca!",
+			});
 		}
-		res.status(200).json({
-			total: vinos.length,
-			data: vinos,
-		});
+
+		if (wines) {
+			for (let wine of wines) {
+				wine.imagen = "http://localhost:3001" + wine.imagen;
+			}
+			res.status(200).json({
+				total: wines.length,
+				wines,
+			});
+		}
 	},
 
 	details: async (req, res) => {
-		const vino = await db.Vinos.findOne({
+		const wine = await db.Vinos.findOne({
 			include: [{ all: true }],
 			where: { id: req.params.id },
 		});
 
-		if (!vino) {
+		if (!wine) {
 			res.status(404).json({
-				error: "No contamos con ese vino",
+				error: "No contamos con el vino que estás buscando",
 			});
 		}
 
-		if (vino) {
-			const similares = await db.Vinos.findAll({
+		if (wine) {
+			wine.imagen = "http://localhost:3001" + wine.imagen;
+
+			const similarWines = await db.Vinos.findAll({
 				include: [{ all: true }],
-				where: { bodega_id: vino.bodega_id },
+				where: {
+					bodega_id: wine.bodega_id,
+					id: {
+						[Op.not]: req.params.id,
+					},
+				},
 			});
 
-			vino.imagen = "http://localhost:3001" + vino.imagen;
-
-			similares.map(
-				(vino) => (vino.imagen = "http://localhost:3001" + vino.imagen)
+			similarWines.map(
+				(wine) => (wine.imagen = "http://localhost:3001" + wine.imagen)
 			);
 
 			res.status(200).json({
-				vino,
-				similares,
+				wine,
+				similarWines,
 			});
 		}
 	},
