@@ -40,7 +40,7 @@ export default function Details({ pageTitle }) {
 			{isLoading && <Loading />}
 			{isSuccess && data && (
 				<>
-					<section className={styles.wine_card}>
+					<article className={styles.wine_card}>
 						<div
 							className={styles.wine_card_img_wrapper}
 							autoFocus>
@@ -52,16 +52,24 @@ export default function Details({ pageTitle }) {
 							/>
 						</div>
 						<div className={styles.wine_card_body}>
-							<h1 className={styles}>{data.wine.nombre}</h1>
-							<h2 className={styles}>
+							<h1 className={styles.wine_name}>
+								{data.wine.nombre}
+							</h1>
+							<h2 className={styles.wine_vineyard}>
 								{data.wine.vinoBodega.nombre}
 							</h2>
-							<h3 className={styles}>
+							<p className={styles.wine_description}>
+								{data.wine.descripcion}
+							</p>
+							<h3 className={styles.wine_grape}>
 								{data.wine.vinoUva.nombre}
 							</h3>
-							<p className={styles}>{data.wine.descripcion}</p>
-							<h4 className={styles}>${data.wine.precio}</h4>
-							<h5 className={styles}>{data.wine.stock}</h5>
+							<h4 className={styles.wine_price}>
+								${data.wine.precio}
+							</h4>
+							<h5 className={styles.wine_stock}>
+								{data.wine.stock}
+							</h5>
 						</div>
 						<div className={styles.actions_wrapper}>
 							<button className={styles.actions}>
@@ -77,7 +85,7 @@ export default function Details({ pageTitle }) {
 								</span>
 							</button>
 						</div>
-					</section>
+					</article>
 					{data.similarWines.length != 0 && (
 						<section className={styles.similar_wines}>
 							<WineSlider

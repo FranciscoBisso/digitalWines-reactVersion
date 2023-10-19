@@ -5,15 +5,89 @@ BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px
 BIG MONITORS: width -> 2560px || height -> 1600px 
 */
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5 {
+.wine_card {
+	border: solid 1px red;
+	padding: 0% 0% 20% 0%;
+}
+
+.wine_card_img_wrapper {
+}
+
+.wine_card_img {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.wine_card_body {
+	padding: 2% 5%;
+}
+
+.wine_name {
+	font-family: var(--cinzelFont);
+	text-align: center;
+	color: var(--yellow);
+}
+
+.wine_vineyard {
+	color: var(--lightGray);
+	text-align: center;
+}
+
+.wine_grape {
+	color: var(--red);
+}
+
+.wine_description {
+	color: var(--white);
+	font-size: var(--font-sz-1);
+}
+
+.wine_description::first-letter {
+	font-size: var(--font-sz-6);
+}
+
+.wine_price {
+	color: var(--green);
+}
+
+.wine_stock {
 	color: var(--white);
 }
 
+.actions_wrapper {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 2% 0%;
+	border: solid 1px green;
+}
+
+.actions {
+	width: unset;
+	background-color: transparent;
+	color: var(--red);
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.actions path:hover {
+}
+
+.actions_subtitle {
+	font-family: var(--cinzelFont);
+	color: var(--white);
+	font-size: 0.6rem;
+}
+
+.similar_wines {
+	padding: 0% 0% 20% 0%;
+	border: solid 1px yellow;
+}
 /* SMALL PHONES (vertically): width -> 360px || height -> 640px */
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
@@ -28,6 +102,10 @@ h5 {
 @media (min-width: 1024px) {
 }
 
+/* BIG TABLETS - MEDIUM MONITORS (horizontally): width -> 1366px || height -> 1024px */
+@media (min-width: 1300px) {
+}
+
 /* BIG MONITORS: width -> 2560px || height -> 1600px */
-@media (min-width: 2560px) {
+@media (min-width: 2000px) {
 }
