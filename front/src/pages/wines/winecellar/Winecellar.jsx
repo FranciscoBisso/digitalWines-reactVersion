@@ -12,7 +12,7 @@ const WinesGrid = lazy(() => import("../../../components/winesGrid/WinesGrid"));
 export default function Winecellar({ pageTitle }) {
 	const url = "http://localhost:3001/api/wines/winecellar";
 
-	const { isLoading, isError, data, status } = useQuery({
+	const { isLoading, isError, isSuccess, data } = useQuery({
 		queryKey: ["winecellar"],
 		queryFn: () => fetchData(url),
 	});
@@ -29,7 +29,7 @@ export default function Winecellar({ pageTitle }) {
 
 			{isLoading && <Loading />}
 			{isError && <NotFound />}
-			{status === "success" && data && (
+			{isSuccess && data && (
 				<div className={styles.wrapper}>
 					<h2>Nuestros Vinos</h2>
 					<WinesGrid wines={data.wines} />

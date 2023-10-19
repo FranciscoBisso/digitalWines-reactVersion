@@ -12,7 +12,7 @@ const WineSlider = lazy(() => import("../../components/slider/WineSlider"));
 const url = "http://localhost:3001/api/home";
 
 export default function Home({ pageTitle }) {
-	const { isLoading, isError, data, status } = useQuery({
+	const { isLoading, isError, isSuccess, data } = useQuery({
 		queryKey: ["home"],
 		queryFn: () => fetchData(url),
 	});
@@ -29,7 +29,7 @@ export default function Home({ pageTitle }) {
 
 			{isError && <NotFound />}
 			{isLoading && <Loading />}
-			{status === "success" && data && (
+			{isSuccess && data && (
 				<>
 					<section className={styles.intro_section}>
 						<div className={styles.video_wrapper}>

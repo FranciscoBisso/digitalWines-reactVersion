@@ -15,7 +15,7 @@ export default function Details({ pageTitle }) {
 	const { id } = useParams();
 	const url = `http://localhost:3001/api/wines/details/${id}`;
 
-	const { isLoading, isError, error, status, data } = useQuery({
+	const { isLoading, isError, error, isSuccess, data } = useQuery({
 		queryKey: ["details/", id],
 		queryFn: () => fetchData(url),
 		retry: 1,
@@ -38,7 +38,7 @@ export default function Details({ pageTitle }) {
 
 			{isError && <NotFound apiErrorMsg={error?.message} />}
 			{isLoading && <Loading />}
-			{status === "success" && data && (
+			{isSuccess && data && (
 				<>
 					<section className={styles.wine_card}>
 						<div
@@ -78,14 +78,14 @@ export default function Details({ pageTitle }) {
 							</button>
 						</div>
 					</section>
-					<section className={styles.similar_wines}>
-						{data.similarWines.length != 0 && (
+					{data.similarWines.length != 0 && (
+						<section className={styles.similar_wines}>
 							<WineSlider
 								wines={data.similarWines}
 								title="Vinos Similares"
 							/>
-						)}
-					</section>
+						</section>
+					)}
 					<section className={styles}></section>
 				</>
 			)}
