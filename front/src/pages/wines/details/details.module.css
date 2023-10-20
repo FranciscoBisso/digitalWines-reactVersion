@@ -7,7 +7,6 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .wine_card {
 	border: solid 1px red;
-	padding: 0% 0% 20% 0%;
 }
 
 .wine_card_img_wrapper {
@@ -16,6 +15,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 .wine_card_img {
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+	aspect-ratio: 1;
 }
 
 .wine_card_body {
@@ -24,27 +24,29 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .wine_name {
 	font-family: var(--cinzelFont);
-	text-align: center;
 	color: var(--yellow);
+	font-size: var(--font-sz-5);
+	text-align: center;
 }
 
 .wine_vineyard {
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-3);
 	color: var(--lightGray);
+	opacity: 1;
 	text-align: center;
 }
 
 .wine_price {
 	color: var(--green);
+	font-size: var(--font-sz-4);
+	font-family: var(--cinzelFont);
 	text-align: center;
 }
 
-.wine_grape {
-	color: var(--red);
-}
-
 .wine_description {
-	color: var(--white);
 	font-size: var(--font-sz-1);
+	color: var(--white);
 	text-wrap: pretty;
 	letter-spacing: 0.08rem;
 	line-height: 1;
@@ -56,13 +58,28 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .wine_description::first-letter {
 	font-size: var(--font-sz-5);
+	color: var(--red);
 	font-size: 2.2rem;
 	float: left;
-	/* letter-spacing: 0.2rem; */
+	letter-spacing: 0.2rem;
+}
+
+.wine_grape {
+	font-family: var(--cinzelFont);
+	color: var(--red);
+	display: inline-block;
+	width: 50%;
+	text-align: end;
+	padding-right: 5%;
 }
 
 .wine_stock {
 	color: var(--white);
+	display: inline-block;
+	width: 50%;
+	text-align: start;
+	padding-left: 5%;
+	font-family: var(--cinzelFont);
 }
 
 .actions_wrapper {
@@ -71,7 +88,6 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	align-items: center;
 	justify-content: space-evenly;
 	padding: 2% 0%;
-	border: solid 1px green;
 }
 
 .actions {
@@ -96,7 +112,6 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .similar_wines {
-	padding: 0% 0% 20% 0%;
 	border: solid 1px yellow;
 }
 /* SMALL PHONES (vertically): width -> 360px || height -> 640px */

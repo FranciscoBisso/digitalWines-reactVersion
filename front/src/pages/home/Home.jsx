@@ -58,13 +58,13 @@ export default function Home({ pageTitle }) {
 						</div>
 						<div className={styles.slider_wrapper}>
 							<WineSlider
-								title={"Más Económicos"}
+								title={"Más Vendidos"}
 								wines={homeQuery.data.bestSellers}
 							/>
 						</div>
 						<div className={styles.slider_wrapper}>
 							<WineSlider
-								title={"Promociones"}
+								title={"Más Económicos"}
 								wines={homeQuery.data.bestDeals}
 							/>
 						</div>

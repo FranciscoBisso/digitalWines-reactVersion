@@ -43,16 +43,13 @@ export default function Details({ pageTitle }) {
 			{detailsQuery.isSuccess && detailsQuery.data && (
 				<>
 					<article className={styles.wine_card}>
-						<div
-							className={styles.wine_card_img_wrapper}
-							autoFocus>
-							<img
-								className={styles.wine_card_img}
-								src={detailsQuery.data.wine.imagen}
-								alt="wineImg"
-								loading="lazy"
-							/>
-						</div>
+						<img
+							className={styles.wine_card_img}
+							src={detailsQuery.data.wine.imagen}
+							alt="wineImg"
+							loading="lazy"
+						/>
+
 						<div className={styles.wine_card_body}>
 							<h1 className={styles.wine_name}>
 								{detailsQuery.data.wine.nombre}
@@ -63,12 +60,12 @@ export default function Details({ pageTitle }) {
 							<h3 className={styles.wine_price}>
 								${detailsQuery.data.wine.precio}
 							</h3>
-							<h4 className={styles.wine_grape}>
+							<span className={styles.wine_grape}>
 								{detailsQuery.data.wine.vinoUva.nombre}
-							</h4>
-							<h5 className={styles.wine_stock}>
-								{detailsQuery.data.wine.stock}
-							</h5>
+							</span>
+							<span className={styles.wine_stock}>
+								Stock: {detailsQuery.data.wine.stock}
+							</span>
 							<p className={styles.wine_description}>
 								{detailsQuery.data.wine.descripcion}
 							</p>
