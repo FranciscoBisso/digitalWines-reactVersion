@@ -33,6 +33,11 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	text-align: center;
 }
 
+.wine_price {
+	color: var(--green);
+	text-align: center;
+}
+
 .wine_grape {
 	color: var(--red);
 }
@@ -44,10 +49,6 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .wine_description::first-letter {
 	font-size: var(--font-sz-6);
-}
-
-.wine_price {
-	color: var(--green);
 }
 
 .wine_stock {
