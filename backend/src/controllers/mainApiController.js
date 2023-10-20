@@ -17,6 +17,9 @@ const mainApiController = {
 			include: [{ all: true }],
 			order: [["nombre", "ASC"]],
 			where: { categoria_id: 3 },
+			//TODO: this ain't an smart way to get the cheapest wines.
+			//TODO: This has to be dynamic, can't depend on a static row of the table;
+			//TODO: this result must came from ordering the wines by price and getting the 10 ones with the lowest price.
 		});
 
 		if (!featured && !bestSellers && !bestDeals) {
