@@ -63,15 +63,15 @@ export default function Details({ pageTitle }) {
 							<h3 className={styles.wine_price}>
 								${detailsQuery.data.wine.precio}
 							</h3>
-							<p className={styles.wine_description}>
-								{detailsQuery.data.wine.descripcion}
-							</p>
 							<h4 className={styles.wine_grape}>
 								{detailsQuery.data.wine.vinoUva.nombre}
 							</h4>
 							<h5 className={styles.wine_stock}>
 								{detailsQuery.data.wine.stock}
 							</h5>
+							<p className={styles.wine_description}>
+								{detailsQuery.data.wine.descripcion}
+							</p>
 						</div>
 						<div className={styles.actions_wrapper}>
 							<button className={styles.actions}>

@@ -45,10 +45,20 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 .wine_description {
 	color: var(--white);
 	font-size: var(--font-sz-1);
+	text-wrap: pretty;
+	letter-spacing: 0.08rem;
+	line-height: 1;
+}
+
+.wine_description::first-line {
+	line-height: 0.8;
 }
 
 .wine_description::first-letter {
-	font-size: var(--font-sz-6);
+	font-size: var(--font-sz-5);
+	font-size: 2.2rem;
+	float: left;
+	/* letter-spacing: 0.2rem; */
 }
 
 .wine_stock {
