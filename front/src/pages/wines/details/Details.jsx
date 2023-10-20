@@ -15,7 +15,7 @@ export default function Details({ pageTitle }) {
 	const { id } = useParams();
 	const url = `http://localhost:3001/api/wines/details/${id}`;
 
-	const { isLoading, isError, error, isSuccess, data } = useQuery({
+	const detailsQuery = useQuery({
 		queryKey: ["details/", id],
 		queryFn: () => fetchData(url),
 		retry: 1,
@@ -36,9 +36,11 @@ export default function Details({ pageTitle }) {
 				/>
 			</Helmet>
 
-			{isError && <NotFound apiErrorMsg={error?.message} />}
-			{isLoading && <Loading />}
-			{isSuccess && data && (
+			{detailsQuery.isError && (
+				<NotFound apiErrorMsg={detailsQuery.error?.message} />
+			)}
+			{detailsQuery.isLoading && <Loading />}
+			{detailsQuery.isSuccess && detailsQuery.data && (
 				<>
 					<article className={styles.wine_card}>
 						<div
@@ -46,29 +48,29 @@ export default function Details({ pageTitle }) {
 							autoFocus>
 							<img
 								className={styles.wine_card_img}
-								src={data.wine.imagen}
+								src={detailsQuery.data.wine.imagen}
 								alt="wineImg"
 								loading="lazy"
 							/>
 						</div>
 						<div className={styles.wine_card_body}>
 							<h1 className={styles.wine_name}>
-								{data.wine.nombre}
+								{detailsQuery.data.wine.nombre}
 							</h1>
 							<h2 className={styles.wine_vineyard}>
-								{data.wine.vinoBodega.nombre}
+								{detailsQuery.data.wine.vinoBodega.nombre}
 							</h2>
 							<p className={styles.wine_description}>
-								{data.wine.descripcion}
+								{detailsQuery.data.wine.descripcion}
 							</p>
 							<h3 className={styles.wine_grape}>
-								{data.wine.vinoUva.nombre}
+								{detailsQuery.data.wine.vinoUva.nombre}
 							</h3>
 							<h4 className={styles.wine_price}>
-								${data.wine.precio}
+								${detailsQuery.data.wine.precio}
 							</h4>
 							<h5 className={styles.wine_stock}>
-								{data.wine.stock}
+								{detailsQuery.data.wine.stock}
 							</h5>
 						</div>
 						<div className={styles.actions_wrapper}>
@@ -86,10 +88,10 @@ export default function Details({ pageTitle }) {
 							</button>
 						</div>
 					</article>
-					{data.similarWines.length != 0 && (
+					{detailsQuery.data.similarWines.length != 0 && (
 						<section className={styles.similar_wines}>
 							<WineSlider
-								wines={data.similarWines}
+								wines={detailsQuery.data.similarWines}
 								title="Vinos Similares"
 							/>
 						</section>

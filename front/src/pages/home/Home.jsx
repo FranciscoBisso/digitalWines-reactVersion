@@ -12,7 +12,7 @@ const WineSlider = lazy(() => import("../../components/slider/WineSlider"));
 const url = "http://localhost:3001/api/home";
 
 export default function Home({ pageTitle }) {
-	const { isLoading, isError, isSuccess, data } = useQuery({
+	const homeQuery = useQuery({
 		queryKey: ["home"],
 		queryFn: () => fetchData(url),
 	});
@@ -27,9 +27,11 @@ export default function Home({ pageTitle }) {
 				/>
 			</Helmet>
 
-			{isError && <NotFound />}
-			{isLoading && <Loading />}
-			{isSuccess && data && (
+			{homeQuery.isError && (
+				<NotFound apiErrorMsg={homeQuery.error?.message} />
+			)}
+			{homeQuery.isLoading && <Loading />}
+			{homeQuery.isSuccess && homeQuery.data && (
 				<>
 					<section className={styles.intro_section}>
 						<div className={styles.video_wrapper}>
@@ -51,19 +53,19 @@ export default function Home({ pageTitle }) {
 						<div className={styles.slider_wrapper}>
 							<WineSlider
 								title={"Destacados"}
-								wines={data.featured}
+								wines={homeQuery.data.featured}
 							/>
 						</div>
 						<div className={styles.slider_wrapper}>
 							<WineSlider
 								title={"Más Económicos"}
-								wines={data.bestSellers}
+								wines={homeQuery.data.bestSellers}
 							/>
 						</div>
 						<div className={styles.slider_wrapper}>
 							<WineSlider
 								title={"Promociones"}
-								wines={data.bestDeals}
+								wines={homeQuery.data.bestDeals}
 							/>
 						</div>
 					</section>
