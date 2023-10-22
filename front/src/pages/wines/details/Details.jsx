@@ -21,6 +21,8 @@ export default function Details({ pageTitle }) {
 		retry: 1,
 	});
 
+	console.log("data", detailsQuery.data);
+
 	return (
 		<>
 			<Helmet>
@@ -57,30 +59,37 @@ export default function Details({ pageTitle }) {
 							<h2 className={styles.wine_vineyard}>
 								{detailsQuery.data.wine.vinoBodega.nombre}
 							</h2>
-							<h3 className={styles.wine_price}>
-								${detailsQuery.data.wine.precio}
-							</h3>
-							<span className={styles.wine_grape}>
+							<h3 className={styles.wine_grape}>
 								{detailsQuery.data.wine.vinoUva.nombre}
-							</span>
-							<span className={styles.wine_stock}>
-								Stock: {detailsQuery.data.wine.stock}
-							</span>
+							</h3>
+							<div className={styles.numbers_wrapper}>
+								<h4 className={styles.wine_price}>
+									<strong>
+										${detailsQuery.data.wine.precio}
+									</strong>
+								</h4>
+								<h5 className={styles.wine_stock}>
+									STOCK:
+									<strong>
+										{` ${detailsQuery.data.wine.stock}`}
+									</strong>
+								</h5>
+							</div>
 							<p className={styles.wine_description}>
 								{detailsQuery.data.wine.descripcion}
 							</p>
 						</div>
 						<div className={styles.actions_wrapper}>
 							<button className={styles.actions}>
-								<FontAwesomeIcon icon={faWineGlass} />
-								<span className={styles.actions_subtitle}>
-									Cava
-								</span>
-							</button>
-							<button className={styles.actions}>
 								<FontAwesomeIcon icon={faStar} />
 								<span className={styles.actions_subtitle}>
 									Favoritos
+								</span>
+							</button>
+							<button className={styles.actions}>
+								<FontAwesomeIcon icon={faWineGlass} />
+								<span className={styles.actions_subtitle}>
+									Cava
 								</span>
 							</button>
 						</div>

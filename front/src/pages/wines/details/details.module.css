@@ -6,7 +6,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 */
 
 .wine_card {
-	border: solid 1px red;
+	position: relative;
 }
 
 .wine_card_img_wrapper {
@@ -37,19 +37,45 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	text-align: center;
 }
 
-.wine_price {
-	color: var(--green);
-	font-size: var(--font-sz-4);
+.wine_grape {
 	font-family: var(--cinzelFont);
+	color: var(--red);
+	font-size: var(--font-sz-4);
 	text-align: center;
+}
+.numbers_wrapper {
+	width: unset;
+	position: absolute;
+	top: 2%;
+	left: 7%;
+}
+
+.wine_price strong {
+	color: var(--green);
+	font-size: var(--font-sz-5);
+	/* font-family: var(--cinzelFont); */
+	text-align: center;
+}
+
+.wine_stock {
+	/* font-family: var(--cinzelFont); */
+	font-size: 0.7rem;
+	text-align: center;
+}
+
+.wine_stock strong {
+	color: var(--red);
+	font-size: var(--font-sz-1);
 }
 
 .wine_description {
 	font-size: var(--font-sz-1);
 	color: var(--white);
+	padding: 5%;
 	text-wrap: pretty;
 	letter-spacing: 0.08rem;
 	line-height: 1;
+	text-align: justify; /* I know design folks say text don't have to be justify, I just don't like unjustify texts. */
 }
 
 .wine_description::first-line {
@@ -64,27 +90,9 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	letter-spacing: 0.2rem;
 }
 
-.wine_grape {
-	font-family: var(--cinzelFont);
-	color: var(--red);
-	display: inline-block;
-	width: 50%;
-	text-align: end;
-	padding-right: 5%;
-}
-
-.wine_stock {
-	color: var(--white);
-	display: inline-block;
-	width: 50%;
-	text-align: start;
-	padding-left: 5%;
-	font-family: var(--cinzelFont);
-}
-
 .actions_wrapper {
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: row;
 	align-items: center;
 	justify-content: space-evenly;
 	padding: 2% 0%;
@@ -103,6 +111,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .actions path:hover {
+	filter: drop-shadow(0rem 0rem 14rem var(--white));
 }
 
 .actions_subtitle {
@@ -112,7 +121,8 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .similar_wines {
-	border: solid 1px yellow;
+	/* border: solid 1px yellow; */
+	padding: 10% 0%;
 }
 /* SMALL PHONES (vertically): width -> 360px || height -> 640px */
 
