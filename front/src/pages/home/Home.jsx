@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "../../services/fetchData";
+import { get } from "../../api/fetchData";
+import { homeUrl } from "../../api/urls";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import video from "../../assets/promo-video.mp4";
@@ -9,12 +10,10 @@ const NotFound = lazy(() => import("../notFound/NotFound"));
 const Loading = lazy(() => import("../../components/loading/Loading"));
 const WineSlider = lazy(() => import("../../components/slider/WineSlider"));
 
-const url = "http://localhost:3001/api/home";
-
 export default function Home({ pageTitle }) {
 	const homeQuery = useQuery({
-		queryKey: ["home"],
-		queryFn: () => fetchData(url),
+		queryKey: ["homeQuery"],
+		queryFn: () => get(homeUrl),
 	});
 
 	return (

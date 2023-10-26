@@ -3,7 +3,8 @@ import { lazy } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "../../../services/fetchData";
+import { get } from "../../../api/fetchData";
+import { detailsUrl } from "../../../api/urls";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWineGlass, faStar } from "@fortawesome/free-solid-svg-icons";
 import styles from "./details.module.css";
@@ -13,15 +14,12 @@ const WineSlider = lazy(() => import("../../../components/slider/WineSlider"));
 
 export default function Details({ pageTitle }) {
 	const { id } = useParams();
-	const url = `http://localhost:3001/api/wines/details/${id}`;
 
 	const detailsQuery = useQuery({
 		queryKey: ["details/", id],
-		queryFn: () => fetchData(url),
+		queryFn: () => get(detailsUrl(id)),
 		retry: 1,
 	});
-
-	console.log("data", detailsQuery.data);
 
 	return (
 		<>

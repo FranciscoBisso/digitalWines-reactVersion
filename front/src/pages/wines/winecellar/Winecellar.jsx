@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "../../../services/fetchData";
+import { get } from "../../../api/fetchData";
+import { winecellarUrl } from "../../../api/urls";
 import { Helmet } from "react-helmet";
 import styles from "./winecellar.module.css";
 import PropTypes from "prop-types";
@@ -10,11 +11,9 @@ const NotFound = lazy(() => import("../../notFound/NotFound"));
 const WinesGrid = lazy(() => import("../../../components/winesGrid/WinesGrid"));
 
 export default function Winecellar({ pageTitle }) {
-	const url = "http://localhost:3001/api/wines/winecellar";
-
 	const winecellarQuery = useQuery({
-		queryKey: ["winecellar"],
-		queryFn: () => fetchData(url),
+		queryKey: ["winecellarQuery"],
+		queryFn: () => get(winecellarUrl),
 	});
 
 	return (
