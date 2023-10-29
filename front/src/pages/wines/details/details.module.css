@@ -134,7 +134,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 	.wine_card_img {
 		width: 50%;
-		border-radius: 10px;
+		border-top-right-radius: 10px;
 	}
 
 	.wine_card_body {
