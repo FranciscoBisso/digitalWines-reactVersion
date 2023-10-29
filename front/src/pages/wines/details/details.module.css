@@ -92,25 +92,37 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .actions_wrapper {
 	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	margin: 2% 0%;
+	width: 45%;
+	margin: 2% auto;
 }
 
 .actions {
-	width: unset;
-	background-color: transparent;
-	color: var(--red);
-	border: none;
-	font-size: 1.5rem;
-	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	gap: 0.3rem;
+	width: 50%;
+	padding: 4% 0%;
+	color: var(--red);
+	background-color: transparent;
+	border: 1.5px solid var(--red);
+	font-size: 1.5rem;
+	cursor: pointer;
 }
 
-.actions path:hover {
-	filter: drop-shadow(0rem 0rem 14rem var(--white));
+.actions:first-child {
+	border-right: none;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.actions:last-child {
+	border-left: none;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.actions:hover {
+	background-color: var(--lightGray);
 }
 
 .actions_subtitle {
@@ -142,8 +154,8 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 		padding: 2% 5%;
 	}
 	.actions_wrapper {
-		justify-content: space-around;
-		margin: 4% 0%;
+		width: 35%;
+		/* margin-left: 7.5%; */
 	}
 }
 
