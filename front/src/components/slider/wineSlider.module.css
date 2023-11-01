@@ -165,7 +165,6 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 	/* * MODAL */
 	.modal {
-		border: 1px solid red;
 		width: 100%;
 		max-width: calc(100vw - 12vw);
 		margin-left: 12vw;
