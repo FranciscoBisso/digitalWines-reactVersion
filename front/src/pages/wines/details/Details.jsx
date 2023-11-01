@@ -66,12 +66,6 @@ export default function Details({ pageTitle }) {
 										${detailsQuery.data.wine.precio}
 									</strong>
 								</h4>
-								<h5 className={styles.wine_stock}>
-									STOCK:
-									<strong>
-										{` ${detailsQuery.data.wine.stock}`}
-									</strong>
-								</h5>
 							</div>
 							<p className={styles.wine_description}>
 								{detailsQuery.data.wine.descripcion}

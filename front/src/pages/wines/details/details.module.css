@@ -5,6 +5,8 @@ BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px
 BIG MONITORS: width -> 2560px || height -> 1600px 
 */
 
+/* SMALL PHONES (vertically): width -> 360px || height -> 640px */
+
 .wine_card {
 	position: relative;
 }
@@ -31,7 +33,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .wine_vineyard {
 	font-family: var(--cinzelFont);
-	font-size: var(--font-sz-3);
+	font-size: var(--font-sz-4);
 	color: var(--lightGray);
 	opacity: 1;
 	text-align: center;
@@ -40,7 +42,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 .wine_grape {
 	font-family: var(--cinzelFont);
 	color: var(--red);
-	font-size: var(--font-sz-4);
+	font-size: var(--font-sz-3);
 	text-align: center;
 }
 .numbers_wrapper {
@@ -57,17 +59,6 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	text-align: center;
 }
 
-.wine_stock {
-	/* font-family: var(--cinzelFont); */
-	font-size: 0.7rem;
-	text-align: center;
-}
-
-.wine_stock strong {
-	color: var(--red);
-	font-size: var(--font-sz-1);
-}
-
 .wine_description {
 	font-size: var(--font-sz-1);
 	color: var(--white);
@@ -75,7 +66,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	text-wrap: pretty;
 	letter-spacing: 0.08rem;
 	line-height: 1;
-	text-align: justify; /* I know design folks say text don't have to be justify, I just don't like unjustify texts. */
+	/* text-align: justify; I know design folks say text don't have to be justify, I just don't like unjustify texts. */
 }
 
 .wine_description::first-line {
@@ -132,10 +123,8 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .similar_wines {
-	/* border: solid 1px yellow; */
-	margin-top: 10%;
+	padding: 10% 0%;
 }
-/* SMALL PHONES (vertically): width -> 360px || height -> 640px */
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
@@ -155,12 +144,82 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	}
 	.actions_wrapper {
 		width: 35%;
-		/* margin-left: 7.5%; */
+	}
+
+	.similar_wines {
+		padding: 5% 0%;
 	}
 }
 
 /* MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
+	.wine_card {
+		display: block;
+	}
+
+	.wine_card_img {
+		width: 100%;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		border-top-right-radius: 0px;
+		aspect-ratio: 1;
+	}
+
+	.wine_card_body {
+		width: 100%;
+		padding: 2% 5%;
+	}
+
+	.wine_name {
+		font-size: var(--font-sz-8);
+	}
+
+	.wine_vineyard {
+		font-size: var(--font-sz-6);
+	}
+
+	.wine_grape {
+		font-size: var(--font-sz-5);
+	}
+
+	.wine_price strong {
+		font-size: var(--font-sz-10);
+	}
+
+	.wine_description {
+		font-size: var(--font-sz-4);
+		line-height: 1.5;
+	}
+
+	.wine_description::first-line {
+		line-height: 0.8;
+		/* line-height: 1.2; */
+	}
+
+	.wine_description::first-letter {
+		font-size: 4.2rem;
+		letter-spacing: 0.4rem;
+	}
+
+	.actions_wrapper {
+		width: 35%;
+	}
+
+	.actions {
+		font-size: var(--font-sz-6);
+	}
+
+	.actions_subtitle {
+		font-size: var(--font-sz-1);
+		text-align: center;
+	}
+
+	.similar_wines {
+		padding: 5% 0%;
+	}
+	.actions_wrapper {
+		margin: 5% auto;
+	}
 }
 
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
