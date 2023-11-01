@@ -160,7 +160,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
 	.slider {
-		height: 30vh;
+		height: 50vh;
 	}
 
 	/* * MODAL */
