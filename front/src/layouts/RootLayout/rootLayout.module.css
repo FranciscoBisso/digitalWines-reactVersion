@@ -22,6 +22,10 @@
 	--font-sz-10: 4.5rem;
 }
 
+html {
+	background-color: var(--strongBlack);
+}
+
 .header {
 	background-color: var(--strongBlack);
 	font-family: var(--cinzelFont);
