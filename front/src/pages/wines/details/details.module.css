@@ -7,17 +7,63 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 /* SMALL PHONES (vertically): width -> 360px || height -> 640px */
 
-.wine_card {
-	position: relative;
-}
-
 .wine_card_img_wrapper {
+	position: relative;
 }
 
 .wine_card_img {
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	aspect-ratio: 1;
+}
+
+.numbers_wrapper {
+	width: unset;
+	position: absolute;
+	top: 2%;
+	left: 4%;
+}
+
+.wine_price strong {
+	color: var(--green);
+	font-size: var(--font-sz-5);
+	text-align: center;
+}
+
+.actions_wrapper {
+	position: absolute;
+	top: 66%;
+	left: 82%;
+	display: flex;
+	flex-direction: column-reverse;
+	width: unset;
+	gap: 0.5rem;
+}
+
+.actions {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	width: 100%;
+	padding: 4% 0%;
+	color: var(--red);
+	background-color: transparent;
+	background-color: var(--lightGray);
+	border: none;
+	border-radius: 10px;
+	font-size: 1.7rem;
+	cursor: pointer;
+}
+
+.actions:hover {
+	background-color: var(--lightGray);
+}
+
+.actions_subtitle {
+	font-family: var(--cinzelFont);
+	color: var(--lightBlack);
+	font-size: 0.6rem;
+	font-weight: bolder;
 }
 
 .wine_card_body {
@@ -27,13 +73,13 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 .wine_name {
 	font-family: var(--cinzelFont);
 	color: var(--yellow);
-	font-size: var(--font-sz-5);
+	font-size: var(--font-sz-6);
 	text-align: center;
 }
 
 .wine_vineyard {
 	font-family: var(--cinzelFont);
-	font-size: var(--font-sz-4);
+	font-size: var(--font-sz-5);
 	color: var(--lightGray);
 	opacity: 1;
 	text-align: center;
@@ -45,85 +91,27 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	font-size: var(--font-sz-3);
 	text-align: center;
 }
-.numbers_wrapper {
-	width: unset;
-	position: absolute;
-	top: 2%;
-	left: 7%;
-}
-
-.wine_price strong {
-	color: var(--green);
-	font-size: var(--font-sz-5);
-	/* font-family: var(--cinzelFont); */
-	text-align: center;
-}
 
 .wine_description {
 	font-size: var(--font-sz-1);
 	color: var(--white);
-	padding: 5%;
+	padding: 2% 0% 5% 5%;
+	padding: 2% 10%;
 	text-wrap: pretty;
 	letter-spacing: 0.08rem;
-	line-height: 1;
-	/* text-align: justify; I know design folks say text don't have to be justify, I just don't like unjustify texts. */
-}
-
-.wine_description::first-line {
-	line-height: 0.8;
+	line-height: 1.4;
 }
 
 .wine_description::first-letter {
-	font-size: var(--font-sz-5);
+	font-size: var(--font-sz-8);
 	color: var(--red);
-	font-size: 2.2rem;
 	float: left;
-	letter-spacing: 0.2rem;
-}
-
-.actions_wrapper {
-	display: flex;
-	width: 45%;
-	margin: 2% auto;
-}
-
-.actions {
-	display: flex;
-	flex-direction: column;
-	gap: 0.3rem;
-	width: 50%;
-	padding: 4% 0%;
-	color: var(--red);
-	background-color: transparent;
-	border: 1.5px solid var(--red);
-	font-size: 1.5rem;
-	cursor: pointer;
-}
-
-.actions:first-child {
-	border-right: none;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-.actions:last-child {
-	border-left: none;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.actions:hover {
-	background-color: var(--lightGray);
-}
-
-.actions_subtitle {
-	font-family: var(--cinzelFont);
-	color: var(--white);
-	font-size: 0.6rem;
+	letter-spacing: 0.4rem;
+	line-height: 0.7;
 }
 
 .similar_wines {
-	padding: 10% 0%;
+	padding: 10% 0% 5%;
 }
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
@@ -131,99 +119,236 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	.wine_card {
 		display: flex;
 		flex-wrap: wrap;
+		flex-direction: row-reverse;
+	}
+
+	.wine_card_img_wrapper {
+		width: 50%;
 	}
 
 	.wine_card_img {
-		width: 50%;
-		border-top-right-radius: 10px;
+		width: 100%;
+		border-top-left-radius: 10px;
+	}
+
+	.numbers_wrapper {
+		top: 2%;
+		left: 4%;
+	}
+
+	.wine_price strong {
+		font-size: var(--font-sz-5);
+	}
+
+	.actions_wrapper {
+		position: unset;
+		flex-direction: row;
+		gap: unset;
+	}
+
+	.actions {
+		flex-direction: column;
+		gap: 0.5rem;
+		width: 100%;
+		background-color: transparent;
+		font-size: 1.7rem;
+	}
+
+	.actions_subtitle {
+		color: var(--white);
 	}
 
 	.wine_card_body {
 		width: 50%;
-		padding: 2% 5%;
+		padding: 2% 5% 0% 5%;
 	}
-	.actions_wrapper {
-		width: 35%;
+
+	.wine_name {
+		font-size: var(--font-sz-5);
+		text-align: left;
+	}
+
+	.wine_vineyard {
+		font-size: var(--font-sz-4);
+		text-align: left;
+	}
+
+	.wine_grape {
+		font-size: var(--font-sz-3);
+		text-align: left;
+	}
+
+	.wine_description {
+		padding: 2% 0%;
 	}
 
 	.similar_wines {
-		padding: 5% 0%;
+		padding: 14% 0% 7%;
 	}
 }
 
 /* MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
 	.wine_card {
-		display: block;
+		display: unset;
+	}
+
+	.wine_card_img_wrapper {
+		width: 75%;
+		margin: 0 auto;
 	}
 
 	.wine_card_img {
-		width: 100%;
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
 		border-top-right-radius: 0px;
+		border-top-left-radius: 0px;
 		aspect-ratio: 1;
 	}
 
 	.wine_card_body {
-		width: 100%;
+		width: 75%;
+		margin: 0 auto;
 		padding: 2% 5%;
+	}
+
+	.numbers_wrapper {
+		width: unset;
+		position: absolute;
+		top: 2%;
+		left: 5%;
+	}
+
+	.wine_price strong {
+		font-size: var(--font-sz-7);
+	}
+
+	.actions_wrapper {
+		position: absolute;
+		display: flex;
+		flex-direction: column-reverse;
+		top: 66%;
+		left: 82%;
+		gap: 0.5rem;
+	}
+
+	.actions {
+		font-size: var(--font-sz-6);
+	}
+
+	.actions_subtitle {
+		font-size: 0.8rem;
+		color: var(--lightBlack);
+		text-align: center;
 	}
 
 	.wine_name {
 		font-size: var(--font-sz-8);
+		text-align: center;
 	}
 
 	.wine_vineyard {
 		font-size: var(--font-sz-6);
+		text-align: center;
 	}
 
 	.wine_grape {
 		font-size: var(--font-sz-5);
-	}
-
-	.wine_price strong {
-		font-size: var(--font-sz-10);
+		text-align: center;
 	}
 
 	.wine_description {
 		font-size: var(--font-sz-4);
-		line-height: 1.5;
-	}
-
-	.wine_description::first-line {
-		line-height: 1.5;
+		padding: 2% 10%;
 	}
 
 	.wine_description::first-letter {
 		font-size: 5rem;
-		letter-spacing: 0.4rem;
-		line-height: 0.9;
-	}
-
-	.actions_wrapper {
-		width: 35%;
-	}
-
-	.actions {
-		font-size: var(--font-sz-5);
-	}
-
-	.actions_subtitle {
-		font-size: var(--font-sz-1);
-		text-align: center;
+		line-height: 0.8;
 	}
 
 	.similar_wines {
-		padding: 5% 0%;
-	}
-	.actions_wrapper {
-		margin: 5% auto;
+		padding: 10% 0% 7%;
 	}
 }
 
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
 @media (min-width: 1024px) {
+	.wine_card {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row-reverse;
+	}
+
+	.wine_card_img_wrapper {
+		width: 50%;
+	}
+
+	.wine_card_img {
+		width: 100%;
+		border-top-left-radius: 10px;
+	}
+
+	.numbers_wrapper {
+		top: 2%;
+		left: 4%;
+	}
+
+	.wine_price strong {
+		font-size: var(--font-sz-7);
+	}
+
+	.actions_wrapper {
+		position: unset;
+		flex-direction: row;
+		gap: unset;
+	}
+
+	.actions {
+		flex-direction: column;
+		gap: 0.5rem;
+		width: 100%;
+		background-color: transparent;
+		font-size: 1.7rem;
+	}
+
+	.actions_subtitle {
+		color: var(--white);
+	}
+
+	.wine_card_body {
+		width: 50%;
+		padding: 2% 5% 0% 5%;
+	}
+
+	.wine_name {
+		font-size: var(--font-sz-8);
+		text-align: left;
+	}
+
+	.wine_vineyard {
+		font-size: var(--font-sz-6);
+		text-align: left;
+	}
+
+	.wine_grape {
+		font-size: var(--font-sz-5);
+		text-align: left;
+	}
+
+	.wine_description {
+		padding: 2% 0%;
+		font-size: var(--font-sz-3);
+	}
+
+	.wine_description::first-letter {
+		font-size: var(--font-sz-9);
+		line-height: 0.82;
+	}
+
+	.similar_wines {
+		padding: 10% 0% 7%;
+	}
 }
 
 /* BIG TABLETS - MEDIUM MONITORS (horizontally): width -> 1366px || height -> 1024px */
