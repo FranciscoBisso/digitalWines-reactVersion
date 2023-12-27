@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../notFound/NotFound"));
-const WinesGrid = lazy(() => import("../../../components/winesGrid/WinesGrid"));
+// const WinesGrid = lazy(() => import("../../../components/winesGrid/WinesGrid"));
 
 export default function Winecellar({ pageTitle }) {
 	const winecellarQuery = useQuery({
@@ -16,25 +16,39 @@ export default function Winecellar({ pageTitle }) {
 		queryFn: () => get(winecellarUrl),
 	});
 
+	console.log(winecellarQuery?.data);
+
 	return (
 		<>
-			<Helmet>
-				<title>{pageTitle}</title>
-				<meta
-					name="description"
-					content="¡Bienvenido a la página de nuestra vinoteca!"
-				/>
-			</Helmet>
-
 			{winecellarQuery.isLoading && <Loading />}
 			{winecellarQuery.isError && (
 				<NotFound apiErrorMsg={winecellarQuery.error?.message} />
 			)}
 			{winecellarQuery.isSuccess && winecellarQuery.data && (
-				<div className={styles.wrapper}>
-					<h2>Nuestros Vinos</h2>
-					<WinesGrid wines={winecellarQuery.data.wines} />
-				</div>
+				<>
+					{" "}
+					<Helmet>
+						<title>{pageTitle.toUpperCase()}</title>
+						<meta
+							name="description"
+							content="¡Bienvenido a la página de nuestra vinoteca!"
+						/>
+					</Helmet>
+					<h2 className={styles.title}>Nuestros Vinos</h2>
+					{/* <WinesGrid wines={winecellarQuery.data.wines} /> */}
+					<div className={styles.wine_cards_wrapper}>
+						{winecellarQuery.data.wines.map((wine) => (
+							<article
+								key={wine.id}
+								className={styles.wine_card}>
+								<img
+									src={wine.imagen}
+									className={styles.wine_card_img}
+								/>
+							</article>
+						))}
+					</div>
+				</>
 			)}
 		</>
 	);

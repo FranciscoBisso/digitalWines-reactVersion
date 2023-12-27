@@ -5,28 +5,43 @@ BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px
 BIG MONITORS: width -> 2560px || height -> 1600px 
 */
 
-.wrapper {
-	padding-top: 5%;
-}
-
-h2 {
-	color: var(--white);
+/** SMALL PHONES: width -> 360px || height -> 640px */
+.title {
+	color: var(--yellow);
 	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-5);
 	text-align: center;
+	padding: 5% 0%;
 }
 
-/* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
+.wine_cards_wrapper {
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 5px;
+}
+
+.wine_card {
+	width: 49%;
+}
+
+.wine_card_img {
+	width: 100%;
+	aspect-ratio: 1;
+}
+
+/** SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
 }
 
-/* MEDIUM TABLETS: width -> 768px || height -> 1024px */
+/** MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
 }
 
-/* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
+/** BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
 @media (min-width: 1024px) {
 }
 
-/* BIG MONITORS: width -> 2560px || height -> 1600px */
+/** BIG MONITORS: width -> 2560px || height -> 1600px */
 @media (min-width: 2560px) {
 }
