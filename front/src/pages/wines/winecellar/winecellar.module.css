@@ -39,6 +39,11 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	/* box-shadow: inset 0rem 0rem 0.1rem 0.05rem var(--strongBlack); */
 }
 
+.img_shadow:hover {
+	/* box-shadow: inset 0rem 0rem 0.1rem 0.05rem var(--strongBlack); */
+	border-bottom: 0.3rem solid var(--red);
+}
+
 /** SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
 	.wine_card {

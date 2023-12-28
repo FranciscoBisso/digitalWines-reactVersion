@@ -5,10 +5,10 @@ import { winecellarUrl } from "../../../api/urls";
 import { Helmet } from "react-helmet";
 import styles from "./winecellar.module.css";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../notFound/NotFound"));
-// const WinesGrid = lazy(() => import("../../../components/winesGrid/WinesGrid"));
 
 export default function Winecellar({ pageTitle }) {
 	const winecellarQuery = useQuery({
@@ -34,17 +34,18 @@ export default function Winecellar({ pageTitle }) {
 			{winecellarQuery.isSuccess && winecellarQuery.data && (
 				<>
 					<h2 className={styles.title}>Nuestros Vinos</h2>
-					{/* <WinesGrid wines={winecellarQuery.data.wines} /> */}
 					<div className={styles.wine_cards_wrapper}>
 						{winecellarQuery.data.wines.map((wine) => (
 							<article
 								key={wine.id}
 								className={styles.wine_card}>
-								<img
-									src={wine.imagen}
-									className={styles.wine_card_img}
-								/>
-								<div className={styles.img_shadow}></div>
+								<Link to={`/detalle/${wine.id}`}>
+									<img
+										src={wine.imagen}
+										className={styles.wine_card_img}
+									/>
+									<div className={styles.img_shadow}></div>
+								</Link>
 							</article>
 						))}
 					</div>

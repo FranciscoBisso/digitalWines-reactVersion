@@ -40,6 +40,7 @@ export default function WinesSlider({ wines, title }) {
 								src={wine.imagen}
 								loading="lazy"
 							/>
+							<div className={styles.img_shadow}></div>
 						</article>
 					))}
 				</div>
