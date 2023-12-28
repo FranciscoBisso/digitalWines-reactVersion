@@ -15,14 +15,14 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .wine_cards_wrapper {
-	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 5px;
 }
 
 .wine_card {
-	width: 49%;
+	position: relative;
+	width: calc(100% / 2 - 2.5px);
 }
 
 .wine_card_img {
@@ -30,18 +30,44 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	aspect-ratio: 1;
 }
 
+.img_shadow {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: calc(100% - 5px);
+	background-color: transparent;
+	/* box-shadow: inset 0rem 0rem 0.1rem 0.05rem var(--strongBlack); */
+}
+
 /** SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
+	.wine_card {
+		width: calc(100% / 3 - 10px / 3);
+	}
 }
 
 /** MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
+	.wine_cards_wrapper {
+		padding: 0 2%;
+	}
+
+	.wine_card {
+		width: calc(100% / 4 - 15px / 4);
+	}
 }
 
 /** BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
 @media (min-width: 1024px) {
+	.wine_card {
+		width: calc(100% / 5 - 20px / 5);
+	}
+}
+
+/** BIG TABLETS - MEDIUM MONITORS (horizontally): width -> 1366px || height -> 1024px */
+@media (min-width: 1300px) {
 }
 
 /** BIG MONITORS: width -> 2560px || height -> 1600px */
-@media (min-width: 2560px) {
+@media (min-width: 2000px) {
 }

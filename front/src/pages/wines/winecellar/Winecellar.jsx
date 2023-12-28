@@ -20,20 +20,19 @@ export default function Winecellar({ pageTitle }) {
 
 	return (
 		<>
+			<Helmet>
+				<title>{pageTitle.toUpperCase()}</title>
+				<meta
+					name="description"
+					content="¡Bienvenido a la página de nuestra vinoteca!"
+				/>
+			</Helmet>
 			{winecellarQuery.isLoading && <Loading />}
 			{winecellarQuery.isError && (
 				<NotFound apiErrorMsg={winecellarQuery.error?.message} />
 			)}
 			{winecellarQuery.isSuccess && winecellarQuery.data && (
 				<>
-					{" "}
-					<Helmet>
-						<title>{pageTitle.toUpperCase()}</title>
-						<meta
-							name="description"
-							content="¡Bienvenido a la página de nuestra vinoteca!"
-						/>
-					</Helmet>
 					<h2 className={styles.title}>Nuestros Vinos</h2>
 					{/* <WinesGrid wines={winecellarQuery.data.wines} /> */}
 					<div className={styles.wine_cards_wrapper}>
@@ -45,6 +44,7 @@ export default function Winecellar({ pageTitle }) {
 									src={wine.imagen}
 									className={styles.wine_card_img}
 								/>
+								<div className={styles.img_shadow}></div>
 							</article>
 						))}
 					</div>
