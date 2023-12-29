@@ -2,13 +2,14 @@ import { lazy } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { get } from "../../../api/fetchData";
 import { winecellarUrl } from "../../../api/urls";
+import { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import styles from "./winecellar.module.css";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../notFound/NotFound"));
+const Modal = lazy(() => import("../../../components/modal/Modal"));
 
 export default function Winecellar({ pageTitle }) {
 	const winecellarQuery = useQuery({
@@ -16,7 +17,18 @@ export default function Winecellar({ pageTitle }) {
 		queryFn: () => get(winecellarUrl),
 	});
 
-	console.log(winecellarQuery?.data);
+	const refModal = useRef();
+	const [selectedWine, setSelectedWine] = useState(null);
+
+	const open = (wine) => {
+		setSelectedWine(wine);
+		refModal?.current.showModal();
+	};
+	const close = (e) => {
+		e.stopPropagation();
+		refModal?.current.close();
+		setSelectedWine(null);
+	};
 
 	return (
 		<>
@@ -38,17 +50,25 @@ export default function Winecellar({ pageTitle }) {
 						{winecellarQuery.data.wines.map((wine) => (
 							<article
 								key={wine.id}
-								className={styles.wine_card}>
-								<Link to={`/detalle/${wine.id}`}>
-									<img
-										src={wine.imagen}
-										className={styles.wine_card_img}
-									/>
-									<div className={styles.img_shadow}></div>
-								</Link>
+								className={styles.wine_card}
+								onClick={() => {
+									open(wine);
+								}}>
+								<img
+									src={wine.imagen}
+									className={styles.wine_card_img}
+								/>
+								<div className={styles.img_shadow}></div>
 							</article>
 						))}
 					</div>
+
+					<Modal
+						ref={refModal}
+						modal={refModal}
+						selectedWine={selectedWine}
+						close={close}
+					/>
 				</>
 			)}
 		</>

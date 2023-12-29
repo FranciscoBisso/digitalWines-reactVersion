@@ -218,7 +218,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	}
 
 	.title {
-		font-size: var(--font-sz-6);
+		font-size: var(--font-sz-5);
 	}
 
 	/* * MODAL */

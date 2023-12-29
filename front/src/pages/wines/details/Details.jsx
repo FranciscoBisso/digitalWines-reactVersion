@@ -52,9 +52,9 @@ export default function Details() {
 							/>
 							<div className={styles.numbers_wrapper}>
 								<h4 className={styles.wine_price}>
-									<strong>
-										${detailsQuery.data.wine.precio}
-									</strong>
+									{/* <strong> */}$
+									{detailsQuery.data.wine.precio}
+									{/* </strong> */}
 								</h4>
 							</div>
 							<div className={styles.actions_wrapper}>

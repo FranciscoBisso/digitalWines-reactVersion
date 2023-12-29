@@ -1,26 +1,21 @@
+import { lazy } from "react";
 import PropTypes from "prop-types";
 import styles from "./wineSlider.module.css";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faXmark,
-	faWineGlass,
-	faStar,
-	faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+
+const Modal = lazy(() => import("../modal/Modal"));
 
 export default function WinesSlider({ wines, title }) {
-	const modal = useRef();
+	const refModal = useRef();
 	const [selectedWine, setSelectedWine] = useState(null);
 
 	const open = (wine) => {
 		setSelectedWine(wine);
-		modal?.current.showModal();
+		refModal?.current.showModal();
 	};
 	const close = (e) => {
 		e.stopPropagation();
-		modal?.current.close();
+		refModal?.current.close();
 		setSelectedWine(null);
 	};
 	return (
@@ -46,56 +41,12 @@ export default function WinesSlider({ wines, title }) {
 				</div>
 			</div>
 
-			<dialog
-				className={styles.modal}
-				ref={modal}>
-				{selectedWine && (
-					<div className={styles.card}>
-						<img
-							className={styles.modal_img}
-							src={selectedWine.imagen}
-							loading="lazy"
-						/>
-						<div className={styles.card_body}>
-							<h4
-								className={
-									styles.price
-								}>{`$${selectedWine.precio}`}</h4>
-
-							<div className={styles.actions_wrapper}>
-								<button className={styles.actions}>
-									<FontAwesomeIcon icon={faWineGlass} />
-									<span className={styles.actions_subtitle}>
-										Cava
-									</span>
-								</button>
-								<button className={styles.actions}>
-									<FontAwesomeIcon icon={faStar} />
-									<span className={styles.actions_subtitle}>
-										Favoritos
-									</span>
-								</button>
-
-								<Link
-									className={styles.actions}
-									to={`/detalle/${selectedWine.id}`}
-									onClick={close}>
-									<FontAwesomeIcon icon={faPlus} />
-									<span className={styles.actions_subtitle}>
-										Info
-									</span>
-								</Link>
-							</div>
-						</div>
-
-						<FontAwesomeIcon
-							className={styles.exit_button}
-							icon={faXmark}
-							onClick={close}
-						/>
-					</div>
-				)}
-			</dialog>
+			<Modal
+				ref={refModal}
+				modal={refModal}
+				selectedWine={selectedWine}
+				close={close}
+			/>
 		</>
 	);
 }
