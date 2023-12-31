@@ -1,8 +1,8 @@
 import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    RouterProvider,
-    Route,
+	createBrowserRouter,
+	createRoutesFromElements,
+	RouterProvider,
+	Route,
 } from "react-router-dom";
 import { lazy } from "react";
 // LAYOUTS - PAGES - COMPONENTS
@@ -25,51 +25,69 @@ const Delete = lazy(() => import("./pages/admin/deleteWine/Delete"));
 
 // Fallback Components
 const NotFound = lazy(() => import("./pages/notFound/NotFound"));
-const Loading = lazy(() => import("./components/loading/Loading"));
 
 const router = createBrowserRouter(
-    createRoutesFromElements(
-        <Route path="/" element={<RootLayout />}>
-            <Route index element={<Home pageTitle={"Digital Wines"} />} />
+	createRoutesFromElements(
+		<Route
+			path="/"
+			element={<RootLayout />}>
+			<Route
+				index
+				element={<Home pageTitle={"Digital Wines"} />}
+			/>
 
-            <Route
-                path="vinoteca"
-                element={<Winecellar pageTitle={"Vinoteca"} />}
-            />
-            <Route path="loading" element={<Loading />} />
+			<Route
+				path="vinoteca"
+				element={<Winecellar pageTitle={"Vinoteca"} />}
+			/>
 
-            <Route
-                path="detalle/:id"
-                element={<Details pageTitle={"Detalles"} />}
-            />
+			<Route
+				path="detalle/:id"
+				element={<Details pageTitle={"Detalles"} />}
+			/>
 
-            <Route path="login" element={<Login pageTitle={"Login"} />} />
-            <Route
-                path="registro"
-                element={<Register pageTitle={"Registro"} />}
-            />
-            <Route path="cava" element={<Cava pageTitle={"Mi cava"} />} />
-            <Route path="cuenta" element={<Cuenta pageTitle={"Mi cuenta"} />} />
-            <Route path="*" element={<NotFound pageTitle={"Ups! 404"} />} />
-            <Route path="/admin">
-                <Route path="agregar" element={<Add pageTitle={"Agregar"} />} />
-                <Route
-                    path="editar/:id"
-                    element={<Edit pageTitle={"Editar"} />}
-                />
-                <Route
-                    path="eliminar/:id"
-                    element={<Delete pageTitle={"Eliminar"} />}
-                />
-            </Route>
-        </Route>
-    )
+			<Route
+				path="login"
+				element={<Login pageTitle={"Login"} />}
+			/>
+			<Route
+				path="registro"
+				element={<Register pageTitle={"Registro"} />}
+			/>
+			<Route
+				path="cava"
+				element={<Cava pageTitle={"Mi cava"} />}
+			/>
+			<Route
+				path="cuenta"
+				element={<Cuenta pageTitle={"Mi cuenta"} />}
+			/>
+			<Route
+				path="*"
+				element={<NotFound pageTitle={"Ups! 404"} />}
+			/>
+			<Route path="/admin">
+				<Route
+					path="agregar"
+					element={<Add pageTitle={"Agregar"} />}
+				/>
+				<Route
+					path="editar/:id"
+					element={<Edit pageTitle={"Editar"} />}
+				/>
+				<Route
+					path="eliminar/:id"
+					element={<Delete pageTitle={"Eliminar"} />}
+				/>
+			</Route>
+		</Route>
+	)
 );
 
 export default function App() {
-    return (
-        <>
-            <RouterProvider router={router} />
-        </>
-    );
+	return (
+		<>
+			<RouterProvider router={router} />
+		</>
+	);
 }

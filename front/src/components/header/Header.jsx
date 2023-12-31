@@ -1,15 +1,11 @@
 import { NavLink } from "react-router-dom";
 import styles from "./header.module.css";
 import logo from "../../assets/icons/logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faHome,
-	faWineBottle,
-	faUser,
-	faUserPlus,
-	faWineGlass,
-} from "@fortawesome/free-solid-svg-icons";
-
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
+import WineBarOutlinedIcon from "@mui/icons-material/WineBarOutlined";
 export default function Header() {
 	return (
 		<>
@@ -23,55 +19,37 @@ export default function Header() {
 			</NavLink>
 			<nav className={styles.nav_bar}>
 				<NavLink className={`${styles.nav_link} ${styles.home_icon}`}>
-					<FontAwesomeIcon
-						icon={faHome}
-						className={styles.icons}
-					/>{" "}
+					<HomeOutlinedIcon className={styles.icons} />
 					<span>Home</span>
 				</NavLink>
 				<NavLink
 					className={styles.nav_link}
 					to="vinoteca">
-					<FontAwesomeIcon
-						icon={faWineBottle}
-						className={`${styles.rotate} ${styles.icons}`}
-					/>{" "}
+					<LiquorOutlinedIcon className={styles.icons} />
 					<span>Vinoteca</span>
 				</NavLink>
 				<NavLink
 					className={styles.nav_link}
 					to="cuenta">
-					<FontAwesomeIcon
-						icon={faUser}
-						className={styles.icons}
-					/>
+					<PersonOutlineOutlinedIcon className={styles.icons} />
 					<span>Mi Cuenta</span>
 				</NavLink>
 				<NavLink
 					className={styles.nav_link}
 					to="cava">
-					<FontAwesomeIcon
-						icon={faWineGlass}
-						className={styles.icons}
-					/>
+					<WineBarOutlinedIcon className={styles.icons} />
 					<span>Mi Cava</span>
 				</NavLink>
 				<NavLink
 					className={styles.nav_link}
 					to="login">
-					<FontAwesomeIcon
-						icon={faUser}
-						className={styles.icons}
-					/>
+					<PersonOutlineOutlinedIcon className={styles.icons} />
 					<span>Login</span>
 				</NavLink>
 				<NavLink
 					className={styles.nav_link}
 					to="registro">
-					<FontAwesomeIcon
-						icon={faUserPlus}
-						className={styles.icons}
-					/>
+					<PersonAddAltOutlinedIcon className={styles.icons} />
 					<span>Registro</span>
 				</NavLink>
 			</nav>

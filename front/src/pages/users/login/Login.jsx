@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./login.module.css";
+import GoogleIcon from "@mui/icons-material/Google";
 import { Helmet } from "react-helmet";
 
 export default function Login({ pageTitle }) {
@@ -19,7 +20,7 @@ export default function Login({ pageTitle }) {
 					<button
 						type="button"
 						className={styles.google_btn}>
-						google
+						<GoogleIcon />
 					</button>
 
 					<input

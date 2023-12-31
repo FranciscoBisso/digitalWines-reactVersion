@@ -42,10 +42,6 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	color: var(--red);
 }
 
-.rotate {
-	transform: rotate(-45deg);
-}
-
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
 	.nav_bar {

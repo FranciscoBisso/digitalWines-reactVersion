@@ -1,15 +1,11 @@
 import PropTypes from "prop-types";
-import styles from "../slider/wineSlider.module.css";
+import styles from "./modal.module.css";
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faXmark,
-	faWineGlass,
-	faStar,
-	faPlus,
-} from "@fortawesome/free-solid-svg-icons";
-
+import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
+import WineBarOutlinedIcon from "@mui/icons-material/WineBarOutlined";
+import StarTwoToneIcon from "@mui/icons-material/StarTwoTone";
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 // OLD VERSION
 // export default function Modal({ selectedWine, close, modal }) {
 // 	return (
@@ -86,13 +82,13 @@ const Modal = forwardRef(function Modal({ selectedWine, close }, modal) {
 
 						<div className={styles.actions_wrapper}>
 							<button className={styles.actions}>
-								<FontAwesomeIcon icon={faWineGlass} />
+								<WineBarOutlinedIcon />
 								<span className={styles.actions_subtitle}>
 									Cava
 								</span>
 							</button>
 							<button className={styles.actions}>
-								<FontAwesomeIcon icon={faStar} />
+								<StarTwoToneIcon />
 								<span className={styles.actions_subtitle}>
 									Favoritos
 								</span>
@@ -102,7 +98,7 @@ const Modal = forwardRef(function Modal({ selectedWine, close }, modal) {
 								className={styles.actions}
 								to={`/detalle/${selectedWine.id}`}
 								onClick={close}>
-								<FontAwesomeIcon icon={faPlus} />
+								<AddCircleOutlineOutlinedIcon />
 								<span className={styles.actions_subtitle}>
 									Info
 								</span>
@@ -110,9 +106,8 @@ const Modal = forwardRef(function Modal({ selectedWine, close }, modal) {
 						</div>
 					</div>
 
-					<FontAwesomeIcon
+					<ClearOutlinedIcon
 						className={styles.exit_button}
-						icon={faXmark}
 						onClick={close}
 					/>
 				</div>

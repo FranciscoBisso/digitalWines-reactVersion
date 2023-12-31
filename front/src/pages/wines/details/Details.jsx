@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { get } from "../../../api/fetchData";
 import { detailsUrl } from "../../../api/urls";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWineGlass, faStar } from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./details.module.css";
+import WineBarOutlinedIcon from "@mui/icons-material/WineBarOutlined";
+import StarTwoToneIcon from "@mui/icons-material/StarTwoTone";
+
 const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../notFound/NotFound"));
 const WineSlider = lazy(() => import("../../../components/slider/WineSlider"));
@@ -59,13 +61,13 @@ export default function Details() {
 							</div>
 							<div className={styles.actions_wrapper}>
 								<button className={styles.actions}>
-									<FontAwesomeIcon icon={faStar} />
+									<StarTwoToneIcon />
 									<span className={styles.actions_subtitle}>
 										Favoritos
 									</span>
 								</button>
 								<button className={styles.actions}>
-									<FontAwesomeIcon icon={faWineGlass} />
+									<WineBarOutlinedIcon />
 									<span className={styles.actions_subtitle}>
 										Cava
 									</span>
