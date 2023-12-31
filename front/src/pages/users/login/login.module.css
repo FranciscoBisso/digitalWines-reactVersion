@@ -21,7 +21,6 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	justify-content: center;
 	width: 85%;
 	padding: 5% 5% 10% 5%;
-	/* border: 0.5px solid var(--white); */
 	border-radius: 10px;
 }
 
@@ -29,25 +28,18 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	width: unset;
 	font-family: var(--cinzelFont);
 	font-size: var(--font-sz-5);
-	color: var(--white);
-	letter-spacing: 0.25rem;
-}
-
-.google_btn {
-	width: unset;
-	font-family: var(--cinzelFont);
-	color: var(--white);
-	border: none;
-	border-bottom: 0.5px solid var(--white);
-	background-color: transparent;
+	color: var(--yellow);
+	letter-spacing: 0.2rem;
+	margin-bottom: 5%;
 }
 
 .inputs {
 	background-color: transparent;
 	border: none;
-	border-bottom: 0.5px solid var(--white);
+	border-bottom: 0.5px solid transparent;
 	color: var(--white);
 	font-family: var(--ebGaramondFont);
+	font-size: var(--font-sz-1);
 	letter-spacing: 0.08rem;
 	line-height: 1.4;
 	padding-left: 0.5%;
@@ -56,37 +48,63 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .inputs:focus {
 	outline: none;
-	/* background: linear-gradient(to top, var(--lightGray), var(--lightBlack)); */
+	padding-left: 0.5%;
+	border-bottom: 0.5px solid var(--white);
 }
 
 .inputs::placeholder {
 	font-family: var(--ebGaramondFont);
 	font-style: italic;
 	padding-left: 0.5%;
+	border-bottom: 0.5px solid rgb(133, 133, 133);
+}
+
+input:focus::placeholder {
+	color: transparent;
+	transition: 0.8s ease-out;
 }
 
 .enter_btn {
 	width: unset;
 	font-family: var(--cinzelFont);
-	color: var(--white);
+	font-size: var(--font-sz-1);
+	color: rgb(133, 133, 133);
 	border: none;
-	border-bottom: 0.5px solid var(--white);
 	background-color: transparent;
 	margin-bottom: 5%;
+	cursor: pointer;
+	transition: color 0.3s ease-in, border-bottom 0.3s ease-in;
+}
+
+.enter_btn:hover {
+	color: var(--white);
+	border-bottom: 0.5px solid var(--white);
 }
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
+	.form {
+		width: 75%;
+	}
 }
 
 /* MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
+	.form {
+		width: 65%;
+	}
 }
 
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
 @media (min-width: 1024px) {
+	.form {
+		width: 55%;
+	}
 }
 
 /* BIG MONITORS: width -> 2560px || height -> 1600px */
-@media (min-width: 2560px) {
+@media (min-width: 1300px) {
+	.form {
+		width: 35%;
+	}
 }
