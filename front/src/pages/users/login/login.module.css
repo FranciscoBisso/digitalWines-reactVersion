@@ -6,6 +6,74 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 */
 
 /* SMALL PHONES (vertically): width -> 360px || height -> 640px */
+.form_wrapper {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 85%;
+	padding: 5% 5% 10% 5%;
+	/* border: 0.5px solid var(--white); */
+	border-radius: 10px;
+}
+
+.form_title {
+	width: unset;
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-5);
+	color: var(--white);
+	letter-spacing: 0.25rem;
+}
+
+.google_btn {
+	width: unset;
+	font-family: var(--cinzelFont);
+	color: var(--white);
+	border: none;
+	border-bottom: 0.5px solid var(--white);
+	background-color: transparent;
+}
+
+.inputs {
+	background-color: transparent;
+	border: none;
+	border-bottom: 0.5px solid var(--white);
+	color: var(--white);
+	font-family: var(--ebGaramondFont);
+	letter-spacing: 0.08rem;
+	line-height: 1.4;
+	padding-left: 0.5%;
+	margin-bottom: 5%;
+}
+
+.inputs:focus {
+	outline: none;
+	/* background: linear-gradient(to top, var(--lightGray), var(--lightBlack)); */
+}
+
+.inputs::placeholder {
+	font-family: var(--ebGaramondFont);
+	font-style: italic;
+	padding-left: 0.5%;
+}
+
+.enter_btn {
+	width: unset;
+	font-family: var(--cinzelFont);
+	color: var(--white);
+	border: none;
+	border-bottom: 0.5px solid var(--white);
+	background-color: transparent;
+	margin-bottom: 5%;
+}
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {

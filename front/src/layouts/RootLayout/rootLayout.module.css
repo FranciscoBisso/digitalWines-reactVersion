@@ -37,7 +37,7 @@ html {
 }
 
 .main {
-	min-height: calc(100vh - 16vh - 8vh);
+	min-height: calc(100vh - 8vh);
 	background-color: var(--lightBlack);
 	font-family: var(--ebGaramondFont);
 }
@@ -62,7 +62,7 @@ html {
 	.main {
 		width: 88vw;
 		margin-left: 12vw;
-		min-height: calc(100vh - 16vh);
+		min-height: 100vh;
 	}
 
 	.footer {
@@ -87,7 +87,6 @@ html {
 
 	.main {
 		width: calc(100vw - 8vw);
-		min-height: calc(100vh - 16vh);
 		margin-left: 8vw;
 	}
 
@@ -106,7 +105,6 @@ html {
 
 	.main {
 		width: calc(100vw - 6vw);
-		min-height: calc(100vh - 16vh);
 		margin-left: 6vw;
 	}
 
@@ -124,7 +122,6 @@ html {
 
 	.main {
 		width: calc(100vw - 4vw);
-		min-height: calc(100vh - 16vh);
 		margin-left: 4vw;
 	}
 
