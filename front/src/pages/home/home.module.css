@@ -28,6 +28,44 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	padding-bottom: 32.5px;
 }
 
+.varietals_section {
+	min-height: 100vh;
+	padding: 0 14.23vw;
+	margin: 25% 0%;
+}
+
+.varietals_wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3rem;
+}
+
+.varietal {
+	width: 100%;
+}
+
+.varietal_name {
+	text-align: center;
+	font-size: var(--font-sz-6);
+	font-family: var(--cinzelFont);
+	color: var(--red);
+}
+
+.varietal_description {
+	font-size: var(--font-sz-1);
+	color: var(--white);
+	text-wrap: pretty;
+	letter-spacing: 0.08rem;
+	line-height: 1.4;
+}
+
+.varietal_description::first-letter {
+	font-size: var(--font-sz-7);
+	float: left;
+	letter-spacing: 0.2rem;
+	line-height: 0.88;
+}
+
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
 	.video_wrapper {
