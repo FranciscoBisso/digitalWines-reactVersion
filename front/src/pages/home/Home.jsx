@@ -18,20 +18,19 @@ export default function Home({ pageTitle }) {
 
 	return (
 		<>
-			<Helmet>
-				<title>{pageTitle}</title>
-				<meta
-					name="description"
-					content="¡Bienvenido a nuestra página principal!"
-				/>
-			</Helmet>
-
+			{homeQuery.isLoading && <Loading />}
 			{homeQuery.isError && (
 				<NotFound apiErrorMsg={homeQuery.error?.message} />
 			)}
-			{homeQuery.isLoading && <Loading />}
 			{homeQuery.isSuccess && homeQuery.data && (
 				<>
+					<Helmet>
+						<title>{pageTitle.toUpperCase()}</title>
+						<meta
+							name="description"
+							content="¡Bienvenido a nuestra página principal!"
+						/>
+					</Helmet>
 					<section className={styles.intro_section}>
 						<div className={styles.video_wrapper}>
 							<video

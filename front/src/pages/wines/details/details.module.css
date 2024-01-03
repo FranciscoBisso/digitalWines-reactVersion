@@ -44,6 +44,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 .actions {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 0.3rem;
 	width: 100%;
 	padding: 4% 0%;

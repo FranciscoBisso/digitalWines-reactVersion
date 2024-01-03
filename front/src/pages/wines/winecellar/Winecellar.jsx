@@ -32,19 +32,19 @@ export default function Winecellar({ pageTitle }) {
 
 	return (
 		<>
-			<Helmet>
-				<title>{pageTitle.toUpperCase()}</title>
-				<meta
-					name="description"
-					content="¡Bienvenido a la página de nuestra vinoteca!"
-				/>
-			</Helmet>
 			{winecellarQuery.isLoading && <Loading />}
 			{winecellarQuery.isError && (
 				<NotFound apiErrorMsg={winecellarQuery.error?.message} />
 			)}
 			{winecellarQuery.isSuccess && winecellarQuery.data && (
 				<>
+					<Helmet>
+						<title>{pageTitle.toUpperCase()}</title>
+						<meta
+							name="description"
+							content="¡Bienvenido a la página de nuestra vinoteca!"
+						/>
+					</Helmet>
 					<h2 className={styles.title}>Nuestros Vinos</h2>
 					<div className={styles.wine_cards_wrapper}>
 						{winecellarQuery.data.wines.map((wine) => (
