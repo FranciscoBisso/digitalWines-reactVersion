@@ -30,14 +30,21 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .varietals_section {
 	min-height: 100vh;
-	padding: 0 14.23vw;
-	margin: 25% 0%;
+	padding: 20% 0%;
+}
+
+.varietals_section_title {
+	color: var(--white);
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-6);
+	text-align: center;
 }
 
 .varietals_wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 3rem;
+	gap: 3em;
+	padding: 5% 14.23vw;
 }
 
 .varietal {
@@ -46,7 +53,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .varietal_name {
 	text-align: center;
-	font-size: var(--font-sz-6);
+	font-size: var(--font-sz-5);
 	font-family: var(--cinzelFont);
 	color: var(--red);
 }
@@ -61,6 +68,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .varietal_description::first-letter {
 	font-size: var(--font-sz-7);
+	color: var(--red);
 	float: left;
 	letter-spacing: 0.2rem;
 	line-height: 0.88;
@@ -71,10 +79,19 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	.video_wrapper {
 		height: 100vh;
 	}
+
 	.sliders_section {
 		position: static;
 		margin-bottom: 0rem;
 		padding: 2.5rem 0rem calc(2.5rem + 16.25px) 0rem;
+	}
+
+	.varietals_wrapper {
+		padding: 5% calc(14.23vw / 2) 5% 14.23vw;
+	}
+
+	.varietal {
+		width: calc(100% / 2 - 3em / 2);
 	}
 }
 
@@ -82,15 +99,17 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 @media (min-width: 768px) {
 	.video_wrapper {
 		height: 75vh;
-		/* border: solid 1px lightblue; */
 	}
 
 	.sliders_section {
-		/* border: solid 1px yellow; */
 		position: relative;
 		top: -6rem;
 		margin-bottom: -6rem;
 		padding: 0 0 2.5rem 0;
+	}
+
+	.varietals_wrapper {
+		padding: 5% calc(14.23vw / 2) 5% 14.23vw;
 	}
 }
 
@@ -105,8 +124,8 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 @media (min-width: 1300px) {
 	.video_wrapper {
 		height: 90vh;
-		/* border: solid 1px lightblue; */
 	}
+
 	.sliders_section {
 		top: -8rem;
 		margin-bottom: -8rem;
@@ -121,5 +140,13 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	.sliders_section {
 		top: -6rem;
 		margin-bottom: -6rem;
+	}
+
+	.varietals_wrapper {
+		padding: 25% 14.23vw;
+	}
+
+	.varietal {
+		width: calc((100% - 3em * 2) / 3);
 	}
 }

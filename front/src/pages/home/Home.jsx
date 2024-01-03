@@ -69,6 +69,9 @@ export default function Home({ pageTitle }) {
 						</div>
 					</section>
 					<section className={styles.varietals_section}>
+						<h2 className={styles.varietals_section_title}>
+							Nuestros Varietales
+						</h2>
 						<div className={styles.varietals_wrapper}>
 							<div className={styles.varietal}>
 								<h3 className={styles.varietal_name}>Malbec</h3>
