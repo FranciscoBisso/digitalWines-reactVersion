@@ -1,0 +1,45 @@
+.accordion_wrapper {
+	width: calc(100% - 14.23vw);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.title {
+	color: var(--red);
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-6);
+	text-align: center;
+}
+
+.accordion {
+	background-color: transparent;
+	border: 0.5px solid var(--lightGray);
+	/* border-radius: 10px; */
+	cursor: pointer;
+}
+
+.accordion_summary {
+}
+
+.name {
+	font-family: var(--cinzelFont);
+	font-weight: bolder;
+	font-size: var(--font-sz-3);
+	color: var(--white);
+}
+
+.description {
+	font-family: var(--ebGaramondFont);
+	color: var(--white);
+}
+
+.description::first-letter {
+	font-size: var(--font-sz-4);
+	color: var(--red);
+	float: left;
+	/* letter-spacing: 0.4rem; */
+	line-height: 0.85;
+}
