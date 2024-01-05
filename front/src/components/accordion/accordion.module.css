@@ -8,20 +8,32 @@
 }
 
 .title {
-	color: var(--red);
+	color: var(--white);
 	font-family: var(--cinzelFont);
-	font-size: var(--font-sz-6);
+	font-size: var(--font-sz-5);
 	text-align: center;
 }
 
 .accordion {
 	background-color: transparent;
 	border: 0.5px solid var(--lightGray);
-	/* border-radius: 10px; */
 	cursor: pointer;
 }
 
-.accordion_summary {
+.accordion_summary div {
+	width: unset;
+}
+
+.accordion_summary svg {
+	color: var(--lightGray);
+}
+
+.accordion_summary:focus-within .name {
+	color: var(--red);
+}
+
+.accordion_summary:focus-within svg {
+	color: var(--white);
 }
 
 .name {
@@ -34,12 +46,4 @@
 .description {
 	font-family: var(--ebGaramondFont);
 	color: var(--white);
-}
-
-.description::first-letter {
-	font-size: var(--font-sz-4);
-	color: var(--red);
-	float: left;
-	/* letter-spacing: 0.4rem; */
-	line-height: 0.85;
 }
