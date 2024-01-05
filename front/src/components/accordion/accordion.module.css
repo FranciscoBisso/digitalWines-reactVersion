@@ -38,12 +38,26 @@
 
 .name {
 	font-family: var(--cinzelFont);
-	font-weight: bolder;
 	font-size: var(--font-sz-3);
+	font-weight: bolder;
 	color: var(--white);
+	letter-spacing: 0.1rem;
 }
 
 .description {
 	font-family: var(--ebGaramondFont);
 	color: var(--white);
+	letter-spacing: 0.1rem;
+}
+
+/* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
+@media (min-width: 1024px) {
+	.accordion_wrapper {
+		width: calc(100% - 14.23vw * 2);
+		max-width: 800px;
+	}
+
+	.description {
+		font-size: var(--font-sz-2);
+	}
 }

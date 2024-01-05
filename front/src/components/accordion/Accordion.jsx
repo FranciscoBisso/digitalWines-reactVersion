@@ -16,7 +16,7 @@ export default function ControlledAccordions({ title, varietals }) {
 
 	return (
 		<>
-			<section className={styles.accordion_wrapper}>
+			<div className={styles.accordion_wrapper}>
 				<h2 className={styles.title}>{title}</h2>
 				{varietals?.map((varietal, index) => (
 					<Accordion
@@ -40,7 +40,7 @@ export default function ControlledAccordions({ title, varietals }) {
 						</AccordionDetails>
 					</Accordion>
 				))}
-			</section>
+			</div>
 		</>
 	);
 }
