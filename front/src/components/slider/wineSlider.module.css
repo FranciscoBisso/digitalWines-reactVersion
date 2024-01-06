@@ -33,8 +33,9 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .slider_item {
 	position: relative;
-	height: 100%;
 	aspect-ratio: 1;
+	width: unset;
+	height: 100%;
 	cursor: pointer;
 	border-radius: 10px;
 }

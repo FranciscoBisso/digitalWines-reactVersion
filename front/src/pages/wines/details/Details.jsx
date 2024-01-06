@@ -90,14 +90,14 @@ export default function Details() {
 							</p>
 						</div>
 					</article>
-					{detailsQuery.data.similarWines.length != 0 && (
-						<section className={styles.similar_wines}>
+					<section className={styles.similar_wines}>
+						{detailsQuery.data.similarWines.length != 0 && (
 							<WineSlider
 								wines={detailsQuery.data.similarWines}
 								title="Vinos Similares"
 							/>
-						</section>
-					)}
+						)}
+					</section>
 					<section className={styles}></section>
 				</>
 			)}
