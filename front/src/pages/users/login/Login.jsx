@@ -6,7 +6,7 @@ export default function Login({ pageTitle }) {
 	return (
 		<>
 			<Helmet>
-				<title>{pageTitle}</title>
+				<title>{pageTitle.toUpperCase()}</title>
 				<meta
 					name="description"
 					content="¡Bienvenido a nuestra página de login de usuarios!"
