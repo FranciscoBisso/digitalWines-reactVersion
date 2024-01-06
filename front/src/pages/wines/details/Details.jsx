@@ -2,8 +2,8 @@ import { lazy } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { get } from "../../../utils/fetchData";
-import { detailsUrl } from "../../../utils/urls";
+import { get } from "../../../services/fetchData";
+import { detailsUrl } from "../../../services/urls";
 
 import styles from "./details.module.css";
 import WineBarOutlinedIcon from "@mui/icons-material/WineBarOutlined";

@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { get } from "../../utils/fetchData";
-import { homeUrl } from "../../utils/urls";
+import { get } from "../../services/fetchData";
+import { homeUrl } from "../../services/urls";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import video from "../../assets/promo-video.mp4";

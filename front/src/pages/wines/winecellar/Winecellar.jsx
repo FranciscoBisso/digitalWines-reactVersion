@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { get } from "../../../utils/fetchData";
-import { winecellarUrl } from "../../../utils/urls";
+import { get } from "../../../services/fetchData";
+import { winecellarUrl } from "../../../services/urls";
 import { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import styles from "./winecellar.module.css";
