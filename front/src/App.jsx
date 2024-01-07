@@ -7,6 +7,7 @@ import {
 import { lazy } from "react";
 // LAYOUTS - PAGES - COMPONENTS
 import RootLayout from "./layouts/RootLayout/RootLayout";
+import AdminLayout from "./layouts/AdminLayout/AdminLayout";
 // Página del home
 const Home = lazy(() => import("./pages/home/Home"));
 
@@ -66,7 +67,9 @@ const router = createBrowserRouter(
 				path="*"
 				element={<NotFound pageTitle={"Ups! 404"} />}
 			/>
-			<Route path="/admin">
+			<Route
+				path="/admin"
+				element={<AdminLayout />}>
 				<Route
 					path="agregar"
 					element={<Add pageTitle={"Agregar"} />}

@@ -6,7 +6,12 @@ import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
 import WineBarOutlinedIcon from "@mui/icons-material/WineBarOutlined";
+import RoomPreferencesOutlinedIcon from "@mui/icons-material/RoomPreferencesOutlined";
+
 export default function Header() {
+	// Should I manage isLogged & isAdmin in the RootLayout and pass them as props to the Header?
+	const isLogged = false;
+	const isAdmin = false;
 	return (
 		<>
 			<NavLink>
@@ -28,18 +33,20 @@ export default function Header() {
 					<LiquorOutlinedIcon className={styles.icons} />
 					<span>Vinoteca</span>
 				</NavLink>
-				<NavLink
-					className={styles.nav_link}
-					to="cuenta">
-					<PersonOutlineOutlinedIcon className={styles.icons} />
-					<span>Mi Cuenta</span>
-				</NavLink>
-				<NavLink
-					className={styles.nav_link}
-					to="cava">
-					<WineBarOutlinedIcon className={styles.icons} />
-					<span>Mi Cava</span>
-				</NavLink>
+				<LoggedUserNavigation isLogged={isLogged} />
+				<AdminNavigation
+					isLogged={isLogged}
+					isAdmin={isAdmin}
+				/>
+			</nav>
+		</>
+	);
+}
+
+function LoggedUserNavigation({ isLogged }) {
+	if (!isLogged) {
+		return (
+			<>
 				<NavLink
 					className={styles.nav_link}
 					to="login">
@@ -52,7 +59,45 @@ export default function Header() {
 					<PersonAddAltOutlinedIcon className={styles.icons} />
 					<span>Registro</span>
 				</NavLink>
-			</nav>
-		</>
-	);
+			</>
+		);
+	}
+
+	if (isLogged) {
+		return (
+			<>
+				<NavLink
+					className={styles.nav_link}
+					to="cuenta">
+					<PersonOutlineOutlinedIcon className={styles.icons} />
+					<span>Mi Cuenta</span>
+				</NavLink>
+				<NavLink
+					className={styles.nav_link}
+					to="cava">
+					<WineBarOutlinedIcon className={styles.icons} />
+					<span>Mi Cava</span>
+				</NavLink>
+			</>
+		);
+	}
+}
+
+function AdminNavigation({ isLogged, isAdmin }) {
+	if (!isAdmin) {
+		return null;
+	}
+
+	if (isLogged && isAdmin) {
+		return (
+			<>
+				<NavLink
+					className={styles.nav_link}
+					to="admin">
+					<RoomPreferencesOutlinedIcon className={styles.icons} />
+					<span>Admin</span>
+				</NavLink>
+			</>
+		);
+	}
 }
