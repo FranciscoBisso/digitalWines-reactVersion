@@ -10,7 +10,7 @@ import WineBarOutlinedIcon from "@mui/icons-material/WineBarOutlined";
 import StarTwoToneIcon from "@mui/icons-material/StarTwoTone";
 
 const Loading = lazy(() => import("../../../components/loading/Loading"));
-const NotFound = lazy(() => import("../../notFound/NotFound"));
+const NotFound = lazy(() => import("../../../components/notFound/NotFound"));
 const WineSlider = lazy(() => import("../../../components/slider/WineSlider"));
 
 export default function Details() {

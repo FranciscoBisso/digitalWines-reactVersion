@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import video from "../../assets/promo-video.mp4";
 import styles from "./home.module.css";
 import Accordion from "../../components/accordion/Accordion";
-const NotFound = lazy(() => import("../notFound/NotFound"));
+const NotFound = lazy(() => import("../../components/notFound/NotFound"));
 const Loading = lazy(() => import("../../components/loading/Loading"));
 const WineSlider = lazy(() => import("../../components/slider/WineSlider"));
 

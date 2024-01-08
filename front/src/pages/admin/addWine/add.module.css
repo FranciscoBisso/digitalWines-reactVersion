@@ -6,19 +6,163 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 */
 
 /* SMALL PHONES (vertically): width -> 360px || height -> 640px */
+.form_wrapper {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 85%;
+	padding: 5% 5% 10% 5%;
+	border-radius: 10px;
+}
+
+.form_title {
+	width: unset;
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-5);
+	color: var(--yellow);
+	letter-spacing: 0.2rem;
+	margin-bottom: 5%;
+}
+
+.upload_img_input {
+	width: unset;
+	padding: 0;
+	margin: 0 auto;
+}
+
+.label {
+	color: rgb(133, 133, 133);
+	font-family: var(--ebGaramondFont);
+	font-size: var(--font-sz-1);
+}
+
+.inputs {
+	background-color: transparent;
+	border: none;
+	border-bottom: 0.5px solid transparent;
+	color: var(--white);
+	font-family: var(--ebGaramondFont);
+	font-size: var(--font-sz-1);
+	letter-spacing: 0.08rem;
+	line-height: 1.4;
+	padding-left: 0.5%;
+	margin-bottom: 5%;
+}
+
+.inputs:focus {
+	outline: none;
+	padding-left: 0.5%;
+	border-bottom: 0.5px solid var(--white);
+}
+
+.inputs::placeholder {
+	font-family: var(--ebGaramondFont);
+	font-style: italic;
+	padding-left: 0.5%;
+	border-bottom: 0.5px solid rgb(133, 133, 133);
+}
+
+input:focus::placeholder {
+	color: transparent;
+	transition: 0.8s ease-out;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+select:focus {
+	outline: none;
+}
+
+.label select option {
+	color: var(--white);
+}
+
+.default_option {
+	color: rgb(133, 133, 133);
+	font-family: var(--ebGaramondFont);
+	font-style: italic;
+	padding-left: 0.5%;
+	border-bottom: 0.5px solid rgb(133, 133, 133);
+}
+
+.description {
+	min-height: 10rem;
+	overflow: auto;
+	resize: vertical;
+	background-color: transparent;
+	border-top: none;
+	border-right: none;
+	border-left: 0.25px solid rgb(133, 133, 133);
+	border-bottom: 0.5px solid rgb(133, 133, 133);
+	color: var(--white);
+	font-family: var(--ebGaramondFont);
+	font-size: var(--font-sz-1);
+	letter-spacing: 0.08rem;
+	line-height: 1.4;
+	padding-left: 1%;
+	margin-bottom: 5%;
+}
+
+.description:focus {
+	outline: none;
+	border-left: 0.25px solid var(--white);
+	border-bottom: 0.5px solid var(--white);
+}
+
+.enter_btn {
+	width: unset;
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-1);
+	color: rgb(133, 133, 133);
+	border: none;
+	background-color: transparent;
+	margin-bottom: 5%;
+	cursor: pointer;
+	transition: color 0.3s ease-in, border-bottom 0.3s ease-in;
+}
+
+.enter_btn:hover {
+	color: var(--white);
+	border-bottom: 0.5px solid var(--white);
+}
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
 @media (min-width: 640px) {
+	.form {
+		width: 75%;
+	}
 }
 
 /* MEDIUM TABLETS: width -> 768px || height -> 1024px */
 @media (min-width: 768px) {
+	.form {
+		width: 65%;
+	}
 }
 
 /* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
 @media (min-width: 1024px) {
+	.form {
+		width: 55%;
+	}
 }
 
 /* BIG MONITORS: width -> 2560px || height -> 1600px */
-@media (min-width: 2560px) {
+@media (min-width: 1300px) {
+	.form {
+		width: 35%;
+	}
 }

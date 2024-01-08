@@ -6,7 +6,7 @@ export default function NotFound({ pageTitle, apiErrorMsg }) {
 	return (
 		<>
 			<Helmet>
-				<title>{pageTitle.toUpperCase()}</title>
+				<title>{pageTitle?.toUpperCase()}</title>
 				<meta
 					name="description"
 					content="¡Ups! página no encontrada"

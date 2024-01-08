@@ -25,7 +25,7 @@ const Edit = lazy(() => import("./pages/admin/editWine/Edit"));
 const Delete = lazy(() => import("./pages/admin/deleteWine/Delete"));
 
 // Fallback Components
-const NotFound = lazy(() => import("./pages/notFound/NotFound"));
+const NotFound = lazy(() => import("./components/notFound/NotFound"));
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -65,7 +65,7 @@ const router = createBrowserRouter(
 			/>
 			<Route
 				path="*"
-				element={<NotFound pageTitle={"Ups! 404"} />}
+				element={<NotFound pageTitle={"Ups! Algo salio mal..."} />}
 			/>
 			<Route
 				path="/admin"

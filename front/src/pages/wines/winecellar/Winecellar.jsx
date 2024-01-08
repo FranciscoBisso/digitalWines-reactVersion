@@ -8,7 +8,7 @@ import styles from "./winecellar.module.css";
 import PropTypes from "prop-types";
 
 const Loading = lazy(() => import("../../../components/loading/Loading"));
-const NotFound = lazy(() => import("../../notFound/NotFound"));
+const NotFound = lazy(() => import("../../../components/notFound/NotFound"));
 const Modal = lazy(() => import("../../../components/modal/Modal"));
 
 export default function Winecellar({ pageTitle }) {

@@ -72,11 +72,9 @@ const winesApiController = {
 		});
 		if (bodegas && uvas && categorias) {
 			res.status(200).json({
-				data: {
-					bodegas: bodegas,
-					uvas: uvas,
-					categorias: categorias,
-				},
+				bodegas: bodegas,
+				varietales: uvas,
+				categorias: categorias,
 			});
 		} else {
 			res.status(400).json({
