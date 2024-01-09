@@ -28,7 +28,6 @@ export default function Add({ pageTitle }) {
 			{addQuery.isError && (
 				<NotFound apiErrorMsg={addQuery.error?.message} />
 			)}
-
 			{addQuery.isSuccess && (
 				<div className={styles.form_wrapper}>
 					<form className={styles.form}>
@@ -83,7 +82,7 @@ export default function Add({ pageTitle }) {
 						<label
 							htmlFor="stock"
 							className={styles.label}>
-							Cantidad de unidades disponibles:
+							Stock:
 							<input
 								type="number"
 								name="stock"
@@ -99,7 +98,7 @@ export default function Add({ pageTitle }) {
 							<select
 								name="categoria_id"
 								id="categoria_id"
-								className={styles.inputs}
+								className={styles.select}
 								placeholder="Categoría">
 								<option
 									value=""
@@ -127,8 +126,16 @@ export default function Add({ pageTitle }) {
 							<select
 								name="bodega_id"
 								id="bodega_id"
-								className={styles.inputs}
+								className={styles.select}
 								placeholder="Bodega">
+								<option
+									value=""
+									disabled
+									selected
+									hidden
+									className={styles.default_option}>
+									Selecciona una opción
+								</option>
 								{addQuery.data.bodegas?.map((winery, index) => (
 									<option
 										key={index}
@@ -145,8 +152,16 @@ export default function Add({ pageTitle }) {
 							<select
 								name="uva_id"
 								id="uva_id"
-								className={styles.inputs}
+								className={styles.select}
 								placeholder="Varietal">
+								<option
+									value=""
+									disabled
+									selected
+									hidden
+									className={styles.default_option}>
+									Selecciona una opción
+								</option>
 								{addQuery.data.varietales?.map(
 									(varietal, index) => (
 										<option
@@ -172,7 +187,7 @@ export default function Add({ pageTitle }) {
 						<button
 							type="button"
 							className={styles.enter_btn}>
-							Enviar
+							Agregar
 						</button>
 					</form>
 				</div>

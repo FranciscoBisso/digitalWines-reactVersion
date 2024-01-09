@@ -7,7 +7,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 /* SMALL PHONES (vertically): width -> 360px || height -> 640px */
 .form_wrapper {
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -33,22 +33,64 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	margin-bottom: 5%;
 }
 
-.upload_img_input {
-	width: unset;
-	padding: 0;
-	margin: 0 auto;
-}
-
 .label {
 	color: rgb(133, 133, 133);
 	font-family: var(--ebGaramondFont);
 	font-size: var(--font-sz-1);
 }
 
+.upload_img_input {
+	color: var(--white);
+	font-family: var(--ebGaramondFont);
+	font-size: var(--font-sz-1);
+	letter-spacing: 0.08rem;
+	line-height: 1.4;
+	padding-left: 0.5%;
+	margin-bottom: 5%;
+	cursor: pointer;
+	border-bottom: 0.5px solid rgb(133, 133, 133);
+}
+
+.upload_img_input:active {
+	color: transparent;
+	transition: 0.8s ease-out;
+}
+
+.upload_img_input::-webkit-file-upload-button {
+	/* visibility: hidden; */
+	display: none;
+	font-family: var(--ebGaramondFont);
+	font-style: italic;
+	background-color: transparent;
+	border: none;
+	color: rgb(133, 133, 133);
+}
+
+.upload_img_input::before {
+	width: unset;
+	/* display: inline-block; */
+	outline: none;
+	white-space: nowrap;
+	-webkit-user-select: none;
+}
+
+.upload_img_input::before:active {
+	color: var(--white);
+}
+
+.upload_img_input:hover::before {
+	border: none;
+}
+
+.upload_img_input:active::before {
+	/* background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); */
+	color: var(--white);
+}
+
 .inputs {
 	background-color: transparent;
 	border: none;
-	border-bottom: 0.5px solid transparent;
+	border-bottom: 0.5px solid rgb(133, 133, 133);
 	color: var(--white);
 	font-family: var(--ebGaramondFont);
 	font-size: var(--font-sz-1);
@@ -68,34 +110,37 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	font-family: var(--ebGaramondFont);
 	font-style: italic;
 	padding-left: 0.5%;
-	border-bottom: 0.5px solid rgb(133, 133, 133);
 }
 
-input:focus::placeholder {
+.inputs:focus::placeholder {
 	color: transparent;
 	transition: 0.8s ease-out;
 }
 
-select {
+.inputs::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.select {
+	cursor: pointer;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-}
-
-select:focus {
 	outline: none;
-}
-
-.label select option {
-	color: var(--white);
-}
-
-.default_option {
-	color: rgb(133, 133, 133);
-	font-family: var(--ebGaramondFont);
-	font-style: italic;
-	padding-left: 0.5%;
+	background-color: transparent;
+	border: none;
 	border-bottom: 0.5px solid rgb(133, 133, 133);
+	color: var(--white);
+	font-family: var(--ebGaramondFont);
+	font-size: var(--font-sz-1);
+	letter-spacing: 0.08rem;
+	line-height: 1.4;
+	padding-left: 0.5%;
+	margin-bottom: 5%;
+}
+
+.select:focus {
+	border-bottom: 0.5px solid var(--white);
 }
 
 .description {
@@ -103,9 +148,7 @@ select:focus {
 	overflow: auto;
 	resize: vertical;
 	background-color: transparent;
-	border-top: none;
-	border-right: none;
-	border-left: 0.25px solid rgb(133, 133, 133);
+	border: none;
 	border-bottom: 0.5px solid rgb(133, 133, 133);
 	color: var(--white);
 	font-family: var(--ebGaramondFont);
@@ -118,8 +161,18 @@ select:focus {
 
 .description:focus {
 	outline: none;
-	border-left: 0.25px solid var(--white);
 	border-bottom: 0.5px solid var(--white);
+}
+
+.description::placeholder {
+	font-family: var(--ebGaramondFont);
+	font-style: italic;
+	padding-left: 0.5%;
+}
+
+.description:focus::placeholder {
+	color: transparent;
+	transition: 0.8s ease-out;
 }
 
 .enter_btn {
