@@ -8,6 +8,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 /* Quattrocento Font */
 @import url("https://fonts.googleapis.com/css2?family=Quattrocento&display=swap");
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
 	box-sizing: border-box;
