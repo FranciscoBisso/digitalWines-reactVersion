@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { addWineUrl } from "../../../services/urls";
 import { get } from "../../../services/fetchData";
 import styles from "./add.module.css";
-
+import Button from "@mui/material/Button";
 const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../../components/notFound/NotFound"));
 
@@ -32,6 +32,7 @@ export default function Add({ pageTitle }) {
 				<div className={styles.form_wrapper}>
 					<form className={styles.form}>
 						<h1 className={styles.form_title}>AGREGAR</h1>
+						<Button variant="standard">Hello world</Button>
 						<label
 							htmlFor="imagen"
 							className={styles.label}>
