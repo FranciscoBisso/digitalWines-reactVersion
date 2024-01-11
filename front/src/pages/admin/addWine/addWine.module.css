@@ -17,11 +17,19 @@
 }
 
 .form_title {
-	width: unset;
+	text-align: center;
 	font-family: var(--cinzelFont);
 	font-size: var(--font-sz-5);
 	color: var(--yellow);
 	letter-spacing: 0.2rem;
+}
+
+.text_field div::before {
+	border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.text_field div::after {
+	border-bottom: 1px solid var(--white);
 }
 
 .text_field label {
@@ -38,21 +46,37 @@
 	color: var(--white);
 }
 
-.text_field div::before {
-	border-bottom: 1px solid rgb(133, 133, 133);
+.text_field input::placeholder {
+	font-style: italic;
+	letter-spacing: 0.05rem;
 }
 
-.text_field div::after {
-	border-bottom: 1px solid var(--white);
+/* INPUT TYPE FILE INNER CONTENT */
+.text_field input::-webkit-file-upload-button {
+	/* visibility: hidden; */
+	/* display: none; */
+	/* width: unset; */
+	cursor: pointer;
+	font-family: var(--ebGaramondFont);
+	font-style: italic;
+	font-weight: bolder;
+	background-color: var(--gray);
+	border: none;
+	border-radius: 5px;
+	margin-right: 1.5%;
+	color: var(--lightGray);
 }
 
+/* INPUT TYPE NUMBER INNER CONTENT */
+.text_field input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+/* SELECT'S LABEL FILE INNER CONTENT */
 .label {
 	color: rgb(133, 133, 133) !important;
 	font-family: var(--ebGaramondFont);
 	font-size: var(--font-sz-1);
-}
-
-.select_wrapper {
 }
 
 .select {
@@ -79,6 +103,7 @@
 	color: white;
 }
 
+/* SELECT'S OPTION'S MENU */
 div:has(ul, li) {
 	width: unset;
 }
@@ -96,11 +121,50 @@ div:has(ul, li) li {
 	line-height: 1.4 !important;
 }
 
+/* TEXTAREA */
+.text_field textarea {
+	font-family: var(--ebGaramondFont);
+	font-size: var(--font-sz-1);
+	letter-spacing: 0.08rem;
+	line-height: 1.4;
+	color: var(--white);
+}
+
 .button {
 	width: unset;
 	color: rgb(133, 133, 133);
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-3);
 }
 
 .button:hover {
 	color: var(--white);
+}
+
+/* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
+@media (min-width: 640px) {
+	.form {
+		width: 75%;
+	}
+}
+
+/* MEDIUM TABLETS: width -> 768px || height -> 1024px */
+@media (min-width: 768px) {
+	.form {
+		width: 65%;
+	}
+}
+
+/* BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px */
+@media (min-width: 1024px) {
+	.form {
+		width: 55%;
+	}
+}
+
+/* BIG MONITORS: width -> 2560px || height -> 1600px */
+@media (min-width: 1300px) {
+	.form {
+		width: 35%;
+	}
 }

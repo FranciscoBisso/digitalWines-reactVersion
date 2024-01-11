@@ -19,7 +19,7 @@ const Cava = lazy(() => import("./pages/users/cava/Cava"));
 
 // Páginas de los vinos
 const Winecellar = lazy(() => import("./pages/wines/winecellar/Winecellar"));
-const Add = lazy(() => import("./pages/admin/addWine/Add"));
+const AddWine = lazy(() => import("./pages/admin/addWine/AddWine"));
 const Details = lazy(() => import("./pages/wines/details/Details"));
 const Edit = lazy(() => import("./pages/admin/editWine/Edit"));
 const Delete = lazy(() => import("./pages/admin/deleteWine/Delete"));
@@ -68,11 +68,11 @@ const router = createBrowserRouter(
 				element={<NotFound pageTitle={"Ups! Algo salio mal..."} />}
 			/>
 			<Route
-				path="/admin"
+				path="admin"
 				element={<AdminLayout />}>
 				<Route
 					path="agregar"
-					element={<Add pageTitle={"Agregar"} />}
+					element={<AddWine pageTitle={"Agregar vino"} />}
 				/>
 				<Route
 					path="editar/:id"
