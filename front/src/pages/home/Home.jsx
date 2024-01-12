@@ -1,21 +1,15 @@
 import { lazy } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { get } from "../../services/fetchData";
-import { homeUrl } from "../../services/urls";
+import { useHomeQuery } from "../../services/queriesHooks";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import video from "../../assets/promo-video.mp4";
 import styles from "./home.module.css";
 import Accordion from "../../components/accordion/Accordion";
-const NotFound = lazy(() => import("../../components/notFound/NotFound"));
-const Loading = lazy(() => import("../../components/loading/Loading"));
+
 const WineSlider = lazy(() => import("../../components/slider/WineSlider"));
 
 export default function Home({ pageTitle }) {
-	const homeQuery = useQuery({
-		queryKey: ["homeQuery"],
-		queryFn: () => get(homeUrl),
-	});
+	const slidersQuery = useHomeQuery();
 
 	const varietals = [
 		{
@@ -57,53 +51,53 @@ export default function Home({ pageTitle }) {
 
 	return (
 		<>
-			{homeQuery.isLoading && <Loading />}
-			{homeQuery.isError && (
-				<NotFound apiErrorMsg={homeQuery.error?.message} />
-			)}
-			{homeQuery.isSuccess && homeQuery.data && (
-				<>
-					<Helmet>
-						<title>{pageTitle.toUpperCase()}</title>
-						<meta
-							name="description"
-							content="¡Bienvenido a nuestra página principal!"
+			<Helmet>
+				<title>{pageTitle.toUpperCase()}</title>
+				<meta
+					name="description"
+					content="¡Bienvenido a nuestra página principal!"
+				/>
+			</Helmet>
+			<section className={styles.intro_section}>
+				<div className={styles.video_wrapper}>
+					<video
+						className={styles.video}
+						playsInline
+						autoPlay
+						loop
+						muted>
+						<source
+							src={video}
+							type="video/mp4"
 						/>
-					</Helmet>
-					<section className={styles.intro_section}>
-						<div className={styles.video_wrapper}>
-							<video
-								className={styles.video}
-								playsInline
-								autoPlay
-								loop
-								muted>
-								<source
-									src={video}
-									type="video/mp4"
-								/>
-							</video>
-						</div>
-					</section>
+					</video>
+				</div>
+			</section>
 
-					<section className={styles.sliders_section}>
-						{homeQuery.data.categories?.map((category, index) => (
-							<WineSlider
-								key={index}
-								title={category.name}
-								wines={category.content}
-							/>
-						))}
-					</section>
+			<section className={styles.sliders_section}>
+				{slidersQuery.isError && (
+					<p style={{ color: "red" }}>Error...</p>
+				)}
+				{slidersQuery.isLoading && (
+					<p style={{ color: "green" }}>Loading...</p>
+				)}
 
-					<section className={styles.varietals_section}>
-						<Accordion
-							title={"Nuestros Varietales"}
-							varietals={varietals}
+				{slidersQuery.isSuccess &&
+					slidersQuery.data.categories?.map((category, index) => (
+						<WineSlider
+							key={index}
+							title={category.name}
+							wines={category.content}
 						/>
-					</section>
-				</>
-			)}
+					))}
+			</section>
+
+			<section className={styles.varietals_section}>
+				<Accordion
+					title={"Nuestros Varietales"}
+					varietals={varietals}
+				/>
+			</section>
 		</>
 	);
 }
