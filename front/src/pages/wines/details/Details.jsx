@@ -22,7 +22,7 @@ export default function Details() {
 					apiErrorMsg={detailsQuery.error?.message}
 				/>
 			)}
-			{detailsQuery.isLoading && <Loading pageTitle="Cargando" />}
+			{detailsQuery.isLoading && <Loading pageTitle="Cargando..." />}
 			{detailsQuery.isSuccess && (
 				<>
 					<Helmet>

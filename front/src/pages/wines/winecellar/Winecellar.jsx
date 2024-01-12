@@ -1,21 +1,16 @@
 import { lazy } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { get } from "../../../services/fetchData";
-import { winecellarUrl } from "../../../services/urls";
-import { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
-import styles from "./winecellar.module.css";
+import { useRef, useState } from "react";
+import { useWinecellarQuery } from "../../../services/queriesHooks";
 import PropTypes from "prop-types";
+import styles from "./winecellar.module.css";
 
 const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../../components/notFound/NotFound"));
 const Modal = lazy(() => import("../../../components/modal/Modal"));
 
 export default function Winecellar({ pageTitle }) {
-	const winecellarQuery = useQuery({
-		queryKey: ["winecellarQuery"],
-		queryFn: () => get(winecellarUrl),
-	});
+	const winecellarQuery = useWinecellarQuery();
 
 	const refModal = useRef();
 	const [selectedWine, setSelectedWine] = useState(null);
@@ -32,9 +27,12 @@ export default function Winecellar({ pageTitle }) {
 
 	return (
 		<>
-			{winecellarQuery.isLoading && <Loading />}
+			{winecellarQuery.isLoading && <Loading pageTitle="Cargando..." />}
 			{winecellarQuery.isError && (
-				<NotFound apiErrorMsg={winecellarQuery.error?.message} />
+				<NotFound
+					pageTitle={"Ups! Algo salio mal..."}
+					apiErrorMsg={winecellarQuery.error?.message}
+				/>
 			)}
 			{winecellarQuery.isSuccess && winecellarQuery.data && (
 				<>
