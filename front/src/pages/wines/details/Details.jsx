@@ -1,34 +1,29 @@
 import { lazy } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import { get } from "../../../services/fetchData";
-import { detailsUrl } from "../../../services/urls";
-
-import styles from "./details.module.css";
+import { useDetailsQuery } from "../../../services/queriesHooks";
 import WineBarOutlinedIcon from "@mui/icons-material/WineBarOutlined";
 import StarTwoToneIcon from "@mui/icons-material/StarTwoTone";
+import styles from "./details.module.css";
 
-const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../../components/notFound/NotFound"));
+const Loading = lazy(() => import("../../../components/loading/Loading"));
 const WineSlider = lazy(() => import("../../../components/slider/WineSlider"));
 
 export default function Details() {
 	const { id } = useParams();
-
-	const detailsQuery = useQuery({
-		queryKey: ["details/", id],
-		queryFn: () => get(detailsUrl(id)),
-		retry: 1,
-	});
+	const detailsQuery = useDetailsQuery(id);
 
 	return (
 		<>
 			{detailsQuery.isError && (
-				<NotFound apiErrorMsg={detailsQuery.error?.message} />
+				<NotFound
+					pageTitle={"Ups! Algo salio mal..."}
+					apiErrorMsg={detailsQuery.error?.message}
+				/>
 			)}
-			{detailsQuery.isLoading && <Loading />}
-			{detailsQuery.isSuccess && detailsQuery.data && (
+			{detailsQuery.isLoading && <Loading pageTitle="Cargando" />}
+			{detailsQuery.isSuccess && (
 				<>
 					<Helmet>
 						<title>
@@ -54,9 +49,7 @@ export default function Details() {
 							/>
 							<div className={styles.numbers_wrapper}>
 								<h4 className={styles.wine_price}>
-									{/* <strong> */}$
-									{detailsQuery.data.wine.precio}
-									{/* </strong> */}
+									${detailsQuery.data.wine.precio}
 								</h4>
 							</div>
 							<div className={styles.actions_wrapper}>

@@ -76,7 +76,10 @@ export default function Home({ pageTitle }) {
 
 			<section className={styles.sliders_section}>
 				{slidersQuery.isError && (
-					<p style={{ color: "red" }}>Error...</p>
+					<p
+						style={{
+							color: "red",
+						}}>{`Error: ${slidersQuery.error?.message}`}</p>
 				)}
 				{slidersQuery.isLoading && (
 					<p style={{ color: "green" }}>Loading...</p>
