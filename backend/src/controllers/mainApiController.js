@@ -51,9 +51,11 @@ const mainApiController = {
 					bestSellers: bestSellers.length,
 					bestDeals: bestDeals.length,
 				},
-				featured,
-				bestSellers,
-				bestDeals,
+				categories: [
+					{ name: "featured", content: featured },
+					{ name: "bestSellers", content: bestSellers },
+					{ name: "bestDeals", content: bestDeals },
+				],
 			});
 		}
 	},

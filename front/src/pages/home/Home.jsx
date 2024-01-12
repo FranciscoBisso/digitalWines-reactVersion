@@ -87,25 +87,15 @@ export default function Home({ pageTitle }) {
 					</section>
 
 					<section className={styles.sliders_section}>
-						<div className={styles.slider_wrapper}>
+						{homeQuery.data.categories?.map((category, index) => (
 							<WineSlider
-								title={"Destacados"}
-								wines={homeQuery.data.featured}
+								key={index}
+								title={category.name}
+								wines={category.content}
 							/>
-						</div>
-						<div className={styles.slider_wrapper}>
-							<WineSlider
-								title={"Más Vendidos"}
-								wines={homeQuery.data.bestSellers}
-							/>
-						</div>
-						<div className={styles.slider_wrapper}>
-							<WineSlider
-								title={"Más Económicos"}
-								wines={homeQuery.data.bestDeals}
-							/>
-						</div>
+						))}
 					</section>
+
 					<section className={styles.varietals_section}>
 						<Accordion
 							title={"Nuestros Varietales"}
