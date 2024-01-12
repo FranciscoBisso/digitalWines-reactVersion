@@ -1,3 +1,4 @@
+const port = process.env.PORT || 3001;
 const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -35,7 +36,7 @@ const userApiController = {
 				res.status(200).json({
 					nombre: newUser.nombre,
 					email: newUser.email,
-					imagen: "http://localhost:3001" + newUser.imagen,
+					imagen: `http://localhost:${port}` + newUser.imagen,
 					token: token,
 				});
 			}
@@ -71,7 +72,7 @@ const userApiController = {
 					res.status(200).json({
 						nombre: user.nombre,
 						email: user.email,
-						imagen: "http://localhost:3001" + user.imagen,
+						imagen: `http://localhost:${port}` + user.imagen,
 						token: token,
 					});
 				} else {

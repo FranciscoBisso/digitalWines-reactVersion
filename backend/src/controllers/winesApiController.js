@@ -1,3 +1,4 @@
+const port = process.env.PORT || 3001;
 const db = require("../database/models");
 const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
@@ -17,7 +18,7 @@ const winesApiController = {
 
 		if (wines) {
 			for (let wine of wines) {
-				wine.imagen = "http://localhost:3001" + wine.imagen;
+				wine.imagen = `http://localhost:${port}` + wine.imagen;
 			}
 			res.status(200).json({
 				total: wines.length,
@@ -39,7 +40,7 @@ const winesApiController = {
 		}
 
 		if (wine) {
-			wine.imagen = "http://localhost:3001" + wine.imagen;
+			wine.imagen = `http://localhost:${port}` + wine.imagen;
 
 			const similarWines = await db.Vinos.findAll({
 				include: [{ all: true }],
@@ -52,7 +53,8 @@ const winesApiController = {
 			});
 
 			similarWines.map(
-				(wine) => (wine.imagen = "http://localhost:3001" + wine.imagen)
+				(wine) =>
+					(wine.imagen = `http://localhost:${port}` + wine.imagen)
 			);
 
 			res.status(200).json({
@@ -150,7 +152,7 @@ const winesApiController = {
 			});
 		} else {
 			vinoModificable.imagen =
-				"http://localhost:3001" + vinoModificable.imagen;
+				`http://localhost:${port}` + vinoModificable.imagen;
 			res.status(200).json({
 				data: {
 					wine: vinoModificable,
@@ -209,7 +211,7 @@ const winesApiController = {
 				error: "No contamos con ese vino",
 			});
 		} else {
-			vino.imagen = "http://localhost:3001" + vino.imagen;
+			vino.imagen = `http://localhost:${port}` + vino.imagen;
 			res.status(200).json({
 				data: vino,
 			});

@@ -1,4 +1,6 @@
+const port = process.env.PORT || 3001;
 const db = require("../database/models");
+
 const mainApiController = {
 	home: async (req, res) => {
 		const featured = await db.Vinos.findAll({
@@ -30,15 +32,15 @@ const mainApiController = {
 
 		if (featured && bestSellers && bestDeals) {
 			for (let wine of featured) {
-				wine.imagen = "http://localhost:3001" + wine.imagen;
+				wine.imagen = `http://localhost:${port}` + wine.imagen;
 			}
 
 			for (let wine of bestSellers) {
-				wine.imagen = "http://localhost:3001" + wine.imagen;
+				wine.imagen = `http://localhost:${port}` + wine.imagen;
 			}
 
 			for (let wine of bestDeals) {
-				wine.imagen = "http://localhost:3001" + wine.imagen;
+				wine.imagen = `http://localhost:${port}` + wine.imagen;
 			}
 
 			res.status(200).json({
