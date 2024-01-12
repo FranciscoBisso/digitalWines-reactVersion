@@ -28,7 +28,7 @@ const userApiController = {
 					email: req.body.email,
 					contrasenia: bcryptjs.hashSync(req.body.password, 10),
 					tipo_id: 2,
-					imagen: req.file.path.split("public").pop(),
+					imagen: req.file.path.split("public").pop(), //*TODO <-- delete this field (row in db), it's nonsense
 				});
 
 				const token = createToken(newUser.id);
@@ -61,6 +61,12 @@ const userApiController = {
 				where: { email: req.body.email },
 			});
 
+			if (!user) {
+				res.status(400).json({
+					credentialsError: "Credenciales inválidas.",
+				});
+			}
+
 			if (user) {
 				const match = bcryptjs.compareSync(
 					req.body.password,
@@ -75,15 +81,13 @@ const userApiController = {
 						imagen: `http://localhost:${port}` + user.imagen,
 						token: token,
 					});
-				} else {
+				}
+
+				if (!match) {
 					res.status(400).json({
 						credentialsError: "Credenciales inválidas.",
 					});
 				}
-			} else {
-				res.status(400).json({
-					credentialsError: "Credenciales inválidas.",
-				});
 			}
 		} else {
 			res.status(400).json({

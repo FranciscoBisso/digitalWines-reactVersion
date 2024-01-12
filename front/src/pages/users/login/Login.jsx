@@ -19,6 +19,7 @@ export default function Login({ pageTitle }) {
 				<form className={styles.form}>
 					<h1 className={styles.form_title}>LOGIN</h1>
 					<TextField
+						type="email"
 						name="email"
 						id="email"
 						label="Correo electrónico:"
@@ -29,6 +30,7 @@ export default function Login({ pageTitle }) {
 						className={styles.text_field}
 					/>
 					<TextField
+						type="password"
 						name="password"
 						id="password"
 						label="Contraseña:"
@@ -41,27 +43,10 @@ export default function Login({ pageTitle }) {
 					<Button
 						variant="text"
 						className={styles.button}>
-						Login
+						Enviar
 					</Button>
 				</form>
 			</div>
-			{/* <div className={styles.form_wrapper}>
-					<label htmlFor="password">
-						<input
-							type="password"
-							name="password"
-							id="password"
-							className={styles.inputs}
-							placeholder="Contraseña"
-						/>
-					</label>
-					<button
-						type="button"
-						className={styles.enter_btn}>
-						Enviar
-					</button>
-				</form>
-			</div> */}
 		</>
 	);
 }

@@ -1,13 +1,5 @@
-/* @MEDIA-QUERY RULES FOR DIFFERENT DEVICES 
-SMALL PHONES: width -> 360px || height -> 640px
-MEDIUM TABLETS: width -> 768px || height -> 1024px
-BIG TABLETS - MEDIUM MONITORS: width -> 1024px || height -> 1366px
-BIG MONITORS: width -> 2560px || height -> 1600px 
-*/
-
-/* SMALL PHONES (vertically): width -> 360px || height -> 640px */
 .form_wrapper {
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -15,70 +7,59 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .form {
+	width: 85%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 85%;
-	padding: 5% 5% 10% 5%;
-	border-radius: 10px;
+	gap: 1rem;
+	padding: 0 1rem;
 }
 
 .form_title {
-	width: unset;
+	text-align: center;
 	font-family: var(--cinzelFont);
 	font-size: var(--font-sz-5);
 	color: var(--yellow);
 	letter-spacing: 0.2rem;
-	margin-bottom: 5%;
 }
 
-.inputs {
-	background-color: transparent;
-	border: none;
-	border-bottom: 0.5px solid transparent;
-	color: var(--white);
+.text_field div::before {
+	border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.text_field div::after {
+	border-bottom: 1px solid var(--white);
+}
+
+.text_field label {
+	color: rgb(133, 133, 133) !important;
+	font-family: var(--ebGaramondFont);
+	font-size: var(--font-sz-1);
+}
+
+.text_field input {
 	font-family: var(--ebGaramondFont);
 	font-size: var(--font-sz-1);
 	letter-spacing: 0.08rem;
 	line-height: 1.4;
-	padding-left: 0.5%;
-	margin-bottom: 5%;
-}
-
-.inputs:focus {
-	outline: none;
-	padding-left: 0.5%;
-	border-bottom: 0.5px solid var(--white);
-}
-
-.inputs::placeholder {
-	font-family: var(--ebGaramondFont);
-	font-style: italic;
-	padding-left: 0.5%;
-	border-bottom: 0.5px solid rgb(133, 133, 133);
-}
-
-input:focus::placeholder {
-	color: transparent;
-	transition: 0.8s ease-out;
-}
-
-.enter_btn {
-	width: unset;
-	font-family: var(--cinzelFont);
-	font-size: var(--font-sz-1);
-	color: rgb(133, 133, 133);
-	border: none;
-	background-color: transparent;
-	margin-bottom: 5%;
-	cursor: pointer;
-	transition: color 0.3s ease-in, border-bottom 0.3s ease-in;
-}
-
-.enter_btn:hover {
 	color: var(--white);
-	border-bottom: 0.5px solid var(--white);
+}
+
+.text_field input::placeholder {
+	font-style: italic;
+	letter-spacing: 0.05rem;
+}
+
+.button {
+	width: unset;
+	color: rgb(133, 133, 133);
+	font-family: var(--cinzelFont);
+	font-size: var(--font-sz-3);
+}
+
+.button:hover {
+	color: var(--white);
 }
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
