@@ -28,6 +28,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 .wine_card_img {
 	width: 100%;
 	aspect-ratio: 1;
+	object-fit: cover;
 }
 
 .img_shadow {

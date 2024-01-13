@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { get } from "./fetchData";
-import { homeUrl, detailsUrl, winecellarUrl } from "./urls";
+import { homeUrl, detailsUrl, winecellarUrl, addWineUrl } from "./urls";
 
 export const useHomeQuery = () => {
 	return useQuery({
@@ -20,5 +20,12 @@ export const useWinecellarQuery = () => {
 	return useQuery({
 		queryKey: ["winecellarQuery"],
 		queryFn: () => get(winecellarUrl),
+	});
+};
+
+export const useAddQuery = () => {
+	return useQuery({
+		queryKey: ["addQuery"],
+		queryFn: () => get(addWineUrl),
 	});
 };

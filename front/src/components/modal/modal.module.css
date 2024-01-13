@@ -102,6 +102,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 		width: 80%;
 		border-top-right-radius: 0px;
 		border-bottom-left-radius: 10px;
+		object-fit: cover;
 	}
 
 	.card_body {

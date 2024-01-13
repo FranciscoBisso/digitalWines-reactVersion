@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { lazy, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { addWineUrl } from "../../../services/urls";
-import { get } from "../../../services/fetchData";
+import { useAddQuery } from "../../../services/queriesHooks";
+import imgFallback from "../../../assets/img-fallback.jpeg";
 import styles from "./addWine.module.css";
 
 import TextField from "@mui/material/TextField";
@@ -18,10 +17,21 @@ const Loading = lazy(() => import("../../../components/loading/Loading"));
 const NotFound = lazy(() => import("../../../components/notFound/NotFound"));
 
 export default function Add({ pageTitle }) {
-	const addQuery = useQuery({
-		queryKey: ["addQuery"],
-		queryFn: () => get(addWineUrl),
-	});
+	const addQuery = useAddQuery();
+
+	const [imageURL, setImageURL] = useState("");
+	const handleImageChange = (event) => {
+		const file = event.target.files[0];
+		if (file) {
+			const imageURL = URL.createObjectURL(file);
+			setImageURL(imageURL);
+		}
+		if (!file) {
+			setImageURL("");
+		}
+	};
+
+	console.log("imageURL:", imageURL);
 
 	const [selectedItem, setSelectedItem] = useState("");
 	const handleChange = (event) => {
@@ -45,6 +55,13 @@ export default function Add({ pageTitle }) {
 				<div className={styles.form_wrapper}>
 					<form className={styles.form}>
 						<h1 className={styles.form_title}>AGREGAR VINO</h1>
+						{/* Wine's Img Preview */}
+						<img
+							id="imgPreview"
+							loading="lazy"
+							src={imageURL || imgFallback}
+							className={styles.upload_file_preview}
+						/>
 						{/* Wine's Picture */}
 						<TextField
 							type="file"
@@ -55,6 +72,7 @@ export default function Add({ pageTitle }) {
 							// error={}
 							helperText={""}
 							className={styles.text_field}
+							onChange={handleImageChange}
 						/>
 						{/* Wine's Name */}
 						<TextField
