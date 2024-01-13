@@ -31,8 +31,6 @@ export default function Add({ pageTitle }) {
 		}
 	};
 
-	console.log("imageURL:", imageURL);
-
 	const [selectedItem, setSelectedItem] = useState("");
 	const handleChange = (event) => {
 		setSelectedItem(event.target.value);
