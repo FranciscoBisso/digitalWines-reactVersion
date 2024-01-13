@@ -25,7 +25,7 @@
 }
 
 .text_field div::before {
-	border-bottom: 1px solid rgb(133, 133, 133);
+	border-bottom: 1px solid var(--gray133133133);
 }
 
 .text_field div::after {
@@ -33,7 +33,7 @@
 }
 
 .text_field label {
-	color: rgb(133, 133, 133) !important;
+	color: var(--gray133133133) !important;
 	font-family: var(--ebGaramondFont);
 	font-size: var(--font-sz-1);
 }
@@ -53,7 +53,7 @@
 
 .button {
 	width: unset;
-	color: rgb(133, 133, 133);
+	color: var(--gray133133133);
 	font-family: var(--cinzelFont);
 	font-size: var(--font-sz-3);
 }

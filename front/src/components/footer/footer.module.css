@@ -12,7 +12,8 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .copyright {
 	text-align: center;
-	color: var(--lightGray);
+	color: var(--gray245245245);
+	font-size: var(--font-sz-1);
 }
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */

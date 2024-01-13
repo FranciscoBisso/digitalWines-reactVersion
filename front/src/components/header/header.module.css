@@ -30,11 +30,11 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .nav_link:hover {
-	background-color: var(--lightGray);
+	background-color: var(--gray245245245);
 }
 
 .nav_link.active {
-	background-color: var(--lightGray);
+	background-color: var(--gray245245245);
 }
 
 .icons {

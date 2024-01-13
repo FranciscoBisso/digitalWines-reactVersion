@@ -51,7 +51,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	padding: 4% 0%;
 	color: var(--red);
 	background-color: transparent;
-	background-color: var(--lightGray);
+	background-color: var(--gray245245245);
 	border: none;
 	border-radius: 10px;
 	font-size: var(--font-sz-4);
@@ -59,12 +59,12 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 }
 
 .actions:hover {
-	background-color: var(--lightGray);
+	background-color: var(--gray245245245);
 }
 
 .actions_subtitle {
 	font-family: var(--cinzelFont);
-	color: var(--lightBlack);
+	color: var(--black101010);
 	font-size: 0.6rem;
 	font-weight: bolder;
 }
@@ -83,7 +83,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 .wine_vineyard {
 	font-family: var(--cinzelFont);
 	font-size: var(--font-sz-5);
-	/* color: var(--lightGray); */
+	/* color: var(--gray245245245); */
 	color: rgba(245, 245, 245, 0.5);
 	text-align: center;
 }

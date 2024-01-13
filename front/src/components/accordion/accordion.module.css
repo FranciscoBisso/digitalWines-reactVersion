@@ -16,7 +16,7 @@
 
 .accordion {
 	background-color: transparent;
-	border: 0.5px solid var(--lightGray);
+	border: 0.5px solid var(--gray245245245);
 	cursor: pointer;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .accordion_summary svg {
-	color: var(--lightGray);
+	color: var(--gray245245245);
 }
 
 .accordion_summary:focus-within .name {

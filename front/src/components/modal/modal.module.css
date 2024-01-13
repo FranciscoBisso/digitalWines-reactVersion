@@ -24,7 +24,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 
 .card {
 	position: relative;
-	background-color: var(--lightBlack);
+	background-color: var(--black101010);
 	border-radius: 10px;
 }
 
@@ -80,8 +80,8 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	border: 2px solid var(--red);
 	border-radius: 10px;
 	color: var(--white);
-	background-color: var(--lightBlack);
-	filter: drop-shadow(0px 0px 0.2rem var(--lightBlack));
+	background-color: var(--black101010);
+	filter: drop-shadow(0px 0px 0.2rem var(--black101010));
 }
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */
@@ -137,7 +137,7 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 		position: relative;
 		flex-direction: column;
 		border-radius: 10px;
-		background-color: var(--lightBlack);
+		background-color: var(--black101010);
 	}
 
 	.modal_img {
@@ -175,9 +175,9 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 		right: -4%;
 		border: 2px solid var(--red);
 		border-radius: 10px;
-		background-color: var(--lightBlack);
+		background-color: var(--black101010);
 		color: var(--white);
-		filter: drop-shadow(0px 0px 0.2rem var(--lightBlack));
+		filter: drop-shadow(0px 0px 0.2rem var(--black101010));
 	}
 
 	.exit_button svg {
@@ -199,9 +199,9 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 		right: -4%;
 		border: 2px solid var(--red);
 		border-radius: 10px;
-		background-color: var(--lightBlack);
+		background-color: var(--black101010);
 		color: var(--white);
-		filter: drop-shadow(0px 0px 0.2rem var(--lightBlack));
+		filter: drop-shadow(0px 0px 0.2rem var(--black101010));
 	}
 
 	.exit_button svg {

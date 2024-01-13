@@ -1,15 +1,17 @@
 :root {
-	--strongBlack: rgba(0, 0, 0, 1);
-	--lightBlack: rgba(10, 10, 10, 1);
-	--gray: rgba(37, 37, 37, 1);
-	--lightGray: rgba(245, 245, 245, 0.2);
-	--red: rgba(170, 13, 63, 1);
-	--green: rgb(57, 181, 74, 1);
-	--yellow: rgba(251, 186, 0, 1);
-	--white: rgba(245, 245, 245, 1);
+	--black000: rgb(0, 0, 0);
+	--black101010: rgb(10, 10, 10);
+	--beige: rgb(249, 244, 218);
+	--gray373737: rgb(37, 37, 37);
+	--gray133133133: rgb(133, 133, 133);
+	--gray245245245: rgba(245, 245, 245, 0.2);
+	--green: rgb(57, 181, 74);
+	--red: rgb(170, 13, 63);
+	--white: rgb(245, 245, 245);
+	--yellow: rgb(251, 186, 0);
+
 	--cinzelFont: "Cinzel", serif;
 	--ebGaramondFont: "EB Garamond", serif;
-	--quattrocentoFont: "Quattrocento", serif;
 	--font-sz-1: 1rem;
 	--font-sz-2: 1.1rem;
 	--font-sz-3: 1.25rem;
@@ -23,27 +25,26 @@
 }
 
 html {
-	background-color: var(--strongBlack);
+	background-color: var(--black000);
 }
 
 .header {
-	background-color: var(--strongBlack);
+	background-color: var(--black000);
 	font-family: var(--cinzelFont);
 	position: fixed;
 	z-index: 10;
 	bottom: 0;
 	height: 8vh;
-	/* border: 1px solid orange; */
 }
 
 .main {
 	min-height: calc(100vh - 8vh);
-	background-color: var(--lightBlack);
+	background-color: var(--black101010);
 	font-family: var(--ebGaramondFont);
 }
 
 .footer {
-	background-color: var(--lightBlack);
+	background-color: var(--black101010);
 	font-family: var(--ebGaramondFont);
 	margin-bottom: 8vh;
 	height: 16vh;

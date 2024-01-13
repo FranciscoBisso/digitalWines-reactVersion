@@ -1,36 +1,11 @@
-/* Roboto Font */
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /* Cinzel Font */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
 /* EB-Garamond Font */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=EB+Garamond&display=swap");
-/* Marcellus Font */
-@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
-/* Quattrocento Font */
-@import url("https://fonts.googleapis.com/css2?family=Quattrocento&display=swap");
 
 * {
 	box-sizing: border-box;
 	width: 100%;
 	margin: 0;
 	padding: 0;
-}
-
-.robotoFont {
-	font-family: "Roboto", sans-serif;
-}
-
-.cinzelFont {
-	font-family: "Cinzel", serif;
-}
-
-.ebGaramondFont {
-	font-family: "EB Garamond", serif;
-}
-.marcelusFont {
-	font-family: "Marcellus", serif;
-}
-
-.quattrocentoFont {
-	font-family: "Quattrocento", serif;
 }

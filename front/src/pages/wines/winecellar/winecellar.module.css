@@ -37,11 +37,11 @@ BIG MONITORS: width -> 2560px || height -> 1600px
 	width: 100%;
 	height: calc(100% - 5px);
 	background-color: transparent;
-	/* box-shadow: inset 0rem 0rem 0.1rem 0.05rem var(--strongBlack); */
+	/* box-shadow: inset 0rem 0rem 0.1rem 0.05rem var(--black000); */
 }
 
 .img_shadow:hover {
-	/* box-shadow: inset 0rem 0rem 0.1rem 0.05rem var(--strongBlack); */
+	/* box-shadow: inset 0rem 0rem 0.1rem 0.05rem var(--black000); */
 	border-bottom: 0.3rem solid var(--red);
 }
 
