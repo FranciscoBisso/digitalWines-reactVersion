@@ -9,7 +9,7 @@ import Accordion from "../../components/accordion/Accordion";
 const WineSlider = lazy(() => import("../../components/slider/WineSlider"));
 
 export default function Home({ pageTitle }) {
-	const slidersQuery = useHomeQuery();
+	const homeQuery = useHomeQuery();
 
 	const varietals = [
 		{
@@ -75,24 +75,37 @@ export default function Home({ pageTitle }) {
 			</section>
 
 			<section className={styles.sliders_section}>
-				{slidersQuery.isError && (
+				{homeQuery.isError && (
 					<p
 						style={{
 							color: "red",
-						}}>{`Error: ${slidersQuery.error?.message}`}</p>
+						}}>{`Error: ${homeQuery.error?.message}`}</p>
 				)}
-				{slidersQuery.isLoading && (
+				{homeQuery.isLoading && (
 					<p style={{ color: "green" }}>Loading...</p>
 				)}
 
-				{slidersQuery.isSuccess &&
-					slidersQuery.data.categories?.map((category, index) => (
-						<WineSlider
-							key={index}
-							title={category.name}
-							wines={category.content}
-						/>
-					))}
+				{homeQuery.isSuccess &&
+					homeQuery.data.categories?.map((category, index) => {
+						switch (category.name) {
+							case "featured":
+								category.name = "Destacados";
+								break;
+							case "bestSellers":
+								category.name = "Más Vendidos";
+								break;
+							case "bestDeals":
+								category.name = "Más Económicos";
+								break;
+						}
+						return (
+							<WineSlider
+								key={index}
+								title={category.name}
+								wines={category.content}
+							/>
+						);
+					})}
 			</section>
 
 			<section className={styles.varietals_section}>
