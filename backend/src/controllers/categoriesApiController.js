@@ -26,7 +26,7 @@ const categoriesApiController = {
 
 		if (!featured && !bestSellers && !bestDeals) {
 			res.status(404).json({
-				error: "¡Houston, tenemos un problema  con los vinos de la página principal!",
+				errorMsg: "Ups! Algo salió mal...", // <-- Oops! Something went wrong...
 			});
 		}
 

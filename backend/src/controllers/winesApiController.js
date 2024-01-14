@@ -4,7 +4,7 @@ const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 
 const winesApiController = {
-	winecellar: async (req, res) => {
+	getWines: async (req, res) => {
 		const wines = await db.Vinos.findAll({
 			include: [{ all: true }],
 			order: [["nombre", "ASC"]],
@@ -12,7 +12,7 @@ const winesApiController = {
 
 		if (!wines) {
 			res.status(404).json({
-				error: "¡Houston, tenemos un problema con los vinos de la vinoteca!",
+				errorMsg: "Ups! Algo salió mal...", // <-- Oops! Something went wrong...
 			});
 		}
 
@@ -27,7 +27,7 @@ const winesApiController = {
 		}
 	},
 
-	details: async (req, res) => {
+	getWine: async (req, res) => {
 		const wine = await db.Vinos.findOne({
 			include: [{ all: true }],
 			where: { id: req.params.id },
@@ -35,7 +35,7 @@ const winesApiController = {
 
 		if (!wine) {
 			res.status(404).json({
-				error: "No contamos con el vino que estás buscando",
+				errorMsg: "Ups! No contamos con el vino que estás buscando", // <-- Oops! We don't have the wine you are looking for
 			});
 		}
 
@@ -64,42 +64,28 @@ const winesApiController = {
 		}
 	},
 
-	add: async (req, res) => {
-		const bodegas = await db.Bodegas.findAll({
-			order: [["nombre", "ASC"]],
-		});
-		const uvas = await db.Uvas.findAll({ order: [["nombre", "ASC"]] });
-		const categorias = await db.Categorias.findAll({
-			order: [["nombre", "ASC"]],
-		});
-		if (bodegas && uvas && categorias) {
-			res.status(200).json({
-				bodegas: bodegas,
-				varietales: uvas,
-				categorias: categorias,
-			});
-		} else {
-			res.status(400).json({
-				error: "F",
-			});
-		}
-	},
-
-	create: async (req, res) => {
+	addWine: async (req, res) => {
 		let errors = validationResult(req);
 
+		if (!errors.isEmpty()) {
+			res.status(400).json({ errors: errors.errors });
+		}
+
 		if (errors.isEmpty()) {
-			const yaExiste = await db.Vinos.findOne({
+			const wine = await db.Vinos.findOne({
 				include: [{ all: true }],
 				where: { nombre: req.body.nombre },
 			});
 
-			if (yaExiste) {
+			if (wine) {
 				res.status(400).json({
-					error: "Ya contamos con ese vino en nuestra DB.",
-					data: yaExiste,
+					errorMsg:
+						"Ups! Ya contamos con ese vino en nuestra base de datos", // <-- Oops! We already have that wine in our db
+					wine,
 				});
-			} else {
+			}
+
+			if (!wine) {
 				const newWine = await db.Vinos.create({
 					nombre: req.body.nombre,
 					imagen: req.file.path.split("public").pop(),
@@ -112,65 +98,24 @@ const winesApiController = {
 					stock: req.body.stock,
 				});
 				res.status(200).json({
-					created: "OK",
-					data: newWine,
+					msg: "Vino agregado exitosamente", // <-- Wine added successfully
+					newWine,
 				});
 			}
-		} else {
-			res.status(400).json({ errorsData: errors.errors });
 		}
 	},
 
-	modify: async (req, res) => {
-		const vinoModificable = await db.Vinos.findOne({
-			include: [{ all: true }],
-			where: { id: req.params.id },
-		});
-		const bodegas = await db.Bodegas.findAll({
-			order: [["nombre", "ASC"]],
-		});
-		const uvas = await db.Uvas.findAll({ order: [["nombre", "ASC"]] });
-		const categorias = await db.Categorias.findAll({
-			order: [["nombre", "ASC"]],
-		});
-
-		if (!vinoModificable) {
-			res.status(404).json({
-				error: "Vino inexistente",
-			});
-		} else if (!bodegas) {
-			res.status(404).json({
-				error: "F con las bodegas",
-			});
-		} else if (!uvas) {
-			res.status(404).json({
-				error: "F con las uvas",
-			});
-		} else if (!categorias) {
-			res.status(404).json({
-				error: "F con las categorias",
-			});
-		} else {
-			vinoModificable.imagen =
-				`http://localhost:${port}` + vinoModificable.imagen;
-			res.status(200).json({
-				data: {
-					wine: vinoModificable,
-					bodegas: bodegas,
-					uvas: uvas,
-					categorias: categorias,
-				},
-			});
-		}
-	},
-
-	update: async (req, res) => {
+	updateWine: async (req, res) => {
 		let errors = validationResult(req);
 
-		const vinoModificable = await db.Vinos.findOne({
+		const editableWine = await db.Vinos.findOne({
 			include: [{ all: true }],
 			where: { id: req.params.id },
 		});
+
+		if (!errors.isEmpty()) {
+			res.status(400).json({ errors: errors.errors });
+		}
 
 		if (errors.isEmpty()) {
 			await db.Vinos.update(
@@ -192,51 +137,34 @@ const winesApiController = {
 				}
 			);
 			res.status(200).json({
-				updatedData: req.body,
-				oldData: vinoModificable,
-			});
-		} else {
-			res.status(400).json({ formErrors: errors.errors });
-		}
-	},
-
-	delete: async (req, res) => {
-		const vino = await db.Vinos.findOne({
-			include: [{ all: true }],
-			where: { id: req.params.id },
-		});
-
-		if (!vino) {
-			res.status(404).json({
-				error: "No contamos con ese vino",
-			});
-		} else {
-			vino.imagen = `http://localhost:${port}` + vino.imagen;
-			res.status(200).json({
-				data: vino,
+				updated: req.body,
+				old: editableWine,
 			});
 		}
 	},
 
-	destroy: async (req, res) => {
-		const vinoAEliminar = await db.Vinos.findOne({
+	deleteWine: async (req, res) => {
+		const deletableWine = await db.Vinos.findOne({
 			include: [{ all: true }],
 			where: { id: req.params.id },
 		});
 
-		if (vinoAEliminar) {
+		if (!deletableWine) {
+			res.status(400).json({
+				errorMsg:
+					"No contamos con el vino que estás queriendo eliminar", // <-- We don't have the wine you want to delete
+			});
+		}
+
+		if (deletableWine) {
 			await db.Vinos.destroy({
 				where: {
 					id: req.params.id,
 				},
 			});
 			res.status(200).json({
-				deleted: "OK",
-				deletedWine: vinoAEliminar,
-			});
-		} else {
-			res.status(400).json({
-				error: "No se pudo eliminar un vino inexistente",
+				msg: "OK",
+				deletedWine: deletableWine,
 			});
 		}
 	},

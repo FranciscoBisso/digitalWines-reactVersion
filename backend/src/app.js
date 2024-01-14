@@ -6,6 +6,8 @@ const path = require("path");
 
 const usersApiRouter = require("./routes/usersApiRouter");
 const winesApiRouter = require("./routes/winesApiRouter");
+const wineriesApiRouter = require("./routes/wineriesApiRouter");
+const varietalsApiRouter = require("./routes/varietalsApiRouter");
 const categoriesApiRouter = require("./routes/categoriesApiRouter");
 const port = process.env.PORT || 3001;
 
@@ -20,6 +22,8 @@ app.use(cors({ origin: "*" }));
 
 app.use("/api/users", usersApiRouter);
 app.use("/api/wines", winesApiRouter);
+app.use("/api/wineries", wineriesApiRouter);
+app.use("/api/varietals", varietalsApiRouter);
 app.use("/api/categories", categoriesApiRouter);
 
 app.listen(port, () => {

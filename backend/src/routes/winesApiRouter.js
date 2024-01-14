@@ -4,27 +4,28 @@ const winesApiController = require("../controllers/winesApiController");
 const uploadFile = require("../middlewares/multerProducts");
 const formValidations = require("../middlewares/validations/formValidations.js");
 
-router.get("/winecellar", winesApiController.winecellar);
+// Gets all wines
+router.get("/", winesApiController.getWines);
+// Gets one wine
+router.get("/:id", winesApiController.getWine);
 
-router.get("/details/:id", winesApiController.details);
-
-router.get("/create", winesApiController.add);
+// Adds a new wine to the db
 router.post(
-	"/create",
+	"/add",
 	uploadFile.single("imagen"),
 	formValidations,
-	winesApiController.create
+	winesApiController.addWine
 );
 
-router.get("/update/:id", winesApiController.modify);
+// Updates a wine in db
 router.put(
 	"/update/:id",
 	uploadFile.single("imagen"),
 	formValidations,
-	winesApiController.update
+	winesApiController.updateWine
 );
 
-router.get("/delete/:id", winesApiController.delete);
-router.delete("/delete/:id", winesApiController.destroy);
+// Deletes a wine in db
+router.delete("/delete/:id", winesApiController.deleteWine);
 
 module.exports = router;
