@@ -4,9 +4,9 @@ require("dotenv").config();
 
 const path = require("path");
 
-const mainApiRouter = require("./routes/mainApiRouter");
-const winesApiRouter = require("./routes/winesApiRouter");
 const usersApiRouter = require("./routes/usersApiRouter");
+const winesApiRouter = require("./routes/winesApiRouter");
+const categoriesApiRouter = require("./routes/categoriesApiRouter");
 const port = process.env.PORT || 3001;
 
 const methodOverride = require("method-override");
@@ -18,9 +18,9 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(methodOverride("_method"));
 app.use(cors({ origin: "*" }));
 
-app.use("/api", mainApiRouter);
-app.use("/api/wines", winesApiRouter);
 app.use("/api/users", usersApiRouter);
+app.use("/api/wines", winesApiRouter);
+app.use("/api/categories", categoriesApiRouter);
 
 app.listen(port, () => {
 	console.log(`SERVER RUNNING IN PORT: ${port}`);

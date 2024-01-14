@@ -1,8 +1,8 @@
 const port = process.env.PORT || 3001;
 const db = require("../database/models");
 
-const mainApiController = {
-	home: async (req, res) => {
+const categoriesApiController = {
+	getCategories: async (req, res) => {
 		const featured = await db.Vinos.findAll({
 			include: [{ all: true }],
 			order: [["nombre", "ASC"]],
@@ -61,4 +61,4 @@ const mainApiController = {
 	},
 };
 
-module.exports = mainApiController;
+module.exports = categoriesApiController;
