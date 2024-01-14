@@ -145,7 +145,7 @@ div:has(ul, li) li {
 }
 
 .button:hover {
-	color: var(--white);
+	color: var(--white) !important;
 }
 
 /* SMALL PHONES (horizontally): width -> 640px || height -> 360px */

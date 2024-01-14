@@ -36,6 +36,11 @@ export default function Add({ pageTitle }) {
 		setSelectedItem(event.target.value);
 	};
 
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		//TODO: MUTATION: const formData = new FormData(event.currentTarget);
+	};
+
 	return (
 		<>
 			<Helmet>
@@ -51,7 +56,11 @@ export default function Add({ pageTitle }) {
 			)}
 			{addQuery.isSuccess && (
 				<div className={styles.form_wrapper}>
-					<form className={styles.form}>
+					<form
+						name="form"
+						id="form"
+						className={styles.form}
+						onSubmit={handleSubmit}>
 						<h1 className={styles.form_title}>AGREGAR VINO</h1>
 						{/* Wine's Img Preview */}
 						<img
@@ -126,7 +135,7 @@ export default function Add({ pageTitle }) {
 							name="descripcion"
 							id="descripcion"
 							label="Descripción del vino: "
-							placeholder="Ej: Vino tinto corpulento con taninos suaves y aromas frutales..."
+							placeholder="Ej: Vino tinto corpulento  y aromas frutales..."
 							variant="standard"
 							// error={}
 							helperText={""}
@@ -221,7 +230,7 @@ export default function Add({ pageTitle }) {
 							<FormHelperText>{}</FormHelperText>
 						</FormControl>
 						<Button
-							variant="text"
+							type="submit"
 							className={styles.button}>
 							Agregar
 						</Button>
