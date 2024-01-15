@@ -3,7 +3,9 @@ const db = require("../database/models");
 
 const varietalsApiController = {
 	getVarietals: async (req, res) => {
-		const varietals = await db.Uvas.findAll({ order: [["nombre", "ASC"]] });
+		const varietals = await db.Varietals.findAll({
+			order: [["nombre", "ASC"]],
+		});
 
 		if (!varietals) {
 			res.status(400).json({
