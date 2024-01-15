@@ -8,12 +8,12 @@ module.exports = (sequelize, dataTypes) => {
 			primaryKey: true,
 			allowNull: false,
 		},
-		nombre: {
+		name: {
 			type: dataTypes.STRING(200),
 			allowNull: false,
 		},
 		description: {
-			type: dataTypes.STRING(200),
+			type: dataTypes.STRING(600),
 			allowNull: false,
 		},
 	};
